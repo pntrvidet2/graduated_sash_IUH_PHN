@@ -626,7 +626,7 @@ export default function App() {
           </OptionCard>
           <OptionCard number="03" title="Viền Đôi Vàng Gold Ánh Kim">
             Đường chỉ đôi chạy liền mạch suốt dải sash trên nền satin Navy sâu,
-            tôn vinh thông tin họ tên và Viện Tài chính Kế toán.
+            tôn vinh thông tin họ tên, Viện Tài chính - Kế toán và Khoa Tài chính - Ngân hàng.
           </OptionCard>
         </div>
       </section>
