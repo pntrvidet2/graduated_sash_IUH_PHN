@@ -9,7 +9,7 @@ function IuhLogo() {
   return (
     <div className="iuh-logo">
       <img
-        src="/assets/iuh-logo-full.png"
+        src={`${import.meta.env.BASE_URL}assets/iuh-logo-full.png`}
         alt="Biểu trưng Industrial University of Ho Chi Minh City"
       />
     </div>
@@ -30,19 +30,19 @@ function SashFrame({ side }: { side: "left" | "right" }) {
   const base: [number, number][] =
     side === "left"
       ? [
-          [0, 3.2],
-          [100, 0],
-          [100, 88.8],
-          [50, 99.6],
-          [0, 88.8],
-        ]
+        [0, 3.2],
+        [100, 0],
+        [100, 88.8],
+        [50, 99.6],
+        [0, 88.8],
+      ]
       : [
-          [0, 0],
-          [100, 3.2],
-          [100, 88.8],
-          [50, 99.6],
-          [0, 88.8],
-        ]
+        [0, 0],
+        [100, 3.2],
+        [100, 88.8],
+        [50, 99.6],
+        [0, 88.8],
+      ]
   const scale = (sx: number, sy: number) =>
     base
       .map(([x, y]) => `${50 + (x - 50) * sx},${50 + (y - 50) * sy}`)

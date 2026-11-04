@@ -128,7 +128,7 @@ export default function PrintSash({
   uid = "a",
   mm = false,
   crop = false,
-  logoSrc = "/assets/iuh-logo-full.png",
+  logoSrc = `${import.meta.env.BASE_URL}assets/iuh-logo-full.png`,
   fontCss,
 }: {
   side: Side

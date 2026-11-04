@@ -43,7 +43,7 @@ async function downloadSvg(side: Side) {
   } catch {
     fontCss = `@import url("${FONT_CSS_URL}");`
   }
-  let logoSrc = "/assets/iuh-logo-full.png"
+  let logoSrc = `${import.meta.env.BASE_URL}assets/iuh-logo-full.png`
   try {
     logoSrc = await toDataUrl(logoSrc)
   } catch {
