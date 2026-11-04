@@ -1,5 +1,6 @@
 // Print-ready sash artwork drawn in real millimetres (1 SVG unit = 1 mm).
 import { IUH_LOGO_WHITE } from "./assets/logoData"
+import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
 
 export type Side = "left" | "right"
 
@@ -9,10 +10,9 @@ export const BLEED = 3
 const SLANT = 20 // slanted neck end
 const V = 70 // depth of the pointed end
 
-const NAVY = "#0f2a66"
-const GOLD = "#c9a55f"
+const NAVY = "#0b1b3e"
+const GOLD = "#e5ba42"
 const IVORY = "#f1e7cf"
-const YEAR = "#d9bd7e"
 
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif"
 const SERIF = "'Noto Serif Display', Georgia, serif"
@@ -75,26 +75,6 @@ function Label({
   )
 }
 
-function ClassBlock() {
-  return (
-    <g>
-      <path d="M48 1318H92" stroke={GOLD} strokeWidth="0.5" />
-      <Label y={1338}>CLASS OF</Label>
-      <text
-        x="70"
-        y={1378}
-        textAnchor="middle"
-        fill={YEAR}
-        fontFamily={SERIF}
-        fontWeight="600"
-        fontSize="30"
-      >
-        2026
-      </text>
-    </g>
-  )
-}
-
 type VerticalTextProps = {
   cy: number
   children: string
@@ -144,43 +124,58 @@ export default function PrintSash({
   const viewBox = crop
     ? `${-BLEED} 800 ${SASH_W + BLEED * 2} ${SASH_L + BLEED - 800}`
     : `${-BLEED} ${-BLEED} ${SASH_W + BLEED * 2} ${total}`
-  const nameHalf = 116 // half the rendered width of the name at 42mm
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox={viewBox}
-      {...(mm
-        ? { width: `${SASH_W + BLEED * 2}mm`, height: `${total}mm` }
-        : {})}
-      role="img"
-      aria-label={
-        side === "left"
-          ? "Vạt trái, kích thước thật"
-          : "Vạt phải, kích thước thật"
+      width={mm ? `${SASH_W + BLEED * 2}mm` : "100%"}
+      height={
+        mm
+          ? crop
+            ? `${SASH_L + BLEED - 800}mm`
+            : `${total}mm`
+          : "auto"
       }
+      className={`print-sash print-sash-${side}`}
     >
-      <defs>{fontCss ? <style>{fontCss}</style> : null}</defs>
+      <defs>
+        {fontCss && (
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `\n/* <![CDATA[ */\n${fontCss}\n/* ]]> */\n`,
+            }}
+          />
+        )}
+        <clipPath id={`clip-${uid}`}>
+          <polygon points={pts(outline(side, -BLEED))} />
+        </clipPath>
+      </defs>
 
-      {/* Gold edge band (bleeds past the cut line) and navy body */}
-      <polygon points={pts(outline(side, -BLEED))} fill={GOLD} />
-      <polygon points={pts(outline(side, 4.2))} fill={NAVY} />
-
-      {/* Double straight-line frame */}
+      {/* Solid Navy fabric fill */}
       <polygon
-        points={pts(outline(side, 9))}
+        points={pts(outline(side, -BLEED))}
+        fill={NAVY}
+        clipPath={`url(#clip-${uid})`}
+      />
+
+      {/* Outer thick gold border */}
+      <polygon
+        points={pts(outline(side, 3))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="0.5"
+        strokeWidth="2.5"
         strokeLinejoin="miter"
       />
+
+      {/* Inner thin accent line */}
       <polygon
-        points={pts(outline(side, 12))}
+        points={pts(outline(side, 6.5))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="0.3"
-        opacity="0.5"
+        strokeWidth="0.4"
+        opacity="0.75"
         strokeLinejoin="miter"
       />
 
@@ -213,65 +208,144 @@ export default function PrintSash({
       {/* Front, hanging end */}
       {side === "left" ? (
         <g id="front-left">
+          {/* Logo IUH */}
           <image
             href={logoSrc}
             xlinkHref={logoSrc}
             x="20"
-            y="845"
+            y="835"
             width="100"
             height={(100 * 291) / 1024}
           />
-          <StepLines y={930} />
-          <Label y={985} color={GOLD}>
-            KHOA
-          </Label>
+
+          {/* Subtext under logo */}
           <text
             x="70"
+            y="874"
             textAnchor="middle"
-            fill={IVORY}
-            fontFamily={SERIF}
-            fontWeight="500"
-            fontSize="12"
-            letterSpacing="0.9"
+            fill={GOLD}
+            fontFamily={SANS}
+            fontWeight="700"
+            fontSize="3.4"
+            letterSpacing="0.6"
           >
-            <tspan x="70" y="1030">
-              TÀI CHÍNH
-            </tspan>
-            <tspan x="70" y="1052">
-              NGÂN HÀNG
-            </tspan>
+            <tspan x="70" y="874">INDUSTRIAL UNIVERSITY OF</tspan>
+            <tspan x="70" y="880">HO CHI MINH CITY</tspan>
           </text>
-          <path
-            d="M46 1096H94M54 1102H86M62 1108H78"
-            fill="none"
-            stroke={GOLD}
-            strokeWidth="0.5"
-          />
-          <ClassBlock />
+
+          {/* Separator rule */}
+          <line x1="50" y1="892" x2="90" y2="892" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+
+          {/* Dong Son Drum Watermark Background centered at y=1075 */}
+          <g transform="translate(-10, 925)">
+            <DongSonDrum size={160} color={GOLD} opacity={0.2} />
+          </g>
+
+          {/* Monogram I - U - H Vertical (Serif Bold) */}
+          <g id="monogram-iuh" fontFamily={SERIF} fontWeight="700" fontSize="56" fill="#fff4d0">
+            <text x="70" y="1005" textAnchor="middle">I</text>
+            <text x="70" y="1085" textAnchor="middle">U</text>
+            <text x="70" y="1165" textAnchor="middle">H</text>
+          </g>
+
+          {/* Separator rule */}
+          <line x1="50" y1="1265" x2="90" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+
+          {/* Class of 2026 */}
+          <g id="class-of-2026" transform="translate(0, 1285)">
+            <text x="56" y="18" textAnchor="end" fill={GOLD} fontFamily={SCRIPT} fontSize="18">
+              Class
+            </text>
+            <text x="66" y="18" textAnchor="end" fill={GOLD} fontFamily={SCRIPT} fontSize="14">
+              of
+            </text>
+            <text x="74" y="20" fill="#fff4d0" fontFamily={SERIF} fontWeight="700" fontSize="22" letterSpacing="1">
+              2026
+            </text>
+          </g>
+
+          {/* Corner flourish ornament at tip */}
+          <g transform="translate(30, 1425) scale(0.67)">
+            <CornerFlourish color={GOLD} />
+          </g>
         </g>
       ) : (
         <g id="front-right">
-          <StepLines y={850} />
-          <Label y={892}>CỬ NHÂN</Label>
-          <g transform="rotate(90 70 1075)">
+          {/* Top: Graduation Cap icon */}
+          <g transform="translate(48, 835)">
+            <GraduationCapIcon size={44} color={GOLD} />
+          </g>
+
+          {/* "— Graduation —" */}
+          <g id="graduation-script-label" transform="translate(0, 890)">
+            <line x1="38" y1="0" x2="48" y2="0" stroke={GOLD} strokeWidth="0.4" />
+            <text x="70" y="3" textAnchor="middle" fill="#fff4d0" fontFamily={SCRIPT} fontSize="16">
+              Graduation
+            </text>
+            <line x1="92" y1="0" x2="102" y2="0" stroke={GOLD} strokeWidth="0.4" />
+          </g>
+
+          {/* Separator rule */}
+          <line x1="50" y1="908" x2="90" y2="908" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+
+          {/* Vertical name & Institute with vertical divider */}
+          <g transform="rotate(90 62 1080)">
             <text
-              x="70"
-              y="1075"
+              x="62"
+              y="1080"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#f0d996"
-              fontFamily={SCRIPT}
-              fontSize="42"
+              fill="#fff4d0"
+              fontFamily={SERIF}
+              fontWeight="700"
+              fontSize="24"
+              letterSpacing="2.5"
             >
-              Phạm Hữu Nghĩa
+              PHẠM HỮU NGHĨA
             </text>
-            <path
-              d={`M${70 - nameHalf - 38} 1075H${70 - nameHalf - 12}M${70 - nameHalf - 38} 1080H${70 - nameHalf - 12}M${70 + nameHalf + 12} 1075H${70 + nameHalf + 38}M${70 + nameHalf + 12} 1080H${70 + nameHalf + 38}`}
-              stroke={YEAR}
-              strokeWidth="0.5"
-            />
           </g>
-          <ClassBlock />
+
+          {/* Vertical divider line */}
+          <line x1="75" y1="940" x2="75" y2="1230" stroke={GOLD} strokeWidth="0.35" opacity="0.5" />
+
+          {/* Institute of Finance and Accounting tag */}
+          <g transform="rotate(90 87 1080)">
+            <text
+              x="87"
+              y="1080"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill={GOLD}
+              fontFamily={SANS}
+              fontWeight="700"
+              fontSize="4"
+              letterSpacing="1.4"
+            >
+              INSTITUTE OF FINANCE AND ACCOUNTING
+            </text>
+          </g>
+
+          {/* Separator rule */}
+          <line x1="50" y1="1265" x2="90" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+
+          {/* Cohort K18 */}
+          <text
+            x="70"
+            y="1310"
+            textAnchor="middle"
+            fill="#fff4d0"
+            fontFamily={SERIF}
+            fontWeight="700"
+            fontSize="24"
+            letterSpacing="1.5"
+          >
+            K18
+          </text>
+
+          {/* Corner flourish ornament at tip */}
+          <g transform="translate(30, 1425) scale(0.67)">
+            <CornerFlourish color={GOLD} />
+          </g>
         </g>
       )}
 

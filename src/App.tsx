@@ -1,11 +1,11 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
 import { IUH_LOGO_WHITE, IUH_LOGO_HEADER } from "./assets/logoData"
-
+import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
 
 type ViewMode = "all" | "front" | "back" | "print"
 
-const GOLD = "#d8ad4b"
+const GOLD = "#e5ba42"
 
 function IuhLogo() {
   return (
@@ -18,33 +18,24 @@ function IuhLogo() {
   )
 }
 
-/* Three straight lines stacked like a stepped pyramid */
-function StepLines() {
-  return (
-    <svg className="step-lines" viewBox="0 0 48 12" aria-hidden="true">
-      <path d="M17 1.5H31M9 6H39M1 10.5H47" />
-    </svg>
-  )
-}
-
 /* Double straight-line frame that follows the sash outline */
 function SashFrame({ side }: { side: "left" | "right" }) {
   const base: [number, number][] =
     side === "left"
       ? [
-        [0, 3.2],
-        [100, 0],
-        [100, 88.8],
-        [50, 99.6],
-        [0, 88.8],
-      ]
+          [0, 3.2],
+          [100, 0],
+          [100, 88.8],
+          [50, 99.6],
+          [0, 88.8],
+        ]
       : [
-        [0, 0],
-        [100, 3.2],
-        [100, 88.8],
-        [50, 99.6],
-        [0, 88.8],
-      ]
+          [0, 0],
+          [100, 3.2],
+          [100, 88.8],
+          [50, 99.6],
+          [0, 88.8],
+        ]
   const scale = (sx: number, sy: number) =>
     base
       .map(([x, y]) => `${50 + (x - 50) * sx},${50 + (y - 50) * sy}`)
@@ -56,62 +47,92 @@ function SashFrame({ side }: { side: "left" | "right" }) {
       preserveAspectRatio="none"
       aria-hidden="true"
     >
-      <polygon points={scale(0.9, 0.975)} />
+      <polygon points={scale(0.92, 0.98)} />
       <polygon points={scale(0.86, 0.96)} className="frame-inner" />
     </svg>
-  )
-}
-
-function FinanceEmblem() {
-  return (
-    <div className="finance-emblem">
-      <StepLines />
-      <p>FINANCE</p>
-      <small>CLASS OF 2026</small>
-    </div>
   )
 }
 
 function FrontSash() {
   return (
     <div className="sash-set front-sash" aria-label="Thiết kế mặt trước sash">
+      {/* Vạt Trái (chữ I - U - H lớn trên nền trống đồng Đông Sơn) */}
       <article className="sash-panel sash-left">
         <div className="sash-inner">
           <SashFrame side="left" />
+
+          {/* Top: Logo IUH + Tên trường */}
           <div className="sash-top">
             <IuhLogo />
-          </div>
-          <div className="sash-mid">
-            <StepLines />
-            <span className="label">KHOA</span>
-            <b className="faculty">
-              TÀI CHÍNH
+            <p className="school-name-dongson">
+              INDUSTRIAL UNIVERSITY OF
               <br />
-              NGÂN HÀNG
-            </b>
+              HO CHI MINH CITY
+            </p>
+            <span className="accent-separator" />
           </div>
-          <div className="sash-bottom">
-            <span className="rule-h" />
-            <span className="label label-ivory">CLASS OF</span>
-            <strong className="year">2026</strong>
+
+          {/* Mid: Trống đồng Đông Sơn làm nền chìm + chữ I - U - H lớn */}
+          <div className="dongson-body-zone">
+            <div className="dongson-watermark">
+              <DongSonDrum size={250} color="#e5ba42" opacity={0.22} />
+            </div>
+            <div className="monogram-iuh-vertical">
+              <span>I</span>
+              <span>U</span>
+              <span>H</span>
+            </div>
+          </div>
+
+          {/* Bottom: Class of 2026 + Hoa văn góc nhọn */}
+          <div className="sash-bottom-dongson">
+            <span className="accent-separator" />
+            <div className="class-box-inline">
+              <div className="script-class-of">
+                <span>Class</span>
+                <span>of</span>
+              </div>
+              <strong className="year-dongson">2026</strong>
+            </div>
+            <div className="corner-flourish-wrap">
+              <CornerFlourish />
+            </div>
           </div>
         </div>
       </article>
 
+      {/* Vạt Phải (Mũ tốt nghiệp, Họ tên dọc, Viện/Khoa, K18) */}
       <article className="sash-panel sash-right">
         <div className="sash-inner">
           <SashFrame side="right" />
+
+          {/* Top: Mũ tốt nghiệp + Chữ Graduation */}
           <div className="sash-top">
-            <StepLines />
-            <span className="label label-ivory">CỬ NHÂN</span>
+            <GraduationCapIcon size={54} />
+            <div className="graduation-label">
+              <span className="flourish-line" />
+              <em>Graduation</em>
+              <span className="flourish-line" />
+            </div>
+            <span className="accent-separator" />
           </div>
-          <div className="name-zone">
-            <h2 className="student-name">Phạm Hữu Nghĩa</h2>
+
+          {/* Mid: Họ tên chạy dọc + Viện Tài chính Kế toán */}
+          <div className="name-zone-dongson">
+            <div className="vertical-columns-wrap">
+              <h2 className="student-name-dongson">PHẠM HỮU NGHĨA</h2>
+              <span className="vertical-rule-divider" />
+              <span className="faculty-name-dongson">INSTITUTE OF FINANCE AND ACCOUNTING</span>
+            </div>
           </div>
-          <div className="sash-bottom">
-            <span className="rule-h" />
-            <span className="label label-ivory">CLASS OF</span>
-            <strong className="year">2026</strong>
+
+          {/* Bottom: K18 + Hoa văn góc nhọn */}
+          <div className="sash-bottom-dongson">
+            <span className="accent-separator" />
+            <div className="k18-badge-dongson">K18</div>
+            <div className="corner-flourish-wrap">
+              <CornerFlourish />
+            </div>
           </div>
         </div>
       </article>
@@ -122,17 +143,22 @@ function FrontSash() {
 function BackSash() {
   return (
     <div className="back-wrap" aria-label="Thiết kế mặt sau sash">
-      <div className="back-collar">
-        <FinanceEmblem />
-      </div>
       <div className="sash-set back-sash">
         <article className="sash-panel sash-left">
           <div className="sash-inner">
             <SashFrame side="left" />
             <div className="sash-mid">
+              <div className="dongson-watermark" style={{ opacity: 0.14 }}>
+                <DongSonDrum size={220} color="#e5ba42" />
+              </div>
               <span className="line-v" />
               <p className="vertical-copy">INDUSTRIAL UNIVERSITY</p>
               <span className="line-v" />
+            </div>
+            <div className="sash-bottom-dongson">
+              <div className="corner-flourish-wrap">
+                <CornerFlourish />
+              </div>
             </div>
           </div>
         </article>
@@ -140,9 +166,17 @@ function BackSash() {
           <div className="sash-inner">
             <SashFrame side="right" />
             <div className="sash-mid">
+              <div className="dongson-watermark" style={{ opacity: 0.14 }}>
+                <DongSonDrum size={220} color="#e5ba42" />
+              </div>
               <span className="line-v" />
               <p className="vertical-copy">HO CHI MINH CITY · 2026</p>
               <span className="line-v" />
+            </div>
+            <div className="sash-bottom-dongson">
+              <div className="corner-flourish-wrap">
+                <CornerFlourish />
+              </div>
             </div>
           </div>
         </article>
@@ -184,11 +218,11 @@ export default function App() {
             className="header-logo"
           />
           <span className="brand-rule" />
-          <span className="brand-monogram">PHN</span>
+          <span className="brand-monogram">IUH · PHN</span>
           <span className="brand-rule" />
           <div>
             <b>GRADUATION SASH</b>
-            <small>DESIGN CONCEPT · 2026</small>
+            <small>ĐÔNG SƠN HERITAGE EDITION · 2026</small>
           </div>
         </div>
         <p>PHẠM HỮU NGHĨA</p>
@@ -196,18 +230,18 @@ export default function App() {
 
       <section className="hero">
         <div className="hero-copy">
-          <p className="section-kicker">THE FINANCE EDITION</p>
+          <p className="section-kicker">HERITAGE EDITION · K18</p>
           <h1>
-            Dấu ấn
+            Khí chất Đông Sơn,
             <br />
-            <em>ngày tốt nghiệp.</em>
+            <em>vinh danh ngày tốt nghiệp.</em>
           </h1>
         </div>
         <div className="hero-note">
           <span>01</span>
           <p>
-            Một thiết kế sash mang tinh thần học thuật, tiết chế và trang trọng
-            — dành riêng cho cột mốc 2026.
+            Mẫu sash nghi lễ đặc trưng IUH kết hợp hoa văn Trống đồng Đông Sơn in chìm,
+            chữ IUH nguyên khối, biểu tượng mũ cử nhân và nhận diện khóa K18.
           </p>
         </div>
       </section>
@@ -270,39 +304,39 @@ export default function App() {
 
       <section className="design-notes">
         <div className="notes-intro">
-          <p className="section-kicker">DESIGN LANGUAGE</p>
+          <p className="section-kicker">HERITAGE DESIGN LANGUAGE</p>
           <h2>
-            Tinh giản để
+            Bản sắc truyền thống &amp;
             <br />
-            tạo nên <em>khí chất.</em>
+            <em>tinh thần học thuật IUH.</em>
           </h2>
         </div>
         <div className="option-list">
-          <OptionCard number="01" title="Typography nghi lễ">
-            Bodoni Moda Italic cho họ tên với nét tương phản cao; Noto Serif
-            Display cho thông tin khoa và niên khóa.
+          <OptionCard number="01" title="Nền Trống Đồng Đông Sơn">
+            Hoa văn mặt trống đồng với ngôi sao 14 cánh và chim Lạc cách điệu in chìm
+            tinh tế dưới cụm chữ I - U - H lớn dập nổi vàng gold.
           </OptionCard>
-          <OptionCard number="02" title="Họa tiết đường thẳng">
-            Khung kép chạy theo đúng hình vạt và bậc ba nét gợi kim tự tháp Ai
-            Cập, đối xứng, dễ thêu hoặc ép nhũ.
+          <OptionCard number="02" title="Mũ Cử Nhân &amp; Nhận diện K18">
+            Đỉnh vạt phải khắc họa biểu tượng Mũ tốt nghiệp uy nghiêm cùng nhận diện
+            khóa K18 và hoa văn góc hoàng gia ở mũi nhọn vạt.
           </OptionCard>
-          <OptionCard number="03" title="Navy & champagne gold">
-            Nền navy sâu phối vàng champagne trầm, chỉ dùng một tông vàng và
-            ivory cho chữ để mặt sash sạch và dễ nhìn.
+          <OptionCard number="03" title="Viền Đôi Vàng Gold Ánh Kim">
+            Đường chỉ đôi chạy liền mạch suốt dải sash trên nền satin Navy sâu,
+            tôn vinh thông tin họ tên và Viện Tài chính Kế toán.
           </OptionCard>
         </div>
       </section>
 
       <footer>
-        <p>IUH · GRADUATION 2026</p>
+        <p>IUH · GRADUATION 2026 · K18</p>
         <div className="palette">
-          <span />
-          <span style={{ background: GOLD }} />
-          <span style={{ background: "#f1ecdf" }} />
-          <b>NAVY / ANTIQUE GOLD / IVORY</b>
+          <span style={{ background: "#0b1b3e" }} />
+          <span style={{ background: "#e5ba42" }} />
+          <span style={{ background: "#f8f3e6" }} />
+          <b>DEEP NAVY / BRONZE GOLD / IVORY</b>
         </div>
         <small>
-          BẢN THIẾT KẾ Ý TƯỞNG · CHỐT KỸ THUẬT THÊU VỚI ĐƠN VỊ SẢN XUẤT
+          BẢN THIẾT KẾ Ý TƯỞNG · CHỐT KỸ THUẬT IN/THÊU VỚI ĐƠN VỊ SẢN XUẤT
         </small>
       </footer>
     </main>
