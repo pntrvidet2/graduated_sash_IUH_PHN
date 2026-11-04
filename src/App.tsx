@@ -7,17 +7,6 @@ type ViewMode = "all" | "front" | "back" | "print"
 
 const GOLD = "#e5ba42"
 
-function IuhLogo() {
-  return (
-    <div className="iuh-logo">
-      <img
-        src={IUH_LOGO_WHITE}
-        alt="Biểu trưng Industrial University of Ho Chi Minh City"
-      />
-    </div>
-  )
-}
-
 /* Double straight-line frame that follows the sash outline */
 function SashFrame({ side }: { side: "left" | "right" }) {
   const base: [number, number][] =
@@ -53,79 +42,171 @@ function SashFrame({ side }: { side: "left" | "right" }) {
   )
 }
 
+/**
+ * Tác phẩm vector vạt trái:
+ * Logo IUH -> Trống đồng Đông Sơn to rõ -> Monogram I - U - H dập nổi -> Class of 2026 -> Hoa văn góc nhọn
+ */
+function LeftSashArtwork() {
+  return (
+    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
+      {/* Top: Logo IUH */}
+      <image
+        href={IUH_LOGO_WHITE}
+        x="20"
+        y="22"
+        width="100"
+        height="28"
+        preserveAspectRatio="xMidYMid meet"
+      />
+
+      {/* Đường vạch phân cách trên */}
+      <line x1="45" y1="62" x2="95" y2="62" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+
+      {/* Trống đồng Đông Sơn to, tròn, sắc nét ở tâm (70, 260) */}
+      <svg x="-45" y="145" width="230" height="230" viewBox="0 0 400 400">
+        <DongSonDrum size="100%" color="#f5d485" opacity={0.48} />
+      </svg>
+
+      {/* 3 chữ I - U - H lớn dập nổi vàng gold */}
+      <g fontFamily="'Noto Serif Display', Georgia, serif" fontWeight="700" fontSize="56" fill="#fff4d0">
+        <text x="70" y="195" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
+          I
+        </text>
+        <text x="70" y="278" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
+          U
+        </text>
+        <text x="70" y="360" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
+          H
+        </text>
+      </g>
+
+      {/* Đường vạch phân cách dưới */}
+      <line x1="45" y1="440" x2="95" y2="440" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+
+      {/* Class of 2026 */}
+      <g id="class-of-2026" transform="translate(0, 474)">
+        <text x="64" y="0" textAnchor="end" fill={GOLD} fontFamily="Cherish, cursive" fontSize="22">
+          Class of
+        </text>
+        <text x="72" y="3" fill="#fff4d0" fontFamily="'Noto Serif Display', serif" fontWeight="700" fontSize="26" letterSpacing="1">
+          2026
+        </text>
+      </g>
+
+      {/* Hoa văn góc nhọn ở đáy vạt */}
+      <g transform="translate(26, 520) scale(0.74)">
+        <CornerFlourish color={GOLD} />
+      </g>
+    </svg>
+  )
+}
+
+/**
+ * Tác phẩm vector vạt phải:
+ * Mũ cử nhân & Graduation -> Trống đồng mờ nhẹ -> Tên Phạm Hữu Nghĩa (font Cherish) | Viện Tài Chính Kế Toán -> K18 -> Hoa văn góc nhọn
+ */
+function RightSashArtwork() {
+  return (
+    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
+      {/* Top: Mũ cử nhân tốt nghiệp */}
+      <g transform="translate(48, 14)">
+        <GraduationCapIcon size={44} color="#f5d485" />
+      </g>
+
+      {/* Dòng chữ — Graduation — */}
+      <g id="graduation-label">
+        <line x1="34" y1="62" x2="44" y2="62" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
+        <text x="70" y="65" textAnchor="middle" fill="#fff4d0" fontFamily="Cherish, cursive" fontSize="18">
+          Graduation
+        </text>
+        <line x1="96" y1="62" x2="106" y2="62" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
+      </g>
+
+      {/* Đường phân cách trên (ngang bằng với vạt trái) */}
+      <line x1="45" y1="78" x2="95" y2="78" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+
+      {/* Nền Trống đồng Đông Sơn in chìm đối xứng */}
+      <svg x="-45" y="145" width="230" height="230" viewBox="0 0 400 400">
+        <DongSonDrum size="100%" color="#f5d485" opacity={0.16} />
+      </svg>
+
+      {/* DÒNG TÊN: Phạm Hữu Nghĩa (font Cherish lúc đầu, xoay dọc ở x=54, y=260) */}
+      <g transform="rotate(90 54 260)">
+        <text
+          x="54"
+          y="260"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fill="#fff4d0"
+          fontFamily="Cherish, cursive"
+          fontSize="42"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.65))"
+        >
+          Phạm Hữu Nghĩa
+        </text>
+      </g>
+
+      {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (chính giữa x=69, từ y=150 đến y=370) */}
+      <line x1="69" y1="150" x2="69" y2="370" stroke={GOLD} strokeWidth="0.5" opacity="0.55" />
+
+      {/* DÒNG VIỆN: VIỆN TÀI CHÍNH KẾ TOÁN (xoay dọc ở x=82, y=260) */}
+      <g transform="rotate(90 82 260)">
+        <text
+          x="82"
+          y="260"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fill={GOLD}
+          fontFamily="'Noto Serif Display', serif"
+          fontWeight="600"
+          fontSize="6.8"
+          letterSpacing="1.6"
+        >
+          VIỆN TÀI CHÍNH KẾ TOÁN
+        </text>
+      </g>
+
+      {/* Đường phân cách dưới (ngang bằng với vạt trái) */}
+      <line x1="45" y1="440" x2="95" y2="440" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+
+      {/* K18 (ngang hàng chuẩn xác với Class of 2026 ở y=478) */}
+      <text
+        x="70"
+        y="478"
+        textAnchor="middle"
+        fill="#fff4d0"
+        fontFamily="'Noto Serif Display', serif"
+        fontWeight="700"
+        fontSize="28"
+        letterSpacing="1"
+      >
+        K18
+      </text>
+
+      {/* Hoa văn góc nhọn ở đáy vạt */}
+      <g transform="translate(26, 520) scale(0.74)">
+        <CornerFlourish color={GOLD} />
+      </g>
+    </svg>
+  )
+}
+
 function FrontSash() {
   return (
     <div className="sash-set front-sash" aria-label="Thiết kế mặt trước sash">
-      {/* Vạt Trái (chữ I - U - H lớn trên nền trống đồng Đông Sơn) */}
+      {/* Vạt Trái */}
       <article className="sash-panel sash-left">
         <div className="sash-inner">
           <SashFrame side="left" />
-
-          {/* Top: Chỉ để Logo IUH gọn gàng (đã có sẵn biểu tượng & chữ IUH) */}
-          <div className="sash-top-zone">
-            <IuhLogo />
-            <span className="accent-separator" />
-          </div>
-
-          {/* Mid: Trống đồng Đông Sơn to, sắc nét, rực rỡ + chữ I - U - H lớn */}
-          <div className="dongson-body-zone">
-            <div className="dongson-watermark">
-              <DongSonDrum size={280} color="#f5d485" opacity={0.48} />
-            </div>
-            <div className="monogram-iuh-vertical">
-              <span>I</span>
-              <span>U</span>
-              <span>H</span>
-            </div>
-          </div>
-
-          {/* Bottom: Class of 2026 + Hoa văn góc nhọn */}
-          <div className="sash-bottom-zone">
-            <span className="accent-separator" />
-            <div className="class-box-inline">
-              <span className="script-class-word">Class of</span>
-              <strong className="year-dongson">2026</strong>
-            </div>
-            <div className="corner-flourish-wrap">
-              <CornerFlourish />
-            </div>
-          </div>
+          <LeftSashArtwork />
         </div>
       </article>
 
-      {/* Vạt Phải (Mũ tốt nghiệp, Họ tên dọc & Viện song song, K18) */}
+      {/* Vạt Phải */}
       <article className="sash-panel sash-right">
         <div className="sash-inner">
           <SashFrame side="right" />
-
-          {/* Top: Mũ cử nhân + Chữ — Graduation — riêng biệt */}
-          <div className="sash-top-zone">
-            <GraduationCapIcon size={56} />
-            <div className="graduation-label">
-              <span className="flourish-line" />
-              <em>Graduation</em>
-              <span className="flourish-line" />
-            </div>
-            <span className="accent-separator" />
-          </div>
-
-          {/* Mid: Họ tên chạy dọc + Viện song song nằm gọn gàng, không bị đè */}
-          <div className="name-zone-dongson">
-            <div className="vertical-columns-container">
-              <h2 className="student-name-script">Phạm Hữu Nghĩa</h2>
-              <span className="divider-vertical-line" />
-              <span className="faculty-name-text">VIỆN TÀI CHÍNH KẾ TOÁN</span>
-            </div>
-          </div>
-
-          {/* Bottom: K18 riêng biệt + Hoa văn góc nhọn */}
-          <div className="sash-bottom-zone">
-            <span className="accent-separator" />
-            <div className="k18-badge-dongson">K18</div>
-            <div className="corner-flourish-wrap">
-              <CornerFlourish />
-            </div>
-          </div>
+          <RightSashArtwork />
         </div>
       </article>
     </div>
@@ -149,7 +230,7 @@ function BackSash() {
             </div>
             <div className="sash-bottom-zone">
               <div className="corner-flourish-wrap">
-                <CornerFlourish />
+                <CornerFlourish color={GOLD} />
               </div>
             </div>
           </div>
@@ -167,7 +248,7 @@ function BackSash() {
             </div>
             <div className="sash-bottom-zone">
               <div className="corner-flourish-wrap">
-                <CornerFlourish />
+                <CornerFlourish color={GOLD} />
               </div>
             </div>
           </div>
