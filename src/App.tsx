@@ -1,6 +1,6 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
-import { IUH_LOGO_WHITE, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
+import { IUH_LOGO_WHITE, IUH_LOGO_HEADER, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
 import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
 
 type ViewMode = "all" | "front" | "back" | "print"
