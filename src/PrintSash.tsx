@@ -275,17 +275,28 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Graduation Cap icon */}
-          <g transform="translate(46, 850)">
-            <GraduationCapIcon size={48} color={GOLD} />
+          <g transform="translate(43, 846)">
+            <GraduationCapIcon size={54} color={GOLD} />
           </g>
 
           {/* "— Graduation —" */}
-          <g id="graduation-script-label" transform="translate(0, 920)">
-            <line x1="32" y1="0" x2="44" y2="0" stroke={GOLD} strokeWidth="0.4" />
-            <text x="70" y="3" textAnchor="middle" fill="#fff4d0" fontFamily={SCRIPT} fontSize="19">
+          <g id="graduation-script-label" transform="translate(0, 918)">
+            <line x1="24" y1="0" x2="38" y2="0" stroke={GOLD} strokeWidth="0.5" opacity="0.8" />
+            <circle cx="41" cy="0" r="1" fill="#fff4d0" />
+            <text
+              x="70"
+              y="3"
+              textAnchor="middle"
+              fill="#fff4d0"
+              fontFamily={SERIF}
+              fontWeight="600"
+              fontSize="12.5"
+              letterSpacing="2.5"
+            >
               Graduation
             </text>
-            <line x1="96" y1="0" x2="108" y2="0" stroke={GOLD} strokeWidth="0.4" />
+            <circle cx="99" cy="0" r="1" fill="#fff4d0" />
+            <line x1="102" y1="0" x2="116" y2="0" stroke={GOLD} strokeWidth="0.5" opacity="0.8" />
           </g>
 
           {/* Separator rule */}

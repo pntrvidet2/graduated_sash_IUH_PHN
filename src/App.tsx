@@ -141,18 +141,31 @@ function LeftSashArtwork() {
 function RightSashArtwork() {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
-      {/* Top: Mũ cử nhân tốt nghiệp, dời xuống đối xứng với vạt trái */}
-      <g transform="translate(46, 38)">
-        <GraduationCapIcon size={48} color="#f5d485" />
+      {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sang trọng */}
+      <g transform="translate(43, 36)">
+        <GraduationCapIcon size={54} />
       </g>
 
-      {/* Dòng chữ — Graduation — */}
+      {/* Dòng chữ — Graduation — phong cách Học thuật Trang trọng (Academic Serif) */}
       <g id="graduation-label">
-        <line x1="32" y1="104" x2="44" y2="104" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
-        <text x="70" y="108" textAnchor="middle" fill="#fff4d0" fontFamily="Cherish, cursive" fontSize="19">
+        <line x1="24" y1="104" x2="38" y2="104" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+        <circle cx="41" cy="104" r="1.1" fill="#fff4d0" />
+        <text
+          x="70"
+          y="107.5"
+          textAnchor="middle"
+          dominantBaseline="central"
+          fill="#fff4d0"
+          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontWeight="600"
+          fontSize="12.5"
+          letterSpacing="2.5"
+          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.7))"
+        >
           Graduation
         </text>
-        <line x1="96" y1="104" x2="108" y2="104" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
+        <circle cx="99" cy="104" r="1.1" fill="#fff4d0" />
+        <line x1="102" y1="104" x2="116" y2="104" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
       </g>
 
       {/* Đường phân cách trên (ngang bằng chính xác với vạt trái ở y=124) */}
