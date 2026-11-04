@@ -90,16 +90,17 @@ function VerticalText({ cy, children }: VerticalTextProps) {
         dominantBaseline="middle"
         fill={GOLD}
         fontFamily={SERIF}
-        fontSize="6"
-        letterSpacing="2.2"
+        fontWeight="700"
+        fontSize="10.5"
+        letterSpacing="3"
         transform={`rotate(90 70 ${cy})`}
       >
         {children}
       </text>
       <path
-        d={`M70 ${cy - 140}V${cy - 95}M70 ${cy + 95}V${cy + 140}`}
+        d={`M70 ${cy - 160}V${cy - 120}M70 ${cy + 120}V${cy + 160}`}
         stroke={GOLD}
-        strokeWidth="0.5"
+        strokeWidth="0.6"
       />
     </g>
   )

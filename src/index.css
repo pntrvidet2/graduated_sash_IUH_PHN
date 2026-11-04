@@ -511,15 +511,16 @@ main {
 }
 
 .back-sash {
-  padding-top: 108px;
+  padding-top: 0;
 }
 
 .back-sash .sash-panel {
-  height: 540px;
+  height: 640px;
 }
 
 .back-sash .sash-inner {
-  padding-top: 150px;
+  padding: 0;
+  overflow: visible;
 }
 
 .back-collar .finance-emblem {

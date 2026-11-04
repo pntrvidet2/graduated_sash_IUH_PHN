@@ -278,6 +278,90 @@ function FrontSash() {
   )
 }
 
+/**
+ * Tác phẩm vector vạt trái mặt sau:
+ * Đường kẻ trên -> Trống đồng Đông Sơn in chìm -> Chữ INDUSTRIAL UNIVERSITY lớn, đậm nét -> Hoa văn góc nhọn
+ */
+function BackLeftSashArtwork() {
+  return (
+    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Mặt sau vạt trái">
+      {/* Vạch kẻ chỉ vàng phía trên với hạt ngọc trang trí */}
+      <line x1="70" y1="45" x2="70" y2="120" stroke={GOLD} strokeWidth="0.8" opacity="0.8" />
+      <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
+
+      {/* Trống đồng Đông Sơn in chìm sắc nét ở tâm */}
+      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
+        <DongSonDrum size="100%" color="#f5d485" opacity={0.22} />
+      </svg>
+
+      {/* DÒNG CHỮ: INDUSTRIAL UNIVERSITY (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
+      <g transform="rotate(90 70 285)">
+        <text
+          x="70"
+          y="285"
+          textAnchor="middle"
+          dominantBaseline="central"
+          fill="#fff4d0"
+          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontWeight="700"
+          fontSize="20"
+          letterSpacing="2.8"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))"
+        >
+          INDUSTRIAL UNIVERSITY
+        </text>
+      </g>
+
+      {/* Hoa văn góc nhọn ở đáy vạt */}
+      <g transform="translate(25, 510)">
+        <CornerFlourish color={GOLD} />
+      </g>
+    </svg>
+  )
+}
+
+/**
+ * Tác phẩm vector vạt phải mặt sau:
+ * Đường kẻ trên -> Trống đồng Đông Sơn in chìm -> Chữ HO CHI MINH CITY · 2026 lớn, đậm nét -> Hoa văn góc nhọn
+ */
+function BackRightSashArtwork() {
+  return (
+    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Mặt sau vạt phải">
+      {/* Vạch kẻ chỉ vàng phía trên với hạt ngọc trang trí */}
+      <line x1="70" y1="45" x2="70" y2="120" stroke={GOLD} strokeWidth="0.8" opacity="0.8" />
+      <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
+
+      {/* Trống đồng Đông Sơn in chìm sắc nét ở tâm */}
+      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
+        <DongSonDrum size="100%" color="#f5d485" opacity={0.22} />
+      </svg>
+
+      {/* DÒNG CHỮ: HO CHI MINH CITY · 2026 (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
+      <g transform="rotate(90 70 285)">
+        <text
+          x="70"
+          y="285"
+          textAnchor="middle"
+          dominantBaseline="central"
+          fill="#fff4d0"
+          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontWeight="700"
+          fontSize="18.5"
+          letterSpacing="2.5"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))"
+        >
+          HO CHI MINH CITY · 2026
+        </text>
+      </g>
+
+      {/* Hoa văn góc nhọn ở đáy vạt */}
+      <g transform="translate(25, 510)">
+        <CornerFlourish color={GOLD} />
+      </g>
+    </svg>
+  )
+}
+
 function BackSash() {
   return (
     <div className="back-wrap" aria-label="Thiết kế mặt sau sash">
@@ -285,35 +369,13 @@ function BackSash() {
         <article className="sash-panel sash-left">
           <div className="sash-inner">
             <SashFrame side="left" />
-            <div className="sash-mid">
-              <div className="dongson-watermark" style={{ opacity: 0.18 }}>
-                <DongSonDrum size={240} color="#f5d485" />
-              </div>
-              <span className="line-v" />
-              <p className="vertical-copy">INDUSTRIAL UNIVERSITY</p>
-            </div>
-            <div className="sash-bottom-zone">
-              <div className="corner-flourish-wrap">
-                <CornerFlourish color={GOLD} />
-              </div>
-            </div>
+            <BackLeftSashArtwork />
           </div>
         </article>
         <article className="sash-panel sash-right">
           <div className="sash-inner">
             <SashFrame side="right" />
-            <div className="sash-mid">
-              <div className="dongson-watermark" style={{ opacity: 0.18 }}>
-                <DongSonDrum size={240} color="#f5d485" />
-              </div>
-              <span className="line-v" />
-              <p className="vertical-copy">HO CHI MINH CITY · 2026</p>
-            </div>
-            <div className="sash-bottom-zone">
-              <div className="corner-flourish-wrap">
-                <CornerFlourish color={GOLD} />
-              </div>
-            </div>
+            <BackRightSashArtwork />
           </div>
         </article>
       </div>
