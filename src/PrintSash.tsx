@@ -258,12 +258,12 @@ export default function PrintSash({
           {/* Separator rule */}
           <line x1="48" y1="1265" x2="92" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
-          {/* Class of 2026 */}
-          <g id="class-of-2026" transform="translate(0, 1285)">
-            <text x="66" y="18" textAnchor="end" fill={GOLD} fontFamily={SCRIPT} fontSize="17">
+          {/* Class of 2026 (2026 xuống dòng) */}
+          <g id="class-of-2026">
+            <text x="70" y="1295" textAnchor="middle" fill={GOLD} fontFamily={SCRIPT} fontSize="20">
               Class of
             </text>
-            <text x="74" y="20" fill="#fff4d0" fontFamily={SERIF} fontWeight="700" fontSize="24" letterSpacing="1">
+            <text x="70" y="1325" textAnchor="middle" fill="#fff4d0" fontFamily={SERIF} fontWeight="700" fontSize="28" letterSpacing="1.5">
               2026
             </text>
           </g>
@@ -321,7 +321,7 @@ export default function PrintSash({
           {/* Vertical divider line */}
           <line x1="68" y1="960" x2="68" y2="1210" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
-          {/* Khoa Tài Chính - Kế Toán (bold, large) */}
+          {/* Viện Tài Chính - Kế Toán (bold, large) */}
           <g transform="rotate(90 84 1085)">
             <text
               x="84"
@@ -334,11 +334,11 @@ export default function PrintSash({
               fontSize="11.5"
               letterSpacing="1.8"
             >
-              KHOA TÀI CHÍNH - KẾ TOÁN
+              VIỆN TÀI CHÍNH - KẾ TOÁN
             </text>
           </g>
 
-          {/* Viện Tài Chính Kế Toán */}
+          {/* Khoa Tài Chính - Ngân Hàng */}
           <g transform="rotate(90 100 1085)">
             <text
               x="100"
@@ -347,11 +347,11 @@ export default function PrintSash({
               dominantBaseline="middle"
               fill={GOLD}
               fontFamily={SERIF}
-              fontWeight="600"
-              fontSize="9.8"
-              letterSpacing="1.5"
+              fontWeight="700"
+              fontSize="10.8"
+              letterSpacing="1.6"
             >
-              VIỆN TÀI CHÍNH KẾ TOÁN
+              KHOA TÀI CHÍNH - NGÂN HÀNG
             </text>
           </g>
 

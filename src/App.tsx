@@ -116,12 +116,30 @@ function LeftSashArtwork() {
       {/* Đường vạch phân cách dưới */}
       <line x1="42" y1="435" x2="98" y2="435" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
 
-      {/* Class of 2026 */}
-      <g id="class-of-2026" transform="translate(0, 472)">
-        <text x="64" y="0" textAnchor="end" fill={GOLD} fontFamily="Cherish, cursive" fontSize="22">
+      {/* Class of 2026 (2026 xuống dòng bên dưới Class of) */}
+      <g id="class-of-2026">
+        <text
+          x="70"
+          y="462"
+          textAnchor="middle"
+          fill={GOLD}
+          fontFamily="Cherish, cursive"
+          fontSize="26"
+          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
+        >
           Class of
         </text>
-        <text x="72" y="3" fill="#fff4d0" fontFamily="'Noto Serif Display', serif" fontWeight="700" fontSize="26" letterSpacing="1">
+        <text
+          x="70"
+          y="492"
+          textAnchor="middle"
+          fill="#fff4d0"
+          fontFamily="'Noto Serif Display', serif"
+          fontWeight="700"
+          fontSize="30"
+          letterSpacing="1.8"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.7))"
+        >
           2026
         </text>
       </g>
@@ -195,7 +213,7 @@ function RightSashArtwork() {
       {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (ở x=68, từ y=155 đến y=400) */}
       <line x1="68" y1="155" x2="68" y2="400" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
 
-      {/* TÊN KHOA: KHOA TÀI CHÍNH - KẾ TOÁN (phóng to đậm nét, dễ đọc, ở x=84) */}
+      {/* TÊN VIỆN: VIỆN TÀI CHÍNH - KẾ TOÁN (phóng to đậm nét, dễ đọc, ở x=84) */}
       <g transform="rotate(90 84 278)">
         <text
           x="84"
@@ -209,11 +227,11 @@ function RightSashArtwork() {
           letterSpacing="1.8"
           filter="drop-shadow(0 1px 3px rgba(0,0,0,0.7))"
         >
-          KHOA TÀI CHÍNH - KẾ TOÁN
+          VIỆN TÀI CHÍNH - KẾ TOÁN
         </text>
       </g>
 
-      {/* TÊN VIỆN: VIỆN TÀI CHÍNH KẾ TOÁN (song song, sắc nét ở x=100) */}
+      {/* TÊN KHOA: KHOA TÀI CHÍNH - NGÂN HÀNG (song song, sắc nét ở x=100) */}
       <g transform="rotate(90 100 278)">
         <text
           x="100"
@@ -222,12 +240,12 @@ function RightSashArtwork() {
           dominantBaseline="middle"
           fill={GOLD}
           fontFamily="'Noto Serif Display', serif"
-          fontWeight="600"
-          fontSize="9.8"
-          letterSpacing="1.5"
+          fontWeight="700"
+          fontSize="10.8"
+          letterSpacing="1.6"
           filter="drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
         >
-          VIỆN TÀI CHÍNH KẾ TOÁN
+          KHOA TÀI CHÍNH - NGÂN HÀNG
         </text>
       </g>
 
