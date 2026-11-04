@@ -960,7 +960,7 @@ footer small {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 6px;
+  padding-bottom: 18px;
   z-index: 2;
 }
 
@@ -988,9 +988,11 @@ footer small {
 }
 
 .corner-flourish-wrap {
-  width: 96px;
-  height: 34px;
-  margin-top: 1px;
+  width: 90px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .graduation-label {

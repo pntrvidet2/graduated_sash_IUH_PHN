@@ -126,11 +126,8 @@ function LeftSashArtwork() {
         </text>
       </g>
 
-      {/* Đường vạch phân cách dưới Class of 2026 */}
-      <line x1="42" y1="492" x2="98" y2="492" stroke={GOLD} strokeWidth="0.5" opacity="0.6" />
-
       {/* Hoa văn góc nhọn ở đáy vạt (tái hiện chính xác theo ảnh thực tế) */}
-      <g transform="translate(10, 508)">
+      <g transform="translate(25, 510)">
         <CornerFlourish color={GOLD} />
       </g>
     </svg>
@@ -238,11 +235,8 @@ function RightSashArtwork() {
         K18
       </text>
 
-      {/* Đường vạch phân cách dưới K18 */}
-      <line x1="42" y1="492" x2="98" y2="492" stroke={GOLD} strokeWidth="0.5" opacity="0.6" />
-
       {/* Hoa văn góc nhọn ở đáy vạt (tái hiện chính xác theo ảnh thực tế) */}
-      <g transform="translate(10, 508)">
+      <g transform="translate(25, 510)">
         <CornerFlourish color={GOLD} />
       </g>
     </svg>
@@ -284,7 +278,6 @@ function BackSash() {
               </div>
               <span className="line-v" />
               <p className="vertical-copy">INDUSTRIAL UNIVERSITY</p>
-              <span className="line-v" />
             </div>
             <div className="sash-bottom-zone">
               <div className="corner-flourish-wrap">
@@ -302,7 +295,6 @@ function BackSash() {
               </div>
               <span className="line-v" />
               <p className="vertical-copy">HO CHI MINH CITY · 2026</p>
-              <span className="line-v" />
             </div>
             <div className="sash-bottom-zone">
               <div className="corner-flourish-wrap">

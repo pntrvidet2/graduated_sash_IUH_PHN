@@ -268,7 +268,7 @@ export default function PrintSash({
           </g>
 
           {/* Corner flourish ornament at tip */}
-          <g transform="translate(10, 1420)">
+          <g transform="translate(25, 1430)">
             <CornerFlourish color={GOLD} />
           </g>
         </g>
@@ -361,7 +361,7 @@ export default function PrintSash({
           </text>
 
           {/* Corner flourish ornament at tip */}
-          <g transform="translate(10, 1420)">
+          <g transform="translate(25, 1430)">
             <CornerFlourish color={GOLD} />
           </g>
         </g>
