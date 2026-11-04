@@ -1013,40 +1013,49 @@ footer small {
   min-height: 380px;
   max-height: 420px;
   z-index: 2;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .vertical-columns-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  transform: rotate(90deg);
+  gap: 12px;
   white-space: nowrap;
 }
 
-.student-name-text {
+.student-name-script {
   margin: 0;
-  font-family: "Noto Serif Display", serif;
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #fff4d0;
+  font-family: "Cherish", cursive;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: #fff3cf;
+  background: linear-gradient(90deg, #fff3cf 0%, #ecd18e 50%, #fff3cf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.65);
+  white-space: nowrap;
 }
 
 .divider-vertical-line {
   display: block;
-  width: 230px;
+  width: 210px;
   height: 1px;
   background: var(--gold);
   opacity: 0.6;
 }
 
 .faculty-name-text {
-  font-family: "Inter:Bold", Inter, sans-serif;
-  font-size: 6.2px;
-  font-weight: 700;
+  font-family: "Noto Serif Display", serif;
+  font-size: 8px;
+  font-weight: 600;
   letter-spacing: 0.22em;
   color: var(--gold);
   text-transform: uppercase;

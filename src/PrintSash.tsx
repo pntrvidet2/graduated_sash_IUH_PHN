@@ -270,40 +270,38 @@ export default function PrintSash({
           {/* Separator rule */}
           <line x1="48" y1="898" x2="92" y2="898" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
-          {/* Vertical name & Institute with vertical divider (nằm gọn từ 940 đến 1230) */}
-          <g transform="rotate(90 62 1085)">
+          {/* Vertical name & Institute with vertical divider */}
+          <g transform="rotate(90 60 1085)">
             <text
-              x="62"
+              x="60"
               y="1085"
               textAnchor="middle"
               dominantBaseline="middle"
               fill="#fff4d0"
-              fontFamily={SERIF}
-              fontWeight="700"
-              fontSize="23"
-              letterSpacing="2.5"
+              fontFamily={SCRIPT}
+              fontSize="44"
             >
-              PHẠM HỮU NGHĨA
+              Phạm Hữu Nghĩa
             </text>
           </g>
 
           {/* Vertical divider line */}
-          <line x1="74" y1="950" x2="74" y2="1220" stroke={GOLD} strokeWidth="0.35" opacity="0.5" />
+          <line x1="74" y1="960" x2="74" y2="1210" stroke={GOLD} strokeWidth="0.35" opacity="0.5" />
 
           {/* Institute of Finance and Accounting tag */}
-          <g transform="rotate(90 86 1085)">
+          <g transform="rotate(90 85 1085)">
             <text
-              x="86"
+              x="85"
               y="1085"
               textAnchor="middle"
               dominantBaseline="middle"
               fill={GOLD}
-              fontFamily={SANS}
-              fontWeight="700"
-              fontSize="3.8"
-              letterSpacing="1.4"
+              fontFamily={SERIF}
+              fontWeight="600"
+              fontSize="4.2"
+              letterSpacing="1.2"
             >
-              INSTITUTE OF FINANCE AND ACCOUNTING
+              VIỆN TÀI CHÍNH KẾ TOÁN
             </text>
           </g>
 

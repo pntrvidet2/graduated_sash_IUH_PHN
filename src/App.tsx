@@ -112,9 +112,9 @@ function FrontSash() {
           {/* Mid: Họ tên chạy dọc + Viện song song nằm gọn gàng, không bị đè */}
           <div className="name-zone-dongson">
             <div className="vertical-columns-container">
-              <span className="student-name-text">PHẠM HỮU NGHĨA</span>
+              <h2 className="student-name-script">Phạm Hữu Nghĩa</h2>
               <span className="divider-vertical-line" />
-              <span className="faculty-name-text">INSTITUTE OF FINANCE AND ACCOUNTING</span>
+              <span className="faculty-name-text">VIỆN TÀI CHÍNH KẾ TOÁN</span>
             </div>
           </div>
 
