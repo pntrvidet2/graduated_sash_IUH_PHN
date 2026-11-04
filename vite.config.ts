@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: process.env.FIGMA_PUBLIC_URL
       ? `${process.env.FIGMA_PUBLIC_URL}/`
-      : "/",
+      : "/graduated_sash_IUH_PHN/",
     build: {
       sourcemap: emitSourcemaps ? "inline" : false,
       minify: !emitSourcemaps,
