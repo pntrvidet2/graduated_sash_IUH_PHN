@@ -1,5 +1,5 @@
 // Print-ready sash artwork drawn in real millimetres (1 SVG unit = 1 mm).
-import { IUH_LOGO_WHITE } from "./assets/logoData"
+import { IUH_LOGO_WHITE, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
 import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
 
 export type Side = "left" | "right"
@@ -208,18 +208,29 @@ export default function PrintSash({
       {/* Front, hanging end */}
       {side === "left" ? (
         <g id="front-left">
-          {/* Logo IUH */}
+          {/* Logo biểu tượng IUH phóng to & dời xuống */}
           <image
-            href={logoSrc}
-            xlinkHref={logoSrc}
-            x="20"
-            y="832"
-            width="100"
-            height={(100 * 291) / 1024}
+            href={IUH_EMBLEM_ORIGINAL}
+            xlinkHref={IUH_EMBLEM_ORIGINAL}
+            x="47"
+            y="850"
+            width="46"
+            height="54"
+            preserveAspectRatio="xMidYMid meet"
           />
 
+          {/* Tên trường đặt ngay dưới biểu tượng logo */}
+          <g fontFamily={SERIF} fontWeight="600" fontSize="5.2" textAnchor="middle">
+            <text x="70" y="916" fill="#fff4d0" letterSpacing="0.9">
+              INDUSTRIAL UNIVERSITY OF
+            </text>
+            <text x="70" y="925" fill={GOLD} letterSpacing="1.2">
+              HO CHI MINH CITY
+            </text>
+          </g>
+
           {/* Separator rule */}
-          <line x1="48" y1="875" x2="92" y2="875" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          <line x1="42" y1="936" x2="98" y2="936" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
           {/* Dong Son Drum Watermark Background (centered at y=1075) */}
           <g transform="translate(-30, 875)">
@@ -254,21 +265,21 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Graduation Cap icon */}
-          <g transform="translate(48, 830)">
-            <GraduationCapIcon size={44} color={GOLD} />
+          <g transform="translate(46, 850)">
+            <GraduationCapIcon size={48} color={GOLD} />
           </g>
 
           {/* "— Graduation —" */}
-          <g id="graduation-script-label" transform="translate(0, 882)">
-            <line x1="36" y1="0" x2="48" y2="0" stroke={GOLD} strokeWidth="0.4" />
-            <text x="70" y="3" textAnchor="middle" fill="#fff4d0" fontFamily={SCRIPT} fontSize="16">
+          <g id="graduation-script-label" transform="translate(0, 920)">
+            <line x1="32" y1="0" x2="44" y2="0" stroke={GOLD} strokeWidth="0.4" />
+            <text x="70" y="3" textAnchor="middle" fill="#fff4d0" fontFamily={SCRIPT} fontSize="19">
               Graduation
             </text>
-            <line x1="92" y1="0" x2="104" y2="0" stroke={GOLD} strokeWidth="0.4" />
+            <line x1="96" y1="0" x2="108" y2="0" stroke={GOLD} strokeWidth="0.4" />
           </g>
 
           {/* Separator rule */}
-          <line x1="48" y1="898" x2="92" y2="898" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          <line x1="42" y1="936" x2="98" y2="936" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
           {/* Vertical name & Institute with vertical divider */}
           <g transform="rotate(90 60 1085)">

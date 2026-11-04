@@ -1,6 +1,6 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
-import { IUH_LOGO_WHITE, IUH_LOGO_HEADER } from "./assets/logoData"
+import { IUH_LOGO_WHITE, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
 import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
 
 type ViewMode = "all" | "front" | "back" | "print"
@@ -44,35 +44,45 @@ function SashFrame({ side }: { side: "left" | "right" }) {
 
 /**
  * Tác phẩm vector vạt trái:
- * Logo IUH -> Trống đồng Đông Sơn to rõ -> Monogram I - U - H dập nổi -> Class of 2026 -> Hoa văn góc nhọn
+ * Logo biểu tượng IUH phóng to & dời xuống cân đối -> Tên trường 2 dòng -> Trống đồng Đông Sơn to rõ -> Monogram I - U - H dập nổi -> Class of 2026 -> Hoa văn góc nhọn
  */
 function LeftSashArtwork() {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
-      {/* Top: Logo IUH */}
+      {/* Top: Biểu tượng IUH riêng biệt, phóng to, dời xuống vừa tầm in */}
       <image
-        href={IUH_LOGO_WHITE}
-        x="20"
-        y="22"
-        width="100"
-        height="28"
+        href={IUH_EMBLEM_ORIGINAL}
+        x="47"
+        y="38"
+        width="46"
+        height="54"
         preserveAspectRatio="xMidYMid meet"
       />
 
-      {/* Đường vạch phân cách trên */}
-      <line x1="45" y1="62" x2="95" y2="62" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+      {/* Tên trường đặt ngay dưới biểu tượng logo */}
+      <g fontFamily="'Noto Serif Display', Georgia, serif" fontWeight="600" fontSize="5.2" textAnchor="middle">
+        <text x="70" y="104" fill="#fff4d0" letterSpacing="0.9">
+          INDUSTRIAL UNIVERSITY OF
+        </text>
+        <text x="70" y="113" fill={GOLD} letterSpacing="1.2">
+          HO CHI MINH CITY
+        </text>
+      </g>
 
-      {/* Trống đồng Đông Sơn to, tròn, sắc nét ở tâm (70, 260) */}
-      <svg x="-45" y="145" width="230" height="230" viewBox="0 0 400 400">
+      {/* Đường vạch phân cách trên */}
+      <line x1="42" y1="124" x2="98" y2="124" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+
+      {/* Trống đồng Đông Sơn to, tròn, sắc nét ở tâm (70, 280) */}
+      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
         <DongSonDrum size="100%" color="#f5d485" opacity={0.48} />
       </svg>
 
       {/* 3 chữ I - U - H lớn dập nổi vàng gold */}
       <g fontFamily="'Noto Serif Display', Georgia, serif" fontWeight="700" fontSize="56" fill="#fff4d0">
-        <text x="70" y="195" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
+        <text x="70" y="215" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
           I
         </text>
-        <text x="70" y="278" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
+        <text x="70" y="288" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
           U
         </text>
         <text x="70" y="360" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
@@ -81,10 +91,10 @@ function LeftSashArtwork() {
       </g>
 
       {/* Đường vạch phân cách dưới */}
-      <line x1="45" y1="440" x2="95" y2="440" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+      <line x1="42" y1="435" x2="98" y2="435" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
 
       {/* Class of 2026 */}
-      <g id="class-of-2026" transform="translate(0, 474)">
+      <g id="class-of-2026" transform="translate(0, 472)">
         <text x="64" y="0" textAnchor="end" fill={GOLD} fontFamily="Cherish, cursive" fontSize="22">
           Class of
         </text>
@@ -94,7 +104,7 @@ function LeftSashArtwork() {
       </g>
 
       {/* Hoa văn góc nhọn ở đáy vạt */}
-      <g transform="translate(26, 520) scale(0.74)">
+      <g transform="translate(26, 516) scale(0.74)">
         <CornerFlourish color={GOLD} />
       </g>
     </svg>
@@ -103,38 +113,38 @@ function LeftSashArtwork() {
 
 /**
  * Tác phẩm vector vạt phải:
- * Mũ cử nhân & Graduation -> Trống đồng mờ nhẹ -> Tên Phạm Hữu Nghĩa (font Cherish) | Viện Tài Chính Kế Toán -> K18 -> Hoa văn góc nhọn
+ * Mũ cử nhân & Graduation dời xuống cân đối -> Trống đồng mờ nhẹ -> Tên Phạm Hữu Nghĩa (font Cherish) | Viện Tài Chính Kế Toán -> K18 -> Hoa văn góc nhọn
  */
 function RightSashArtwork() {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
-      {/* Top: Mũ cử nhân tốt nghiệp */}
-      <g transform="translate(48, 14)">
-        <GraduationCapIcon size={44} color="#f5d485" />
+      {/* Top: Mũ cử nhân tốt nghiệp, dời xuống đối xứng với vạt trái */}
+      <g transform="translate(46, 38)">
+        <GraduationCapIcon size={48} color="#f5d485" />
       </g>
 
       {/* Dòng chữ — Graduation — */}
       <g id="graduation-label">
-        <line x1="34" y1="62" x2="44" y2="62" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
-        <text x="70" y="65" textAnchor="middle" fill="#fff4d0" fontFamily="Cherish, cursive" fontSize="18">
+        <line x1="32" y1="104" x2="44" y2="104" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
+        <text x="70" y="108" textAnchor="middle" fill="#fff4d0" fontFamily="Cherish, cursive" fontSize="19">
           Graduation
         </text>
-        <line x1="96" y1="62" x2="106" y2="62" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
+        <line x1="96" y1="104" x2="108" y2="104" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
       </g>
 
-      {/* Đường phân cách trên (ngang bằng với vạt trái) */}
-      <line x1="45" y1="78" x2="95" y2="78" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+      {/* Đường phân cách trên (ngang bằng chính xác với vạt trái ở y=124) */}
+      <line x1="42" y1="124" x2="98" y2="124" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
 
       {/* Nền Trống đồng Đông Sơn in chìm đối xứng */}
-      <svg x="-45" y="145" width="230" height="230" viewBox="0 0 400 400">
+      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
         <DongSonDrum size="100%" color="#f5d485" opacity={0.16} />
       </svg>
 
-      {/* DÒNG TÊN: Phạm Hữu Nghĩa (font Cherish lúc đầu, xoay dọc ở x=54, y=260) */}
-      <g transform="rotate(90 54 260)">
+      {/* DÒNG TÊN: Phạm Hữu Nghĩa (font Cherish lúc đầu, xoay dọc cân đối ở tâm y=278) */}
+      <g transform="rotate(90 53 278)">
         <text
-          x="54"
-          y="260"
+          x="53"
+          y="278"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
@@ -146,33 +156,33 @@ function RightSashArtwork() {
         </text>
       </g>
 
-      {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (chính giữa x=69, từ y=150 đến y=370) */}
-      <line x1="69" y1="150" x2="69" y2="370" stroke={GOLD} strokeWidth="0.5" opacity="0.55" />
+      {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (chính giữa x=70, từ y=160 đến y=395) */}
+      <line x1="70" y1="160" x2="70" y2="395" stroke={GOLD} strokeWidth="0.5" opacity="0.55" />
 
-      {/* DÒNG VIỆN: VIỆN TÀI CHÍNH KẾ TOÁN (xoay dọc ở x=82, y=260) */}
-      <g transform="rotate(90 82 260)">
+      {/* DÒNG VIỆN: VIỆN TÀI CHÍNH KẾ TOÁN (xoay dọc ở x=84, cân đối ở tâm y=278) */}
+      <g transform="rotate(90 84 278)">
         <text
-          x="82"
-          y="260"
+          x="84"
+          y="278"
           textAnchor="middle"
           dominantBaseline="middle"
           fill={GOLD}
           fontFamily="'Noto Serif Display', serif"
           fontWeight="600"
-          fontSize="6.8"
+          fontSize="7"
           letterSpacing="1.6"
         >
           VIỆN TÀI CHÍNH KẾ TOÁN
         </text>
       </g>
 
-      {/* Đường phân cách dưới (ngang bằng với vạt trái) */}
-      <line x1="45" y1="440" x2="95" y2="440" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+      {/* Đường phân cách dưới (ngang bằng chính xác với vạt trái ở y=435) */}
+      <line x1="42" y1="435" x2="98" y2="435" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
 
-      {/* K18 (ngang hàng chuẩn xác với Class of 2026 ở y=478) */}
+      {/* K18 (ngang hàng chuẩn xác với Class of 2026 ở y=475) */}
       <text
         x="70"
-        y="478"
+        y="475"
         textAnchor="middle"
         fill="#fff4d0"
         fontFamily="'Noto Serif Display', serif"
@@ -184,7 +194,7 @@ function RightSashArtwork() {
       </text>
 
       {/* Hoa văn góc nhọn ở đáy vạt */}
-      <g transform="translate(26, 520) scale(0.74)">
+      <g transform="translate(26, 516) scale(0.74)">
         <CornerFlourish color={GOLD} />
       </g>
     </svg>
