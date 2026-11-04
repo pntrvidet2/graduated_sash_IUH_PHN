@@ -1,4 +1,6 @@
 // Print-ready sash artwork drawn in real millimetres (1 SVG unit = 1 mm).
+import defaultLogoWhite from "./assets/iuh-logo-white.png"
+
 export type Side = "left" | "right"
 
 export const SASH_W = 140
@@ -87,7 +89,7 @@ function ClassBlock() {
         fontWeight="600"
         fontSize="30"
       >
-        2022
+        2026
       </text>
     </g>
   )
@@ -128,7 +130,7 @@ export default function PrintSash({
   uid = "a",
   mm = false,
   crop = false,
-  logoSrc = `${import.meta.env.BASE_URL}assets/iuh-logo-full.png`,
+  logoSrc = defaultLogoWhite,
   fontCss,
 }: {
   side: Side
@@ -199,12 +201,12 @@ export default function PrintSash({
             FINANCE
           </text>
         ) : (
-          <Label y={190}>CLASS OF 2022</Label>
+          <Label y={190}>CLASS OF 2026</Label>
         )}
         <VerticalText cy={470}>
           {side === "left"
             ? "INDUSTRIAL UNIVERSITY"
-            : "HO CHI MINH CITY · 2022"}
+            : "HO CHI MINH CITY · 2026"}
         </VerticalText>
       </g>
 
@@ -217,7 +219,7 @@ export default function PrintSash({
             x="20"
             y="845"
             width="100"
-            height={(100 * 436) / 1600}
+            height={(100 * 291) / 1024}
           />
           <StepLines y={930} />
           <Label y={985} color={GOLD}>

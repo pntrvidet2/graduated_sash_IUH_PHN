@@ -1,5 +1,9 @@
 {
-  "description": "A design app for refining graduation sashes with elegant typography, decorative details, and a polished look tailored to finance students.",
+  "title": "Graduation Sash · PHN",
+  "description": "Graduation sash design concept for Pham Huu Nghia - IUH Finance 2026",
+  "icons": {
+    "icon": "./assets/iuh-logo-full.png"
+  },
   "robots": {
     "index": false
   },

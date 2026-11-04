@@ -1,5 +1,7 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
+import logoWhite from "./assets/iuh-logo-white.png"
+import logoHeader from "./assets/iuh-logo-custom.png"
 
 type ViewMode = "all" | "front" | "back" | "print"
 
@@ -9,7 +11,7 @@ function IuhLogo() {
   return (
     <div className="iuh-logo">
       <img
-        src={`${import.meta.env.BASE_URL}assets/iuh-logo-full.png`}
+        src={logoWhite}
         alt="Biểu trưng Industrial University of Ho Chi Minh City"
       />
     </div>
@@ -65,7 +67,7 @@ function FinanceEmblem() {
     <div className="finance-emblem">
       <StepLines />
       <p>FINANCE</p>
-      <small>CLASS OF 2022</small>
+      <small>CLASS OF 2026</small>
     </div>
   )
 }
@@ -91,7 +93,7 @@ function FrontSash() {
           <div className="sash-bottom">
             <span className="rule-h" />
             <span className="label label-ivory">CLASS OF</span>
-            <strong className="year">2022</strong>
+            <strong className="year">2026</strong>
           </div>
         </div>
       </article>
@@ -109,7 +111,7 @@ function FrontSash() {
           <div className="sash-bottom">
             <span className="rule-h" />
             <span className="label label-ivory">CLASS OF</span>
-            <strong className="year">2022</strong>
+            <strong className="year">2026</strong>
           </div>
         </div>
       </article>
@@ -139,7 +141,7 @@ function BackSash() {
             <SashFrame side="right" />
             <div className="sash-mid">
               <span className="line-v" />
-              <p className="vertical-copy">HO CHI MINH CITY · 2022</p>
+              <p className="vertical-copy">HO CHI MINH CITY · 2026</p>
               <span className="line-v" />
             </div>
           </div>
@@ -176,11 +178,17 @@ export default function App() {
     <main>
       <header className="site-header">
         <div className="header-brand">
-          <span className="brand-monogram">IUH</span>
+          <img
+            src={logoHeader}
+            alt="IUH Logo"
+            className="header-logo"
+          />
+          <span className="brand-rule" />
+          <span className="brand-monogram">PHN</span>
           <span className="brand-rule" />
           <div>
-            <b>GRADUATION STOLE</b>
-            <small>DESIGN CONCEPT · 2022</small>
+            <b>GRADUATION SASH</b>
+            <small>DESIGN CONCEPT · 2026</small>
           </div>
         </div>
         <p>PHẠM HỮU NGHĨA</p>
@@ -199,7 +207,7 @@ export default function App() {
           <span>01</span>
           <p>
             Một thiết kế sash mang tinh thần học thuật, tiết chế và trang trọng
-            — dành riêng cho cột mốc 2022.
+            — dành riêng cho cột mốc 2026.
           </p>
         </div>
       </section>
@@ -286,7 +294,7 @@ export default function App() {
       </section>
 
       <footer>
-        <p>IUH · GRADUATION 2022</p>
+        <p>IUH · GRADUATION 2026</p>
         <div className="palette">
           <span />
           <span style={{ background: GOLD }} />

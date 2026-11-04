@@ -72,6 +72,12 @@ main {
   font-family: "Inter:Medium", Inter, sans-serif;
 }
 
+.header-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
 .header-brand {
   display: flex;
   align-items: center;
