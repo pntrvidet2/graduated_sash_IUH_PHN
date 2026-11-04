@@ -213,53 +213,35 @@ export default function PrintSash({
             href={logoSrc}
             xlinkHref={logoSrc}
             x="20"
-            y="835"
+            y="832"
             width="100"
             height={(100 * 291) / 1024}
           />
 
-          {/* Subtext under logo */}
-          <text
-            x="70"
-            y="874"
-            textAnchor="middle"
-            fill={GOLD}
-            fontFamily={SANS}
-            fontWeight="700"
-            fontSize="3.4"
-            letterSpacing="0.6"
-          >
-            <tspan x="70" y="874">INDUSTRIAL UNIVERSITY OF</tspan>
-            <tspan x="70" y="880">HO CHI MINH CITY</tspan>
-          </text>
-
           {/* Separator rule */}
-          <line x1="50" y1="892" x2="90" y2="892" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          <line x1="48" y1="875" x2="92" y2="875" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
-          {/* Dong Son Drum Watermark Background centered at y=1075 */}
-          <g transform="translate(-10, 925)">
-            <DongSonDrum size={160} color={GOLD} opacity={0.2} />
+          {/* Dong Son Drum Watermark Background (centered at y=1075) */}
+          <g transform="translate(-30, 875)">
+            <DongSonDrum size={200} color={GOLD} opacity={0.45} />
           </g>
 
           {/* Monogram I - U - H Vertical (Serif Bold) */}
-          <g id="monogram-iuh" fontFamily={SERIF} fontWeight="700" fontSize="56" fill="#fff4d0">
-            <text x="70" y="1005" textAnchor="middle">I</text>
-            <text x="70" y="1085" textAnchor="middle">U</text>
+          <g id="monogram-iuh" fontFamily={SERIF} fontWeight="700" fontSize="58" fill="#fff4d0">
+            <text x="70" y="995" textAnchor="middle">I</text>
+            <text x="70" y="1080" textAnchor="middle">U</text>
             <text x="70" y="1165" textAnchor="middle">H</text>
           </g>
 
           {/* Separator rule */}
-          <line x1="50" y1="1265" x2="90" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          <line x1="48" y1="1265" x2="92" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
           {/* Class of 2026 */}
           <g id="class-of-2026" transform="translate(0, 1285)">
-            <text x="56" y="18" textAnchor="end" fill={GOLD} fontFamily={SCRIPT} fontSize="18">
-              Class
+            <text x="66" y="18" textAnchor="end" fill={GOLD} fontFamily={SCRIPT} fontSize="17">
+              Class of
             </text>
-            <text x="66" y="18" textAnchor="end" fill={GOLD} fontFamily={SCRIPT} fontSize="14">
-              of
-            </text>
-            <text x="74" y="20" fill="#fff4d0" fontFamily={SERIF} fontWeight="700" fontSize="22" letterSpacing="1">
+            <text x="74" y="20" fill="#fff4d0" fontFamily={SERIF} fontWeight="700" fontSize="24" letterSpacing="1">
               2026
             </text>
           </g>
@@ -272,33 +254,33 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Graduation Cap icon */}
-          <g transform="translate(48, 835)">
+          <g transform="translate(48, 830)">
             <GraduationCapIcon size={44} color={GOLD} />
           </g>
 
           {/* "— Graduation —" */}
-          <g id="graduation-script-label" transform="translate(0, 890)">
-            <line x1="38" y1="0" x2="48" y2="0" stroke={GOLD} strokeWidth="0.4" />
+          <g id="graduation-script-label" transform="translate(0, 882)">
+            <line x1="36" y1="0" x2="48" y2="0" stroke={GOLD} strokeWidth="0.4" />
             <text x="70" y="3" textAnchor="middle" fill="#fff4d0" fontFamily={SCRIPT} fontSize="16">
               Graduation
             </text>
-            <line x1="92" y1="0" x2="102" y2="0" stroke={GOLD} strokeWidth="0.4" />
+            <line x1="92" y1="0" x2="104" y2="0" stroke={GOLD} strokeWidth="0.4" />
           </g>
 
           {/* Separator rule */}
-          <line x1="50" y1="908" x2="90" y2="908" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          <line x1="48" y1="898" x2="92" y2="898" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
-          {/* Vertical name & Institute with vertical divider */}
-          <g transform="rotate(90 62 1080)">
+          {/* Vertical name & Institute with vertical divider (nằm gọn từ 940 đến 1230) */}
+          <g transform="rotate(90 62 1085)">
             <text
               x="62"
-              y="1080"
+              y="1085"
               textAnchor="middle"
               dominantBaseline="middle"
               fill="#fff4d0"
               fontFamily={SERIF}
               fontWeight="700"
-              fontSize="24"
+              fontSize="23"
               letterSpacing="2.5"
             >
               PHẠM HỮU NGHĨA
@@ -306,19 +288,19 @@ export default function PrintSash({
           </g>
 
           {/* Vertical divider line */}
-          <line x1="75" y1="940" x2="75" y2="1230" stroke={GOLD} strokeWidth="0.35" opacity="0.5" />
+          <line x1="74" y1="950" x2="74" y2="1220" stroke={GOLD} strokeWidth="0.35" opacity="0.5" />
 
           {/* Institute of Finance and Accounting tag */}
-          <g transform="rotate(90 87 1080)">
+          <g transform="rotate(90 86 1085)">
             <text
-              x="87"
-              y="1080"
+              x="86"
+              y="1085"
               textAnchor="middle"
               dominantBaseline="middle"
               fill={GOLD}
               fontFamily={SANS}
               fontWeight="700"
-              fontSize="4"
+              fontSize="3.8"
               letterSpacing="1.4"
             >
               INSTITUTE OF FINANCE AND ACCOUNTING
@@ -326,17 +308,17 @@ export default function PrintSash({
           </g>
 
           {/* Separator rule */}
-          <line x1="50" y1="1265" x2="90" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          <line x1="48" y1="1265" x2="92" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
           {/* Cohort K18 */}
           <text
             x="70"
-            y="1310"
+            y="1312"
             textAnchor="middle"
             fill="#fff4d0"
             fontFamily={SERIF}
             fontWeight="700"
-            fontSize="24"
+            fontSize="26"
             letterSpacing="1.5"
           >
             K18
