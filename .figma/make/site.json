@@ -1,0 +1,10 @@
+{
+  "description": "A design app for refining graduation sashes with elegant typography, decorative details, and a polished look tailored to finance students.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
