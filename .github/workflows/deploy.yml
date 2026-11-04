@@ -3,7 +3,6 @@ name: Deploy Vite Site to Pages
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
@@ -25,29 +24,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: ${{ hashFiles('pnpm-lock.yaml') != '' && 'pnpm' || hashFiles('package-lock.json') != '' && 'npm' || 'yarn' }}
-
-      - name: Install pnpm (nếu dự án dùng pnpm)
-        if: env.USES_PNPM == 'true'
-        run: npm i -g pnpm
-        env:
-          USES_PNPM: ${{ hashFiles('pnpm-lock.yaml') != '' }}
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: |
-          if [ -f pnpm-lock.yaml ]; then pnpm install;
-          elif [ -f package-lock.json ]; then npm ci;
-          else npm install; fi
+        run: pnpm install
 
       - name: Build
-        run: |
-          if [ -f pnpm-lock.yaml ]; then pnpm run build;
-          elif [ -f package-lock.json ]; then npm run build;
-          else npm run build; fi
+        run: pnpm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
