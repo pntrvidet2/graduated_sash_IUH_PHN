@@ -1,7 +1,7 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
-import logoWhite from "./assets/iuh-logo-white.png"
-import logoHeader from "./assets/iuh-logo-custom.png"
+import { IUH_LOGO_WHITE, IUH_LOGO_HEADER } from "./assets/logoData"
+
 
 type ViewMode = "all" | "front" | "back" | "print"
 
@@ -11,7 +11,7 @@ function IuhLogo() {
   return (
     <div className="iuh-logo">
       <img
-        src={logoWhite}
+        src={IUH_LOGO_WHITE}
         alt="Biểu trưng Industrial University of Ho Chi Minh City"
       />
     </div>
@@ -179,7 +179,7 @@ export default function App() {
       <header className="site-header">
         <div className="header-brand">
           <img
-            src={logoHeader}
+            src={IUH_LOGO_HEADER}
             alt="IUH Logo"
             className="header-logo"
           />

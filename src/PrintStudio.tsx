@@ -1,5 +1,5 @@
 import PrintSash, { type Side } from "./PrintSash"
-import logoWhite from "./assets/iuh-logo-white.png"
+import { IUH_LOGO_WHITE } from "./assets/logoData"
 
 const FONT_CSS_URL =
   "https://fonts.googleapis.com/css2?family=Cherish&family=Inter:wght@500;700&family=Noto+Serif+Display:wght@500;600&display=swap"
@@ -44,7 +44,7 @@ async function downloadSvg(side: Side) {
   } catch {
     fontCss = `@import url("${FONT_CSS_URL}");`
   }
-  let logoSrc = logoWhite
+  let logoSrc = IUH_LOGO_WHITE
   try {
     logoSrc = await toDataUrl(logoSrc)
   } catch {

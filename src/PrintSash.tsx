@@ -1,5 +1,5 @@
 // Print-ready sash artwork drawn in real millimetres (1 SVG unit = 1 mm).
-import defaultLogoWhite from "./assets/iuh-logo-white.png"
+import { IUH_LOGO_WHITE } from "./assets/logoData"
 
 export type Side = "left" | "right"
 
@@ -130,7 +130,7 @@ export default function PrintSash({
   uid = "a",
   mm = false,
   crop = false,
-  logoSrc = defaultLogoWhite,
+  logoSrc = IUH_LOGO_WHITE,
   fontCss,
 }: {
   side: Side
