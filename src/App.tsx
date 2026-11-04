@@ -140,37 +140,56 @@ function RightSashArtwork() {
         <DongSonDrum size="100%" color="#f5d485" opacity={0.16} />
       </svg>
 
-      {/* DÒNG TÊN: Phạm Hữu Nghĩa (font Cherish lúc đầu, xoay dọc cân đối ở tâm y=278) */}
-      <g transform="rotate(90 53 278)">
+      {/* DÒNG TÊN: Phạm Hữu Nghĩa (font Cherish, phóng to rõ ràng, xoay dọc ở x=48, tâm y=278) */}
+      <g transform="rotate(90 48 278)">
         <text
-          x="53"
+          x="48"
           y="278"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
           fontFamily="Cherish, cursive"
-          fontSize="42"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.65))"
+          fontSize="50"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))"
         >
           Phạm Hữu Nghĩa
         </text>
       </g>
 
-      {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (chính giữa x=70, từ y=160 đến y=395) */}
-      <line x1="70" y1="160" x2="70" y2="395" stroke={GOLD} strokeWidth="0.5" opacity="0.55" />
+      {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (ở x=68, từ y=155 đến y=400) */}
+      <line x1="68" y1="155" x2="68" y2="400" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
 
-      {/* DÒNG VIỆN: VIỆN TÀI CHÍNH KẾ TOÁN (xoay dọc ở x=84, cân đối ở tâm y=278) */}
+      {/* TÊN KHOA: KHOA TÀI CHÍNH - KẾ TOÁN (phóng to đậm nét, dễ đọc, ở x=84) */}
       <g transform="rotate(90 84 278)">
         <text
           x="84"
           y="278"
           textAnchor="middle"
           dominantBaseline="middle"
+          fill="#fff4d0"
+          fontFamily="'Noto Serif Display', serif"
+          fontWeight="700"
+          fontSize="11.5"
+          letterSpacing="1.8"
+          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.7))"
+        >
+          KHOA TÀI CHÍNH - KẾ TOÁN
+        </text>
+      </g>
+
+      {/* TÊN VIỆN: VIỆN TÀI CHÍNH KẾ TOÁN (song song, sắc nét ở x=100) */}
+      <g transform="rotate(90 100 278)">
+        <text
+          x="100"
+          y="278"
+          textAnchor="middle"
+          dominantBaseline="middle"
           fill={GOLD}
           fontFamily="'Noto Serif Display', serif"
           fontWeight="600"
-          fontSize="7"
-          letterSpacing="1.6"
+          fontSize="9.8"
+          letterSpacing="1.5"
+          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
         >
           VIỆN TÀI CHÍNH KẾ TOÁN
         </text>
