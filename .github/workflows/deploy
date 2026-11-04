@@ -1,0 +1,62 @@
+name: Deploy Vite Site to Pages
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: ${{ hashFiles('pnpm-lock.yaml') != '' && 'pnpm' || hashFiles('package-lock.json') != '' && 'npm' || 'yarn' }}
+
+      - name: Install pnpm (nếu dự án dùng pnpm)
+        if: env.USES_PNPM == 'true'
+        run: npm i -g pnpm
+        env:
+          USES_PNPM: ${{ hashFiles('pnpm-lock.yaml') != '' }}
+
+      - name: Install dependencies
+        run: |
+          if [ -f pnpm-lock.yaml ]; then pnpm install;
+          elif [ -f package-lock.json ]; then npm ci;
+          else npm install; fi
+
+      - name: Build
+        run: |
+          if [ -f pnpm-lock.yaml ]; then pnpm run build;
+          elif [ -f package-lock.json ]; then npm run build;
+          else npm run build; fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
