@@ -1,6 +1,7 @@
 // Print-ready sash artwork drawn in real millimetres (1 SVG unit = 1 mm).
 import { IUH_LOGO_WHITE, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
 import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
+import type { NameFontStyle } from "./App"
 
 export type Side = "left" | "right"
 
@@ -113,6 +114,7 @@ export default function PrintSash({
   crop = false,
   logoSrc = IUH_LOGO_WHITE,
   fontCss,
+  fontStyle = "serif-caps",
 }: {
   side: Side
   uid?: string
@@ -120,6 +122,7 @@ export default function PrintSash({
   crop?: boolean
   logoSrc?: string
   fontCss?: string
+  fontStyle?: NameFontStyle
 }) {
   const total = SASH_L + BLEED * 2
   const viewBox = crop
@@ -305,17 +308,64 @@ export default function PrintSash({
 
           {/* Vertical name & Faculty / Institute with vertical divider */}
           <g transform="rotate(90 48 1085)">
-            <text
-              x="48"
-              y="1085"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#fff4d0"
-              fontFamily={SCRIPT}
-              fontSize="50"
-            >
-              Phạm Hữu Nghĩa
-            </text>
+            {fontStyle === "serif-caps" && (
+              <text
+                x="48"
+                y="1085"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily={SERIF}
+                fontWeight="800"
+                fontSize="23"
+                letterSpacing="2.8"
+              >
+                PHẠM HỮU NGHĨA
+              </text>
+            )}
+            {fontStyle === "serif-title" && (
+              <text
+                x="48"
+                y="1085"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily={SERIF}
+                fontWeight="700"
+                fontSize="26"
+                letterSpacing="1.8"
+              >
+                Phạm Hữu Nghĩa
+              </text>
+            )}
+            {fontStyle === "sans-bold" && (
+              <text
+                x="48"
+                y="1085"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily={SANS}
+                fontWeight="800"
+                fontSize="21"
+                letterSpacing="3"
+              >
+                PHẠM HỮU NGHĨA
+              </text>
+            )}
+            {fontStyle === "cherish" && (
+              <text
+                x="48"
+                y="1085"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily={SCRIPT}
+                fontSize="50"
+              >
+                Phạm Hữu Nghĩa
+              </text>
+            )}
           </g>
 
           {/* Vertical divider line */}

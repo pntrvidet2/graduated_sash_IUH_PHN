@@ -1,5 +1,6 @@
 import PrintSash, { type Side } from "./PrintSash"
 import { IUH_LOGO_WHITE } from "./assets/logoData"
+import type { NameFontStyle } from "./App"
 
 const FONT_CSS_URL =
   "https://fonts.googleapis.com/css2?family=Cherish&family=Inter:wght@500;700&family=Noto+Serif+Display:wght@500;600&display=swap"
@@ -83,7 +84,11 @@ export function PrintSheets() {
   )
 }
 
-export default function PrintStudio() {
+export default function PrintStudio({
+  fontStyle = "serif-caps",
+}: {
+  fontStyle?: NameFontStyle
+}) {
   return (
     <section className="print-studio">
       <div className="print-intro">
@@ -128,7 +133,7 @@ export default function PrintStudio() {
         {(["left", "right"] as Side[]).map((side) => (
           <figure key={side} className="print-preview">
             <div className="print-detail">
-              <PrintSash side={side} uid={`detail-${side}`} crop />
+              <PrintSash side={side} uid={`detail-${side}`} crop fontStyle={fontStyle} />
             </div>
             <figcaption>
               {side === "left" ? "VẠT TRÁI" : "VẠT PHẢI"} · phần đầu rủ phóng to

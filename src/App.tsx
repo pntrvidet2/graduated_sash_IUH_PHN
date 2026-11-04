@@ -152,11 +152,13 @@ function LeftSashArtwork() {
   )
 }
 
+export type NameFontStyle = "serif-caps" | "serif-title" | "sans-bold" | "cherish"
+
 /**
  * Tác phẩm vector vạt phải:
- * Mũ cử nhân & Graduation dời xuống cân đối -> Trống đồng mờ nhẹ -> Tên Phạm Hữu Nghĩa (font Cherish) | Viện Tài Chính Kế Toán -> K18 -> Hoa văn góc nhọn
+ * Mũ cử nhân & Graduation dời xuống cân đối -> Trống đồng mờ nhẹ -> Tên Phạm Hữu Nghĩa (tùy biến font rõ ràng, sang trọng) | Viện & Khoa -> K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork() {
+function RightSashArtwork({ fontStyle = "serif-caps" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sang trọng */}
@@ -194,20 +196,70 @@ function RightSashArtwork() {
         <DongSonDrum size="100%" color="#f5d485" opacity={0.16} />
       </svg>
 
-      {/* DÒNG TÊN: Phạm Hữu Nghĩa (font Cherish, phóng to rõ ràng, xoay dọc ở x=48, tâm y=278) */}
+      {/* DÒNG TÊN: PHẠM HỮU NGHĨA (dễ nhìn, rõ nét, sang trọng, mặc định Serif Hoàng Gia in hoa chuẩn thực tế IUH) */}
       <g transform="rotate(90 48 278)">
-        <text
-          x="48"
-          y="278"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fill="#fff4d0"
-          fontFamily="Cherish, cursive"
-          fontSize="50"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))"
-        >
-          Phạm Hữu Nghĩa
-        </text>
+        {fontStyle === "serif-caps" && (
+          <text
+            x="48"
+            y="278"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Noto Serif Display', Georgia, serif"
+            fontWeight="800"
+            fontSize="23"
+            letterSpacing="2.8"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            PHẠM HỮU NGHĨA
+          </text>
+        )}
+        {fontStyle === "serif-title" && (
+          <text
+            x="48"
+            y="278"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Noto Serif Display', Georgia, serif"
+            fontWeight="700"
+            fontSize="26"
+            letterSpacing="1.8"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
+        {fontStyle === "sans-bold" && (
+          <text
+            x="48"
+            y="278"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="Inter, 'Segoe UI', Arial, sans-serif"
+            fontWeight="800"
+            fontSize="21"
+            letterSpacing="3"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            PHẠM HỮU NGHĨA
+          </text>
+        )}
+        {fontStyle === "cherish" && (
+          <text
+            x="48"
+            y="278"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="Cherish, cursive"
+            fontSize="50"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
       </g>
 
       {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (ở x=68, từ y=155 đến y=400) */}
@@ -274,7 +326,7 @@ function RightSashArtwork() {
   )
 }
 
-function FrontSash() {
+function FrontSash({ fontStyle = "serif-caps" }: { fontStyle?: NameFontStyle }) {
   return (
     <div className="sash-set front-sash" aria-label="Thiết kế mặt trước sash">
       {/* Vạt Trái */}
@@ -289,7 +341,7 @@ function FrontSash() {
       <article className="sash-panel sash-right">
         <div className="sash-inner">
           <SashFrame side="right" />
-          <RightSashArtwork />
+          <RightSashArtwork fontStyle={fontStyle} />
         </div>
       </article>
     </div>
@@ -423,6 +475,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("serif-caps")
 
   return (
     <main>
@@ -485,8 +538,43 @@ export default function App() {
         })}
       </nav>
 
+      {/* Thanh công cụ tùy chỉnh font chữ tên sinh viên */}
+      <div className="font-toolbar" aria-label="Tùy chọn kiểu chữ tên sinh viên">
+        <span className="font-toolbar-title">CHỌN FONT CHỮ TÊN (PHẠM HỮU NGHĨA):</span>
+        <div className="font-options">
+          <button
+            type="button"
+            className={fontStyle === "serif-caps" ? "active" : ""}
+            onClick={() => setFontStyle("serif-caps")}
+          >
+            ★ Serif Hoàng Gia (In hoa · Chuẩn mẫu IUH dễ nhìn nhất)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "serif-title" ? "active" : ""}
+            onClick={() => setFontStyle("serif-title")}
+          >
+            Serif Cổ Điển (Viết hoa chữ đầu)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "sans-bold" ? "active" : ""}
+            onClick={() => setFontStyle("sans-bold")}
+          >
+            Hiện Đại (Sans Bold)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "cherish" ? "active" : ""}
+            onClick={() => setFontStyle("cherish")}
+          >
+            Thư Pháp Cũ (Cherish Cursive)
+          </button>
+        </div>
+      </div>
+
       {view === "print" ? (
-        <PrintStudio />
+        <PrintStudio fontStyle={fontStyle} />
       ) : (
         <section className={`showcase view-${view}`}>
           {(view === "all" || view === "front") && (
@@ -498,7 +586,7 @@ export default function App() {
                   <h2>Mặt trước</h2>
                 </div>
               </div>
-              <FrontSash />
+              <FrontSash fontStyle={fontStyle} />
             </div>
           )}
 
