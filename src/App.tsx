@@ -7,37 +7,60 @@ type ViewMode = "all" | "front" | "back" | "print"
 
 const GOLD = "#e5ba42"
 
-/* Double straight-line frame that follows the sash outline */
+function sashOutlinePoints(side: "left" | "right", d: number): string {
+  const yTopLeft = side === "left" ? 18 + d * 0.9 : d * 0.9
+  const yTopRight = side === "left" ? d * 0.9 : 18 + d * 0.9
+  const dy = 60
+  const dx = 70
+  const hyp = Math.sqrt(dx * dx + dy * dy)
+  const sinA = dx / hyp
+  const cosA = dy / hyp
+  const yTip = 576 - d / sinA
+  const yShoulder = 516 - (d * (1 - cosA)) / sinA
+  return [
+    `${d},${Math.round(yTopLeft * 10) / 10}`,
+    `${140 - d},${Math.round(yTopRight * 10) / 10}`,
+    `${140 - d},${Math.round(yShoulder * 10) / 10}`,
+    `70,${Math.round(yTip * 10) / 10}`,
+    `${d},${Math.round(yShoulder * 10) / 10}`,
+  ].join(" ")
+}
+
+/* Khung sọc viền kép / viền ba sang trọng chạy dọc toàn bộ biên dải sash */
 function SashFrame({ side }: { side: "left" | "right" }) {
-  const base: [number, number][] =
-    side === "left"
-      ? [
-          [0, 3.2],
-          [100, 0],
-          [100, 88.8],
-          [50, 99.6],
-          [0, 88.8],
-        ]
-      : [
-          [0, 0],
-          [100, 3.2],
-          [100, 88.8],
-          [50, 99.6],
-          [0, 88.8],
-        ]
-  const scale = (sx: number, sy: number) =>
-    base
-      .map(([x, y]) => `${50 + (x - 50) * sx},${50 + (y - 50) * sy}`)
-      .join(" ")
   return (
     <svg
       className="sash-frame"
-      viewBox="0 0 100 100"
+      viewBox="0 0 140 580"
       preserveAspectRatio="none"
       aria-hidden="true"
     >
-      <polygon points={scale(0.92, 0.98)} />
-      <polygon points={scale(0.86, 0.96)} className="frame-inner" />
+      {/* Line 1: Sọc viền ngoài */}
+      <polygon
+        points={sashOutlinePoints(side, 3.5)}
+        fill="none"
+        stroke={GOLD}
+        strokeWidth="1.2"
+        strokeLinejoin="miter"
+      />
+      {/* Line 2: Sọc viền giữa (tạo dải sọc song song sắc nét) */}
+      <polygon
+        points={sashOutlinePoints(side, 7)}
+        fill="none"
+        stroke={GOLD}
+        strokeWidth="0.8"
+        strokeLinejoin="miter"
+        opacity="0.9"
+      />
+      {/* Line 3: Đường chỉ mảnh viền trong */}
+      <polygon
+        points={sashOutlinePoints(side, 10.5)}
+        fill="none"
+        stroke={GOLD}
+        strokeWidth="0.5"
+        strokeLinejoin="miter"
+        opacity="0.65"
+      />
     </svg>
   )
 }
@@ -103,8 +126,11 @@ function LeftSashArtwork() {
         </text>
       </g>
 
-      {/* Hoa văn góc nhọn ở đáy vạt */}
-      <g transform="translate(26, 516) scale(0.74)">
+      {/* Đường vạch phân cách dưới Class of 2026 */}
+      <line x1="42" y1="492" x2="98" y2="492" stroke={GOLD} strokeWidth="0.5" opacity="0.6" />
+
+      {/* Hoa văn góc nhọn ở đáy vạt (tái hiện chính xác theo ảnh thực tế) */}
+      <g transform="translate(10, 508)">
         <CornerFlourish color={GOLD} />
       </g>
     </svg>
@@ -212,8 +238,11 @@ function RightSashArtwork() {
         K18
       </text>
 
-      {/* Hoa văn góc nhọn ở đáy vạt */}
-      <g transform="translate(26, 516) scale(0.74)">
+      {/* Đường vạch phân cách dưới K18 */}
+      <line x1="42" y1="492" x2="98" y2="492" stroke={GOLD} strokeWidth="0.5" opacity="0.6" />
+
+      {/* Hoa văn góc nhọn ở đáy vạt (tái hiện chính xác theo ảnh thực tế) */}
+      <g transform="translate(10, 508)">
         <CornerFlourish color={GOLD} />
       </g>
     </svg>

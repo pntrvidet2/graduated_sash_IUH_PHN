@@ -267,10 +267,11 @@ export function GraduationCapIcon({
 }
 
 /**
- * Họa tiết hoa văn góc nhọn ở đáy vạt sash (Corner Flourish)
+ * Họa tiết hoa văn góc nhọn ở đáy vạt sash (Victorian / Baroque Filigree Corner Flourish)
+ * Tái hiện chính xác theo ảnh thực tế dải sash IUH
  */
 export function CornerFlourish({
-  color = "#f5d485",
+  color = "#e5ba42",
   className = "",
 }: {
   color?: string
@@ -278,29 +279,74 @@ export function CornerFlourish({
 }) {
   return (
     <svg
-      viewBox="0 0 120 50"
-      preserveAspectRatio="none"
+      viewBox="0 0 120 54"
+      width="120"
+      height="54"
       className={className}
       fill="none"
       stroke={color}
-      strokeWidth="1.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      {/* Cuộn hoa văn bên trái */}
-      <path d="M60 42 C54 34, 46 28, 36 28 C26 28, 20 34, 14 30 C10 27, 12 22, 18 22 C26 22, 32 30, 42 34" />
-      <path d="M42 30 C34 22, 28 18, 16 18" strokeWidth="0.8" opacity="0.75" />
+      {/* 1. Đường viền chữ V góc nhọn phía trong */}
+      <path d="M 16 12 L 60 49 L 104 12" strokeWidth="1" opacity="0.9" />
+      <path d="M 21 12 L 60 45.5 L 99 12" strokeWidth="0.5" opacity="0.65" strokeDasharray="1.5 1.5" />
 
-      {/* Cuộn hoa văn bên phải (đối xứng) */}
-      <path d="M60 42 C66 34, 74 28, 84 28 C94 28, 100 34, 106 30 C110 27, 108 22, 102 22 C94 22, 88 30, 78 34" />
-      <path d="M78 30 C86 22, 92 18, 104 18" strokeWidth="0.8" opacity="0.75" />
+      {/* 2. Mũi nhọn & lá trung tâm chỉ thẳng lên trên */}
+      <path
+        d="M 60 16 C 57 23, 57 32, 60 38 C 63 32, 63 23, 60 16 Z"
+        fill="#fff4d0"
+        stroke="none"
+      />
+      <circle cx="60" cy="41" r="1.4" fill="#fff4d0" stroke="none" />
+      <circle cx="60" cy="45" r="1" fill={color} stroke="none" />
+      {/* Giọt nhọn ở đáy trỏ xuống đỉnh góc V */}
+      <polygon points="60,51 58.5,46 61.5,46" fill={color} stroke="none" />
 
-      {/* Mũi nhọn trung tâm */}
-      <polygon points="60,46 58,40 60,37 62,40" fill={color} stroke="none" />
-      <circle cx="60" cy="33" r="1.8" fill={color} stroke="none" />
-      <circle cx="50" cy="36" r="1.2" fill={color} stroke="none" />
-      <circle cx="70" cy="36" r="1.2" fill={color} stroke="none" />
+      {/* 3. Cuộn hoa văn Baroque bên trái */}
+      <path
+        d="M 60 39 C 54 37, 48 35, 43 30 C 39 26, 39 21, 44 19 C 48 17, 52 21, 49 25 C 46 28, 40 28, 35 23"
+        strokeWidth="1"
+      />
+      <path
+        d="M 43 30 C 37 31, 30 25, 25 19 C 21 14, 24 10, 28 10 C 33 10, 34 16, 30 19"
+        strokeWidth="0.8"
+        opacity="0.9"
+      />
+      <path d="M 52 35 C 47 38, 38 34, 33 27" strokeWidth="0.6" opacity="0.75" />
+      {/* Lá phụ & chuỗi hạt ngọc bên trái */}
+      <path d="M 25 16 C 22 14, 20 11, 21 9 C 23 9, 26 12, 27 14" fill={color} stroke="none" />
+      <path d="M 38 21 C 36 19, 33 17, 34 15 C 36 15, 38 18, 39 20" fill={color} stroke="none" />
+      <circle cx="52" cy="38" r="1.1" fill="#fff4d0" stroke="none" />
+      <circle cx="44" cy="32" r="1" fill="#fff4d0" stroke="none" />
+      <circle cx="36" cy="26" r="0.9" fill="#fff4d0" stroke="none" />
+      <circle cx="27" cy="18" r="0.8" fill="#fff4d0" stroke="none" />
+
+      {/* 4. Cuộn hoa văn Baroque bên phải (đối xứng hoàn hảo) */}
+      <path
+        d="M 60 39 C 66 37, 72 35, 77 30 C 81 26, 81 21, 76 19 C 72 17, 68 21, 71 25 C 74 28, 80 28, 85 23"
+        strokeWidth="1"
+      />
+      <path
+        d="M 77 30 C 83 31, 90 25, 95 19 C 99 14, 96 10, 92 10 C 87 10, 86 16, 90 19"
+        strokeWidth="0.8"
+        opacity="0.9"
+      />
+      <path d="M 68 35 C 73 38, 82 34, 87 27" strokeWidth="0.6" opacity="0.75" />
+      {/* Lá phụ & chuỗi hạt ngọc bên phải */}
+      <path d="M 95 16 C 98 14, 100 11, 99 9 C 97 9, 94 12, 93 14" fill={color} stroke="none" />
+      <path d="M 82 21 C 84 19, 87 17, 86 15 C 84 15, 82 18, 81 20" fill={color} stroke="none" />
+      <circle cx="68" cy="38" r="1.1" fill="#fff4d0" stroke="none" />
+      <circle cx="76" cy="32" r="1" fill="#fff4d0" stroke="none" />
+      <circle cx="84" cy="26" r="0.9" fill="#fff4d0" stroke="none" />
+      <circle cx="93" cy="18" r="0.8" fill="#fff4d0" stroke="none" />
+
+      {/* 5. Vòng cung vương miện trên liên kết 2 cánh hoa văn */}
+      <path d="M 50 21 Q 60 14 70 21" strokeWidth="0.75" opacity="0.85" />
+      <circle cx="60" cy="14" r="1.3" fill="#fff4d0" stroke="none" />
+      <circle cx="56" cy="15" r="0.9" fill={color} stroke="none" />
+      <circle cx="64" cy="15" r="0.9" fill={color} stroke="none" />
     </svg>
   )
 }

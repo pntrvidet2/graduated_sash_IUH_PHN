@@ -174,8 +174,18 @@ export default function PrintSash({
         points={pts(outline(side, 6.5))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="0.4"
-        opacity="0.75"
+        strokeWidth="0.7"
+        opacity="0.85"
+        strokeLinejoin="miter"
+      />
+
+      {/* Third fine gold pinstripe */}
+      <polygon
+        points={pts(outline(side, 9.5))}
+        fill="none"
+        stroke={GOLD}
+        strokeWidth="0.45"
+        opacity="0.65"
         strokeLinejoin="miter"
       />
 
@@ -258,7 +268,7 @@ export default function PrintSash({
           </g>
 
           {/* Corner flourish ornament at tip */}
-          <g transform="translate(30, 1425) scale(0.67)">
+          <g transform="translate(10, 1420)">
             <CornerFlourish color={GOLD} />
           </g>
         </g>
@@ -351,7 +361,7 @@ export default function PrintSash({
           </text>
 
           {/* Corner flourish ornament at tip */}
-          <g transform="translate(30, 1425) scale(0.67)">
+          <g transform="translate(10, 1420)">
             <CornerFlourish color={GOLD} />
           </g>
         </g>
