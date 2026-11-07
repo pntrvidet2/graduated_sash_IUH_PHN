@@ -219,9 +219,9 @@ export default function PrintSash({
         ) : (
           <Label y={190}>CLASS OF 2026</Label>
         )}
-        {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm */}
-        <g transform="translate(-30, 370)">
-          <DongSonDrum size={200} opacity={0.22} />
+        {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
+        <g transform="translate(-55, 335)">
+          <DongSonDrum size={250} opacity={0.20} />
         </g>
         <VerticalText cy={470}>
           {side === "left"
@@ -233,122 +233,129 @@ export default function PrintSash({
       {/* Front, hanging end */}
       {side === "left" ? (
         <g id="front-left">
-          {/* Top: Biểu tượng IUH riêng biệt, cân đối */}
+          {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, không có chữ bên dưới theo yêu cầu */}
           <image
             href={IUH_EMBLEM_ORIGINAL}
             xlinkHref={IUH_EMBLEM_ORIGINAL}
-            x="48"
-            y="820"
-            width="44"
-            height="50"
+            x="53"
+            y="826"
+            width="34"
+            height="38"
             preserveAspectRatio="xMidYMid meet"
           />
 
-          {/* Đường vạch phân cách trên có họa tiết kim cương ở y=878 */}
-          <line x1="36" y1="878" x2="104" y2="878" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,875.5 72.5,878 70,880.5 67.5,878" fill="#fff4d0" />
-          <circle cx="63" cy="878" r="0.8" fill="#fff4d0" />
-          <circle cx="77" cy="878" r="0.8" fill="#fff4d0" />
+          {/* Đường vạch phân cách kim cương thanh mảnh dưới logo IUH ở y=872 */}
+          <line x1="38" y1="872" x2="102" y2="872" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,869.5 72.5,872 70,874.5 67.5,872" fill="#fff4d0" />
+          <circle cx="63" cy="872" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="872" r="0.8" fill="#fff4d0" />
 
-          {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm */}
-          <g transform="translate(-45, 955)">
-            <DongSonDrum size={230} opacity={0.18} />
+          {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, in chìm tinh tế */}
+          <g transform="translate(-70, 915)">
+            <DongSonDrum size={280} opacity={0.17} />
           </g>
 
           {/* Họa tiết bướm bay nghệ thuật */}
-          <ButterflyIcon x={32} y={924} size={24} color={GOLD} />
+          <ButterflyIcon x={30} y={918} size={24} color={GOLD} />
 
-          {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 */}
-          <MiniGraduationCap x={64} y={934} size={18} />
+          {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 lệch trái */}
+          <MiniGraduationCap x={49} y={930} size={20} />
 
           {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
-          <SparkleStar cx={96} cy={926} r={5} color="#fff4d0" />
-          <SparkleStar cx={36} cy={1010} r={4} color={GOLD} />
-          <SparkleStar cx={98} cy={1110} r={4.5} color="#fff4d0" />
-          <SparkleStar cx={48} cy={1168} r={4} color={GOLD} />
+          <SparkleStar cx={92} cy={960} r={4.5} color="#fff4d0" />
+          <SparkleStar cx={38} cy={1012} r={4} color={GOLD} />
+          <SparkleStar cx={96} cy={1072} r={4.5} color="#fff4d0" />
+          <SparkleStar cx={46} cy={1164} r={4} color={GOLD} />
 
           {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
-          <g transform="rotate(90 40 1060)">
+          <g transform="rotate(90 34 1058)">
             <text
-              x="40"
-              y="1060"
+              x="34"
+              y="1058"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#fff4d0"
-              fontFamily={SERIF}
+              fill={GOLD}
+              fontFamily="'Cinzel', Georgia, serif"
               fontWeight="700"
-              fontSize="8.5"
-              letterSpacing="4"
+              fontSize="8.2"
+              letterSpacing="3.5"
             >
               CLASS OF
             </text>
           </g>
 
-          {/* Cụm 4 số 2 - 0 - 2 - 6 phông chữ thư pháp nghệ thuật nối liền nhau (Interlocking Ribbon Script) */}
+          {/* Cụm 4 số 2 - 0 - 2 - 6 xếp xéo nhau và nối nhau nghệ thuật (Interlocking Ribbon Script) */}
           <g id="connected-year-2026">
-            {/* Đường nối thư pháp mềm mại giữa số 2 và số 0 */}
+            {/* Dải lụa nối uốn lượn từ chân số 2 sang đỉnh số 0 */}
             <path
-              d="M 68 986 C 82 992, 85 1006, 76 1016"
+              d="M 54 984 C 68 988, 78 998, 80 1008"
               fill="none"
-              stroke="#fff4d0"
-              strokeWidth="2.8"
+              stroke="#f3db83"
+              strokeWidth="2.5"
               strokeLinecap="round"
             />
 
-            {/* Đường nối giữa số 0 và số 2 */}
+            {/* Dải lụa nối từ chân số 0 sang đầu số 2 thứ hai */}
             <path
-              d="M 76 1044 C 71 1052, 66 1058, 72 1066"
+              d="M 80 1050 C 76 1058, 68 1058, 60 1060"
               fill="none"
-              stroke="#fff4d0"
-              strokeWidth="2.8"
+              stroke="#f3db83"
+              strokeWidth="2.5"
               strokeLinecap="round"
             />
 
-            {/* Dải lụa thư pháp uốn lượn đặc trưng từ chân số 2 bao bọc quanh số 6 */}
+            {/* Dải lụa uốn lượn từ chân số 2 thứ hai nối và bao quanh số 6 */}
             <path
-              d="M 66 1094 C 92 1100, 96 1122, 82 1140 C 72 1152, 60 1158, 74 1162"
+              d="M 52 1084 C 72 1090, 86 1100, 80 1110"
               fill="none"
-              stroke="#fff4d0"
-              strokeWidth="2.6"
+              stroke="#f3db83"
+              strokeWidth="2.5"
               strokeLinecap="round"
-              opacity="0.95"
+            />
+            <path
+              d="M 72 1148 C 88 1154, 92 1166, 84 1176 C 76 1184, 66 1188, 74 1194"
+              fill="none"
+              stroke="#f3db83"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              opacity="0.9"
             />
 
-            {/* 4 chữ số 2 - 0 - 2 - 6 phông thư pháp Charm mềm mại, uốn lượn nối liền */}
+            {/* 4 chữ số 2 - 0 - 2 - 6 thư pháp xếp xéo nhau (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
             <g
-              fontFamily="'Charm', 'Great Vibes', cursive"
+              fontFamily="'Charm', 'Alex Brush', cursive"
               fontWeight="700"
-              fill="#fff4d0"
+              fill="#f3db83"
               textAnchor="middle"
             >
-              <text x="75" y="984" fontSize="54">
+              <text x="60" y="980" fontSize="56">
                 2
               </text>
-              <text x="75" y="1034" fontSize="50">
+              <text x="80" y="1030" fontSize="50">
                 0
               </text>
-              <text x="75" y="1084" fontSize="54">
+              <text x="60" y="1080" fontSize="56">
                 2
               </text>
-              <text x="75" y="1134" fontSize="50">
+              <text x="80" y="1130" fontSize="52">
                 6
               </text>
             </g>
           </g>
 
           {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
-          <SparkleStar cx={70} cy={1196} r={5} color="#fff4d0" />
+          <SparkleStar cx={70} cy={1208} r={5} color="#f3db83" />
 
-          {/* Chữ Graduation thư pháp uốn lượn (DỜI XUỐNG y=1262 BẰNG K18) */}
+          {/* Chữ Graduation thư pháp uốn lượn (căn tại y=1260, bằng ngang tuyệt đối với K18) */}
           <g>
-            <SparkleStar cx={26} cy={1262} r={3} color={GOLD} />
-            <SparkleStar cx={114} cy={1262} r={3} color={GOLD} />
+            <SparkleStar cx={24} cy={1260} r={3} color={GOLD} />
+            <SparkleStar cx={116} cy={1260} r={3} color={GOLD} />
             <text
               x="70"
-              y="1262"
+              y="1260"
               textAnchor="middle"
               dominantBaseline="central"
-              fill="#fff4d0"
+              fill="#f3db83"
               fontFamily="'Great Vibes', 'Charm', cursive"
               fontSize="27"
               letterSpacing="1"
@@ -364,48 +371,48 @@ export default function PrintSash({
         </g>
       ) : (
         <g id="front-right">
-          {/* Top: Phóng to Graduation Cap icon */}
-          <g transform="translate(38, 804)">
-            <GraduationCapIcon size={64} color={GOLD} />
+          {/* Top: Mũ cử nhân hoàng gia */}
+          <g transform="translate(45, 804)">
+            <GraduationCapIcon size={50} color={GOLD} />
           </g>
 
-          {/* Tên trường đầy đủ trang trọng */}
+          {/* Tên trường tiếng Anh trang trọng dưới mũ cử nhân */}
           <text
             x="70"
-            y="860"
-            textAnchor="middle"
-            dominantBaseline="central"
-            fill="#fff4d0"
-            fontFamily="'Playfair Display', 'Cinzel', Georgia, serif"
-            fontWeight="800"
-            fontSize="7.2"
-            letterSpacing="1.2"
-          >
-            TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP
-          </text>
-          <text
-            x="70"
-            y="872"
+            y="858"
             textAnchor="middle"
             dominantBaseline="central"
             fill="#dfb143"
-            fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
+            fontFamily="'Cinzel', Georgia, serif"
             fontWeight="800"
-            fontSize="8"
-            letterSpacing="2.2"
+            fontSize="7.2"
+            letterSpacing="1.6"
           >
-            TP. HỒ CHÍ MINH
+            INDUSTRIAL UNIVERSITY
+          </text>
+          <text
+            x="70"
+            y="869"
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill="#fff4d0"
+            fontFamily="'Cinzel', Georgia, serif"
+            fontWeight="700"
+            fontSize="6.6"
+            letterSpacing="1.8"
+          >
+            OF HO CHI MINH CITY
           </text>
 
-          {/* Đường phân cách trên có họa tiết kim cương ở y=886 */}
-          <line x1="32" y1="886" x2="108" y2="886" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,883.5 72.5,886 70,888.5 67.5,886" fill="#fff4d0" />
-          <circle cx="63" cy="886" r="0.8" fill="#fff4d0" />
-          <circle cx="77" cy="886" r="0.8" fill="#fff4d0" />
+          {/* Đường phân cách trên có họa tiết kim cương ở y=882 */}
+          <line x1="34" y1="882" x2="106" y2="882" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,879.5 72.5,882 70,884.5 67.5,882" fill="#fff4d0" />
+          <circle cx="63" cy="882" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="882" r="0.8" fill="#fff4d0" />
 
-          {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
-          <g transform="translate(-45, 955)">
-            <DongSonDrum size={230} opacity={0.18} />
+          {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
+          <g transform="translate(-70, 915)">
+            <DongSonDrum size={280} opacity={0.17} />
           </g>
 
           {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
@@ -535,20 +542,18 @@ export default function PrintSash({
             )}
           </g>
 
-          {/* Cohort K18 (chuẩn Roman Serif, sửa triệt để lỗi font số 1, căn ngang bằng Graduation ở y=1262) */}
+          {/* Cohort K18 (chuẩn Roman Serif Cinzel, căn chính xác trung tâm x=70, y=1260, màu vàng gold quý phái) */}
           <g>
-            <polygon points="36,1262 38.5,1259.5 41,1262 38.5,1264.5" fill={GOLD} opacity="0.8" />
-            <polygon points="99,1262 101.5,1259.5 104,1262 101.5,1264.5" fill={GOLD} opacity="0.8" />
             <text
               x="70"
-              y="1262"
+              y="1260"
               textAnchor="middle"
               dominantBaseline="central"
-              fill="#fff4d0"
+              fill="#dfb143"
               fontFamily="'Cinzel', 'Noto Serif Display', 'Times New Roman', Georgia, serif"
               fontWeight="800"
-              fontSize="27"
-              letterSpacing="3"
+              fontSize="28"
+              letterSpacing="1.5"
             >
               K18
             </text>
