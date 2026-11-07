@@ -8,7 +8,7 @@ import {
   SparkleStar,
   MiniGraduationCap,
 } from "./DongSonDrum"
-import type { NameFontStyle } from "./App"
+import type { NameFontStyle, Year2026Style } from "./App"
 
 export type Side = "left" | "right"
 
@@ -122,6 +122,7 @@ export default function PrintSash({
   logoSrc = IUH_LOGO_WHITE,
   fontCss,
   fontStyle = "script-greatvibes",
+  yearStyle = "royal-interlocking",
 }: {
   side: Side
   uid?: string
@@ -130,6 +131,7 @@ export default function PrintSash({
   logoSrc?: string
   fontCss?: string
   fontStyle?: NameFontStyle
+  yearStyle?: Year2026Style
 }) {
   const total = SASH_L + BLEED * 2
   const viewBox = crop
@@ -162,6 +164,14 @@ export default function PrintSash({
         <clipPath id={`clip-${uid}`}>
           <polygon points={pts(outline(side, -BLEED))} />
         </clipPath>
+        <linearGradient id={`goldFoil-${uid}`} x1="15%" y1="0%" x2="85%" y2="100%">
+          <stop offset="0%" stopColor="#fffce8" />
+          <stop offset="18%" stopColor="#fced9d" />
+          <stop offset="42%" stopColor="#dfa832" />
+          <stop offset="68%" stopColor="#fdf0b0" />
+          <stop offset="88%" stopColor="#c99120" />
+          <stop offset="100%" stopColor="#9a6912" />
+        </linearGradient>
       </defs>
 
       {/* Solid Navy fabric fill */}
@@ -258,90 +268,134 @@ export default function PrintSash({
           </g>
 
           {/* Họa tiết bướm bay nghệ thuật */}
-          <ButterflyIcon x={30} y={916} size={24} color={GOLD} />
+          <ButterflyIcon x={30} y={918} size={24} color={GOLD} />
 
-          {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 lệch trái */}
-          <MiniGraduationCap x={46} y={928} size={22} />
+          {/* Mũ cử nhân mini đội nghiêng tự nhiên trên chóp số 2 lệch trái */}
+          <g transform="translate(42, 926) rotate(-14) scale(0.88)">
+            <polygon points="50,11 90,28 50,44 10,28" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
+            <path d="M 28 34 V 44 C 28 52, 72 52, 72 44 V 34 Z" fill="#9e7115" />
+            <path d="M 50 28 C 50 34, 76 38, 76 46" stroke="#fff8dd" strokeWidth="1.2" fill="none" />
+            <circle cx="76" cy="48" r="1.8" fill="#fff8dd" />
+          </g>
 
           {/* Ngôi sao lấp lánh trang trí quanh số 2026 chuẩn theo mẫu thực tế */}
-          <SparkleStar cx={88} cy={958} r={4.5} color="#fff4d0" />
-          <SparkleStar cx={32} cy={998} r={3.8} color="#f3db83" />
-          <SparkleStar cx={98} cy={1066} r={4.5} color="#fff4d0" />
-          <SparkleStar cx={70} cy={1164} r={3.5} color="#f3db83" />
+          <SparkleStar cx={90} cy={950} r={4.5} color="#fff8df" />
+          <SparkleStar cx={26} cy={987} r={3.8} color="#fced9d" />
+          <SparkleStar cx={100} cy={1045} r={4.5} color="#fff8df" />
+          <SparkleStar cx={28} cy={1100} r={3.5} color="#fced9d" />
+          <SparkleStar cx={70} cy={1148} r={4.0} color="#fff8df" />
 
-          {/* DÒNG CHỮ CLASS OF XẾP DỌC TỪNG KÝ TỰ (C L A S S  O F) */}
+          {/* DÒNG CHỮ CLASS OF XẾP DỌC HOÀNG GIA (C L A S S  O F) */}
           <g
             fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
             fontWeight="800"
-            fontSize="7.8"
-            fill={GOLD}
+            fontSize="8.2"
+            fill={`url(#goldFoil-${uid})`}
             textAnchor="middle"
+            letterSpacing="0.6"
           >
-            <text x="32" y="1014">C</text>
-            <text x="32" y="1027">L</text>
-            <text x="32" y="1040">A</text>
-            <text x="32" y="1053">S</text>
-            <text x="32" y="1066">S</text>
-            <text x="32" y="1086">O</text>
-            <text x="32" y="1099">F</text>
+            <text x="32" y="996">C</text>
+            <text x="32" y="1010">L</text>
+            <text x="32" y="1024">A</text>
+            <text x="32" y="1038">S</text>
+            <text x="32" y="1052">S</text>
+            <text x="32" y="1074">O</text>
+            <text x="32" y="1088">F</text>
           </g>
 
-          {/* CỤM 4 SỐ 2 - 0 - 2 - 6 NỐI NHAU LIỀN MẠCH, THANH THOÁT, CHUẨN THIẾT KẾ THỰC TẾ
-              Nét uốn lượn mềm mại liên kết chân 2 sang 0, đáy 0 sang 2, và chân 2 sang cổ 6 */}
-          <g id="connected-year-2026">
-            {/* Nét uốn lượn nối chân số 2 thứ nhất sang đỉnh số 0 */}
-            <path
-              d="M 64 991 C 71 991, 75.5 994, 75.5 1004"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-            />
-            {/* Nét uốn lượn nối đáy số 0 sang đỉnh số 2 thứ hai */}
-            <path
-              d="M 74 1046 C 71 1054, 61 1054, 57 1058"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-            />
-            {/* Nét uốn lượn nối chân số 2 thứ hai sang cổ số 6 */}
-            <path
-              d="M 64 1083 C 71 1083, 76 1088, 76 1100"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-            />
+          {/* ========================================================
+              TRUNG TÂM NGHỆ THUẬT: CỤM SỐ 2 0 2 6 HOÀNG GIA ĐẲNG CẤP
+              Hỗ trợ 3 phong cách thiết kế tinh tế:
+              1. royal-interlocking (Mặc định · Didone Lồng Khối Vàng Ánh Kim 3D)
+              2. seamless-ribbon (Thư Pháp Dải Ruy Băng Vàng Liền Mạch)
+              3. classic-italic (Thư Pháp Cổ Điển Tinh Giản)
+             ======================================================== */}
+          {yearStyle === "royal-interlocking" && (
+            <g id="masterpiece-2026">
+              {/* Nét uốn lượn liên hoàn kết nối mượt mà giữa các con số */}
+              <path
+                d="M 64 984 C 71 984, 76 986, 76 996"
+                fill="none"
+                stroke={`url(#goldFoil-${uid})`}
+                strokeWidth="2.8"
+                strokeLinecap="round"
+              />
+              <path
+                d="M 75 1030 C 72 1038, 62 1036, 56 1040"
+                fill="none"
+                stroke={`url(#goldFoil-${uid})`}
+                strokeWidth="2.6"
+                strokeLinecap="round"
+              />
+              <path
+                d="M 64 1064 C 71 1064, 76 1068, 76 1078"
+                fill="none"
+                stroke={`url(#goldFoil-${uid})`}
+                strokeWidth="2.8"
+                strokeLinecap="round"
+              />
 
-            <g
-              fontFamily="'Playfair Display', Georgia, serif"
-              fontStyle="italic"
-              fontWeight="700"
-              fill="#f3db83"
-              textAnchor="middle"
-            >
-              {/* Số 2 thứ nhất (lệch trái, chóp đội mũ cử nhân mini) */}
-              <text x="56" y="992" fontSize="68">
-                2
-              </text>
-
-              {/* Số 0 (thon dài thanh thoát, xếp xéo sang phải, nối từ đuôi số 2) */}
-              <text x="76" y="1038" fontSize="62">
-                0
-              </text>
-
-              {/* Số 2 thứ hai (xếp xéo lồng vào trong lòng số 0, nối tiếp sang số 6) */}
-              <text x="56" y="1084" fontSize="68">
-                2
-              </text>
-
-              {/* Số 6 (xếp xéo sang phải, cổ số cong dài đón chân số 2) */}
-              <text x="76" y="1134" fontSize="64">
-                6
-              </text>
+              <g
+                fontFamily="'Playfair Display', Georgia, serif"
+                fontStyle="italic"
+                fontWeight="900"
+                fill={`url(#goldFoil-${uid})`}
+                textAnchor="middle"
+              >
+                <text x="54" y="984" fontSize="72">
+                  2
+                </text>
+                <text x="76" y="1024" fontSize="65">
+                  0
+                </text>
+                <text x="54" y="1064" fontSize="72">
+                  2
+                </text>
+                <text x="76" y="1104" fontSize="68">
+                  6
+                </text>
+              </g>
             </g>
-          </g>
+          )}
+
+          {yearStyle === "seamless-ribbon" && (
+            <g id="seamless-ribbon-2026" fill={`url(#goldFoil-${uid})`}>
+              <path d="M 44 948 C 44 941, 52 935, 62 935 C 72 935, 78 942, 78 951 C 78 962, 70 971, 61 980 C 51 990, 44 998, 42 1004 L 70 1004 C 78 1004, 84 1007, 85 1016 C 85 1018, 83 1018, 80 1015 C 75 1010, 68 1009, 60 1009 L 40 1009 C 36 1009, 36 1004, 39 1000 C 43 993, 52 983, 62 972 C 70 963, 73 957, 73 950 C 73 945, 68 940, 61 940 C 54 940, 49 944, 49 949 Z" />
+              <path d="M 84 1016 C 92 1019, 98 1028, 98 1041 C 98 1058, 88 1068, 76 1068 C 67 1068, 62 1061, 62 1050 C 62 1035, 72 1021, 84 1016 Z M 79 1023 C 72 1026, 68 1036, 68 1048 C 68 1058, 72 1063, 76 1063 C 83 1063, 91 1054, 91 1040 C 91 1029, 85 1023, 79 1023 Z" />
+              <path d="M 73 1066 C 68 1074, 58 1072, 54 1076 C 52 1078, 54 1080, 57 1078 C 62 1075, 69 1074, 75 1068 Z" />
+              <path d="M 44 1068 C 44 1061, 52 1055, 62 1055 C 72 1055, 78 1062, 78 1071 C 78 1082, 70 1091, 61 1100 C 51 1110, 44 1118, 42 1124 L 70 1124 C 78 1124, 84 1127, 85 1136 C 85 1138, 83 1138, 80 1135 C 75 1130, 68 1129, 60 1129 L 40 1129 C 36 1129, 36 1124, 39 1120 C 43 1113, 52 1103, 62 1092 C 70 1083, 73 1077, 73 1070 C 73 1065, 68 1060, 61 1060 C 54 1060, 49 1064, 49 1069 Z" />
+              <path d="M 83 1134 C 87 1138, 88 1145, 87 1153 L 82 1152 C 83 1146, 82 1141, 79 1137 Z" />
+              <path d="M 87 1148 C 87 1140, 83 1133, 75 1133 C 65 1133, 58 1144, 58 1161 C 58 1177, 68 1188, 80 1188 C 91 1188, 98 1177, 98 1164 C 98 1153, 91 1145, 80 1145 C 73 1145, 67 1150, 64 1156 C 65 1145, 71 1138, 78 1138 C 83 1138, 85 1142, 85 1148 Z M 78 1150 C 86 1150, 91 1156, 91 1165 C 91 1174, 86 1183, 78 1183 C 71 1183, 64 1175, 64 1165 C 64 1156, 71 1150, 78 1150 Z" />
+            </g>
+          )}
+
+          {yearStyle === "classic-italic" && (
+            <g id="classic-italic-2026">
+              <g
+                fontFamily="'Playfair Display', Georgia, serif"
+                fontStyle="italic"
+                fontWeight="700"
+                fill={`url(#goldFoil-${uid})`}
+                textAnchor="middle"
+              >
+                <text x="56" y="986" fontSize="68">
+                  2
+                </text>
+                <text x="76" y="1028" fontSize="62">
+                  0
+                </text>
+                <text x="56" y="1070" fontSize="68">
+                  2
+                </text>
+                <text x="76" y="1112" fontSize="64">
+                  6
+                </text>
+              </g>
+              <path d="M 64 986 C 71 986, 76 989, 76 998" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
+              <path d="M 74 1034 C 71 1042, 61 1042, 57 1046" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
+              <path d="M 64 1070 C 71 1070, 76 1074, 76 1084" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
+            </g>
+          )}
 
           {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
           <g>
@@ -372,9 +426,9 @@ export default function PrintSash({
               y="1260"
               textAnchor="middle"
               dominantBaseline="central"
-              fill="#f3db83"
+              fill={`url(#goldFoil-${uid})`}
               fontFamily="'Great Vibes', 'Charm', cursive"
-              fontSize="27"
+              fontSize="28"
               letterSpacing="1"
             >
               Graduation

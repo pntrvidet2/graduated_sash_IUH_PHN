@@ -1,6 +1,6 @@
 import PrintSash, { type Side } from "./PrintSash"
 import { IUH_LOGO_WHITE } from "./assets/logoData"
-import type { NameFontStyle } from "./App"
+import type { NameFontStyle, Year2026Style } from "./App"
 
 const FONT_CSS_URL =
   "https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Charm:wght@400;700&family=Charmonman:wght@400;700&family=Cinzel:wght@700;800;900&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Noto+Serif+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@600;700;800&display=swap"
@@ -38,7 +38,11 @@ async function buildFontCss(): Promise<string> {
     .join("")
 }
 
-async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-charm") {
+async function downloadSvg(
+  side: Side,
+  fontStyle: NameFontStyle = "script-charm",
+  yearStyle: Year2026Style = "royal-interlocking",
+) {
   let fontCss: string | undefined
   try {
     fontCss = await buildFontCss()
@@ -60,6 +64,7 @@ async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-charm"
       logoSrc={logoSrc}
       fontCss={fontCss}
       fontStyle={fontStyle}
+      yearStyle={yearStyle}
     />,
   )
   const blob = new Blob([`<?xml version="1.0" encoding="UTF-8"?>\n${markup}`], {
@@ -87,8 +92,10 @@ export function PrintSheets() {
 
 export default function PrintStudio({
   fontStyle = "script-greatvibes",
+  yearStyle = "royal-interlocking",
 }: {
   fontStyle?: NameFontStyle
+  yearStyle?: Year2026Style
 }) {
   return (
     <section className="print-studio">
@@ -113,10 +120,10 @@ export default function PrintStudio({
           <button type="button" onClick={() => window.print()}>
             IN / LƯU PDF
           </button>
-          <button type="button" onClick={() => downloadSvg("left", fontStyle)}>
+          <button type="button" onClick={() => downloadSvg("left", fontStyle, yearStyle)}>
             TẢI SVG VẠT TRÁI
           </button>
-          <button type="button" onClick={() => downloadSvg("right", fontStyle)}>
+          <button type="button" onClick={() => downloadSvg("right", fontStyle, yearStyle)}>
             TẢI SVG VẠT PHẢI
           </button>
         </div>
@@ -134,7 +141,13 @@ export default function PrintStudio({
         {(["left", "right"] as Side[]).map((side) => (
           <figure key={side} className="print-preview">
             <div className="print-detail">
-              <PrintSash side={side} uid={`detail-${side}`} crop fontStyle={fontStyle} />
+              <PrintSash
+                side={side}
+                uid={`detail-${side}`}
+                crop
+                fontStyle={fontStyle}
+                yearStyle={yearStyle}
+              />
             </div>
             <figcaption>
               {side === "left" ? "VẠT TRÁI" : "VẠT PHẢI"} · phần đầu rủ phóng to
