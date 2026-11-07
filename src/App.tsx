@@ -12,7 +12,7 @@ import {
 
 type ViewMode = "all" | "front" | "back" | "print"
 
-const GOLD = "#e5ba42"
+const GOLD = "#f0c652"
 
 function sashOutlinePoints(side: "left" | "right", d: number): string {
   const yTopLeft = side === "left" ? 18 + d * 0.9 : d * 0.9
@@ -33,7 +33,7 @@ function sashOutlinePoints(side: "left" | "right", d: number): string {
   ].join(" ")
 }
 
-/* Khung viền chỉ vàng satin hoàng gia tinh tế, giải phóng không gian thoáng đãng bên trong */
+/* Khung viền 3 chỉ vàng satin hoàng gia đậm đà, sắc nét và đẳng cấp */
 function SashFrame({ side }: { side: "left" | "right" }) {
   return (
     <svg
@@ -42,22 +42,31 @@ function SashFrame({ side }: { side: "left" | "right" }) {
       preserveAspectRatio="none"
       aria-hidden="true"
     >
-      {/* Sọc viền ngoài thanh lịch */}
+      {/* Chỉ ngoài đậm sắc nét */}
       <polygon
         points={sashOutlinePoints(side, 2.5)}
         fill="none"
-        stroke={GOLD}
-        strokeWidth="1.0"
+        stroke="#f0c652"
+        strokeWidth="1.8"
         strokeLinejoin="miter"
       />
-      {/* Đường chỉ mảnh viền trong cách 3px tạo khoảng thở */}
+      {/* Chỉ giữa thanh thoát */}
       <polygon
-        points={sashOutlinePoints(side, 5.5)}
+        points={sashOutlinePoints(side, 5.8)}
         fill="none"
-        stroke={GOLD}
+        stroke="#f0c652"
+        strokeWidth="1.0"
+        strokeLinejoin="miter"
+        opacity="0.95"
+      />
+      {/* Chỉ trong tinh tế tạo chiều sâu hoàng gia */}
+      <polygon
+        points={sashOutlinePoints(side, 8.8)}
+        fill="none"
+        stroke="#f0c652"
         strokeWidth="0.5"
         strokeLinejoin="miter"
-        opacity="0.8"
+        opacity="0.75"
       />
     </svg>
   )
@@ -858,7 +867,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.13.0</strong> · Khắc Họa Huy Hiệu Ngân Hàng Hoàng Gia &amp; Cán Cân Tài Chính Đẳng Cấp
+            TAG <strong>v1.14.0</strong> · Tăng Độ Đậm Khung Viền Vàng Hoàng Gia 3 Chỉ Đẳng Cấp
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -876,7 +885,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.13.0): Bổ sung 2 cụm chi tiết Banking &amp; Finance danh giá: Trụ sở Ngân hàng Tân Cổ Điển &amp; Vòng Nguyệt Quế (ở khoảng trống trên) cùng Cán cân Tài chính Vàng &amp; Huy hiệu Kim Tiền Hoàng Gia (ở khoảng trống dưới), tôn vinh trọn vẹn chuyên ngành Tài chính - Ngân hàng.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.14.0): Tăng độ đậm và sắc nét cho toàn bộ khung viền dải sash với nẹp biên vàng satin 6.5px cùng hệ viền 3 chỉ vàng hoàng gia (Triple Pinstripe) tinh xảo, tôn vinh khí chất tân cử nhân Khoa Tài chính - Ngân hàng.
           </p>
         </div>
       </section>
@@ -1032,9 +1041,9 @@ export default function App() {
             Đỉnh vạt phải khắc họa biểu tượng Mũ tốt nghiệp uy nghiêm cùng nhận diện
             khóa K18 và hoa văn góc hoàng gia ở mũi nhọn vạt.
           </OptionCard>
-          <OptionCard number="03" title="Viền Đôi Vàng Gold Ánh Kim">
-            Đường chỉ đôi chạy liền mạch suốt dải sash trên nền satin Navy sâu,
-            tôn vinh thông tin họ tên, Viện Tài chính - Kế toán và Khoa Tài chính - Ngân hàng.
+          <OptionCard number="03" title="Viền 3 Chỉ Vàng Hoàng Gia Sắc Nét">
+            Khung viền 3 chỉ vàng sắc nét, đậm đà uy nghiêm chạy dọc dải sash trên nền satin Navy sâu,
+            kết hợp nẹp biên vàng satin 6.5px vững chãi tôn vinh phong thái cử nhân danh giá.
           </OptionCard>
         </div>
       </section>

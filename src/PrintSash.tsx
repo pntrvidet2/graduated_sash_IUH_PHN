@@ -19,7 +19,7 @@ const SLANT = 20 // slanted neck end
 const V = 70 // depth of the pointed end
 
 const NAVY = "#0b1b3e"
-const GOLD = "#e5ba42"
+const GOLD = "#f0c652"
 const IVORY = "#f1e7cf"
 
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif"
@@ -186,27 +186,27 @@ export default function PrintSash({
         points={pts(outline(side, 3))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="2.5"
+        strokeWidth="3.2"
         strokeLinejoin="miter"
       />
 
       {/* Inner thin accent line */}
       <polygon
-        points={pts(outline(side, 6.5))}
+        points={pts(outline(side, 6.8))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="0.7"
-        opacity="0.85"
+        strokeWidth="1.2"
+        opacity="0.95"
         strokeLinejoin="miter"
       />
 
       {/* Third fine gold pinstripe */}
       <polygon
-        points={pts(outline(side, 9.5))}
+        points={pts(outline(side, 9.8))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="0.45"
-        opacity="0.65"
+        strokeWidth="0.7"
+        opacity="0.80"
         strokeLinejoin="miter"
       />
 

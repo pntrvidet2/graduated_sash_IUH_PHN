@@ -28,8 +28,8 @@
   font-family: "Inter:Regular", Inter, sans-serif;
   font-synthesis: none;
   --navy: #0b214d;
-  --gold: #e5ba42;
-  --gold-trim: #e5ba42;
+  --gold: #f0c652;
+  --gold-trim: linear-gradient(135deg, #fced9d 0%, #dfa832 30%, #f7d770 65%, #c99120 100%);
   --royal-blue: #185adb;
   --paper: #f3efe5;
   --ink: #172238;
@@ -315,7 +315,7 @@ main {
   flex: 0 0 auto;
   width: 170px;
   height: 640px;
-  padding: 4.5px;
+  padding: 6.5px;
   background: var(--gold-trim);
   box-shadow: 0 14px 34px rgba(10, 31, 68, 0.28);
   clip-path: polygon(0 3.5%, 100% 0, 100% 89%, 50% 100%, 0 89%);
@@ -366,9 +366,7 @@ main {
 
 .sash-frame polygon {
   fill: none;
-  stroke: var(--gold);
   stroke-linejoin: miter;
-  vector-effect: non-scaling-stroke;
 }
 
 .sash-frame .frame-inner {
