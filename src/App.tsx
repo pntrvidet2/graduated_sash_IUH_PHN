@@ -33,7 +33,7 @@ function sashOutlinePoints(side: "left" | "right", d: number): string {
   ].join(" ")
 }
 
-/* Khung sọc viền kép / viền ba sang trọng chạy dọc toàn bộ biên dải sash */
+/* Khung viền chỉ vàng satin hoàng gia tinh tế, giải phóng không gian thoáng đãng bên trong */
 function SashFrame({ side }: { side: "left" | "right" }) {
   return (
     <svg
@@ -42,31 +42,22 @@ function SashFrame({ side }: { side: "left" | "right" }) {
       preserveAspectRatio="none"
       aria-hidden="true"
     >
-      {/* Line 1: Sọc viền ngoài */}
+      {/* Sọc viền ngoài thanh lịch */}
       <polygon
-        points={sashOutlinePoints(side, 3.5)}
+        points={sashOutlinePoints(side, 2.5)}
         fill="none"
         stroke={GOLD}
-        strokeWidth="1.2"
+        strokeWidth="1.0"
         strokeLinejoin="miter"
       />
-      {/* Line 2: Sọc viền giữa (tạo dải sọc song song sắc nét) */}
+      {/* Đường chỉ mảnh viền trong cách 3px tạo khoảng thở */}
       <polygon
-        points={sashOutlinePoints(side, 7)}
-        fill="none"
-        stroke={GOLD}
-        strokeWidth="0.8"
-        strokeLinejoin="miter"
-        opacity="0.9"
-      />
-      {/* Line 3: Đường chỉ mảnh viền trong */}
-      <polygon
-        points={sashOutlinePoints(side, 10.5)}
+        points={sashOutlinePoints(side, 5.5)}
         fill="none"
         stroke={GOLD}
         strokeWidth="0.5"
         strokeLinejoin="miter"
-        opacity="0.65"
+        opacity="0.8"
       />
     </svg>
   )
@@ -74,91 +65,91 @@ function SashFrame({ side }: { side: "left" | "right" }) {
 
 /**
  * Tác phẩm vector vạt trái:
- * Logo biểu tượng IUH -> Vạch kim cương -> Bướm bay nghệ thuật -> Mũ cử nhân mini trên đỉnh số 2 -> Cụm số 2026 xếp dọc & CLASS OF -> Ngôi sao lấp lánh -> Graduation thư pháp -> Hoa văn góc nhọn
+ * Logo biểu tượng IUH -> Vạch kim cương -> Bướm bay nghệ thuật -> Mũ cử nhân mini trên đỉnh số 2 -> Cụm số 2026 nghiêng thanh thoát & CLASS OF -> Ngôi sao lấp lánh -> Graduation thư pháp -> Hoa văn góc nhọn
  */
 function LeftSashArtwork() {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
-      {/* Top: Biểu tượng IUH riêng biệt, phóng to, dời xuống vừa tầm in */}
+      {/* Top: Biểu tượng IUH riêng biệt, cân đối tỷ lệ */}
       <image
         href={IUH_EMBLEM_ORIGINAL}
-        x="47"
-        y="36"
-        width="46"
-        height="54"
+        x="48"
+        y="30"
+        width="44"
+        height="50"
         preserveAspectRatio="xMidYMid meet"
       />
 
-      {/* Đường vạch phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt phải ở y=106) */}
-      <line x1="34" y1="106" x2="106" y2="106" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-      <polygon points="70,103.5 72.5,106 70,108.5 67.5,106" fill="#fff4d0" />
-      <circle cx="63" cy="106" r="0.8" fill="#fff4d0" />
-      <circle cx="77" cy="106" r="0.8" fill="#fff4d0" />
+      {/* Đường vạch phân cách trên có hạt kim cương thanh nhã ở y=88 */}
+      <line x1="36" y1="88" x2="104" y2="88" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,85.5 72.5,88 70,90.5 67.5,88" fill="#fff4d0" />
+      <circle cx="63" cy="88" r="0.8" fill="#fff4d0" />
+      <circle cx="77" cy="88" r="0.8" fill="#fff4d0" />
 
-      {/* Họa tiết bướm bay nghệ thuật (Butterfly Line-art) */}
-      <ButterflyIcon x={28} y={150} size={28} color={GOLD} />
+      {/* Họa tiết bướm bay nghệ thuật góc trên bên trái */}
+      <ButterflyIcon x={32} y={132} size={24} color={GOLD} />
 
-      {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 */}
-      <MiniGraduationCap x={58} y={158} size={22} />
+      {/* Mũ cử nhân mini đội nghiêng tự nhiên trên đỉnh số 2 */}
+      <MiniGraduationCap x={64} y={144} size={18} />
 
       {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
-      <SparkleStar cx={98} cy={145} r={5.5} color="#fff4d0" />
-      <SparkleStar cx={38} cy={232} r={4.5} color={GOLD} />
-      <SparkleStar cx={98} cy={335} r={5} color="#fff4d0" />
-      <SparkleStar cx={48} cy={395} r={4} color={GOLD} />
+      <SparkleStar cx={96} cy={136} r={5} color="#fff4d0" />
+      <SparkleStar cx={36} cy={220} r={4} color={GOLD} />
+      <SparkleStar cx={98} cy={320} r={4.5} color="#fff4d0" />
+      <SparkleStar cx={48} cy={378} r={4} color={GOLD} />
 
       {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
-      <g transform="rotate(90 40 290)">
+      <g transform="rotate(90 42 273)">
         <text
-          x="40"
-          y="290"
+          x="42"
+          y="273"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
-          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontFamily="'Playfair Display', Georgia, serif"
           fontWeight="700"
-          fontSize="9.5"
-          letterSpacing="4.5"
+          fontSize="8.5"
+          letterSpacing="4"
           filter="drop-shadow(0 1px 2px rgba(0,0,0,0.7))"
         >
           CLASS OF
         </text>
       </g>
 
-      {/* Cụm 4 số 2 - 0 - 2 - 6 xếp dọc nghệ thuật */}
+      {/* Cụm 4 số 2 - 0 - 2 - 6 xếp dọc nghệ thuật in nghiêng thanh thoát chuẩn mẫu thực tế */}
       <g
-        fontFamily="'Noto Serif Display', 'Playfair Display', Georgia, serif"
+        fontFamily="'Playfair Display', 'Cormorant Garamond', 'Noto Serif Display', Georgia, serif"
         fontStyle="italic"
         fontWeight="800"
-        fontSize="52"
+        fontSize="48"
         fill="#fff4d0"
         textAnchor="middle"
       >
-        <text x="76" y="204" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+        <text x="76" y="192" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
           2
         </text>
-        <text x="76" y="262" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+        <text x="76" y="246" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
           0
         </text>
-        <text x="76" y="320" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+        <text x="76" y="300" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
           2
         </text>
-        <text x="76" y="378" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+        <text x="76" y="354" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
           6
         </text>
       </g>
 
       {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
-      <SparkleStar cx={70} cy={430} r={6} color="#fff4d0" />
+      <SparkleStar cx={70} cy={406} r={5} color="#fff4d0" />
 
-      {/* Chữ Graduation thư pháp uốn lượn tuyệt đẹp */}
+      {/* Chữ Graduation thư pháp uốn lượn tuyệt đẹp (khoảng thở rộng rãi với đáy) */}
       <text
         x="70"
-        y="470"
+        y="442"
         textAnchor="middle"
         fill="#fff4d0"
-        fontFamily="'Alex Brush', 'Great Vibes', 'Allura', cursive"
-        fontSize="28"
+        fontFamily="'Great Vibes', 'Alex Brush', cursive"
+        fontSize="26"
         letterSpacing="1"
         filter="drop-shadow(0 1px 3px rgba(0,0,0,0.75))"
       >
@@ -174,136 +165,157 @@ function LeftSashArtwork() {
 }
 
 export type NameFontStyle =
-  | "script-slanted"
-  | "script-vibes"
-  | "script-allura"
+  | "script-greatvibes"
+  | "script-alexbrush"
+  | "script-dancing"
+  | "serif-italic"
   | "serif-caps"
-  | "serif-title"
-  | "sans-bold"
 
 /**
  * Tác phẩm vector vạt phải:
- * Mũ cử nhân tốt nghiệp -> Chữ IUH ngay dưới mũ -> Vạch kim cương -> Viện (trên) & Khoa (dưới) | Tên sinh viên (in nghiêng mẫu thực tế) -> Khóa K18 -> Hoa văn góc nhọn
+ * Mũ cử nhân tốt nghiệp -> Chữ IUH ngay dưới mũ -> Vạch kim cương ->
+ * Viện trên & Khoa dưới (tách bạch rõ ràng, KHÔNG chạm K18) | Tên sinh viên thư pháp chuẩn mẫu thực tế ->
+ * Khoảng thở 58px -> Khóa K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork({ fontStyle = "script-slanted" }: { fontStyle?: NameFontStyle }) {
+function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sang trọng */}
-      <g transform="translate(45, 30)">
-        <GraduationCapIcon size={50} />
+      <g transform="translate(46, 24)">
+        <GraduationCapIcon size={48} />
       </g>
 
       {/* Chữ IUH in hoa đậm nét nằm ngay dưới mũ cử nhân */}
       <text
         x="70"
-        y="86"
+        y="78"
         textAnchor="middle"
         dominantBaseline="central"
         fill="#fff4d0"
-        fontFamily="'Noto Serif Display', Georgia, serif"
+        fontFamily="'Playfair Display', Georgia, serif"
         fontWeight="800"
-        fontSize="16"
-        letterSpacing="4"
+        fontSize="14"
+        letterSpacing="3.5"
         filter="drop-shadow(0 1px 3px rgba(0,0,0,0.8))"
       >
         IUH
       </text>
 
-      {/* Đường phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt trái ở y=106) */}
-      <line x1="34" y1="106" x2="106" y2="106" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-      <polygon points="70,103.5 72.5,106 70,108.5 67.5,106" fill="#fff4d0" />
-      <circle cx="63" cy="106" r="0.8" fill="#fff4d0" />
-      <circle cx="77" cy="106" r="0.8" fill="#fff4d0" />
+      {/* Đường phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt trái ở y=88) */}
+      <line x1="36" y1="88" x2="104" y2="88" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,85.5 72.5,88 70,90.5 67.5,88" fill="#fff4d0" />
+      <circle cx="63" cy="88" r="0.8" fill="#fff4d0" />
+      <circle cx="77" cy="88" r="0.8" fill="#fff4d0" />
 
       {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
       <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
         <DongSonDrum size="100%" opacity={0.16} />
       </svg>
 
-      {/* CỘT TRÁI: VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI, SIZE CHỮ TO RÕ RÀNG */}
-      {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên) */}
-      <g transform="rotate(90 44 205)">
+      {/* CỘT TRÁI (x=42): VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI (CHUẨN TỶ LỆ, CÁCH K18 GẦN 60PX) */}
+      {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên, tâm y=190, dải y: 135 -> 245) */}
+      <g transform="rotate(90 42 190)">
         <text
-          x="44"
-          y="205"
+          x="42"
+          y="190"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
-          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontFamily="'Playfair Display', 'Noto Serif Display', Georgia, serif"
           fontWeight="800"
-          fontSize="12.5"
-          letterSpacing="1.8"
+          fontSize="9.5"
+          letterSpacing="1.2"
           filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
         >
           VIỆN TÀI CHÍNH - KẾ TOÁN
         </text>
       </g>
 
-      {/* Hạt kim cương phân cách giữa Viện và Khoa */}
+      {/* Hạt kim cương quý phái phân cách giữa Viện và Khoa ở y=268 */}
       <g>
-        <circle cx="44" cy="274" r="0.8" fill={GOLD} />
-        <polygon points="44,279.5 46.5,282 44,284.5 41.5,282" fill="#fff4d0" />
-        <circle cx="44" cy="290" r="0.8" fill={GOLD} />
+        <circle cx="42" cy="261" r="0.7" fill={GOLD} />
+        <polygon points="42,265.5 44.5,268 42,270.5 39.5,268" fill="#fff4d0" />
+        <circle cx="42" cy="275" r="0.7" fill={GOLD} />
       </g>
 
-      {/* 2. Khoa Tài Chính - Ngân Hàng (Khoa nằm ở phần dưới) */}
-      <g transform="rotate(90 44 360)">
+      {/* 2. Khoa Tài Chính - Ngân Hàng (Khoa nằm ở phần dưới, tâm y=345, dải y: 290 -> 400) */}
+      <g transform="rotate(90 42 345)">
         <text
-          x="44"
-          y="360"
+          x="42"
+          y="345"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
-          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontFamily="'Playfair Display', 'Noto Serif Display', Georgia, serif"
           fontWeight="700"
-          fontSize="12"
-          letterSpacing="1.6"
+          fontSize="9"
+          letterSpacing="1.0"
           filter="drop-shadow(0 1px 2px rgba(0,0,0,0.8))"
         >
           KHOA TÀI CHÍNH - NGÂN HÀNG
         </text>
       </g>
 
-      {/* CỘT PHẢI: DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
-      <g transform="rotate(90 86 282)">
-        {fontStyle === "script-slanted" && (
+      {/* CỘT PHẢI (x=86): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
+      <g transform="rotate(90 86 268)">
+        {fontStyle === "script-greatvibes" && (
           <text
             x="86"
-            y="282"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="#fff4d0"
-            fontFamily="'Alex Brush', 'Great Vibes', 'Allura', cursive"
-            fontSize="42"
-            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-          >
-            Phạm Hữu Nghĩa
-          </text>
-        )}
-        {fontStyle === "script-vibes" && (
-          <text
-            x="86"
-            y="282"
+            y="268"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Great Vibes', cursive"
             fontSize="38"
-            letterSpacing="1"
+            letterSpacing="0.8"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             Phạm Hữu Nghĩa
           </text>
         )}
-        {fontStyle === "script-allura" && (
+        {fontStyle === "script-alexbrush" && (
           <text
             x="86"
-            y="282"
+            y="268"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
-            fontFamily="'Allura', cursive"
-            fontSize="44"
+            fontFamily="'Alex Brush', cursive"
+            fontSize="36"
+            letterSpacing="0.5"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
+        {fontStyle === "script-dancing" && (
+          <text
+            x="86"
+            y="268"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Dancing Script', cursive"
+            fontWeight="700"
+            fontSize="32"
+            letterSpacing="0.8"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
+        {fontStyle === "serif-italic" && (
+          <text
+            x="86"
+            y="268"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Playfair Display', Georgia, serif"
+            fontStyle="italic"
+            fontWeight="800"
+            fontSize="26"
+            letterSpacing="1.2"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             Phạm Hữu Nghĩa
@@ -312,46 +324,14 @@ function RightSashArtwork({ fontStyle = "script-slanted" }: { fontStyle?: NameFo
         {fontStyle === "serif-caps" && (
           <text
             x="86"
-            y="282"
+            y="268"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
-            fontFamily="'Noto Serif Display', Georgia, serif"
+            fontFamily="'Playfair Display', Georgia, serif"
             fontWeight="800"
-            fontSize="22"
-            letterSpacing="2.8"
-            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-          >
-            PHẠM HỮU NGHĨA
-          </text>
-        )}
-        {fontStyle === "serif-title" && (
-          <text
-            x="86"
-            y="282"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="#fff4d0"
-            fontFamily="'Noto Serif Display', Georgia, serif"
-            fontWeight="700"
-            fontSize="25"
-            letterSpacing="1.8"
-            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))"
-          >
-            Phạm Hữu Nghĩa
-          </text>
-        )}
-        {fontStyle === "sans-bold" && (
-          <text
-            x="86"
-            y="282"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="#fff4d0"
-            fontFamily="Inter, 'Segoe UI', Arial, sans-serif"
-            fontWeight="800"
-            fontSize="20"
-            letterSpacing="3"
+            fontSize="21"
+            letterSpacing="2.5"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             PHẠM HỮU NGHĨA
@@ -359,16 +339,16 @@ function RightSashArtwork({ fontStyle = "script-slanted" }: { fontStyle?: NameFo
         )}
       </g>
 
-      {/* K18 (ngang hàng chuẩn xác với Graduation ở vạt trái) */}
+      {/* K18 (đặt tại y=472, cách đuôi chữ Khoa tận 72px cực kỳ thoáng đãng, không bao giờ đè nhau) */}
       <text
         x="70"
-        y="476"
+        y="472"
         textAnchor="middle"
         fill="#fff4d0"
-        fontFamily="'Noto Serif Display', Georgia, serif"
+        fontFamily="'Playfair Display', Georgia, serif"
         fontWeight="800"
-        fontSize="28"
-        letterSpacing="1.5"
+        fontSize="26"
+        letterSpacing="2"
         filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))"
       >
         K18
@@ -382,7 +362,7 @@ function RightSashArtwork({ fontStyle = "script-slanted" }: { fontStyle?: NameFo
   )
 }
 
-function FrontSash({ fontStyle = "script-slanted" }: { fontStyle?: NameFontStyle }) {
+function FrontSash({ fontStyle = "script-greatvibes" }: { fontStyle?: NameFontStyle }) {
   return (
     <div className="sash-set front-sash" aria-label="Thiết kế mặt trước sash">
       {/* Vạt Trái */}
@@ -531,7 +511,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
-  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-slanted")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-greatvibes")
 
   return (
     <main>
@@ -600,24 +580,31 @@ export default function App() {
         <div className="font-options">
           <button
             type="button"
-            className={fontStyle === "script-slanted" ? "active" : ""}
-            onClick={() => setFontStyle("script-slanted")}
+            className={fontStyle === "script-greatvibes" ? "active" : ""}
+            onClick={() => setFontStyle("script-greatvibes")}
           >
-            ★ In Nghiêng Mẫu Thực Tế (Alex Brush · Chuẩn ảnh mẫu, nét đều rõ ràng)
+            ★ Thư Pháp Hoàng Gia (Great Vibes · Chuẩn ảnh dải sash thực tế)
           </button>
           <button
             type="button"
-            className={fontStyle === "script-vibes" ? "active" : ""}
-            onClick={() => setFontStyle("script-vibes")}
+            className={fontStyle === "script-dancing" ? "active" : ""}
+            onClick={() => setFontStyle("script-dancing")}
           >
-            In Nghiêng Lượn (Great Vibes)
+            In Nghiêng Hiện Đại Rõ Nét (Dancing Script)
           </button>
           <button
             type="button"
-            className={fontStyle === "script-allura" ? "active" : ""}
-            onClick={() => setFontStyle("script-allura")}
+            className={fontStyle === "serif-italic" ? "active" : ""}
+            onClick={() => setFontStyle("serif-italic")}
           >
-            In Nghiêng Mềm Mại (Allura)
+            Serif Nghiêng Cao Cấp (Playfair Display)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "script-alexbrush" ? "active" : ""}
+            onClick={() => setFontStyle("script-alexbrush")}
+          >
+            In Nghiêng Mềm (Alex Brush)
           </button>
           <button
             type="button"
@@ -625,20 +612,6 @@ export default function App() {
             onClick={() => setFontStyle("serif-caps")}
           >
             Serif Hoàng Gia (In hoa)
-          </button>
-          <button
-            type="button"
-            className={fontStyle === "serif-title" ? "active" : ""}
-            onClick={() => setFontStyle("serif-title")}
-          >
-            Serif Cổ Điển (Viết hoa chữ đầu)
-          </button>
-          <button
-            type="button"
-            className={fontStyle === "sans-bold" ? "active" : ""}
-            onClick={() => setFontStyle("sans-bold")}
-          >
-            Hiện Đại (Sans Bold)
           </button>
         </div>
       </div>

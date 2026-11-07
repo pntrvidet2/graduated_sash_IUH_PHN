@@ -3,7 +3,7 @@ import { IUH_LOGO_WHITE } from "./assets/logoData"
 import type { NameFontStyle } from "./App"
 
 const FONT_CSS_URL =
-  "https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Great+Vibes&family=Cherish&family=Inter:wght@500;700;800&family=Noto+Serif+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap"
+  "https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Noto+Serif+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@600;700;800&display=swap"
 
 function toDataUrl(url: string): Promise<string> {
   return fetch(url)
@@ -38,7 +38,7 @@ async function buildFontCss(): Promise<string> {
     .join("")
 }
 
-async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-slanted") {
+async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-greatvibes") {
   let fontCss: string | undefined
   try {
     fontCss = await buildFontCss()
@@ -86,7 +86,7 @@ export function PrintSheets() {
 }
 
 export default function PrintStudio({
-  fontStyle = "script-slanted",
+  fontStyle = "script-greatvibes",
 }: {
   fontStyle?: NameFontStyle
 }) {
