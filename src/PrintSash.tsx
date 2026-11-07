@@ -244,11 +244,13 @@ export default function PrintSash({
             preserveAspectRatio="xMidYMid meet"
           />
 
-          {/* Đường vạch phân cách kim cương thanh mảnh dưới logo IUH ở y=872 */}
+          {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=872 */}
           <line x1="38" y1="872" x2="102" y2="872" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
           <polygon points="70,869.5 72.5,872 70,874.5 67.5,872" fill="#fff4d0" />
           <circle cx="63" cy="872" r="0.8" fill="#fff4d0" />
           <circle cx="77" cy="872" r="0.8" fill="#fff4d0" />
+          <SparkleStar cx={36} cy={872} r={2.2} color={GOLD} />
+          <SparkleStar cx={104} cy={872} r={2.2} color={GOLD} />
 
           {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, in chìm tinh tế */}
           <g transform="translate(-70, 915)">
@@ -259,13 +261,14 @@ export default function PrintSash({
           <ButterflyIcon x={30} y={918} size={24} color={GOLD} />
 
           {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 lệch trái */}
-          <MiniGraduationCap x={49} y={930} size={20} />
+          <MiniGraduationCap x={48} y={930} size={20} />
 
           {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
-          <SparkleStar cx={92} cy={960} r={4.5} color="#fff4d0" />
+          <SparkleStar cx={92} cy={958} r={4.5} color="#fff4d0" />
           <SparkleStar cx={38} cy={1012} r={4} color={GOLD} />
-          <SparkleStar cx={96} cy={1072} r={4.5} color="#fff4d0" />
-          <SparkleStar cx={46} cy={1164} r={4} color={GOLD} />
+          <SparkleStar cx={96} cy={1070} r={4.5} color="#fff4d0" />
+          <SparkleStar cx={38} cy={1132} r={3.5} color={GOLD} />
+          <SparkleStar cx={96} cy={1148} r={3.5} color="#fff4d0" />
 
           {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
           <g transform="rotate(90 34 1058)">
@@ -284,67 +287,75 @@ export default function PrintSash({
             </text>
           </g>
 
-          {/* Cụm 4 số 2 - 0 - 2 - 6 xếp xéo nhau và nối nhau nghệ thuật (Interlocking Ribbon Script) */}
+          {/* Cụm 4 số 2 - 0 - 2 - 6 đổi sang font Great Vibes đồng nhất hoàn hảo với Graduation */}
           <g id="connected-year-2026">
-            {/* Dải lụa nối uốn lượn từ chân số 2 sang đỉnh số 0 */}
+            {/* Dải lụa nối uốn lượn từ đuôi số 2 sang đỉnh số 0 */}
             <path
-              d="M 54 984 C 68 988, 78 998, 80 1008"
+              d="M 68 984 C 76 988, 79 996, 78 1005"
               fill="none"
               stroke="#f3db83"
-              strokeWidth="2.5"
+              strokeWidth="2.2"
               strokeLinecap="round"
             />
 
             {/* Dải lụa nối từ chân số 0 sang đầu số 2 thứ hai */}
             <path
-              d="M 80 1050 C 76 1058, 68 1058, 60 1060"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-
-            {/* Dải lụa uốn lượn từ chân số 2 thứ hai nối và bao quanh số 6 */}
-            <path
-              d="M 52 1084 C 72 1090, 86 1100, 80 1110"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 72 1148 C 88 1154, 92 1166, 84 1176 C 76 1184, 66 1188, 74 1194"
+              d="M 78 1045 C 74 1052, 68 1053, 60 1058"
               fill="none"
               stroke="#f3db83"
               strokeWidth="2.2"
               strokeLinecap="round"
-              opacity="0.9"
             />
 
-            {/* 4 chữ số 2 - 0 - 2 - 6 thư pháp xếp xéo nhau (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
+            {/* Dải lụa nối từ đuôi số 2 thứ hai sang cuống số 6 */}
+            <path
+              d="M 68 1084 C 76 1090, 80 1098, 78 1106"
+              fill="none"
+              stroke="#f3db83"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+
+            {/* 4 chữ số 2 - 0 - 2 - 6: FONT GREAT VIBES CHUẨN XÁC, XẾP XÉO NHAU (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
             <g
-              fontFamily="'Charm', 'Alex Brush', cursive"
-              fontWeight="700"
+              fontFamily="'Great Vibes', cursive"
               fill="#f3db83"
               textAnchor="middle"
             >
-              <text x="60" y="980" fontSize="56">
+              <text x="60" y="980" fontSize="62">
                 2
               </text>
-              <text x="80" y="1030" fontSize="50">
+              <text x="80" y="1030" fontSize="56">
                 0
               </text>
-              <text x="60" y="1080" fontSize="56">
+              <text x="60" y="1080" fontSize="62">
                 2
               </text>
-              <text x="80" y="1130" fontSize="52">
+              <text x="80" y="1130" fontSize="58">
                 6
               </text>
             </g>
           </g>
 
-          {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
-          <SparkleStar cx={70} cy={1208} r={5} color="#f3db83" />
+          {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
+          <g>
+            <SparkleStar cx={70} cy={1182} r={5} color="#f3db83" />
+            <SparkleStar cx={48} cy={1178} r={3} color="#fff4d0" />
+            <SparkleStar cx={92} cy={1178} r={3} color="#fff4d0" />
+
+            <line x1="36" y1="1204" x2="62" y2="1204" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+            <line x1="78" y1="1204" x2="104" y2="1204" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+            <polygon points="70,1201.5 72.5,1204 70,1206.5 67.5,1204" fill="#fff4d0" />
+            <circle cx="65" cy="1204" r="0.8" fill={GOLD} />
+            <circle cx="75" cy="1204" r="0.8" fill={GOLD} />
+            <circle cx="58" cy="1204" r="0.6" fill="#fff4d0" />
+            <circle cx="82" cy="1204" r="0.6" fill="#fff4d0" />
+            <SparkleStar cx={34} cy={1204} r={2.8} color={GOLD} />
+            <SparkleStar cx={106} cy={1204} r={2.8} color={GOLD} />
+
+            <SparkleStar cx={46} cy={1228} r={2.8} color={GOLD} />
+            <SparkleStar cx={94} cy={1228} r={2.8} color={GOLD} />
+          </g>
 
           {/* Chữ Graduation thư pháp uốn lượn (căn tại y=1260, bằng ngang tuyệt đối với K18) */}
           <g>
@@ -372,11 +383,11 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Mũ cử nhân hoàng gia */}
-          <g transform="translate(45, 804)">
-            <GraduationCapIcon size={50} color={GOLD} />
+          <g transform="translate(47, 806)">
+            <GraduationCapIcon size={46} color={GOLD} />
           </g>
 
-          {/* Tên trường tiếng Anh trang trọng dưới mũ cử nhân */}
+          {/* Tên trường tiếng Anh thu nhỏ thanh nhã cân xứng với vạt trái */}
           <text
             x="70"
             y="858"
@@ -385,30 +396,32 @@ export default function PrintSash({
             fill="#dfb143"
             fontFamily="'Cinzel', Georgia, serif"
             fontWeight="800"
-            fontSize="7.2"
-            letterSpacing="1.6"
+            fontSize="5.2"
+            letterSpacing="1.1"
           >
             INDUSTRIAL UNIVERSITY
           </text>
           <text
             x="70"
-            y="869"
+            y="867"
             textAnchor="middle"
             dominantBaseline="central"
             fill="#fff4d0"
             fontFamily="'Cinzel', Georgia, serif"
             fontWeight="700"
-            fontSize="6.6"
-            letterSpacing="1.8"
+            fontSize="4.7"
+            letterSpacing="1.2"
           >
             OF HO CHI MINH CITY
           </text>
 
-          {/* Đường phân cách trên có họa tiết kim cương ở y=882 */}
-          <line x1="34" y1="882" x2="106" y2="882" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,879.5 72.5,882 70,884.5 67.5,882" fill="#fff4d0" />
-          <circle cx="63" cy="882" r="0.8" fill="#fff4d0" />
-          <circle cx="77" cy="882" r="0.8" fill="#fff4d0" />
+          {/* Đường phân cách trên có họa tiết kim cương và ngôi sao ở y=878 */}
+          <line x1="38" y1="878" x2="102" y2="878" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,875.5 72.5,878 70,880.5 67.5,878" fill="#fff4d0" />
+          <circle cx="63" cy="878" r="0.7" fill="#fff4d0" />
+          <circle cx="77" cy="878" r="0.7" fill="#fff4d0" />
+          <SparkleStar cx={36} cy={878} r={2.2} color={GOLD} />
+          <SparkleStar cx={104} cy={878} r={2.2} color={GOLD} />
 
           {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
           <g transform="translate(-70, 915)">
@@ -542,8 +555,30 @@ export default function PrintSash({
             )}
           </g>
 
+          {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
+          <g>
+            <SparkleStar cx={70} cy={1182} r={5} color="#f3db83" />
+            <SparkleStar cx={48} cy={1178} r={3} color="#fff4d0" />
+            <SparkleStar cx={92} cy={1178} r={3} color="#fff4d0" />
+
+            <line x1="36" y1="1204" x2="62" y2="1204" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+            <line x1="78" y1="1204" x2="104" y2="1204" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+            <polygon points="70,1201.5 72.5,1204 70,1206.5 67.5,1204" fill="#fff4d0" />
+            <circle cx="65" cy="1204" r="0.8" fill={GOLD} />
+            <circle cx="75" cy="1204" r="0.8" fill={GOLD} />
+            <circle cx="58" cy="1204" r="0.6" fill="#fff4d0" />
+            <circle cx="82" cy="1204" r="0.6" fill="#fff4d0" />
+            <SparkleStar cx={34} cy={1204} r={2.8} color={GOLD} />
+            <SparkleStar cx={106} cy={1204} r={2.8} color={GOLD} />
+
+            <SparkleStar cx={46} cy={1228} r={2.8} color={GOLD} />
+            <SparkleStar cx={94} cy={1228} r={2.8} color={GOLD} />
+          </g>
+
           {/* Cohort K18 (chuẩn Roman Serif Cinzel, căn chính xác trung tâm x=70, y=1260, màu vàng gold quý phái) */}
           <g>
+            <SparkleStar cx={24} cy={1260} r={3} color={GOLD} />
+            <SparkleStar cx={116} cy={1260} r={3} color={GOLD} />
             <text
               x="70"
               y="1260"

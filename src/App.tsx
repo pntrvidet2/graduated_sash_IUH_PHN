@@ -80,11 +80,13 @@ function LeftSashArtwork() {
         preserveAspectRatio="xMidYMid meet"
       />
 
-      {/* Đường vạch phân cách kim cương thanh mảnh dưới logo IUH ở y=68 */}
+      {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=68 */}
       <line x1="38" y1="68" x2="102" y2="68" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
       <polygon points="70,65.5 72.5,68 70,70.5 67.5,68" fill="#fff4d0" />
       <circle cx="63" cy="68" r="0.8" fill="#fff4d0" />
       <circle cx="77" cy="68" r="0.8" fill="#fff4d0" />
+      <SparkleStar cx={36} cy={68} r={2.2} color={GOLD} />
+      <SparkleStar cx={104} cy={68} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
       <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
@@ -93,13 +95,14 @@ function LeftSashArtwork() {
       <ButterflyIcon x={30} y={126} size={24} color={GOLD} />
 
       {/* Mũ cử nhân mini đội nghiêng tự nhiên trên chóp số 2 lệch trái */}
-      <MiniGraduationCap x={49} y={138} size={20} />
+      <MiniGraduationCap x={48} y={138} size={20} />
 
       {/* Ngôi sao lấp lánh trang trí quanh cụm số 2026 */}
-      <SparkleStar cx={92} cy={168} r={4.5} color="#fff4d0" />
+      <SparkleStar cx={92} cy={166} r={4.5} color="#fff4d0" />
       <SparkleStar cx={38} cy={220} r={4} color={GOLD} />
-      <SparkleStar cx={96} cy={280} r={4.5} color="#fff4d0" />
-      <SparkleStar cx={46} cy={372} r={4} color={GOLD} />
+      <SparkleStar cx={96} cy={278} r={4.5} color="#fff4d0" />
+      <SparkleStar cx={38} cy={340} r={3.5} color={GOLD} />
+      <SparkleStar cx={96} cy={356} r={3.5} color="#fff4d0" />
 
       {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
       <g transform="rotate(90 34 266)">
@@ -119,75 +122,85 @@ function LeftSashArtwork() {
         </text>
       </g>
 
-      {/* Cụm 4 số 2 - 0 - 2 - 6 xếp xéo nhau (diagonally staggered) và nối nhau nghệ thuật (Interlocking Ribbon) */}
+      {/* Cụm 4 số 2 - 0 - 2 - 6 đổi sang font Great Vibes đồng nhất 100% với chữ Graduation */}
       <g id="connected-year-2026">
-        {/* Dải lụa nối uốn lượn từ chân số 2 (trái) sang đỉnh số 0 (phải) */}
+        {/* Dải lụa nối uốn lượn thư pháp mượt mà từ đuôi số 2 sang đỉnh số 0 */}
         <path
-          d="M 54 192 C 68 196, 78 206, 80 216"
-          fill="none"
-          stroke="#f3db83"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-        />
-
-        {/* Dải lụa nối uốn lượn từ chân số 0 (phải) sang đầu số 2 thứ hai (trái) */}
-        <path
-          d="M 80 258 C 76 266, 68 266, 60 268"
-          fill="none"
-          stroke="#f3db83"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-        />
-
-        {/* Dải lụa uốn lượn từ chân số 2 thứ hai nối và bao quanh số 6 */}
-        <path
-          d="M 52 292 C 72 298, 86 308, 80 318"
-          fill="none"
-          stroke="#f3db83"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-        />
-        <path
-          d="M 72 356 C 88 362, 92 374, 84 384 C 76 392, 66 396, 74 402"
+          d="M 68 194 C 76 198, 79 206, 78 215"
           fill="none"
           stroke="#f3db83"
           strokeWidth="2.2"
           strokeLinecap="round"
-          opacity="0.9"
           filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
         />
 
-        {/* 4 chữ số 2 - 0 - 2 - 6 thư pháp: XẾP XÉO NHAU (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
+        {/* Dải lụa nối từ chân số 0 sang đầu số 2 thứ hai */}
+        <path
+          d="M 78 255 C 74 262, 68 263, 60 268"
+          fill="none"
+          stroke="#f3db83"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+        />
+
+        {/* Dải lụa nối từ đuôi số 2 thứ hai sang cuống số 6 */}
+        <path
+          d="M 68 294 C 76 300, 80 308, 78 316"
+          fill="none"
+          stroke="#f3db83"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+        />
+
+        {/* 4 chữ số 2 - 0 - 2 - 6: FONT GREAT VIBES CHUẨN XÁC, XẾP XÉO NHAU (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
         <g
-          fontFamily="'Charm', 'Alex Brush', cursive"
-          fontWeight="700"
+          fontFamily="'Great Vibes', cursive"
           fill="#f3db83"
           textAnchor="middle"
         >
           {/* Số 2 thứ nhất (lệch trái) */}
-          <text x="60" y="188" fontSize="56" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+          <text x="60" y="190" fontSize="62" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
             2
           </text>
           {/* Số 0 (xếp xéo sang phải) */}
-          <text x="80" y="238" fontSize="50" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+          <text x="80" y="240" fontSize="56" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
             0
           </text>
           {/* Số 2 thứ hai (xếp xéo sang trái) */}
-          <text x="60" y="288" fontSize="56" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+          <text x="60" y="290" fontSize="62" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
             2
           </text>
-          {/* Số 6 (xếp xéo sang phải với đuôi cong uốn lượn) */}
-          <text x="80" y="338" fontSize="52" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+          {/* Số 6 (xếp xéo sang phải) */}
+          <text x="80" y="340" fontSize="58" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
             6
           </text>
         </g>
       </g>
 
-      {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
-      <SparkleStar cx={70} cy={416} r={5} color="#f3db83" />
+      {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
+      <g filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+        {/* Chùm sao lấp lánh tầng trên */}
+        <SparkleStar cx={70} cy={392} r={5} color="#f3db83" />
+        <SparkleStar cx={48} cy={388} r={3} color="#fff4d0" />
+        <SparkleStar cx={92} cy={388} r={3} color="#fff4d0" />
+
+        {/* Đường gạch ngang hoàng gia tinh xảo */}
+        <line x1="36" y1="414" x2="62" y2="414" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+        <line x1="78" y1="414" x2="104" y2="414" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+        <polygon points="70,411.5 72.5,414 70,416.5 67.5,414" fill="#fff4d0" />
+        <circle cx="65" cy="414" r="0.8" fill={GOLD} />
+        <circle cx="75" cy="414" r="0.8" fill={GOLD} />
+        <circle cx="58" cy="414" r="0.6" fill="#fff4d0" />
+        <circle cx="82" cy="414" r="0.6" fill="#fff4d0" />
+        <SparkleStar cx={34} cy={414} r={2.8} color={GOLD} />
+        <SparkleStar cx={106} cy={414} r={2.8} color={GOLD} />
+
+        {/* Sao lấp lánh tầng dưới */}
+        <SparkleStar cx={46} cy={438} r={2.8} color={GOLD} />
+        <SparkleStar cx={94} cy={438} r={2.8} color={GOLD} />
+      </g>
 
       {/* Chữ Graduation thư pháp uốn lượn (căn tại y=468, bằng ngang trung tâm tuyệt đối với K18) */}
       <g filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
@@ -234,11 +247,11 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sắc nét */}
-      <g transform="translate(45, 14)">
-        <GraduationCapIcon size={50} />
+      <g transform="translate(47, 16)">
+        <GraduationCapIcon size={46} />
       </g>
 
-      {/* Tên trường bằng tiếng Anh trang trọng dưới mũ cử nhân theo đúng yêu cầu */}
+      {/* Tên trường tiếng Anh thu nhỏ thanh nhã, cân xứng hoàn hảo với logo IUH bên vạt trái */}
       <text
         x="70"
         y="68"
@@ -247,32 +260,34 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         fill="#dfb143"
         fontFamily="'Cinzel', Georgia, serif"
         fontWeight="800"
-        fontSize="7.2"
-        letterSpacing="1.6"
+        fontSize="5.2"
+        letterSpacing="1.1"
         filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
       >
         INDUSTRIAL UNIVERSITY
       </text>
       <text
         x="70"
-        y="79"
+        y="77"
         textAnchor="middle"
         dominantBaseline="central"
         fill="#fff4d0"
         fontFamily="'Cinzel', Georgia, serif"
         fontWeight="700"
-        fontSize="6.6"
-        letterSpacing="1.8"
+        fontSize="4.7"
+        letterSpacing="1.2"
         filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
       >
         OF HO CHI MINH CITY
       </text>
 
-      {/* Đường phân cách trên có họa tiết kim cương ở y=92 */}
-      <line x1="34" y1="92" x2="106" y2="92" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-      <polygon points="70,89.5 72.5,92 70,94.5 67.5,92" fill="#fff4d0" />
-      <circle cx="63" cy="92" r="0.8" fill="#fff4d0" />
-      <circle cx="77" cy="92" r="0.8" fill="#fff4d0" />
+      {/* Đường phân cách trên có họa tiết kim cương và ngôi sao ở y=88 */}
+      <line x1="38" y1="88" x2="102" y2="88" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,86 72,88 70,90 68,88" fill="#fff4d0" />
+      <circle cx="63" cy="88" r="0.7" fill="#fff4d0" />
+      <circle cx="77" cy="88" r="0.7" fill="#fff4d0" />
+      <SparkleStar cx={36} cy={88} r={2.2} color={GOLD} />
+      <SparkleStar cx={104} cy={88} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
       <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
@@ -412,8 +427,33 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
       </g>
 
+      {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
+      <g filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+        {/* Chùm sao lấp lánh tầng trên */}
+        <SparkleStar cx={70} cy={392} r={5} color="#f3db83" />
+        <SparkleStar cx={48} cy={388} r={3} color="#fff4d0" />
+        <SparkleStar cx={92} cy={388} r={3} color="#fff4d0" />
+
+        {/* Đường gạch ngang hoàng gia tinh xảo */}
+        <line x1="36" y1="414" x2="62" y2="414" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+        <line x1="78" y1="414" x2="104" y2="414" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
+        <polygon points="70,411.5 72.5,414 70,416.5 67.5,414" fill="#fff4d0" />
+        <circle cx="65" cy="414" r="0.8" fill={GOLD} />
+        <circle cx="75" cy="414" r="0.8" fill={GOLD} />
+        <circle cx="58" cy="414" r="0.6" fill="#fff4d0" />
+        <circle cx="82" cy="414" r="0.6" fill="#fff4d0" />
+        <SparkleStar cx={34} cy={414} r={2.8} color={GOLD} />
+        <SparkleStar cx={106} cy={414} r={2.8} color={GOLD} />
+
+        {/* Sao lấp lánh tầng dưới */}
+        <SparkleStar cx={46} cy={438} r={2.8} color={GOLD} />
+        <SparkleStar cx={94} cy={438} r={2.8} color={GOLD} />
+      </g>
+
       {/* K18 (chuẩn Roman Serif Cinzel, căn chính xác tuyệt đối trung tâm x=70, y=468, màu vàng gold quý phái) */}
       <g filter="drop-shadow(0 2px 4px rgba(0,0,0,0.9))">
+        <SparkleStar cx={24} cy={468} r={3} color={GOLD} />
+        <SparkleStar cx={116} cy={468} r={3} color={GOLD} />
         <text
           x="70"
           y="468"
@@ -604,7 +644,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.5.0</strong> · 2026 Xếp Xéo Nối Liền · K18 Căn Giữa Hoàng Kim · Tên Tiếng Anh IUH
+            TAG <strong>v1.6.0</strong> · 2026 Great Vibes · Tên Trường Cân Đối · Decor Vạch Ngang & Chùm Sao
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -622,7 +662,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.5.0): Logo IUH thu nhỏ thanh nhã không chữ dưới, mũ cử nhân có tên tiếng Anh "INDUSTRIAL UNIVERSITY OF HO CHI MINH CITY", cụm số 2026 xếp xéo uốn lượn nối liền nghệ thuật, Trống đồng phóng to 280px bề thế chìm mờ tinh tế, K18 chuẩn trung tâm hoàng kim sắc sảo.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.6.0): Đổi cụm số 2026 sang font Great Vibes đồng nhất hoàn hảo với Graduation, thu nhỏ tên trường tiếng Anh cân xứng với logo IUH vạt trái, bổ sung vạch phân cách hoàng gia kim cương và chùm sao lấp lánh sang trọng lấp đầy khoảng trống.
           </p>
         </div>
       </section>
