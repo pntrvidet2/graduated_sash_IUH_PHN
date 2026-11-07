@@ -215,6 +215,11 @@ function RightSashArtwork({ fontStyle = "script-slanted" }: { fontStyle?: NameFo
       <circle cx="63" cy="106" r="0.8" fill="#fff4d0" />
       <circle cx="77" cy="106" r="0.8" fill="#fff4d0" />
 
+      {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
+      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
+        <DongSonDrum size="100%" opacity={0.16} />
+      </svg>
+
       {/* CỘT TRÁI: VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI, SIZE CHỮ TO RÕ RÀNG */}
       {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên) */}
       <g transform="rotate(90 44 205)">
@@ -410,9 +415,9 @@ function BackLeftSashArtwork() {
       <line x1="70" y1="45" x2="70" y2="120" stroke={GOLD} strokeWidth="0.8" opacity="0.8" />
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
-      {/* Trống đồng Đông Sơn in chìm sắc nét ở tâm */}
+      {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét ở tâm */}
       <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" color="#f5d485" opacity={0.22} />
+        <DongSonDrum size="100%" opacity={0.34} />
       </svg>
 
       {/* DÒNG CHỮ: INDUSTRIAL UNIVERSITY (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
@@ -452,9 +457,9 @@ function BackRightSashArtwork() {
       <line x1="70" y1="45" x2="70" y2="120" stroke={GOLD} strokeWidth="0.8" opacity="0.8" />
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
-      {/* Trống đồng Đông Sơn in chìm sắc nét ở tâm */}
+      {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét ở tâm */}
       <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" color="#f5d485" opacity={0.22} />
+        <DongSonDrum size="100%" opacity={0.34} />
       </svg>
 
       {/* DÒNG CHỮ: HO CHI MINH CITY · 2026 (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}

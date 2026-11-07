@@ -1,208 +1,42 @@
 import React from "react"
+import { DONG_SON_DRUM_AUTH } from "./assets/logoData"
 
 /**
- * Trống đồng Đông Sơn chi tiết cao (Detailed Dong Son Bronze Drum)
- * Thể hiện đầy đủ: Ngôi sao 14 cánh, hoạ tiết lông công, chim Lạc bay, răng cưa và chấm tròn tiếp tuyến.
+ * Trống đồng Đông Sơn cổ truyền thực tế cao cấp (Authentic Dong Son Bronze Drum)
+ * Tái hiện chính xác 100% theo bản vẽ trống đồng Ngọc Lũ thực tế được cung cấp:
+ * Ngôi sao 14 cánh, hoạ tiết chim Lạc bay, đàn hươu, người múa lễ hội, thuyền rồng cổ và vành răng cưa tiếp tuyến.
  */
 export function DongSonDrum({
   size = 280,
-  color = "#f5d485",
   opacity = 0.45,
   className = "",
+  style,
 }: {
   size?: number | string
   color?: string
   opacity?: number
   className?: string
+  style?: React.CSSProperties
 }) {
-  const cx = 200
-  const cy = 200
-
-  // 1. Ngôi sao 14 cánh ở tâm
-  const numPoints = 14
-  const starOuterR = 48
-  const starInnerR = 18
-  const starPoints: string[] = []
-  const featherTriangles: React.ReactNode[] = []
-
-  for (let i = 0; i < numPoints * 2; i++) {
-    const angle = (i * Math.PI) / numPoints - Math.PI / 2
-    const r = i % 2 === 0 ? starOuterR : starInnerR
-    starPoints.push(`${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`)
-  }
-
-  // Họa tiết lông đuôi công / tam giác giữa các cánh sao
-  for (let i = 0; i < numPoints; i++) {
-    const midAngle = ((i * 2 + 1) * Math.PI) / numPoints - Math.PI / 2
-    const p1Angle = (i * 2 * Math.PI) / numPoints - Math.PI / 2
-    const p2Angle = ((i * 2 + 2) * Math.PI) / numPoints - Math.PI / 2
-    const rBase = starInnerR + 2
-    const rTip = starOuterR - 8
-
-    featherTriangles.push(
-      <g key={`feather-${i}`}>
-        <polygon
-          points={`
-            ${cx + rBase * Math.cos(p1Angle)},${cy + rBase * Math.sin(p1Angle)} 
-            ${cx + rTip * Math.cos(midAngle)},${cy + rTip * Math.sin(midAngle)} 
-            ${cx + rBase * Math.cos(p2Angle)},${cy + rBase * Math.sin(p2Angle)}
-          `}
-          fill="none"
-          stroke={color}
-          strokeWidth="0.8"
-        />
-        <line
-          x1={cx + rBase * Math.cos(midAngle)}
-          y1={cy + rBase * Math.sin(midAngle)}
-          x2={cx + rTip * Math.cos(midAngle)}
-          y2={cy + rTip * Math.sin(midAngle)}
-          stroke={color}
-          strokeWidth="0.6"
-        />
-      </g>
-    )
-  }
-
-  // 2. Vòng chim Lạc (10 con chim hạc sải cánh dài bay ngược chiều kim đồng hồ)
-  const numBirds = 10
-  const birdRadius = 138
-  const birdElements = Array.from({ length: numBirds }).map((_, i) => {
-    const deg = (i * 360) / numBirds
-    return (
-      <g key={`bird-${i}`} transform={`rotate(${deg} ${cx} ${cy})`}>
-        {/* Thân và cánh chim Lạc */}
-        <path
-          d={`M ${cx + 105} ${cy - 8}
-              Q ${cx + 120} ${cy - 12} ${cx + 138} ${cy - 3}
-              Q ${cx + 146} ${cy - 2} ${cx + 158} ${cy - 8}
-              Q ${cx + 150} ${cy + 2} ${cx + 138} ${cy + 4}
-              Q ${cx + 120} ${cy + 6} ${cx + 105} ${cy + 2}
-              Z`}
-          fill={color}
-        />
-        {/* Mỏ dài vươn về phía trước */}
-        <path
-          d={`M ${cx + 158} ${cy - 8} Q ${cx + 172} ${cy - 12} ${cx + 182} ${cy - 14} Q ${cx + 172} ${cy - 8} ${cx + 160} ${cy - 6} Z`}
-          fill={color}
-        />
-        {/* Đuôi xoè dài vút ngược */}
-        <path
-          d={`M ${cx + 105} ${cy - 8} 
-              L ${cx + 86} ${cy - 20} 
-              L ${cx + 94} ${cy - 10} 
-              L ${cx + 82} ${cy - 14} 
-              L ${cx + 96} ${cy - 5} 
-              Z`}
-          fill={color}
-        />
-        {/* Chân chim duỗi thẳng */}
-        <line
-          x1={cx + 115}
-          y1={cy + 4}
-          x2={cx + 95}
-          y2={cy + 12}
-          stroke={color}
-          strokeWidth="1"
-        />
-      </g>
-    )
-  })
-
-  // 3. Vòng răng cưa (Sawtooth)
-  const sawtoothCount = 48
-  const stR1 = 82
-  const stR2 = 92
-  const sawtoothLines: React.ReactNode[] = []
-  for (let i = 0; i < sawtoothCount; i++) {
-    const a1 = (i * 2 * Math.PI) / sawtoothCount
-    const a2 = ((i * 2 + 1) * Math.PI) / sawtoothCount
-    const a3 = ((i * 2 + 2) * Math.PI) / sawtoothCount
-    sawtoothLines.push(
-      <polygon
-        key={`st-${i}`}
-        points={`
-          ${cx + stR1 * Math.cos(a1)},${cy + stR1 * Math.sin(a1)}
-          ${cx + stR2 * Math.cos(a2)},${cy + stR2 * Math.sin(a2)}
-          ${cx + stR1 * Math.cos(a3)},${cy + stR1 * Math.sin(a3)}
-        `}
-        fill={color}
-      />
-    )
-  }
-
-  // 4. Vòng người múa vũ trang / chấm tiếp tuyến ngoài
-  const tangentCircleCount = 56
-  const tgR = 176
-  const tangentDots = Array.from({ length: tangentCircleCount }).map((_, i) => {
-    const a = (i * 2 * Math.PI) / tangentCircleCount
-    return (
-      <circle
-        key={`tg-${i}`}
-        cx={cx + tgR * Math.cos(a)}
-        cy={cy + tgR * Math.sin(a)}
-        r="1.5"
-        fill={color}
-      />
-    )
-  })
-
   return (
     <svg
-      viewBox="0 0 400 400"
       width={size}
       height={size}
+      viewBox="0 0 400 400"
       className={className}
-      style={{ opacity }}
-      aria-hidden="true"
+      style={{ overflow: "visible", ...style }}
+      aria-label="Trống đồng Đông Sơn thực tế"
     >
-      <defs>
-        <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#fff4d0" stopOpacity="0.3" />
-          <stop offset="60%" stopColor={color} stopOpacity="0.15" />
-          <stop offset="100%" stopColor={color} stopOpacity="0" />
-        </radialGradient>
-      </defs>
-
-      {/* Ánh sáng nền nhẹ tỏa ra từ tâm trống */}
-      <circle cx={cx} cy={cy} r="190" fill="url(#drumGlow)" />
-
-      {/* --- CÁC VÒNG ĐỒNG TÂM --- */}
-      {/* Vòng ngoài cùng */}
-      <circle cx={cx} cy={cy} r="196" fill="none" stroke={color} strokeWidth="2.2" />
-      <circle cx={cx} cy={cy} r="190" fill="none" stroke={color} strokeWidth="1" />
-      <circle cx={cx} cy={cy} r="183" fill="none" stroke={color} strokeWidth="1.2" />
-
-      {/* Vòng chấm tròn tiếp tuyến */}
-      {tangentDots}
-      <circle cx={cx} cy={cy} r="170" fill="none" stroke={color} strokeWidth="1.2" />
-
-      {/* Vòng chim Lạc */}
-      <circle cx={cx} cy={cy} r="162" fill="none" stroke={color} strokeWidth="1" />
-      <circle cx={cx} cy={cy} r="114" fill="none" stroke={color} strokeWidth="1" />
-      <g>{birdElements}</g>
-
-      {/* Vòng răng cưa kép */}
-      <circle cx={cx} cy={cy} r="108" fill="none" stroke={color} strokeWidth="1.2" />
-      <g>{sawtoothLines}</g>
-      <circle cx={cx} cy={cy} r="76" fill="none" stroke={color} strokeWidth="1.2" />
-
-      {/* Vòng chấm tròn con lộng */}
-      <circle
-        cx={cx}
-        cy={cy}
-        r="68"
-        fill="none"
-        stroke={color}
-        strokeWidth="2.5"
-        strokeDasharray="2.5 4.5"
+      <image
+        href={DONG_SON_DRUM_AUTH}
+        xlinkHref={DONG_SON_DRUM_AUTH}
+        x="0"
+        y="0"
+        width="400"
+        height="400"
+        preserveAspectRatio="xMidYMid meet"
+        opacity={opacity}
       />
-      <circle cx={cx} cy={cy} r="58" fill="none" stroke={color} strokeWidth="1.2" />
-
-      {/* Ngôi sao 14 cánh & lông công ở tâm */}
-      {featherTriangles}
-      <polygon points={starPoints.join(" ")} fill={color} />
-      <circle cx={cx} cy={cy} r="14" fill="none" stroke="#0a1931" strokeWidth="1.5" />
-      <circle cx={cx} cy={cy} r="6" fill="#fff4d0" />
     </svg>
   )
 }

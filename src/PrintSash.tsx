@@ -219,6 +219,10 @@ export default function PrintSash({
         ) : (
           <Label y={190}>CLASS OF 2026</Label>
         )}
+        {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm */}
+        <g transform="translate(-30, 370)">
+          <DongSonDrum size={200} opacity={0.34} />
+        </g>
         <VerticalText cy={470}>
           {side === "left"
             ? "INDUSTRIAL UNIVERSITY"
@@ -338,6 +342,11 @@ export default function PrintSash({
           <polygon points="70,907.5 72.5,910 70,912.5 67.5,910" fill="#fff4d0" />
           <circle cx="63" cy="910" r="0.8" fill="#fff4d0" />
           <circle cx="77" cy="910" r="0.8" fill="#fff4d0" />
+
+          {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
+          <g transform="translate(-30, 986)">
+            <DongSonDrum size={200} opacity={0.16} />
+          </g>
 
           {/* CỘT TRÁI: VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI, SIZE CHỮ TO RÕ RÀNG */}
           {/* 1. Viện Tài Chính - Kế Toán */}
