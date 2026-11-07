@@ -10,7 +10,7 @@ export function DongSonDrum({
   x,
   y,
   size = 280,
-  opacity = 0.45,
+  opacity = 0.20,
   className = "",
   style,
 }: {
@@ -30,7 +30,12 @@ export function DongSonDrum({
       height={size}
       viewBox="0 0 400 400"
       className={className}
-      style={{ overflow: "visible", ...style }}
+      style={{
+        overflow: "visible",
+        mixBlendMode: "screen",
+        filter: "brightness(1.08) contrast(0.9)",
+        ...style,
+      }}
       aria-label="Trống đồng Đông Sơn thực tế"
     >
       <image

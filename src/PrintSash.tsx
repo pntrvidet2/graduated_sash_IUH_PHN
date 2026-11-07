@@ -221,7 +221,7 @@ export default function PrintSash({
         )}
         {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm */}
         <g transform="translate(-30, 370)">
-          <DongSonDrum size={200} opacity={0.34} />
+          <DongSonDrum size={200} opacity={0.22} />
         </g>
         <VerticalText cy={470}>
           {side === "left"
@@ -252,11 +252,11 @@ export default function PrintSash({
 
           {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm */}
           <g transform="translate(-45, 955)">
-            <DongSonDrum size={230} opacity={0.34} />
+            <DongSonDrum size={230} opacity={0.18} />
           </g>
 
           {/* Họa tiết bướm bay nghệ thuật */}
-          <ButterflyIcon x={32} y={922} size={24} color={GOLD} />
+          <ButterflyIcon x={32} y={924} size={24} color={GOLD} />
 
           {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 */}
           <MiniGraduationCap x={64} y={934} size={18} />
@@ -339,18 +339,23 @@ export default function PrintSash({
           {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
           <SparkleStar cx={70} cy={1196} r={5} color="#fff4d0" />
 
-          {/* Chữ Graduation thư pháp uốn lượn */}
-          <text
-            x="70"
-            y="1232"
-            textAnchor="middle"
-            fill="#fff4d0"
-            fontFamily={SCRIPT}
-            fontSize="26"
-            letterSpacing="1"
-          >
-            Graduation
-          </text>
+          {/* Chữ Graduation thư pháp uốn lượn (DỜI XUỐNG y=1262 BẰNG K18) */}
+          <g>
+            <SparkleStar cx={26} cy={1262} r={3} color={GOLD} />
+            <SparkleStar cx={114} cy={1262} r={3} color={GOLD} />
+            <text
+              x="70"
+              y="1262"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fill="#fff4d0"
+              fontFamily="'Great Vibes', 'Charm', cursive"
+              fontSize="27"
+              letterSpacing="1"
+            >
+              Graduation
+            </text>
+          </g>
 
           {/* Corner flourish ornament at tip */}
           <g transform="translate(25, 1430)">
@@ -359,58 +364,54 @@ export default function PrintSash({
         </g>
       ) : (
         <g id="front-right">
-          {/* Top: Graduation Cap icon */}
-          <g transform="translate(46, 814)">
-            <GraduationCapIcon size={48} color={GOLD} />
+          {/* Top: Phóng to Graduation Cap icon */}
+          <g transform="translate(38, 804)">
+            <GraduationCapIcon size={64} color={GOLD} />
           </g>
 
-          {/* Chữ IUH in hoa đậm nét nằm ngay dưới mũ cử nhân */}
+          {/* Tên trường đầy đủ trang trọng */}
           <text
             x="70"
-            y="868"
+            y="860"
             textAnchor="middle"
             dominantBaseline="central"
             fill="#fff4d0"
-            fontFamily={SERIF}
+            fontFamily="'Playfair Display', 'Cinzel', Georgia, serif"
             fontWeight="800"
-            fontSize="14"
-            letterSpacing="3.5"
+            fontSize="7.2"
+            letterSpacing="1.2"
           >
-            IUH
+            TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP
+          </text>
+          <text
+            x="70"
+            y="872"
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill="#dfb143"
+            fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
+            fontWeight="800"
+            fontSize="8"
+            letterSpacing="2.2"
+          >
+            TP. HỒ CHÍ MINH
           </text>
 
-          {/* Đường phân cách trên có họa tiết kim cương ở y=878 */}
-          <line x1="36" y1="878" x2="104" y2="878" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,875.5 72.5,878 70,880.5 67.5,878" fill="#fff4d0" />
-          <circle cx="63" cy="878" r="0.8" fill="#fff4d0" />
-          <circle cx="77" cy="878" r="0.8" fill="#fff4d0" />
+          {/* Đường phân cách trên có họa tiết kim cương ở y=886 */}
+          <line x1="32" y1="886" x2="108" y2="886" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,883.5 72.5,886 70,888.5 67.5,886" fill="#fff4d0" />
+          <circle cx="63" cy="886" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="886" r="0.8" fill="#fff4d0" />
 
           {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
           <g transform="translate(-45, 955)">
-            <DongSonDrum size={230} opacity={0.32} />
+            <DongSonDrum size={230} opacity={0.18} />
           </g>
 
-          {/* CỘT 1 (x=33): VIỆN TÀI CHÍNH - KẾ TOÁN (XUỐNG DÒNG, SIZE LỚN HƠN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
+          {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
           <g transform="rotate(90 33 1058)">
             <text
               x="33"
-              y="1058"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#ffffff"
-              fontFamily={SERIF}
-              fontWeight="800"
-              fontSize="11.5"
-              letterSpacing="1.2"
-            >
-              VIỆN TÀI CHÍNH - KẾ TOÁN
-            </text>
-          </g>
-
-          {/* CỘT 2 (x=51): KHOA TÀI CHÍNH - NGÂN HÀNG (XUỐNG DÒNG SONG SONG, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
-          <g transform="rotate(90 51 1058)">
-            <text
-              x="51"
               y="1058"
               textAnchor="middle"
               dominantBaseline="middle"
@@ -424,7 +425,24 @@ export default function PrintSash({
             </text>
           </g>
 
-          {/* CỘT 3 (x=88): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
+          {/* CỘT 2 (x=51): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
+          <g transform="rotate(90 51 1058)">
+            <text
+              x="51"
+              y="1058"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#ffffff"
+              fontFamily={SERIF}
+              fontWeight="800"
+              fontSize="11.5"
+              letterSpacing="1.2"
+            >
+              VIỆN TÀI CHÍNH - KẾ TOÁN
+            </text>
+          </g>
+
+          {/* CỘT 3 (x=88): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THANH THOÁT, KÉO DÀI) */}
           <g transform="rotate(90 88 1058)">
             {fontStyle === "script-charm" && (
               <text
@@ -433,10 +451,10 @@ export default function PrintSash({
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#fff4d0"
-                fontFamily="'Charm', 'Great Vibes', cursive"
-                fontWeight="700"
-                fontSize="34"
-                letterSpacing="0.8"
+                fontFamily="'Charm', 'Alex Brush', cursive"
+                fontWeight="600"
+                fontSize="36"
+                letterSpacing="2.2"
               >
                 Phạm Hữu Nghĩa
               </text>
@@ -450,7 +468,7 @@ export default function PrintSash({
                 fill="#fff4d0"
                 fontFamily="'Great Vibes', cursive"
                 fontSize="38"
-                letterSpacing="0.8"
+                letterSpacing="1.5"
               >
                 Phạm Hữu Nghĩa
               </text>
@@ -463,8 +481,8 @@ export default function PrintSash({
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily="'Alex Brush', cursive"
-                fontSize="36"
-                letterSpacing="0.5"
+                fontSize="37"
+                letterSpacing="1.5"
               >
                 Phạm Hữu Nghĩa
               </text>
@@ -478,8 +496,8 @@ export default function PrintSash({
                 fill="#fff4d0"
                 fontFamily="'Dancing Script', cursive"
                 fontWeight="700"
-                fontSize="32"
-                letterSpacing="0.8"
+                fontSize="33"
+                letterSpacing="1.6"
               >
                 Phạm Hữu Nghĩa
               </text>
@@ -495,7 +513,7 @@ export default function PrintSash({
                 fontStyle="italic"
                 fontWeight="800"
                 fontSize="26"
-                letterSpacing="1.2"
+                letterSpacing="1.8"
               >
                 Phạm Hữu Nghĩa
               </text>
@@ -510,26 +528,31 @@ export default function PrintSash({
                 fontFamily={SERIF}
                 fontWeight="800"
                 fontSize="21"
-                letterSpacing="2.5"
+                letterSpacing="3.0"
               >
                 PHẠM HỮU NGHĨA
               </text>
             )}
           </g>
 
-          {/* Cohort K18 (đặt tại y=1262, cách đuôi chữ Khoa tận 72mm cực kỳ thoáng đãng, không đè nhau) */}
-          <text
-            x="70"
-            y="1262"
-            textAnchor="middle"
-            fill="#fff4d0"
-            fontFamily={SERIF}
-            fontWeight="800"
-            fontSize="26"
-            letterSpacing="2"
-          >
-            K18
-          </text>
+          {/* Cohort K18 (chuẩn Roman Serif, sửa triệt để lỗi font số 1, căn ngang bằng Graduation ở y=1262) */}
+          <g>
+            <polygon points="36,1262 38.5,1259.5 41,1262 38.5,1264.5" fill={GOLD} opacity="0.8" />
+            <polygon points="99,1262 101.5,1259.5 104,1262 101.5,1264.5" fill={GOLD} opacity="0.8" />
+            <text
+              x="70"
+              y="1262"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fill="#fff4d0"
+              fontFamily="'Cinzel', 'Noto Serif Display', 'Times New Roman', Georgia, serif"
+              fontWeight="800"
+              fontSize="27"
+              letterSpacing="3"
+            >
+              K18
+            </text>
+          </g>
 
           {/* Corner flourish ornament at tip */}
           <g transform="translate(25, 1430)">
