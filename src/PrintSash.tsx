@@ -246,9 +246,14 @@ export default function PrintSash({
 
           {/* Đường vạch phân cách trên có họa tiết kim cương ở y=878 */}
           <line x1="36" y1="878" x2="104" y2="878" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,855.5 72.5,878 70,900.5 67.5,878" fill="#fff4d0" />
+          <polygon points="70,875.5 72.5,878 70,880.5 67.5,878" fill="#fff4d0" />
           <circle cx="63" cy="878" r="0.8" fill="#fff4d0" />
           <circle cx="77" cy="878" r="0.8" fill="#fff4d0" />
+
+          {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm */}
+          <g transform="translate(-45, 955)">
+            <DongSonDrum size={230} opacity={0.34} />
+          </g>
 
           {/* Họa tiết bướm bay nghệ thuật */}
           <ButterflyIcon x={32} y={922} size={24} color={GOLD} />
@@ -345,7 +350,7 @@ export default function PrintSash({
 
           {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
           <g transform="translate(-45, 955)">
-            <DongSonDrum size={230} opacity={0.16} />
+            <DongSonDrum size={230} opacity={0.32} />
           </g>
 
           {/* CỘT TRÁI (x=42): VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI (CHUẨN TỶ LỆ, CÁCH K18 GẦN 70MM) */}
@@ -359,7 +364,7 @@ export default function PrintSash({
               fill="#fff4d0"
               fontFamily={SERIF}
               fontWeight="800"
-              fontSize="9.5"
+              fontSize="10"
               letterSpacing="1.2"
             >
               VIỆN TÀI CHÍNH - KẾ TOÁN
@@ -374,16 +379,16 @@ export default function PrintSash({
           </g>
 
           {/* 2. Khoa Tài Chính - Ngân Hàng */}
-          <g transform="rotate(90 42 1135)">
+          <g transform="rotate(90 42 1138)">
             <text
               x="42"
-              y="1135"
+              y="1138"
               textAnchor="middle"
               dominantBaseline="middle"
               fill="#fff4d0"
               fontFamily={SERIF}
               fontWeight="700"
-              fontSize="9"
+              fontSize="9.5"
               letterSpacing="1.0"
             >
               KHOA TÀI CHÍNH - NGÂN HÀNG
@@ -392,6 +397,21 @@ export default function PrintSash({
 
           {/* CỘT PHẢI (x=86): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
           <g transform="rotate(90 86 1058)">
+            {fontStyle === "script-charm" && (
+              <text
+                x="86"
+                y="1058"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily="'Charm', 'Great Vibes', cursive"
+                fontWeight="700"
+                fontSize="33"
+                letterSpacing="0.8"
+              >
+                Phạm Hữu Nghĩa
+              </text>
+            )}
             {fontStyle === "script-greatvibes" && (
               <text
                 x="86"

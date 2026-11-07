@@ -3,7 +3,7 @@ import { IUH_LOGO_WHITE } from "./assets/logoData"
 import type { NameFontStyle } from "./App"
 
 const FONT_CSS_URL =
-  "https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Noto+Serif+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@600;700;800&display=swap"
+  "https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Charm:wght@400;700&family=Charmonman:wght@400;700&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&family=Noto+Serif+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@600;700;800&display=swap"
 
 function toDataUrl(url: string): Promise<string> {
   return fetch(url)
@@ -38,7 +38,7 @@ async function buildFontCss(): Promise<string> {
     .join("")
 }
 
-async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-greatvibes") {
+async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-charm") {
   let fontCss: string | undefined
   try {
     fontCss = await buildFontCss()

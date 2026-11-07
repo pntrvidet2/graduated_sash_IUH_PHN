@@ -65,7 +65,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
 
 /**
  * Tác phẩm vector vạt trái:
- * Logo biểu tượng IUH -> Vạch kim cương -> Bướm bay nghệ thuật -> Mũ cử nhân mini trên đỉnh số 2 -> Cụm số 2026 nghiêng thanh thoát & CLASS OF -> Ngôi sao lấp lánh -> Graduation thư pháp -> Hoa văn góc nhọn
+ * Logo biểu tượng IUH -> Vạch kim cương -> NỀN TRỐNG ĐỒNG ĐÔNG SƠN NGỌC LŨ THỰC TẾ -> Bướm bay nghệ thuật -> Mũ cử nhân mini trên đỉnh số 2 -> Cụm số 2026 nghiêng thanh thoát & CLASS OF -> Ngôi sao lấp lánh -> Graduation thư pháp -> Hoa văn góc nhọn
  */
 function LeftSashArtwork() {
   return (
@@ -85,6 +85,9 @@ function LeftSashArtwork() {
       <polygon points="70,85.5 72.5,88 70,90.5 67.5,88" fill="#fff4d0" />
       <circle cx="63" cy="88" r="0.8" fill="#fff4d0" />
       <circle cx="77" cy="88" r="0.8" fill="#fff4d0" />
+
+      {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm sắc nét, quý phái (chuẩn ảnh mẫu thực tế) */}
+      <DongSonDrum x={-45} y={165} size={230} opacity={0.34} />
 
       {/* Họa tiết bướm bay nghệ thuật góc trên bên trái */}
       <ButterflyIcon x={32} y={132} size={24} color={GOLD} />
@@ -165,19 +168,21 @@ function LeftSashArtwork() {
 }
 
 export type NameFontStyle =
+  | "script-charm"
   | "script-greatvibes"
-  | "script-alexbrush"
   | "script-dancing"
   | "serif-italic"
+  | "script-alexbrush"
   | "serif-caps"
 
 /**
  * Tác phẩm vector vạt phải:
  * Mũ cử nhân tốt nghiệp -> Chữ IUH ngay dưới mũ -> Vạch kim cương ->
+ * NỀN TRỐNG ĐỒNG ĐÔNG SƠN NGỌC LŨ THỰC TẾ ->
  * Viện trên & Khoa dưới (tách bạch rõ ràng, KHÔNG chạm K18) | Tên sinh viên thư pháp chuẩn mẫu thực tế ->
- * Khoảng thở 58px -> Khóa K18 -> Hoa văn góc nhọn
+ * Khoảng thở 64px -> Khóa K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: NameFontStyle }) {
+function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sang trọng */}
@@ -207,23 +212,21 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
       <circle cx="63" cy="88" r="0.8" fill="#fff4d0" />
       <circle cx="77" cy="88" r="0.8" fill="#fff4d0" />
 
-      {/* Nền Trống đồng Đông Sơn cổ truyền thực tế in chìm tinh tế */}
-      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" opacity={0.16} />
-      </svg>
+      {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm sắc nét, quý phái (chuẩn ảnh mẫu thực tế) */}
+      <DongSonDrum x={-45} y={165} size={230} opacity={0.32} />
 
-      {/* CỘT TRÁI (x=42): VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI (CHUẨN TỶ LỆ, CÁCH K18 GẦN 60PX) */}
-      {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên, tâm y=190, dải y: 135 -> 245) */}
-      <g transform="rotate(90 42 190)">
+      {/* CỘT TRÁI (x=42): VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI (CHUẨN TỶ LỆ, CÁCH K18 GẦN 64PX) */}
+      {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên, tâm y=188, dải y: 125 -> 251) */}
+      <g transform="rotate(90 42 188)">
         <text
           x="42"
-          y="190"
+          y="188"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
           fontFamily="'Playfair Display', 'Noto Serif Display', Georgia, serif"
           fontWeight="800"
-          fontSize="9.5"
+          fontSize="10"
           letterSpacing="1.2"
           filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
         >
@@ -238,17 +241,17 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
         <circle cx="42" cy="275" r="0.7" fill={GOLD} />
       </g>
 
-      {/* 2. Khoa Tài Chính - Ngân Hàng (Khoa nằm ở phần dưới, tâm y=345, dải y: 290 -> 400) */}
-      <g transform="rotate(90 42 345)">
+      {/* 2. Khoa Tài Chính - Ngân Hàng (Khoa nằm ở phần dưới, tâm y=348, dải y: 288 -> 408) */}
+      <g transform="rotate(90 42 348)">
         <text
           x="42"
-          y="345"
+          y="348"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
           fontFamily="'Playfair Display', 'Noto Serif Display', Georgia, serif"
           fontWeight="700"
-          fontSize="9"
+          fontSize="9.5"
           letterSpacing="1.0"
           filter="drop-shadow(0 1px 2px rgba(0,0,0,0.8))"
         >
@@ -258,6 +261,22 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
 
       {/* CỘT PHẢI (x=86): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
       <g transform="rotate(90 86 268)">
+        {fontStyle === "script-charm" && (
+          <text
+            x="86"
+            y="268"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Charm', 'Great Vibes', cursive"
+            fontWeight="700"
+            fontSize="33"
+            letterSpacing="0.8"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
         {fontStyle === "script-greatvibes" && (
           <text
             x="86"
@@ -268,21 +287,6 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             fontFamily="'Great Vibes', cursive"
             fontSize="38"
             letterSpacing="0.8"
-            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-          >
-            Phạm Hữu Nghĩa
-          </text>
-        )}
-        {fontStyle === "script-alexbrush" && (
-          <text
-            x="86"
-            y="268"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="#fff4d0"
-            fontFamily="'Alex Brush', cursive"
-            fontSize="36"
-            letterSpacing="0.5"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             Phạm Hữu Nghĩa
@@ -316,6 +320,21 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             fontWeight="800"
             fontSize="26"
             letterSpacing="1.2"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
+        {fontStyle === "script-alexbrush" && (
+          <text
+            x="86"
+            y="268"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Alex Brush', cursive"
+            fontSize="36"
+            letterSpacing="0.5"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             Phạm Hữu Nghĩa
@@ -396,9 +415,7 @@ function BackLeftSashArtwork() {
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
       {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét ở tâm */}
-      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" opacity={0.34} />
-      </svg>
+      <DongSonDrum x={-45} y={165} size={230} opacity={0.38} />
 
       {/* DÒNG CHỮ: INDUSTRIAL UNIVERSITY (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
       <g transform="rotate(90 70 285)">
@@ -438,9 +455,7 @@ function BackRightSashArtwork() {
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
       {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét ở tâm */}
-      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" opacity={0.34} />
-      </svg>
+      <DongSonDrum x={-45} y={165} size={230} opacity={0.38} />
 
       {/* DÒNG CHỮ: HO CHI MINH CITY · 2026 (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
       <g transform="rotate(90 70 285)">
@@ -511,7 +526,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
-  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-greatvibes")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-charm")
 
   return (
     <main>
@@ -530,7 +545,13 @@ export default function App() {
             <small>ĐÔNG SƠN HERITAGE EDITION · 2026</small>
           </div>
         </div>
-        <p>PHẠM HỮU NGHĨA</p>
+        <div className="header-right">
+          <span className="version-pill" title="Đã đánh tag git cho từng bản update">
+            <span className="tag-dot" />
+            TAG <strong>v1.2.0</strong> · Trống đồng thực tế
+          </span>
+          <p className="header-student-name">PHẠM HỮU NGHĨA</p>
+        </div>
       </header>
 
       <section className="hero">
@@ -545,8 +566,8 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH: Vạt trái số 2026 xếp dọc cùng bướm bay và mũ cử nhân mini,
-            vạt phải mũ tốt nghiệp, logo IUH, Viện trên - Khoa dưới và tên sinh viên in nghiêng thư pháp.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.2.0): Nền hoa văn Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm rõ nét trên cả mặt trước và mặt sau,
+            vạt trái số 2026 xếp dọc cùng bướm bay và mũ cử nhân mini, vạt phải mũ cử nhân hoàng gia, IUH, Viện Tài chính - Kế toán (trên), Khoa Tài chính - Ngân hàng (dưới) và tên sinh viên thư pháp chuẩn mẫu ảnh.
           </p>
         </div>
       </section>
@@ -580,31 +601,38 @@ export default function App() {
         <div className="font-options">
           <button
             type="button"
+            className={fontStyle === "script-charm" ? "active" : ""}
+            onClick={() => setFontStyle("script-charm")}
+          >
+            ★ Thư Pháp Hoàng Gia (Charm · Chuẩn ảnh mẫu thực tế)
+          </button>
+          <button
+            type="button"
             className={fontStyle === "script-greatvibes" ? "active" : ""}
             onClick={() => setFontStyle("script-greatvibes")}
           >
-            ★ Thư Pháp Hoàng Gia (Great Vibes · Chuẩn ảnh dải sash thực tế)
+            Thư Pháp Bay Bổng (Great Vibes)
           </button>
           <button
             type="button"
             className={fontStyle === "script-dancing" ? "active" : ""}
             onClick={() => setFontStyle("script-dancing")}
           >
-            In Nghiêng Hiện Đại Rõ Nét (Dancing Script)
+            Viết Tay Hiện Đại Rõ Nét (Dancing Script)
           </button>
           <button
             type="button"
             className={fontStyle === "serif-italic" ? "active" : ""}
             onClick={() => setFontStyle("serif-italic")}
           >
-            Serif Nghiêng Cao Cấp (Playfair Display)
+            Serif Nghiêng Cổ Điển (Playfair Display)
           </button>
           <button
             type="button"
             className={fontStyle === "script-alexbrush" ? "active" : ""}
             onClick={() => setFontStyle("script-alexbrush")}
           >
-            In Nghiêng Mềm (Alex Brush)
+            Thư Pháp Mềm Mại (Alex Brush)
           </button>
           <button
             type="button"

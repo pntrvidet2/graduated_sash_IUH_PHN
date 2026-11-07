@@ -7,11 +7,15 @@ import { DONG_SON_DRUM_AUTH } from "./assets/logoData"
  * Ngôi sao 14 cánh, hoạ tiết chim Lạc bay, đàn hươu, người múa lễ hội, thuyền rồng cổ và vành răng cưa tiếp tuyến.
  */
 export function DongSonDrum({
+  x,
+  y,
   size = 280,
   opacity = 0.45,
   className = "",
   style,
 }: {
+  x?: number | string
+  y?: number | string
   size?: number | string
   color?: string
   opacity?: number
@@ -20,6 +24,8 @@ export function DongSonDrum({
 }) {
   return (
     <svg
+      x={x}
+      y={y}
       width={size}
       height={size}
       viewBox="0 0 400 400"
