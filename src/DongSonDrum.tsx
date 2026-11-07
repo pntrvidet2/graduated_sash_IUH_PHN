@@ -467,3 +467,128 @@ export function CornerFlourish({
     </svg>
   )
 }
+
+/**
+ * Họa tiết bướm bay nghệ thuật (Artistic Fluttering Butterfly)
+ * Tái hiện chính xác theo ảnh thực tế dải sash IUH
+ */
+export function ButterflyIcon({
+  x = 38,
+  y = 175,
+  size = 28,
+  color = "#e5ba42",
+}: {
+  x?: number
+  y?: number
+  size?: number
+  color?: string
+}) {
+  return (
+    <g transform={`translate(${x}, ${y}) scale(${size / 40}) rotate(-18)`} stroke={color} fill="none">
+      {/* Cánh trên trái */}
+      <path
+        d="M 20 20 C 14 11, 4 8, 2 16 C 0 24, 14 26, 19 22"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
+      {/* Cánh dưới trái */}
+      <path
+        d="M 19 22 C 10 26, 6 34, 12 37 C 18 38, 20 29, 21 24"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+      {/* Gân cánh trái */}
+      <path d="M 12 18 Q 8 16 5 20" strokeWidth="0.6" opacity="0.75" />
+      <path d="M 14 28 Q 10 32 12 34" strokeWidth="0.6" opacity="0.75" />
+
+      {/* Cánh trên phải */}
+      <path
+        d="M 21 20 C 27 10, 37 8, 39 16 C 41 24, 27 26, 22 22"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
+      {/* Cánh dưới phải */}
+      <path
+        d="M 22 22 C 31 26, 35 34, 29 37 C 23 38, 21 29, 20 24"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+      {/* Gân cánh phải */}
+      <path d="M 29 18 Q 33 16 36 20" strokeWidth="0.6" opacity="0.75" />
+      <path d="M 27 28 Q 31 32 29 34" strokeWidth="0.6" opacity="0.75" />
+
+      {/* Thân bướm */}
+      <path d="M 20.5 17 Q 20.5 24 20.5 27" strokeWidth="1.5" strokeLinecap="round" />
+
+      {/* Râu bướm uốn lượn */}
+      <path d="M 20.5 17 Q 17 12 14 13" strokeWidth="0.8" strokeLinecap="round" />
+      <circle cx="13.5" cy="13.5" r="0.8" fill={color} stroke="none" />
+      <path d="M 20.5 17 Q 24 12 27 13" strokeWidth="0.8" strokeLinecap="round" />
+      <circle cx="27.5" cy="13.5" r="0.8" fill={color} stroke="none" />
+    </g>
+  )
+}
+
+/**
+ * Ngôi sao 4 cánh lấp lánh (Sparkle Star ✦)
+ */
+export function SparkleStar({
+  cx,
+  cy,
+  r = 6,
+  color = "#fff4d0",
+}: {
+  cx: number
+  cy: number
+  r?: number
+  color?: string
+}) {
+  const d = `
+    M ${cx} ${cy - r}
+    Q ${cx} ${cy} ${cx + r} ${cy}
+    Q ${cx} ${cy} ${cx} ${cy + r}
+    Q ${cx} ${cy} ${cx - r} ${cy}
+    Q ${cx} ${cy} ${cx} ${cy - r}
+    Z
+  `
+  return (
+    <g>
+      <path d={d} fill={color} />
+      <circle cx={cx} cy={cy} r={r * 0.2} fill="#ffffff" />
+    </g>
+  )
+}
+
+/**
+ * Mũ cử nhân mini đội trên đỉnh số 2
+ */
+export function MiniGraduationCap({
+  x = 60,
+  y = 175,
+  size = 22,
+}: {
+  x?: number
+  y?: number
+  size?: number
+}) {
+  return (
+    <g transform={`translate(${x}, ${y}) scale(${size / 22}) rotate(-16)`}>
+      {/* Tấm nón hình thoi vát 3D */}
+      <polygon
+        points="11,2 22,7.5 11,13 0,7.5"
+        fill="#f3cb62"
+        stroke="#e5ba42"
+        strokeWidth="0.4"
+      />
+      <polygon points="0,7.5 11,13 11,14.5 0,9" fill="#9a6e12" />
+      <polygon points="11,13 22,7.5 22,9 11,14.5" fill="#dfb143" />
+      {/* Vành mũ dưới */}
+      <path d="M 6.5 11 C 6.5 14.5, 15.5 14.5, 15.5 11" fill="#9a6e12" />
+      {/* Khuy tròn */}
+      <circle cx="11" cy="7.5" r="1.1" fill="#fff4d0" />
+      {/* Dây tua rua */}
+      <path d="M 11 7.5 Q 16.5 9.5, 19 15" stroke="#fff4d0" strokeWidth="0.9" fill="none" strokeLinecap="round" />
+      <polygon points="17.5,15 20,15 20.5,19 17,19" fill="#dfb143" />
+    </g>
+  )
+}

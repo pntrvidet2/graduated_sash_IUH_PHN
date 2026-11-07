@@ -1,7 +1,14 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
 import { IUH_LOGO_WHITE, IUH_LOGO_HEADER, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
-import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
+import {
+  DongSonDrum,
+  GraduationCapIcon,
+  CornerFlourish,
+  ButterflyIcon,
+  SparkleStar,
+  MiniGraduationCap,
+} from "./DongSonDrum"
 
 type ViewMode = "all" | "front" | "back" | "print"
 
@@ -67,7 +74,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
 
 /**
  * Tác phẩm vector vạt trái:
- * Logo biểu tượng IUH phóng to & dời xuống cân đối -> Tên trường 2 dòng -> Trống đồng Đông Sơn to rõ -> Monogram I - U - H dập nổi -> Class of 2026 -> Hoa văn góc nhọn
+ * Logo biểu tượng IUH -> Vạch kim cương -> Bướm bay nghệ thuật -> Mũ cử nhân mini trên đỉnh số 2 -> Cụm số 2026 xếp dọc & CLASS OF -> Ngôi sao lấp lánh -> Graduation thư pháp -> Hoa văn góc nhọn
  */
 function LeftSashArtwork() {
   return (
@@ -76,75 +83,89 @@ function LeftSashArtwork() {
       <image
         href={IUH_EMBLEM_ORIGINAL}
         x="47"
-        y="38"
+        y="36"
         width="46"
         height="54"
         preserveAspectRatio="xMidYMid meet"
       />
 
-      {/* Tên trường đặt ngay dưới biểu tượng logo */}
-      <g fontFamily="'Noto Serif Display', Georgia, serif" fontWeight="600" fontSize="5.2" textAnchor="middle">
-        <text x="70" y="104" fill="#fff4d0" letterSpacing="0.9">
-          INDUSTRIAL UNIVERSITY OF
-        </text>
-        <text x="70" y="113" fill={GOLD} letterSpacing="1.2">
-          HO CHI MINH CITY
-        </text>
-      </g>
+      {/* Đường vạch phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt phải ở y=106) */}
+      <line x1="34" y1="106" x2="106" y2="106" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,103.5 72.5,106 70,108.5 67.5,106" fill="#fff4d0" />
+      <circle cx="63" cy="106" r="0.8" fill="#fff4d0" />
+      <circle cx="77" cy="106" r="0.8" fill="#fff4d0" />
 
-      {/* Đường vạch phân cách trên */}
-      <line x1="42" y1="124" x2="98" y2="124" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+      {/* Họa tiết bướm bay nghệ thuật (Butterfly Line-art) */}
+      <ButterflyIcon x={28} y={150} size={28} color={GOLD} />
 
-      {/* Trống đồng Đông Sơn to, tròn, sắc nét ở tâm (70, 280) */}
-      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" color="#f5d485" opacity={0.48} />
-      </svg>
+      {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 */}
+      <MiniGraduationCap x={58} y={158} size={22} />
 
-      {/* 3 chữ I - U - H lớn dập nổi vàng gold */}
-      <g fontFamily="'Noto Serif Display', Georgia, serif" fontWeight="700" fontSize="56" fill="#fff4d0">
-        <text x="70" y="215" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
-          I
-        </text>
-        <text x="70" y="288" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
-          U
-        </text>
-        <text x="70" y="360" textAnchor="middle" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))">
-          H
-        </text>
-      </g>
+      {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
+      <SparkleStar cx={98} cy={145} r={5.5} color="#fff4d0" />
+      <SparkleStar cx={38} cy={232} r={4.5} color={GOLD} />
+      <SparkleStar cx={98} cy={335} r={5} color="#fff4d0" />
+      <SparkleStar cx={48} cy={395} r={4} color={GOLD} />
 
-      {/* Đường vạch phân cách dưới */}
-      <line x1="42" y1="435" x2="98" y2="435" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
-
-      {/* Class of 2026 (2026 xuống dòng bên dưới Class of) */}
-      <g id="class-of-2026">
+      {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
+      <g transform="rotate(90 40 290)">
         <text
-          x="70"
-          y="462"
+          x="40"
+          y="290"
           textAnchor="middle"
-          fill={GOLD}
-          fontFamily="Cherish, cursive"
-          fontSize="26"
-          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
-        >
-          Class of
-        </text>
-        <text
-          x="70"
-          y="492"
-          textAnchor="middle"
+          dominantBaseline="middle"
           fill="#fff4d0"
-          fontFamily="'Noto Serif Display', serif"
+          fontFamily="'Noto Serif Display', Georgia, serif"
           fontWeight="700"
-          fontSize="30"
-          letterSpacing="1.8"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.7))"
+          fontSize="9.5"
+          letterSpacing="4.5"
+          filter="drop-shadow(0 1px 2px rgba(0,0,0,0.7))"
         >
-          2026
+          CLASS OF
         </text>
       </g>
 
-      {/* Hoa văn góc nhọn ở đáy vạt (tái hiện chính xác theo ảnh thực tế) */}
+      {/* Cụm 4 số 2 - 0 - 2 - 6 xếp dọc nghệ thuật */}
+      <g
+        fontFamily="'Noto Serif Display', 'Playfair Display', Georgia, serif"
+        fontStyle="italic"
+        fontWeight="800"
+        fontSize="52"
+        fill="#fff4d0"
+        textAnchor="middle"
+      >
+        <text x="76" y="204" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+          2
+        </text>
+        <text x="76" y="262" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+          0
+        </text>
+        <text x="76" y="320" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+          2
+        </text>
+        <text x="76" y="378" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
+          6
+        </text>
+      </g>
+
+      {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
+      <SparkleStar cx={70} cy={430} r={6} color="#fff4d0" />
+
+      {/* Chữ Graduation thư pháp uốn lượn tuyệt đẹp */}
+      <text
+        x="70"
+        y="470"
+        textAnchor="middle"
+        fill="#fff4d0"
+        fontFamily="'Alex Brush', 'Great Vibes', 'Allura', cursive"
+        fontSize="28"
+        letterSpacing="1"
+        filter="drop-shadow(0 1px 3px rgba(0,0,0,0.75))"
+      >
+        Graduation
+      </text>
+
+      {/* Hoa văn góc nhọn ở đáy vạt */}
       <g transform="translate(25, 510)">
         <CornerFlourish color={GOLD} />
       </g>
@@ -152,62 +173,147 @@ function LeftSashArtwork() {
   )
 }
 
-export type NameFontStyle = "serif-caps" | "serif-title" | "sans-bold" | "cherish"
+export type NameFontStyle =
+  | "script-slanted"
+  | "script-vibes"
+  | "script-allura"
+  | "serif-caps"
+  | "serif-title"
+  | "sans-bold"
 
 /**
  * Tác phẩm vector vạt phải:
- * Mũ cử nhân & Graduation dời xuống cân đối -> Trống đồng mờ nhẹ -> Tên Phạm Hữu Nghĩa (tùy biến font rõ ràng, sang trọng) | Viện & Khoa -> K18 -> Hoa văn góc nhọn
+ * Mũ cử nhân tốt nghiệp -> Chữ IUH ngay dưới mũ -> Vạch kim cương -> Viện (trên) & Khoa (dưới) | Tên sinh viên (in nghiêng mẫu thực tế) -> Khóa K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork({ fontStyle = "serif-caps" }: { fontStyle?: NameFontStyle }) {
+function RightSashArtwork({ fontStyle = "script-slanted" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sang trọng */}
-      <g transform="translate(43, 36)">
-        <GraduationCapIcon size={54} />
+      <g transform="translate(45, 30)">
+        <GraduationCapIcon size={50} />
       </g>
 
-      {/* Dòng chữ — Graduation — phong cách Học thuật Trang trọng (Academic Serif) */}
-      <g id="graduation-label">
-        <line x1="24" y1="104" x2="38" y2="104" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-        <circle cx="41" cy="104" r="1.1" fill="#fff4d0" />
+      {/* Chữ IUH in hoa đậm nét nằm ngay dưới mũ cử nhân */}
+      <text
+        x="70"
+        y="86"
+        textAnchor="middle"
+        dominantBaseline="central"
+        fill="#fff4d0"
+        fontFamily="'Noto Serif Display', Georgia, serif"
+        fontWeight="800"
+        fontSize="16"
+        letterSpacing="4"
+        filter="drop-shadow(0 1px 3px rgba(0,0,0,0.8))"
+      >
+        IUH
+      </text>
+
+      {/* Đường phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt trái ở y=106) */}
+      <line x1="34" y1="106" x2="106" y2="106" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,103.5 72.5,106 70,108.5 67.5,106" fill="#fff4d0" />
+      <circle cx="63" cy="106" r="0.8" fill="#fff4d0" />
+      <circle cx="77" cy="106" r="0.8" fill="#fff4d0" />
+
+      {/* CỘT TRÁI: VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI, SIZE CHỮ TO RÕ RÀNG */}
+      {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên) */}
+      <g transform="rotate(90 44 205)">
         <text
-          x="70"
-          y="107.5"
+          x="44"
+          y="205"
           textAnchor="middle"
-          dominantBaseline="central"
+          dominantBaseline="middle"
           fill="#fff4d0"
           fontFamily="'Noto Serif Display', Georgia, serif"
-          fontWeight="600"
+          fontWeight="800"
           fontSize="12.5"
-          letterSpacing="2.5"
-          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.7))"
+          letterSpacing="1.8"
+          filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
         >
-          Graduation
+          VIỆN TÀI CHÍNH - KẾ TOÁN
         </text>
-        <circle cx="99" cy="104" r="1.1" fill="#fff4d0" />
-        <line x1="102" y1="104" x2="116" y2="104" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
       </g>
 
-      {/* Đường phân cách trên (ngang bằng chính xác với vạt trái ở y=124) */}
-      <line x1="42" y1="124" x2="98" y2="124" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
+      {/* Hạt kim cương phân cách giữa Viện và Khoa */}
+      <g>
+        <circle cx="44" cy="274" r="0.8" fill={GOLD} />
+        <polygon points="44,279.5 46.5,282 44,284.5 41.5,282" fill="#fff4d0" />
+        <circle cx="44" cy="290" r="0.8" fill={GOLD} />
+      </g>
 
-      {/* Nền Trống đồng Đông Sơn in chìm đối xứng */}
-      <svg x="-45" y="165" width="230" height="230" viewBox="0 0 400 400">
-        <DongSonDrum size="100%" color="#f5d485" opacity={0.16} />
-      </svg>
+      {/* 2. Khoa Tài Chính - Ngân Hàng (Khoa nằm ở phần dưới) */}
+      <g transform="rotate(90 44 360)">
+        <text
+          x="44"
+          y="360"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fill="#fff4d0"
+          fontFamily="'Noto Serif Display', Georgia, serif"
+          fontWeight="700"
+          fontSize="12"
+          letterSpacing="1.6"
+          filter="drop-shadow(0 1px 2px rgba(0,0,0,0.8))"
+        >
+          KHOA TÀI CHÍNH - NGÂN HÀNG
+        </text>
+      </g>
 
-      {/* DÒNG TÊN: PHẠM HỮU NGHĨA (dễ nhìn, rõ nét, sang trọng, mặc định Serif Hoàng Gia in hoa chuẩn thực tế IUH) */}
-      <g transform="rotate(90 48 278)">
+      {/* CỘT PHẢI: DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
+      <g transform="rotate(90 86 282)">
+        {fontStyle === "script-slanted" && (
+          <text
+            x="86"
+            y="282"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Alex Brush', 'Great Vibes', 'Allura', cursive"
+            fontSize="42"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
+        {fontStyle === "script-vibes" && (
+          <text
+            x="86"
+            y="282"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Great Vibes', cursive"
+            fontSize="38"
+            letterSpacing="1"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
+        {fontStyle === "script-allura" && (
+          <text
+            x="86"
+            y="282"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="#fff4d0"
+            fontFamily="'Allura', cursive"
+            fontSize="44"
+            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+          >
+            Phạm Hữu Nghĩa
+          </text>
+        )}
         {fontStyle === "serif-caps" && (
           <text
-            x="48"
-            y="278"
+            x="86"
+            y="282"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Noto Serif Display', Georgia, serif"
             fontWeight="800"
-            fontSize="23"
+            fontSize="22"
             letterSpacing="2.8"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
@@ -216,14 +322,14 @@ function RightSashArtwork({ fontStyle = "serif-caps" }: { fontStyle?: NameFontSt
         )}
         {fontStyle === "serif-title" && (
           <text
-            x="48"
-            y="278"
+            x="86"
+            y="282"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Noto Serif Display', Georgia, serif"
             fontWeight="700"
-            fontSize="26"
+            fontSize="25"
             letterSpacing="1.8"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))"
           >
@@ -232,93 +338,38 @@ function RightSashArtwork({ fontStyle = "serif-caps" }: { fontStyle?: NameFontSt
         )}
         {fontStyle === "sans-bold" && (
           <text
-            x="48"
-            y="278"
+            x="86"
+            y="282"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="Inter, 'Segoe UI', Arial, sans-serif"
             fontWeight="800"
-            fontSize="21"
+            fontSize="20"
             letterSpacing="3"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             PHẠM HỮU NGHĨA
           </text>
         )}
-        {fontStyle === "cherish" && (
-          <text
-            x="48"
-            y="278"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fill="#fff4d0"
-            fontFamily="Cherish, cursive"
-            fontSize="50"
-            filter="drop-shadow(0 2px 4px rgba(0,0,0,0.75))"
-          >
-            Phạm Hữu Nghĩa
-          </text>
-        )}
       </g>
 
-      {/* ĐƯỜNG KẺ CHỈ DỌC PHÂN CÁCH (ở x=68, từ y=155 đến y=400) */}
-      <line x1="68" y1="155" x2="68" y2="400" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
-
-      {/* TÊN VIỆN: VIỆN TÀI CHÍNH - KẾ TOÁN (phóng to đậm nét, dễ đọc, ở x=84) */}
-      <g transform="rotate(90 84 278)">
-        <text
-          x="84"
-          y="278"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fill="#fff4d0"
-          fontFamily="'Noto Serif Display', serif"
-          fontWeight="700"
-          fontSize="11.5"
-          letterSpacing="1.8"
-          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.7))"
-        >
-          VIỆN TÀI CHÍNH - KẾ TOÁN
-        </text>
-      </g>
-
-      {/* TÊN KHOA: KHOA TÀI CHÍNH - NGÂN HÀNG (song song, sắc nét ở x=100) */}
-      <g transform="rotate(90 100 278)">
-        <text
-          x="100"
-          y="278"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fill={GOLD}
-          fontFamily="'Noto Serif Display', serif"
-          fontWeight="700"
-          fontSize="10.8"
-          letterSpacing="1.6"
-          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
-        >
-          KHOA TÀI CHÍNH - NGÂN HÀNG
-        </text>
-      </g>
-
-      {/* Đường phân cách dưới (ngang bằng chính xác với vạt trái ở y=435) */}
-      <line x1="42" y1="435" x2="98" y2="435" stroke={GOLD} strokeWidth="0.6" opacity="0.6" />
-
-      {/* K18 (ngang hàng chuẩn xác với Class of 2026 ở y=475) */}
+      {/* K18 (ngang hàng chuẩn xác với Graduation ở vạt trái) */}
       <text
         x="70"
-        y="475"
+        y="476"
         textAnchor="middle"
         fill="#fff4d0"
-        fontFamily="'Noto Serif Display', serif"
-        fontWeight="700"
+        fontFamily="'Noto Serif Display', Georgia, serif"
+        fontWeight="800"
         fontSize="28"
-        letterSpacing="1"
+        letterSpacing="1.5"
+        filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))"
       >
         K18
       </text>
 
-      {/* Hoa văn góc nhọn ở đáy vạt (tái hiện chính xác theo ảnh thực tế) */}
+      {/* Hoa văn góc nhọn ở đáy vạt */}
       <g transform="translate(25, 510)">
         <CornerFlourish color={GOLD} />
       </g>
@@ -326,7 +377,7 @@ function RightSashArtwork({ fontStyle = "serif-caps" }: { fontStyle?: NameFontSt
   )
 }
 
-function FrontSash({ fontStyle = "serif-caps" }: { fontStyle?: NameFontStyle }) {
+function FrontSash({ fontStyle = "script-slanted" }: { fontStyle?: NameFontStyle }) {
   return (
     <div className="sash-set front-sash" aria-label="Thiết kế mặt trước sash">
       {/* Vạt Trái */}
@@ -475,7 +526,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
-  const [fontStyle, setFontStyle] = useState<NameFontStyle>("serif-caps")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-slanted")
 
   return (
     <main>
@@ -509,8 +560,8 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH kết hợp hoa văn Trống đồng Đông Sơn in chìm sắc nét,
-            chữ IUH nguyên khối, biểu tượng mũ cử nhân và nhận diện khóa K18.
+            Mẫu sash nghi lễ đặc trưng IUH: Vạt trái số 2026 xếp dọc cùng bướm bay và mũ cử nhân mini,
+            vạt phải mũ tốt nghiệp, logo IUH, Viện trên - Khoa dưới và tên sinh viên in nghiêng thư pháp.
           </p>
         </div>
       </section>
@@ -540,14 +591,35 @@ export default function App() {
 
       {/* Thanh công cụ tùy chỉnh font chữ tên sinh viên */}
       <div className="font-toolbar" aria-label="Tùy chọn kiểu chữ tên sinh viên">
-        <span className="font-toolbar-title">CHỌN FONT CHỮ TÊN (PHẠM HỮU NGHĨA):</span>
+        <span className="font-toolbar-title">FONT CHỮ TÊN (PHẠM HỮU NGHĨA):</span>
         <div className="font-options">
+          <button
+            type="button"
+            className={fontStyle === "script-slanted" ? "active" : ""}
+            onClick={() => setFontStyle("script-slanted")}
+          >
+            ★ In Nghiêng Mẫu Thực Tế (Alex Brush · Chuẩn ảnh mẫu, nét đều rõ ràng)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "script-vibes" ? "active" : ""}
+            onClick={() => setFontStyle("script-vibes")}
+          >
+            In Nghiêng Lượn (Great Vibes)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "script-allura" ? "active" : ""}
+            onClick={() => setFontStyle("script-allura")}
+          >
+            In Nghiêng Mềm Mại (Allura)
+          </button>
           <button
             type="button"
             className={fontStyle === "serif-caps" ? "active" : ""}
             onClick={() => setFontStyle("serif-caps")}
           >
-            ★ Serif Hoàng Gia (In hoa · Chuẩn mẫu IUH dễ nhìn nhất)
+            Serif Hoàng Gia (In hoa)
           </button>
           <button
             type="button"
@@ -562,13 +634,6 @@ export default function App() {
             onClick={() => setFontStyle("sans-bold")}
           >
             Hiện Đại (Sans Bold)
-          </button>
-          <button
-            type="button"
-            className={fontStyle === "cherish" ? "active" : ""}
-            onClick={() => setFontStyle("cherish")}
-          >
-            Thư Pháp Cũ (Cherish Cursive)
           </button>
         </div>
       </div>

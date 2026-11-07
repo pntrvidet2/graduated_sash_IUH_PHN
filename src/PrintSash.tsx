@@ -1,6 +1,13 @@
 // Print-ready sash artwork drawn in real millimetres (1 SVG unit = 1 mm).
 import { IUH_LOGO_WHITE, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
-import { DongSonDrum, GraduationCapIcon, CornerFlourish } from "./DongSonDrum"
+import {
+  DongSonDrum,
+  GraduationCapIcon,
+  CornerFlourish,
+  ButterflyIcon,
+  SparkleStar,
+  MiniGraduationCap,
+} from "./DongSonDrum"
 import type { NameFontStyle } from "./App"
 
 export type Side = "left" | "right"
@@ -114,7 +121,7 @@ export default function PrintSash({
   crop = false,
   logoSrc = IUH_LOGO_WHITE,
   fontCss,
-  fontStyle = "serif-caps",
+  fontStyle = "script-slanted",
 }: {
   side: Side
   uid?: string
@@ -222,54 +229,82 @@ export default function PrintSash({
       {/* Front, hanging end */}
       {side === "left" ? (
         <g id="front-left">
-          {/* Logo biểu tượng IUH phóng to & dời xuống */}
+          {/* Top: Biểu tượng IUH riêng biệt */}
           <image
             href={IUH_EMBLEM_ORIGINAL}
             xlinkHref={IUH_EMBLEM_ORIGINAL}
             x="47"
-            y="850"
+            y="840"
             width="46"
             height="54"
             preserveAspectRatio="xMidYMid meet"
           />
 
-          {/* Tên trường đặt ngay dưới biểu tượng logo */}
-          <g fontFamily={SERIF} fontWeight="600" fontSize="5.2" textAnchor="middle">
-            <text x="70" y="916" fill="#fff4d0" letterSpacing="0.9">
-              INDUSTRIAL UNIVERSITY OF
-            </text>
-            <text x="70" y="925" fill={GOLD} letterSpacing="1.2">
-              HO CHI MINH CITY
-            </text>
-          </g>
+          {/* Đường vạch phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt phải ở y=910) */}
+          <line x1="34" y1="910" x2="106" y2="910" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,907.5 72.5,910 70,912.5 67.5,910" fill="#fff4d0" />
+          <circle cx="63" cy="910" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="910" r="0.8" fill="#fff4d0" />
 
-          {/* Separator rule */}
-          <line x1="42" y1="936" x2="98" y2="936" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          {/* Họa tiết bướm bay nghệ thuật (Butterfly Line-art) */}
+          <ButterflyIcon x={28} y={950} size={28} color={GOLD} />
 
-          {/* Dong Son Drum Watermark Background (centered at y=1075) */}
-          <g transform="translate(-30, 875)">
-            <DongSonDrum size={200} color={GOLD} opacity={0.45} />
-          </g>
+          {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 */}
+          <MiniGraduationCap x={58} y={958} size={22} />
 
-          {/* Monogram I - U - H Vertical (Serif Bold) */}
-          <g id="monogram-iuh" fontFamily={SERIF} fontWeight="700" fontSize="58" fill="#fff4d0">
-            <text x="70" y="995" textAnchor="middle">I</text>
-            <text x="70" y="1080" textAnchor="middle">U</text>
-            <text x="70" y="1165" textAnchor="middle">H</text>
-          </g>
+          {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
+          <SparkleStar cx={98} cy={945} r={5.5} color="#fff4d0" />
+          <SparkleStar cx={38} cy={1032} r={4.5} color={GOLD} />
+          <SparkleStar cx={98} cy={1135} r={5} color="#fff4d0" />
+          <SparkleStar cx={48} cy={1195} r={4} color={GOLD} />
 
-          {/* Separator rule */}
-          <line x1="48" y1="1265" x2="92" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
-
-          {/* Class of 2026 (2026 xuống dòng) */}
-          <g id="class-of-2026">
-            <text x="70" y="1295" textAnchor="middle" fill={GOLD} fontFamily={SCRIPT} fontSize="20">
-              Class of
-            </text>
-            <text x="70" y="1325" textAnchor="middle" fill="#fff4d0" fontFamily={SERIF} fontWeight="700" fontSize="28" letterSpacing="1.5">
-              2026
+          {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
+          <g transform="rotate(90 40 1090)">
+            <text
+              x="40"
+              y="1090"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#fff4d0"
+              fontFamily={SERIF}
+              fontWeight="700"
+              fontSize="9.5"
+              letterSpacing="4.5"
+            >
+              CLASS OF
             </text>
           </g>
+
+          {/* Cụm 4 số 2 - 0 - 2 - 6 xếp dọc nghệ thuật */}
+          <g
+            fontFamily={SERIF}
+            fontStyle="italic"
+            fontWeight="800"
+            fontSize="52"
+            fill="#fff4d0"
+            textAnchor="middle"
+          >
+            <text x="76" y="1004">2</text>
+            <text x="76" y="1062">0</text>
+            <text x="76" y="1120">2</text>
+            <text x="76" y="1178">6</text>
+          </g>
+
+          {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
+          <SparkleStar cx={70} cy={1230} r={6} color="#fff4d0" />
+
+          {/* Chữ Graduation thư pháp uốn lượn */}
+          <text
+            x="70"
+            y="1270"
+            textAnchor="middle"
+            fill="#fff4d0"
+            fontFamily="'Alex Brush', 'Great Vibes', 'Allura', cursive"
+            fontSize="28"
+            letterSpacing="1"
+          >
+            Graduation
+          </text>
 
           {/* Corner flourish ornament at tip */}
           <g transform="translate(25, 1430)">
@@ -279,45 +314,125 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Graduation Cap icon */}
-          <g transform="translate(43, 846)">
-            <GraduationCapIcon size={54} color={GOLD} />
+          <g transform="translate(45, 834)">
+            <GraduationCapIcon size={50} color={GOLD} />
           </g>
 
-          {/* "— Graduation —" */}
-          <g id="graduation-script-label" transform="translate(0, 918)">
-            <line x1="24" y1="0" x2="38" y2="0" stroke={GOLD} strokeWidth="0.5" opacity="0.8" />
-            <circle cx="41" cy="0" r="1" fill="#fff4d0" />
+          {/* Chữ IUH in hoa đậm nét nằm ngay dưới mũ cử nhân */}
+          <text
+            x="70"
+            y="890"
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill="#fff4d0"
+            fontFamily={SERIF}
+            fontWeight="800"
+            fontSize="16"
+            letterSpacing="4"
+          >
+            IUH
+          </text>
+
+          {/* Đường phân cách trên có họa tiết kim cương (đồng bộ tuyệt đối với vạt trái ở y=910) */}
+          <line x1="34" y1="910" x2="106" y2="910" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,907.5 72.5,910 70,912.5 67.5,910" fill="#fff4d0" />
+          <circle cx="63" cy="910" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="910" r="0.8" fill="#fff4d0" />
+
+          {/* CỘT TRÁI: VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI, SIZE CHỮ TO RÕ RÀNG */}
+          {/* 1. Viện Tài Chính - Kế Toán */}
+          <g transform="rotate(90 44 1010)">
             <text
-              x="70"
-              y="3"
+              x="44"
+              y="1010"
               textAnchor="middle"
+              dominantBaseline="middle"
               fill="#fff4d0"
               fontFamily={SERIF}
-              fontWeight="600"
+              fontWeight="800"
               fontSize="12.5"
-              letterSpacing="2.5"
+              letterSpacing="1.8"
             >
-              Graduation
+              VIỆN TÀI CHÍNH - KẾ TOÁN
             </text>
-            <circle cx="99" cy="0" r="1" fill="#fff4d0" />
-            <line x1="102" y1="0" x2="116" y2="0" stroke={GOLD} strokeWidth="0.5" opacity="0.8" />
           </g>
 
-          {/* Separator rule */}
-          <line x1="42" y1="936" x2="98" y2="936" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
+          {/* Hạt kim cương phân cách giữa Viện và Khoa */}
+          <g>
+            <circle cx="44" cy="1078" r="0.8" fill={GOLD} />
+            <polygon points="44,1083.5 46.5,1086 44,1088.5 41.5,1086" fill="#fff4d0" />
+            <circle cx="44" cy="1094" r="0.8" fill={GOLD} />
+          </g>
 
-          {/* Vertical name & Faculty / Institute with vertical divider */}
-          <g transform="rotate(90 48 1085)">
+          {/* 2. Khoa Tài Chính - Ngân Hàng */}
+          <g transform="rotate(90 44 1165)">
+            <text
+              x="44"
+              y="1165"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#fff4d0"
+              fontFamily={SERIF}
+              fontWeight="700"
+              fontSize="12"
+              letterSpacing="1.6"
+            >
+              KHOA TÀI CHÍNH - NGÂN HÀNG
+            </text>
+          </g>
+
+          {/* CỘT PHẢI: DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
+          <g transform="rotate(90 86 1086)">
+            {fontStyle === "script-slanted" && (
+              <text
+                x="86"
+                y="1086"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily="'Alex Brush', 'Great Vibes', 'Allura', cursive"
+                fontSize="42"
+              >
+                Phạm Hữu Nghĩa
+              </text>
+            )}
+            {fontStyle === "script-vibes" && (
+              <text
+                x="86"
+                y="1086"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily="'Great Vibes', cursive"
+                fontSize="38"
+                letterSpacing="1"
+              >
+                Phạm Hữu Nghĩa
+              </text>
+            )}
+            {fontStyle === "script-allura" && (
+              <text
+                x="86"
+                y="1086"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#fff4d0"
+                fontFamily="'Allura', cursive"
+                fontSize="44"
+              >
+                Phạm Hữu Nghĩa
+              </text>
+            )}
             {fontStyle === "serif-caps" && (
               <text
-                x="48"
-                y="1085"
+                x="86"
+                y="1086"
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily={SERIF}
                 fontWeight="800"
-                fontSize="23"
+                fontSize="22"
                 letterSpacing="2.8"
               >
                 PHẠM HỮU NGHĨA
@@ -325,14 +440,14 @@ export default function PrintSash({
             )}
             {fontStyle === "serif-title" && (
               <text
-                x="48"
-                y="1085"
+                x="86"
+                y="1086"
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily={SERIF}
                 fontWeight="700"
-                fontSize="26"
+                fontSize="25"
                 letterSpacing="1.8"
               >
                 Phạm Hữu Nghĩa
@@ -340,83 +455,30 @@ export default function PrintSash({
             )}
             {fontStyle === "sans-bold" && (
               <text
-                x="48"
-                y="1085"
+                x="86"
+                y="1086"
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily={SANS}
                 fontWeight="800"
-                fontSize="21"
+                fontSize="20"
                 letterSpacing="3"
               >
                 PHẠM HỮU NGHĨA
               </text>
             )}
-            {fontStyle === "cherish" && (
-              <text
-                x="48"
-                y="1085"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="#fff4d0"
-                fontFamily={SCRIPT}
-                fontSize="50"
-              >
-                Phạm Hữu Nghĩa
-              </text>
-            )}
           </g>
-
-          {/* Vertical divider line */}
-          <line x1="68" y1="960" x2="68" y2="1210" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
-
-          {/* Viện Tài Chính - Kế Toán (bold, large) */}
-          <g transform="rotate(90 84 1085)">
-            <text
-              x="84"
-              y="1085"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#fff4d0"
-              fontFamily={SERIF}
-              fontWeight="700"
-              fontSize="11.5"
-              letterSpacing="1.8"
-            >
-              VIỆN TÀI CHÍNH - KẾ TOÁN
-            </text>
-          </g>
-
-          {/* Khoa Tài Chính - Ngân Hàng */}
-          <g transform="rotate(90 100 1085)">
-            <text
-              x="100"
-              y="1085"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill={GOLD}
-              fontFamily={SERIF}
-              fontWeight="700"
-              fontSize="10.8"
-              letterSpacing="1.6"
-            >
-              KHOA TÀI CHÍNH - NGÂN HÀNG
-            </text>
-          </g>
-
-          {/* Separator rule */}
-          <line x1="48" y1="1265" x2="92" y2="1265" stroke={GOLD} strokeWidth="0.4" opacity="0.6" />
 
           {/* Cohort K18 */}
           <text
             x="70"
-            y="1312"
+            y="1276"
             textAnchor="middle"
             fill="#fff4d0"
             fontFamily={SERIF}
-            fontWeight="700"
-            fontSize="26"
+            fontWeight="800"
+            fontSize="28"
             letterSpacing="1.5"
           >
             K18

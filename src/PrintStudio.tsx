@@ -3,7 +3,7 @@ import { IUH_LOGO_WHITE } from "./assets/logoData"
 import type { NameFontStyle } from "./App"
 
 const FONT_CSS_URL =
-  "https://fonts.googleapis.com/css2?family=Cherish&family=Inter:wght@500;700&family=Noto+Serif+Display:wght@500;600&display=swap"
+  "https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Great+Vibes&family=Cherish&family=Inter:wght@500;700;800&family=Noto+Serif+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap"
 
 function toDataUrl(url: string): Promise<string> {
   return fetch(url)
@@ -38,7 +38,7 @@ async function buildFontCss(): Promise<string> {
     .join("")
 }
 
-async function downloadSvg(side: Side) {
+async function downloadSvg(side: Side, fontStyle: NameFontStyle = "script-slanted") {
   let fontCss: string | undefined
   try {
     fontCss = await buildFontCss()
@@ -59,6 +59,7 @@ async function downloadSvg(side: Side) {
       mm
       logoSrc={logoSrc}
       fontCss={fontCss}
+      fontStyle={fontStyle}
     />,
   )
   const blob = new Blob([`<?xml version="1.0" encoding="UTF-8"?>\n${markup}`], {
@@ -85,7 +86,7 @@ export function PrintSheets() {
 }
 
 export default function PrintStudio({
-  fontStyle = "serif-caps",
+  fontStyle = "script-slanted",
 }: {
   fontStyle?: NameFontStyle
 }) {
@@ -112,10 +113,10 @@ export default function PrintStudio({
           <button type="button" onClick={() => window.print()}>
             IN / LƯU PDF
           </button>
-          <button type="button" onClick={() => downloadSvg("left")}>
+          <button type="button" onClick={() => downloadSvg("left", fontStyle)}>
             TẢI SVG VẠT TRÁI
           </button>
-          <button type="button" onClick={() => downloadSvg("right")}>
+          <button type="button" onClick={() => downloadSvg("right", fontStyle)}>
             TẢI SVG VẠT PHẢI
           </button>
         </div>
