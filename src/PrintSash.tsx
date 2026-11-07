@@ -258,83 +258,57 @@ export default function PrintSash({
           </g>
 
           {/* Họa tiết bướm bay nghệ thuật */}
-          <ButterflyIcon x={30} y={918} size={24} color={GOLD} />
+          <ButterflyIcon x={30} y={916} size={24} color={GOLD} />
 
           {/* Mũ cử nhân mini đội nghiêng trên đỉnh số 2 lệch trái */}
-          <MiniGraduationCap x={48} y={930} size={20} />
+          <MiniGraduationCap x={46} y={928} size={22} />
 
-          {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
-          <SparkleStar cx={92} cy={958} r={4.5} color="#fff4d0" />
-          <SparkleStar cx={38} cy={1012} r={4} color={GOLD} />
-          <SparkleStar cx={96} cy={1070} r={4.5} color="#fff4d0" />
-          <SparkleStar cx={38} cy={1132} r={3.5} color={GOLD} />
-          <SparkleStar cx={96} cy={1148} r={3.5} color="#fff4d0" />
+          {/* Ngôi sao lấp lánh trang trí quanh số 2026 chuẩn theo mẫu thực tế */}
+          <SparkleStar cx={88} cy={958} r={4.5} color="#fff4d0" />
+          <SparkleStar cx={32} cy={998} r={3.8} color="#f3db83" />
+          <SparkleStar cx={98} cy={1066} r={4.5} color="#fff4d0" />
+          <SparkleStar cx={70} cy={1164} r={3.5} color="#f3db83" />
 
-          {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
-          <g transform="rotate(90 34 1058)">
-            <text
-              x="34"
-              y="1058"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill={GOLD}
-              fontFamily="'Cinzel', Georgia, serif"
-              fontWeight="700"
-              fontSize="8.2"
-              letterSpacing="3.5"
-            >
-              CLASS OF
-            </text>
+          {/* DÒNG CHỮ CLASS OF XẾP DỌC TỪNG KÝ TỰ (C L A S S  O F) */}
+          <g
+            fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
+            fontWeight="800"
+            fontSize="7.8"
+            fill={GOLD}
+            textAnchor="middle"
+          >
+            <text x="32" y="1014">C</text>
+            <text x="32" y="1027">L</text>
+            <text x="32" y="1040">A</text>
+            <text x="32" y="1053">S</text>
+            <text x="32" y="1066">S</text>
+            <text x="32" y="1086">O</text>
+            <text x="32" y="1099">F</text>
           </g>
 
-          {/* Cụm 4 số 2 - 0 - 2 - 6 đổi sang font Great Vibes đồng nhất hoàn hảo với Graduation */}
-          <g id="connected-year-2026">
-            {/* Dải lụa nối uốn lượn từ đuôi số 2 sang đỉnh số 0 */}
-            <path
-              d="M 68 984 C 76 988, 79 996, 78 1005"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-            />
-
-            {/* Dải lụa nối từ chân số 0 sang đầu số 2 thứ hai */}
-            <path
-              d="M 78 1045 C 74 1052, 68 1053, 60 1058"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-            />
-
-            {/* Dải lụa nối từ đuôi số 2 thứ hai sang cuống số 6 */}
-            <path
-              d="M 68 1084 C 76 1090, 80 1098, 78 1106"
-              fill="none"
-              stroke="#f3db83"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-            />
-
-            {/* 4 chữ số 2 - 0 - 2 - 6: FONT GREAT VIBES CHUẨN XÁC, XẾP XÉO NHAU (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
-            <g
-              fontFamily="'Great Vibes', cursive"
-              fill="#f3db83"
-              textAnchor="middle"
-            >
-              <text x="60" y="980" fontSize="62">
-                2
-              </text>
-              <text x="80" y="1030" fontSize="56">
-                0
-              </text>
-              <text x="60" y="1080" fontSize="62">
-                2
-              </text>
-              <text x="80" y="1130" fontSize="58">
-                6
-              </text>
-            </g>
+          {/* CỤM 4 SỐ 2 - 0 - 2 - 6: PHÔNG CHỮ THƯ PHÁP CỔ ĐIỂN THANH THOÁT (PLAYFAIR DISPLAY ITALIC)
+              Nét thanh mảnh uốn lượn, xếp xéo lồng vào nhau tự nhiên chuẩn mẫu ảnh thực tế,
+              KHÔNG dùng dây nối thô, các con số tự đan cài quý phái và sắc sảo */}
+          <g
+            id="connected-year-2026"
+            fontFamily="'Playfair Display', Georgia, serif"
+            fontStyle="italic"
+            fontWeight="700"
+            fill="#f3db83"
+            textAnchor="middle"
+          >
+            <text x="58" y="982" fontSize="66">
+              2
+            </text>
+            <text x="76" y="1030" fontSize="60">
+              0
+            </text>
+            <text x="58" y="1080" fontSize="66">
+              2
+            </text>
+            <text x="76" y="1132" fontSize="62">
+              6
+            </text>
           </g>
 
           {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}

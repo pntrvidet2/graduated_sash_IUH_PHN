@@ -92,91 +92,66 @@ function LeftSashArtwork() {
       <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
 
       {/* Họa tiết bướm bay nghệ thuật góc trên bên trái */}
-      <ButterflyIcon x={30} y={126} size={24} color={GOLD} />
+      <ButterflyIcon x={30} y={124} size={24} color={GOLD} />
 
       {/* Mũ cử nhân mini đội nghiêng tự nhiên trên chóp số 2 lệch trái */}
-      <MiniGraduationCap x={48} y={138} size={20} />
+      <MiniGraduationCap x={46} y={136} size={22} />
 
-      {/* Ngôi sao lấp lánh trang trí quanh cụm số 2026 */}
-      <SparkleStar cx={92} cy={166} r={4.5} color="#fff4d0" />
-      <SparkleStar cx={38} cy={220} r={4} color={GOLD} />
-      <SparkleStar cx={96} cy={278} r={4.5} color="#fff4d0" />
-      <SparkleStar cx={38} cy={340} r={3.5} color={GOLD} />
-      <SparkleStar cx={96} cy={356} r={3.5} color="#fff4d0" />
+      {/* Ngôi sao lấp lánh trang trí quanh cụm số 2026 chuẩn theo mẫu ảnh thực tế */}
+      <SparkleStar cx={88} cy={166} r={4.5} color="#fff4d0" />
+      <SparkleStar cx={32} cy={206} r={3.8} color="#f3db83" />
+      <SparkleStar cx={98} cy={274} r={4.5} color="#fff4d0" />
+      <SparkleStar cx={70} cy={372} r={3.5} color="#f3db83" />
 
-      {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
-      <g transform="rotate(90 34 266)">
-        <text
-          x="34"
-          y="266"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fill="#dfb143"
-          fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
-          fontWeight="700"
-          fontSize="8.2"
-          letterSpacing="3.5"
-          filter="drop-shadow(0 1px 2px rgba(0,0,0,0.8))"
-        >
-          CLASS OF
-        </text>
+      {/* DÒNG CHỮ CLASS OF XẾP DỌC TỪNG KÝ TỰ CHUẨN MẪU THỰC TẾ (C L A S S  O F) */}
+      <g
+        fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
+        fontWeight="800"
+        fontSize="7.8"
+        fill="#dfb143"
+        textAnchor="middle"
+        filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
+      >
+        <text x="32" y="222">C</text>
+        <text x="32" y="235">L</text>
+        <text x="32" y="248">A</text>
+        <text x="32" y="261">S</text>
+        <text x="32" y="274">S</text>
+        <text x="32" y="294">O</text>
+        <text x="32" y="307">F</text>
       </g>
 
-      {/* Cụm 4 số 2 - 0 - 2 - 6 đổi sang font Great Vibes đồng nhất 100% với chữ Graduation */}
-      <g id="connected-year-2026">
-        {/* Dải lụa nối uốn lượn thư pháp mượt mà từ đuôi số 2 sang đỉnh số 0 */}
-        <path
-          d="M 68 194 C 76 198, 79 206, 78 215"
-          fill="none"
-          stroke="#f3db83"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-        />
+      {/* CỤM 4 SỐ 2 - 0 - 2 - 6: PHÔNG CHỮ THƯ PHÁP CỔ ĐIỂN THANH THOÁT (PLAYFAIR DISPLAY ITALIC)
+          Nét thanh mảnh uốn lượn, xếp xéo lồng vào nhau tự nhiên chuẩn 100% mẫu ảnh thực tế,
+          KHÔNG dùng dây nối thô, các con số tự đan cài quý phái và sắc sảo */}
+      <g
+        id="connected-year-2026"
+        fontFamily="'Playfair Display', Georgia, serif"
+        fontStyle="italic"
+        fontWeight="700"
+        fill="#f3db83"
+        textAnchor="middle"
+        filter="drop-shadow(0 2px 4px rgba(0,0,0,0.9))"
+      >
+        {/* Số 2 thứ nhất (lệch trái, chóp đội mũ cử nhân, đuôi lượn sóng sắc nét vươn sang số 0) */}
+        <text x="58" y="190" fontSize="66">
+          2
+        </text>
 
-        {/* Dải lụa nối từ chân số 0 sang đầu số 2 thứ hai */}
-        <path
-          d="M 78 255 C 74 262, 68 263, 60 268"
-          fill="none"
-          stroke="#f3db83"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-        />
+        {/* Số 0 (thon dài thanh thoát, xếp xéo sang phải, lồng dưới đuôi số 2) */}
+        <text x="76" y="238" fontSize="60">
+          0
+        </text>
 
-        {/* Dải lụa nối từ đuôi số 2 thứ hai sang cuống số 6 */}
-        <path
-          d="M 68 294 C 76 300, 80 308, 78 316"
-          fill="none"
-          stroke="#f3db83"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
-        />
+        {/* Số 2 thứ hai (xếp xéo lồng vào trong lòng số 0, vạt đuôi sắc sảo vươn sang số 6) */}
+        <text x="58" y="288" fontSize="66">
+          2
+        </text>
 
-        {/* 4 chữ số 2 - 0 - 2 - 6: FONT GREAT VIBES CHUẨN XÁC, XẾP XÉO NHAU (2 trái -> 0 phải -> 2 trái -> 6 phải) */}
-        <g
-          fontFamily="'Great Vibes', cursive"
-          fill="#f3db83"
-          textAnchor="middle"
-        >
-          {/* Số 2 thứ nhất (lệch trái) */}
-          <text x="60" y="190" fontSize="62" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
-            2
-          </text>
-          {/* Số 0 (xếp xéo sang phải) */}
-          <text x="80" y="240" fontSize="56" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
-            0
-          </text>
-          {/* Số 2 thứ hai (xếp xéo sang trái) */}
-          <text x="60" y="290" fontSize="62" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
-            2
-          </text>
-          {/* Số 6 (xếp xéo sang phải) */}
-          <text x="80" y="340" fontSize="58" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
-            6
-          </text>
-        </g>
+        {/* Số 6 (xếp xéo sang phải, cổ số cong dài vút lên đón chân số 2, bầu tròn thanh nhã) */}
+        <text x="76" y="340" fontSize="62">
+          6
+        </text>
       </g>
 
       {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
@@ -644,7 +619,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.6.0</strong> · 2026 Great Vibes · Tên Trường Cân Đối · Decor Vạch Ngang & Chùm Sao
+            TAG <strong>v1.7.0</strong> · 2026 Thanh Thoát Chuẩn Mẫu · Bỏ Nối Thô · Xếp Dọc CLASS OF
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -662,7 +637,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.6.0): Đổi cụm số 2026 sang font Great Vibes đồng nhất hoàn hảo với Graduation, thu nhỏ tên trường tiếng Anh cân xứng với logo IUH vạt trái, bổ sung vạch phân cách hoàng gia kim cương và chùm sao lấp lánh sang trọng lấp đầy khoảng trống.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.7.0): Cụm 4 số 2026 chuẩn phông thư pháp cổ điển thanh thoát (Playfair Display Italic), loại bỏ hoàn toàn các dây nối thô, các con số tự đan cài xếp xéo lồng vào nhau sắc sảo theo chuẩn 100% ảnh mẫu thực tế, chữ CLASS OF xếp dọc từng ký tự trang trọng.
           </p>
         </div>
       </section>
