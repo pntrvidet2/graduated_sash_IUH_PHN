@@ -545,8 +545,8 @@ export default function PrintSash({
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fill="#fff4d0"
-                fontFamily="'Great Vibes', cursive"
+                fill={`url(#goldFoil-${uid})`}
+                fontFamily="'Great Vibes', 'Charm', cursive"
                 fontSize="38"
                 letterSpacing="1.5"
               >

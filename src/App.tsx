@@ -344,9 +344,20 @@ export type NameFontStyle =
  * Viện trên & Khoa dưới (tách bạch rõ ràng, KHÔNG chạm K18) | Tên sinh viên thư pháp chuẩn mẫu thực tế ->
  * Khoảng thở 64px -> Khóa K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFontStyle }) {
+function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
+      <defs>
+        <linearGradient id="sashRightGoldFoil" x1="15%" y1="0%" x2="85%" y2="100%">
+          <stop offset="0%" stopColor="#fffce8" />
+          <stop offset="18%" stopColor="#fced9d" />
+          <stop offset="42%" stopColor="#dfa832" />
+          <stop offset="68%" stopColor="#fdf0b0" />
+          <stop offset="88%" stopColor="#c99120" />
+          <stop offset="100%" stopColor="#9a6912" />
+        </linearGradient>
+      </defs>
+
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sắc nét */}
       <g transform="translate(48, 14)">
         <GraduationCapIcon size={44} />
@@ -453,8 +464,8 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
-            fill="#fff4d0"
-            fontFamily="'Great Vibes', cursive"
+            fill="url(#sashRightGoldFoil)"
+            fontFamily="'Great Vibes', 'Charm', cursive"
             fontSize="38"
             letterSpacing="1.5"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
@@ -729,7 +740,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
-  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-charm")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-greatvibes")
   const [yearStyle, setYearStyle] = useState<Year2026Style>("royal-interlocking")
 
   return (
@@ -752,7 +763,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.9.0</strong> · Tái Thiết Kế 2026 Đẳng Cấp Ánh Kim 3D · Nhịp Điệu Hoàng Gia
+            TAG <strong>v1.10.0</strong> · Đồng Bộ Font Great Vibes Của Graduation Sang Tên Sinh Viên
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -770,7 +781,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.9.0): Cụm số 2026 được tái thiết kế hoàn toàn mới theo chuẩn Haute Couture cao cấp: kiểu chữ Didone hoàng gia lồng khối nhịp điệu so le 40px, hiệu ứng đổ màu vàng ánh kim Gold Foil 5 tầng, các nét uốn lượn liên hoàn mềm mại kết nối tự nhiên, cùng 3 tùy chọn phong cách linh hoạt.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.10.0): Tên sinh viên "Phạm Hữu Nghĩa" đã được chuyển đổi mặc định sang đúng phông thư pháp Great Vibes uốn lượn bay bổng của chữ "Graduation", mang lại sự đồng bộ mỹ thuật hoàn hảo giữa hai vạt sash.
           </p>
         </div>
       </section>
@@ -804,31 +815,17 @@ export default function App() {
         <div className="font-options">
           <button
             type="button"
-            className={fontStyle === "script-charm" ? "active" : ""}
-            onClick={() => setFontStyle("script-charm")}
-          >
-            ★ Thư Pháp Hoàng Gia (Charm · Chuẩn ảnh mẫu thực tế)
-          </button>
-          <button
-            type="button"
             className={fontStyle === "script-greatvibes" ? "active" : ""}
             onClick={() => setFontStyle("script-greatvibes")}
           >
-            Thư Pháp Bay Bổng (Great Vibes)
+            ★ Thư Pháp Graduation (Great Vibes · Đồng Bộ Mặc Định)
           </button>
           <button
             type="button"
-            className={fontStyle === "script-dancing" ? "active" : ""}
-            onClick={() => setFontStyle("script-dancing")}
+            className={fontStyle === "script-charm" ? "active" : ""}
+            onClick={() => setFontStyle("script-charm")}
           >
-            Viết Tay Hiện Đại Rõ Nét (Dancing Script)
-          </button>
-          <button
-            type="button"
-            className={fontStyle === "serif-italic" ? "active" : ""}
-            onClick={() => setFontStyle("serif-italic")}
-          >
-            Serif Nghiêng Cổ Điển (Playfair Display)
+            Thư Pháp Hoàng Gia (Charm)
           </button>
           <button
             type="button"
@@ -836,6 +833,20 @@ export default function App() {
             onClick={() => setFontStyle("script-alexbrush")}
           >
             Thư Pháp Mềm Mại (Alex Brush)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "script-dancing" ? "active" : ""}
+            onClick={() => setFontStyle("script-dancing")}
+          >
+            Viết Tay Hiện Đại (Dancing Script)
+          </button>
+          <button
+            type="button"
+            className={fontStyle === "serif-italic" ? "active" : ""}
+            onClick={() => setFontStyle("serif-italic")}
+          >
+            Serif Nghiêng Cổ Điển (Playfair Display)
           </button>
           <button
             type="button"
