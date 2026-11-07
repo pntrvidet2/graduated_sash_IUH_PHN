@@ -129,41 +129,41 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
 
       {/* Họa tiết bướm bay nghệ thuật góc trên bên trái */}
-      <ButterflyIcon x={26} y={114} size={22} color={GOLD} />
+      <ButterflyIcon x={20} y={126} size={22} color={GOLD} />
 
-      {/* Mũ cử nhân mini đội chuẩn xác, thanh nhã trên chóp số 2 tại x=60 */}
-      <g transform="translate(48, 126) rotate(-12) scale(0.68)" filter="url(#sashRoyalShadow)">
+      {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
+      <g transform="translate(36, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
         <polygon points="22,4 42,13 22,22 2,13" fill="url(#sashGoldFoil)" stroke="#fff8dd" strokeWidth="0.8" />
         <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
         <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
         <circle cx="34" cy="26" r="1.5" fill="#fff8dd" />
       </g>
 
-      {/* CONSTELATION OF STARDUST & SPARKLE STARS AROUND 2026 (Cân đối mỹ thuật & giàu chi tiết) */}
+      {/* CONSTELATION OF STARDUST & SPARKLE STARS AROUND 2026 (Hạ +20px đồng bộ) */}
       <g filter="url(#sashRoyalShadow)">
         {/* Chòm sao góc trên bên phải của số 2 */}
-        <SparkleStar cx={98} cy={144} r={4.5} color="#fff8df" />
-        <circle cx={108} cy={158} r={0.9} fill="#fced9d" />
-        <circle cx={92} cy={162} r={0.75} fill="#fff8df" />
+        <SparkleStar cx={98} cy={164} r={4.5} color="#fff8df" />
+        <circle cx={108} cy={178} r={0.9} fill="#fced9d" />
+        <circle cx={92} cy={182} r={0.75} fill="#fff8df" />
 
         {/* Chòm sao khoảng giữa bên trái (cạnh CLASS OF) */}
-        <SparkleStar cx={22} cy={182} r={3.6} color="#fced9d" />
-        <circle cx={20} cy={226} r={0.8} fill="#fff8df" />
+        <SparkleStar cx={22} cy={202} r={3.6} color="#fced9d" />
+        <circle cx={20} cy={246} r={0.8} fill="#fff8df" />
 
         {/* Chòm sao khoảng giữa bên phải (cạnh số 0 và số 2) */}
-        <SparkleStar cx={106} cy={236} r={4.5} color="#fff8df" />
-        <circle cx={102} cy={272} r={0.85} fill="#fced9d" />
+        <SparkleStar cx={106} cy={256} r={4.5} color="#fff8df" />
+        <circle cx={102} cy={292} r={0.85} fill="#fced9d" />
 
         {/* Chòm sao góc dưới bên trái (cạnh đuôi số 2 thứ hai) */}
-        <SparkleStar cx={22} cy={300} r={3.6} color="#fced9d" />
+        <SparkleStar cx={22} cy={320} r={3.6} color="#fced9d" />
 
         {/* Chòm sao trung tâm dưới số 6 */}
-        <SparkleStar cx={70} cy={344} r={4.2} color="#fff8df" />
-        <circle cx={58} cy={344} r={0.8} fill="#fced9d" />
-        <circle cx={82} cy={344} r={0.8} fill="#fced9d" />
+        <SparkleStar cx={70} cy={364} r={4.2} color="#fff8df" />
+        <circle cx={58} cy={364} r={0.8} fill="#fced9d" />
+        <circle cx={82} cy={364} r={0.8} fill="#fced9d" />
       </g>
 
-      {/* DÒNG CHỮ CLASS OF XẾP DỌC HOÀNG GIA (C L A S S  O F) */}
+      {/* DÒNG CHỮ CLASS OF XẾP DỌC HOÀNG GIA (C L A S S  O F) - Hạ +20px */}
       <g
         fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
         fontWeight="800"
@@ -173,18 +173,18 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
         letterSpacing="0.6"
         filter="url(#sashRoyalShadow)"
       >
-        <text x="28" y="196">C</text>
-        <text x="28" y="210">L</text>
-        <text x="28" y="224">A</text>
-        <text x="28" y="238">S</text>
-        <text x="28" y="252">S</text>
-        <text x="28" y="274">O</text>
-        <text x="28" y="288">F</text>
+        <text x="28" y="216">C</text>
+        <text x="28" y="230">L</text>
+        <text x="28" y="244">A</text>
+        <text x="28" y="258">S</text>
+        <text x="28" y="272">S</text>
+        <text x="28" y="294">O</text>
+        <text x="28" y="308">F</text>
       </g>
 
       {/* ========================================================
           TRUNG TÂM NGHỆ THUẬT: CỤM SỐ 2 0 2 6 HOÀNG GIA ĐẲNG CẤP
-          Hỗ trợ 3 phong cách thiết kế tinh tế:
+          Hạ +20px đưa toàn bộ cụm số vào trung tâm đĩa mặt trời Đông Sơn
           1. royal-interlocking (Mặc định · Didone Lồng Khối Vàng Ánh Kim 3D)
           2. seamless-ribbon (Thư Pháp Dải Ruy Băng Vàng Liền Mạch)
           3. classic-italic (Thư Pháp Cổ Điển Tinh Giản)
@@ -194,7 +194,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           {/* Nét uốn lượn liên hoàn kết nối mượt mà giữa các con số */}
           {/* 2 -> 0: đuôi số 2 thứ nhất lượn cong vươn sang và nối vào đỉnh số 0 */}
           <path
-            d="M 70 184 C 77 184, 80 186, 80 196"
+            d="M 70 204 C 77 204, 80 206, 80 216"
             fill="none"
             stroke="url(#sashGoldFoil)"
             strokeWidth="2.8"
@@ -202,7 +202,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           />
           {/* 0 -> 2: đáy cong số 0 lượn nhẹ nối vào đỉnh số 2 thứ hai */}
           <path
-            d="M 79 230 C 76 238, 68 236, 62 240"
+            d="M 79 250 C 76 258, 68 256, 62 260"
             fill="none"
             stroke="url(#sashGoldFoil)"
             strokeWidth="2.6"
@@ -210,7 +210,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           />
           {/* 2 -> 6: đuôi số 2 thứ hai lượn cong vươn sang và nối vào cổ số 6 */}
           <path
-            d="M 70 264 C 77 264, 80 268, 80 278"
+            d="M 70 284 C 77 284, 80 288, 80 298"
             fill="none"
             stroke="url(#sashGoldFoil)"
             strokeWidth="2.8"
@@ -224,20 +224,20 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
             fill="url(#sashGoldFoil)"
             textAnchor="middle"
           >
-            {/* Số 2 thứ nhất: x=60, y=184 */}
-            <text x="60" y="184" fontSize="70">
+            {/* Số 2 thứ nhất: x=60, y=204 */}
+            <text x="60" y="204" fontSize="70">
               2
             </text>
-            {/* Số 0: x=80, y=224 */}
-            <text x="80" y="224" fontSize="64">
+            {/* Số 0: x=80, y=244 */}
+            <text x="80" y="244" fontSize="64">
               0
             </text>
-            {/* Số 2 thứ hai: x=60, y=264 */}
-            <text x="60" y="264" fontSize="70">
+            {/* Số 2 thứ hai: x=60, y=284 */}
+            <text x="60" y="284" fontSize="70">
               2
             </text>
-            {/* Số 6: x=80, y=304 */}
-            <text x="80" y="304" fontSize="66">
+            {/* Số 6: x=80, y=324 */}
+            <text x="80" y="324" fontSize="66">
               6
             </text>
           </g>
@@ -245,7 +245,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       )}
 
       {yearStyle === "seamless-ribbon" && (
-        <g id="seamless-ribbon-2026" filter="url(#sashGoldGlow)" fill="url(#sashGoldFoil)">
+        <g id="seamless-ribbon-2026" filter="url(#sashGoldGlow)" fill="url(#sashGoldFoil)" transform="translate(0, 20)">
           {/* Số 2 thứ nhất đúc vector nguyên khối với dải lụa nối sang 0 */}
           <path d="M 44 148 C 44 141, 52 135, 62 135 C 72 135, 78 142, 78 151 C 78 162, 70 171, 61 180 C 51 190, 44 198, 42 204 L 70 204 C 78 204, 84 207, 85 216 C 85 218, 83 218, 80 215 C 75 210, 68 209, 60 209 L 40 209 C 36 209, 36 204, 39 200 C 43 193, 52 183, 62 172 C 70 163, 73 157, 73 150 C 73 145, 68 140, 61 140 C 54 140, 49 144, 49 149 Z" />
 
@@ -275,23 +275,23 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
             fill="url(#sashGoldFoil)"
             textAnchor="middle"
           >
-            <text x="60" y="186" fontSize="68">
+            <text x="60" y="206" fontSize="68">
               2
             </text>
-            <text x="80" y="228" fontSize="62">
+            <text x="80" y="248" fontSize="62">
               0
             </text>
-            <text x="60" y="270" fontSize="68">
+            <text x="60" y="290" fontSize="68">
               2
             </text>
-            <text x="80" y="312" fontSize="64">
+            <text x="80" y="332" fontSize="64">
               6
             </text>
           </g>
           {/* Nét lụa vàng liên kết thanh mảnh */}
-          <path d="M 70 186 C 77 186, 80 189, 80 198" fill="none" stroke="url(#sashGoldFoil)" strokeWidth="2.0" strokeLinecap="round" />
-          <path d="M 78 234 C 75 242, 65 242, 61 246" fill="none" stroke="url(#sashGoldFoil)" strokeWidth="2.0" strokeLinecap="round" />
-          <path d="M 70 270 C 77 270, 80 274, 80 284" fill="none" stroke="url(#sashGoldFoil)" strokeWidth="2.0" strokeLinecap="round" />
+          <path d="M 70 206 C 77 206, 80 209, 80 218" fill="none" stroke="url(#sashGoldFoil)" strokeWidth="2.0" strokeLinecap="round" />
+          <path d="M 78 254 C 75 262, 65 262, 61 266" fill="none" stroke="url(#sashGoldFoil)" strokeWidth="2.0" strokeLinecap="round" />
+          <path d="M 70 290 C 77 290, 80 294, 80 304" fill="none" stroke="url(#sashGoldFoil)" strokeWidth="2.0" strokeLinecap="round" />
         </g>
       )}
 
@@ -778,7 +778,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.11.0</strong> · Cân Chỉnh Trục Đối Xứng Hoàn Mỹ 2026 &amp; Bổ Sung Tinh Tú Hoàng Gia
+            TAG <strong>v1.12.0</strong> · Xích Nón Cử Nhân Qua Trái &amp; Hạ Cụm 2026 Cân Đối Trục Dọc
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -796,7 +796,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.11.0): Cụm 4 số 2026 và mũ cử nhân mini được cân chỉnh trục tâm đối xứng hoàn hảo (x=70), kết hợp chùm sao lấp lánh và hạt ngọc hoàng gia lấp đầy không gian tinh tế, hài hòa tuyệt đối.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.12.0): Nón cử nhân mini được xích chuẩn sang trái đội trọn vẹn đỉnh đầu số 2, đồng thời toàn bộ cụm 2026 và CLASS OF được hạ xuống thấp hơn để cân bằng khoảng cách đều giữa logo IUH phía trên và chữ Graduation phía dưới.
           </p>
         </div>
       </section>
