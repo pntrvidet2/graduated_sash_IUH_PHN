@@ -70,23 +70,23 @@ function SashFrame({ side }: { side: "left" | "right" }) {
 function LeftSashArtwork() {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
-      {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, không có chữ ở dưới theo yêu cầu */}
+      {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, căn chuẩn cân đối với vạt phải */}
       <image
         href={IUH_EMBLEM_ORIGINAL}
-        x="53"
+        x="50"
         y="22"
-        width="34"
-        height="38"
+        width="40"
+        height="44"
         preserveAspectRatio="xMidYMid meet"
       />
 
-      {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=68 */}
-      <line x1="38" y1="68" x2="102" y2="68" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-      <polygon points="70,65.5 72.5,68 70,70.5 67.5,68" fill="#fff4d0" />
-      <circle cx="63" cy="68" r="0.8" fill="#fff4d0" />
-      <circle cx="77" cy="68" r="0.8" fill="#fff4d0" />
-      <SparkleStar cx={36} cy={68} r={2.2} color={GOLD} />
-      <SparkleStar cx={104} cy={68} r={2.2} color={GOLD} />
+      {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=82 (đồng mức tuyệt đối với vạt phải) */}
+      <line x1="38" y1="82" x2="102" y2="82" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,79.5 72.5,82 70,84.5 67.5,82" fill="#fff4d0" />
+      <circle cx="63" cy="82" r="0.8" fill="#fff4d0" />
+      <circle cx="77" cy="82" r="0.8" fill="#fff4d0" />
+      <SparkleStar cx={36} cy={82} r={2.2} color={GOLD} />
+      <SparkleStar cx={104} cy={82} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
       <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
@@ -121,37 +121,64 @@ function LeftSashArtwork() {
         <text x="32" y="307">F</text>
       </g>
 
-      {/* CỤM 4 SỐ 2 - 0 - 2 - 6: PHÔNG CHỮ THƯ PHÁP CỔ ĐIỂN THANH THOÁT (PLAYFAIR DISPLAY ITALIC)
-          Nét thanh mảnh uốn lượn, xếp xéo lồng vào nhau tự nhiên chuẩn 100% mẫu ảnh thực tế,
-          KHÔNG dùng dây nối thô, các con số tự đan cài quý phái và sắc sảo */}
+      {/* CỤM 4 SỐ 2 - 0 - 2 - 6 NỐI NHAU LIỀN MẠCH, THANH THOÁT, CHUẨN THIẾT KẾ THỰC TẾ
+          Nét uốn lượn mềm mại liên kết chân 2 sang 0, đáy 0 sang 2, và chân 2 sang cổ 6 */}
       <g
         id="connected-year-2026"
-        fontFamily="'Playfair Display', Georgia, serif"
-        fontStyle="italic"
-        fontWeight="700"
-        fill="#f3db83"
-        textAnchor="middle"
         filter="drop-shadow(0 2px 4px rgba(0,0,0,0.9))"
       >
-        {/* Số 2 thứ nhất (lệch trái, chóp đội mũ cử nhân, đuôi lượn sóng sắc nét vươn sang số 0) */}
-        <text x="58" y="190" fontSize="66">
-          2
-        </text>
+        {/* Nét uốn lượn nối chân số 2 thứ nhất sang đỉnh số 0 */}
+        <path
+          d="M 64 191 C 71 191, 75.5 194, 75.5 204"
+          fill="none"
+          stroke="#f3db83"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+        />
+        {/* Nét uốn lượn nối đáy số 0 sang đỉnh số 2 thứ hai */}
+        <path
+          d="M 74 246 C 71 254, 61 254, 57 258"
+          fill="none"
+          stroke="#f3db83"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+        />
+        {/* Nét uốn lượn nối chân số 2 thứ hai sang cổ số 6 */}
+        <path
+          d="M 64 283 C 71 283, 76 288, 76 300"
+          fill="none"
+          stroke="#f3db83"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+        />
 
-        {/* Số 0 (thon dài thanh thoát, xếp xéo sang phải, lồng dưới đuôi số 2) */}
-        <text x="76" y="238" fontSize="60">
-          0
-        </text>
+        <g
+          fontFamily="'Playfair Display', Georgia, serif"
+          fontStyle="italic"
+          fontWeight="700"
+          fill="#f3db83"
+          textAnchor="middle"
+        >
+          {/* Số 2 thứ nhất (lệch trái, chóp đội mũ cử nhân mini) */}
+          <text x="56" y="192" fontSize="68">
+            2
+          </text>
 
-        {/* Số 2 thứ hai (xếp xéo lồng vào trong lòng số 0, vạt đuôi sắc sảo vươn sang số 6) */}
-        <text x="58" y="288" fontSize="66">
-          2
-        </text>
+          {/* Số 0 (thon dài thanh thoát, xếp xéo sang phải, nối từ đuôi số 2) */}
+          <text x="76" y="238" fontSize="62">
+            0
+          </text>
 
-        {/* Số 6 (xếp xéo sang phải, cổ số cong dài vút lên đón chân số 2, bầu tròn thanh nhã) */}
-        <text x="76" y="340" fontSize="62">
-          6
-        </text>
+          {/* Số 2 thứ hai (xếp xéo lồng vào trong lòng số 0, nối tiếp sang số 6) */}
+          <text x="56" y="284" fontSize="68">
+            2
+          </text>
+
+          {/* Số 6 (xếp xéo sang phải, cổ số cong dài đón chân số 2) */}
+          <text x="76" y="334" fontSize="64">
+            6
+          </text>
+        </g>
       </g>
 
       {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
@@ -222,14 +249,14 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sắc nét */}
-      <g transform="translate(47, 16)">
-        <GraduationCapIcon size={46} />
+      <g transform="translate(48, 14)">
+        <GraduationCapIcon size={44} />
       </g>
 
       {/* Tên trường tiếng Anh thu nhỏ thanh nhã, cân xứng hoàn hảo với logo IUH bên vạt trái */}
       <text
         x="70"
-        y="68"
+        y="62"
         textAnchor="middle"
         dominantBaseline="central"
         fill="#dfb143"
@@ -243,7 +270,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       </text>
       <text
         x="70"
-        y="77"
+        y="71"
         textAnchor="middle"
         dominantBaseline="central"
         fill="#fff4d0"
@@ -256,13 +283,13 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         OF HO CHI MINH CITY
       </text>
 
-      {/* Đường phân cách trên có họa tiết kim cương và ngôi sao ở y=88 */}
-      <line x1="38" y1="88" x2="102" y2="88" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-      <polygon points="70,86 72,88 70,90 68,88" fill="#fff4d0" />
-      <circle cx="63" cy="88" r="0.7" fill="#fff4d0" />
-      <circle cx="77" cy="88" r="0.7" fill="#fff4d0" />
-      <SparkleStar cx={36} cy={88} r={2.2} color={GOLD} />
-      <SparkleStar cx={104} cy={88} r={2.2} color={GOLD} />
+      {/* Đường phân cách trên có họa tiết kim cương và ngôi sao ở y=82 (đồng mức tuyệt đối với vạt trái) */}
+      <line x1="38" y1="82" x2="102" y2="82" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+      <polygon points="70,79.5 72.5,82 70,84.5 67.5,82" fill="#fff4d0" />
+      <circle cx="63" cy="82" r="0.8" fill="#fff4d0" />
+      <circle cx="77" cy="82" r="0.8" fill="#fff4d0" />
+      <SparkleStar cx={36} cy={82} r={2.2} color={GOLD} />
+      <SparkleStar cx={104} cy={82} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
       <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
@@ -619,7 +646,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.7.0</strong> · 2026 Thanh Thoát Chuẩn Mẫu · Bỏ Nối Thô · Xếp Dọc CLASS OF
+            TAG <strong>v1.8.0</strong> · 2026 Nối Liền Mạch Tinh Tế · Đồng Mức Tuyệt Đối 2 Đầu Sash
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -637,7 +664,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.7.0): Cụm 4 số 2026 chuẩn phông thư pháp cổ điển thanh thoát (Playfair Display Italic), loại bỏ hoàn toàn các dây nối thô, các con số tự đan cài xếp xéo lồng vào nhau sắc sảo theo chuẩn 100% ảnh mẫu thực tế, chữ CLASS OF xếp dọc từng ký tự trang trọng.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.8.0): Cụm số 2026 thư pháp uốn lượn nối liền mạch tự nhiên (nối đuôi 2 sang 0, đáy 0 sang 2, và chân 2 sang cổ 6), hai đầu sash cân xứng đồng mức tuyệt đối ở đường vạch phân cách hoàng gia (y = 82), tên trường tiếng Anh và logo IUH cân xứng hoàn mỹ.
           </p>
         </div>
       </section>

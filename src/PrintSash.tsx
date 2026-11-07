@@ -233,24 +233,24 @@ export default function PrintSash({
       {/* Front, hanging end */}
       {side === "left" ? (
         <g id="front-left">
-          {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, không có chữ bên dưới theo yêu cầu */}
+          {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, căn chuẩn cân đối với vạt phải */}
           <image
             href={IUH_EMBLEM_ORIGINAL}
             xlinkHref={IUH_EMBLEM_ORIGINAL}
-            x="53"
-            y="826"
-            width="34"
-            height="38"
+            x="50"
+            y="822"
+            width="40"
+            height="44"
             preserveAspectRatio="xMidYMid meet"
           />
 
-          {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=872 */}
-          <line x1="38" y1="872" x2="102" y2="872" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,869.5 72.5,872 70,874.5 67.5,872" fill="#fff4d0" />
-          <circle cx="63" cy="872" r="0.8" fill="#fff4d0" />
-          <circle cx="77" cy="872" r="0.8" fill="#fff4d0" />
-          <SparkleStar cx={36} cy={872} r={2.2} color={GOLD} />
-          <SparkleStar cx={104} cy={872} r={2.2} color={GOLD} />
+          {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=882 (đồng mức tuyệt đối với vạt phải) */}
+          <line x1="38" y1="882" x2="102" y2="882" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,879.5 72.5,882 70,884.5 67.5,882" fill="#fff4d0" />
+          <circle cx="63" cy="882" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="882" r="0.8" fill="#fff4d0" />
+          <SparkleStar cx={36} cy={882} r={2.2} color={GOLD} />
+          <SparkleStar cx={104} cy={882} r={2.2} color={GOLD} />
 
           {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, in chìm tinh tế */}
           <g transform="translate(-70, 915)">
@@ -286,29 +286,61 @@ export default function PrintSash({
             <text x="32" y="1099">F</text>
           </g>
 
-          {/* CỤM 4 SỐ 2 - 0 - 2 - 6: PHÔNG CHỮ THƯ PHÁP CỔ ĐIỂN THANH THOÁT (PLAYFAIR DISPLAY ITALIC)
-              Nét thanh mảnh uốn lượn, xếp xéo lồng vào nhau tự nhiên chuẩn mẫu ảnh thực tế,
-              KHÔNG dùng dây nối thô, các con số tự đan cài quý phái và sắc sảo */}
-          <g
-            id="connected-year-2026"
-            fontFamily="'Playfair Display', Georgia, serif"
-            fontStyle="italic"
-            fontWeight="700"
-            fill="#f3db83"
-            textAnchor="middle"
-          >
-            <text x="58" y="982" fontSize="66">
-              2
-            </text>
-            <text x="76" y="1030" fontSize="60">
-              0
-            </text>
-            <text x="58" y="1080" fontSize="66">
-              2
-            </text>
-            <text x="76" y="1132" fontSize="62">
-              6
-            </text>
+          {/* CỤM 4 SỐ 2 - 0 - 2 - 6 NỐI NHAU LIỀN MẠCH, THANH THOÁT, CHUẨN THIẾT KẾ THỰC TẾ
+              Nét uốn lượn mềm mại liên kết chân 2 sang 0, đáy 0 sang 2, và chân 2 sang cổ 6 */}
+          <g id="connected-year-2026">
+            {/* Nét uốn lượn nối chân số 2 thứ nhất sang đỉnh số 0 */}
+            <path
+              d="M 64 991 C 71 991, 75.5 994, 75.5 1004"
+              fill="none"
+              stroke="#f3db83"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+            />
+            {/* Nét uốn lượn nối đáy số 0 sang đỉnh số 2 thứ hai */}
+            <path
+              d="M 74 1046 C 71 1054, 61 1054, 57 1058"
+              fill="none"
+              stroke="#f3db83"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+            />
+            {/* Nét uốn lượn nối chân số 2 thứ hai sang cổ số 6 */}
+            <path
+              d="M 64 1083 C 71 1083, 76 1088, 76 1100"
+              fill="none"
+              stroke="#f3db83"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+            />
+
+            <g
+              fontFamily="'Playfair Display', Georgia, serif"
+              fontStyle="italic"
+              fontWeight="700"
+              fill="#f3db83"
+              textAnchor="middle"
+            >
+              {/* Số 2 thứ nhất (lệch trái, chóp đội mũ cử nhân mini) */}
+              <text x="56" y="992" fontSize="68">
+                2
+              </text>
+
+              {/* Số 0 (thon dài thanh thoát, xếp xéo sang phải, nối từ đuôi số 2) */}
+              <text x="76" y="1038" fontSize="62">
+                0
+              </text>
+
+              {/* Số 2 thứ hai (xếp xéo lồng vào trong lòng số 0, nối tiếp sang số 6) */}
+              <text x="56" y="1084" fontSize="68">
+                2
+              </text>
+
+              {/* Số 6 (xếp xéo sang phải, cổ số cong dài đón chân số 2) */}
+              <text x="76" y="1134" fontSize="64">
+                6
+              </text>
+            </g>
           </g>
 
           {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
@@ -357,14 +389,14 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Mũ cử nhân hoàng gia */}
-          <g transform="translate(47, 806)">
-            <GraduationCapIcon size={46} color={GOLD} />
+          <g transform="translate(48, 814)">
+            <GraduationCapIcon size={44} color={GOLD} />
           </g>
 
           {/* Tên trường tiếng Anh thu nhỏ thanh nhã cân xứng với vạt trái */}
           <text
             x="70"
-            y="858"
+            y="862"
             textAnchor="middle"
             dominantBaseline="central"
             fill="#dfb143"
@@ -377,7 +409,7 @@ export default function PrintSash({
           </text>
           <text
             x="70"
-            y="867"
+            y="871"
             textAnchor="middle"
             dominantBaseline="central"
             fill="#fff4d0"
@@ -389,13 +421,13 @@ export default function PrintSash({
             OF HO CHI MINH CITY
           </text>
 
-          {/* Đường phân cách trên có họa tiết kim cương và ngôi sao ở y=878 */}
-          <line x1="38" y1="878" x2="102" y2="878" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
-          <polygon points="70,875.5 72.5,878 70,880.5 67.5,878" fill="#fff4d0" />
-          <circle cx="63" cy="878" r="0.7" fill="#fff4d0" />
-          <circle cx="77" cy="878" r="0.7" fill="#fff4d0" />
-          <SparkleStar cx={36} cy={878} r={2.2} color={GOLD} />
-          <SparkleStar cx={104} cy={878} r={2.2} color={GOLD} />
+          {/* Đường phân cách trên có họa tiết kim cương và ngôi sao ở y=882 (đồng mức tuyệt đối với vạt trái) */}
+          <line x1="38" y1="882" x2="102" y2="882" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
+          <polygon points="70,879.5 72.5,882 70,884.5 67.5,882" fill="#fff4d0" />
+          <circle cx="63" cy="882" r="0.8" fill="#fff4d0" />
+          <circle cx="77" cy="882" r="0.8" fill="#fff4d0" />
+          <SparkleStar cx={36} cy={882} r={2.2} color={GOLD} />
+          <SparkleStar cx={104} cy={882} r={2.2} color={GOLD} />
 
           {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
           <g transform="translate(-70, 915)">
