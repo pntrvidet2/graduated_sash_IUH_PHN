@@ -268,22 +268,39 @@ export default function PrintSash({
           </g>
 
           {/* Họa tiết bướm bay nghệ thuật */}
-          <ButterflyIcon x={30} y={918} size={24} color={GOLD} />
+          <ButterflyIcon x={26} y={914} size={22} color={GOLD} />
 
-          {/* Mũ cử nhân mini đội nghiêng tự nhiên trên chóp số 2 lệch trái */}
-          <g transform="translate(42, 926) rotate(-14) scale(0.88)">
-            <polygon points="50,11 90,28 50,44 10,28" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
-            <path d="M 28 34 V 44 C 28 52, 72 52, 72 44 V 34 Z" fill="#9e7115" />
-            <path d="M 50 28 C 50 34, 76 38, 76 46" stroke="#fff8dd" strokeWidth="1.2" fill="none" />
-            <circle cx="76" cy="48" r="1.8" fill="#fff8dd" />
+          {/* Mũ cử nhân mini đội chuẩn xác, thanh nhã trên chóp số 2 tại x=60 */}
+          <g transform="translate(48, 926) rotate(-12) scale(0.68)">
+            <polygon points="22,4 42,13 22,22 2,13" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
+            <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
+            <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+            <circle cx="34" cy="26" r="1.5" fill="#fff8dd" />
           </g>
 
-          {/* Ngôi sao lấp lánh trang trí quanh số 2026 chuẩn theo mẫu thực tế */}
-          <SparkleStar cx={90} cy={950} r={4.5} color="#fff8df" />
-          <SparkleStar cx={26} cy={987} r={3.8} color="#fced9d" />
-          <SparkleStar cx={100} cy={1045} r={4.5} color="#fff8df" />
-          <SparkleStar cx={28} cy={1100} r={3.5} color="#fced9d" />
-          <SparkleStar cx={70} cy={1148} r={4.0} color="#fff8df" />
+          {/* CONSTELATION OF STARDUST & SPARKLE STARS AROUND 2026 (Cân đối mỹ thuật & giàu chi tiết) */}
+          <g>
+            {/* Chòm sao góc trên bên phải của số 2 */}
+            <SparkleStar cx={98} cy={944} r={4.5} color="#fff8df" />
+            <circle cx={108} cy={958} r={0.9} fill="#fced9d" />
+            <circle cx={92} cy={962} r={0.75} fill="#fff8df" />
+
+            {/* Chòm sao khoảng giữa bên trái (cạnh CLASS OF) */}
+            <SparkleStar cx={22} cy={982} r={3.6} color="#fced9d" />
+            <circle cx={20} cy={1026} r={0.8} fill="#fff8df" />
+
+            {/* Chòm sao khoảng giữa bên phải (cạnh số 0 và số 2) */}
+            <SparkleStar cx={106} cy={1036} r={4.5} color="#fff8df" />
+            <circle cx={102} cy={1072} r={0.85} fill="#fced9d" />
+
+            {/* Chòm sao góc dưới bên trái (cạnh đuôi số 2 thứ hai) */}
+            <SparkleStar cx={22} cy={1100} r={3.6} color="#fced9d" />
+
+            {/* Chòm sao trung tâm dưới số 6 */}
+            <SparkleStar cx={70} cy={1144} r={4.2} color="#fff8df" />
+            <circle cx={58} cy={1144} r={0.8} fill="#fced9d" />
+            <circle cx={82} cy={1144} r={0.8} fill="#fced9d" />
+          </g>
 
           {/* DÒNG CHỮ CLASS OF XẾP DỌC HOÀNG GIA (C L A S S  O F) */}
           <g
@@ -294,13 +311,13 @@ export default function PrintSash({
             textAnchor="middle"
             letterSpacing="0.6"
           >
-            <text x="32" y="996">C</text>
-            <text x="32" y="1010">L</text>
-            <text x="32" y="1024">A</text>
-            <text x="32" y="1038">S</text>
-            <text x="32" y="1052">S</text>
-            <text x="32" y="1074">O</text>
-            <text x="32" y="1088">F</text>
+            <text x="28" y="996">C</text>
+            <text x="28" y="1010">L</text>
+            <text x="28" y="1024">A</text>
+            <text x="28" y="1038">S</text>
+            <text x="28" y="1052">S</text>
+            <text x="28" y="1074">O</text>
+            <text x="28" y="1088">F</text>
           </g>
 
           {/* ========================================================
@@ -314,21 +331,21 @@ export default function PrintSash({
             <g id="masterpiece-2026">
               {/* Nét uốn lượn liên hoàn kết nối mượt mà giữa các con số */}
               <path
-                d="M 64 984 C 71 984, 76 986, 76 996"
+                d="M 70 984 C 77 984, 80 986, 80 996"
                 fill="none"
                 stroke={`url(#goldFoil-${uid})`}
                 strokeWidth="2.8"
                 strokeLinecap="round"
               />
               <path
-                d="M 75 1030 C 72 1038, 62 1036, 56 1040"
+                d="M 79 1030 C 76 1038, 68 1036, 62 1040"
                 fill="none"
                 stroke={`url(#goldFoil-${uid})`}
                 strokeWidth="2.6"
                 strokeLinecap="round"
               />
               <path
-                d="M 64 1064 C 71 1064, 76 1068, 76 1078"
+                d="M 70 1064 C 77 1064, 80 1068, 80 1078"
                 fill="none"
                 stroke={`url(#goldFoil-${uid})`}
                 strokeWidth="2.8"
@@ -342,16 +359,20 @@ export default function PrintSash({
                 fill={`url(#goldFoil-${uid})`}
                 textAnchor="middle"
               >
-                <text x="54" y="984" fontSize="72">
+                {/* Số 2 thứ nhất: x=60, y=984 */}
+                <text x="60" y="984" fontSize="70">
                   2
                 </text>
-                <text x="76" y="1024" fontSize="65">
+                {/* Số 0: x=80, y=1024 */}
+                <text x="80" y="1024" fontSize="64">
                   0
                 </text>
-                <text x="54" y="1064" fontSize="72">
+                {/* Số 2 thứ hai: x=60, y=1064 */}
+                <text x="60" y="1064" fontSize="70">
                   2
                 </text>
-                <text x="76" y="1104" fontSize="68">
+                {/* Số 6: x=80, y=1104 */}
+                <text x="80" y="1104" fontSize="66">
                   6
                 </text>
               </g>
@@ -378,22 +399,22 @@ export default function PrintSash({
                 fill={`url(#goldFoil-${uid})`}
                 textAnchor="middle"
               >
-                <text x="56" y="986" fontSize="68">
+                <text x="60" y="986" fontSize="68">
                   2
                 </text>
-                <text x="76" y="1028" fontSize="62">
+                <text x="80" y="1028" fontSize="62">
                   0
                 </text>
-                <text x="56" y="1070" fontSize="68">
+                <text x="60" y="1070" fontSize="68">
                   2
                 </text>
-                <text x="76" y="1112" fontSize="64">
+                <text x="80" y="1112" fontSize="64">
                   6
                 </text>
               </g>
-              <path d="M 64 986 C 71 986, 76 989, 76 998" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
-              <path d="M 74 1034 C 71 1042, 61 1042, 57 1046" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
-              <path d="M 64 1070 C 71 1070, 76 1074, 76 1084" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
+              <path d="M 70 986 C 77 986, 80 989, 80 998" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
+              <path d="M 78 1034 C 75 1042, 65 1042, 61 1046" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
+              <path d="M 70 1070 C 77 1070, 80 1074, 80 1084" fill="none" stroke={`url(#goldFoil-${uid})`} strokeWidth="2.0" strokeLinecap="round" />
             </g>
           )}
 
