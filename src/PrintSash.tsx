@@ -268,10 +268,10 @@ export default function PrintSash({
           <SparkleStar cx={48} cy={1168} r={4} color={GOLD} />
 
           {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
-          <g transform="rotate(90 42 1063)">
+          <g transform="rotate(90 40 1060)">
             <text
-              x="42"
-              y="1063"
+              x="40"
+              y="1060"
               textAnchor="middle"
               dominantBaseline="middle"
               fill="#fff4d0"
@@ -284,19 +284,56 @@ export default function PrintSash({
             </text>
           </g>
 
-          {/* Cụm 4 số 2 - 0 - 2 - 6 xếp dọc nghệ thuật in nghiêng thanh thoát chuẩn mẫu thực tế */}
-          <g
-            fontFamily={SERIF}
-            fontStyle="italic"
-            fontWeight="800"
-            fontSize="48"
-            fill="#fff4d0"
-            textAnchor="middle"
-          >
-            <text x="76" y="982">2</text>
-            <text x="76" y="1036">0</text>
-            <text x="76" y="1090">2</text>
-            <text x="76" y="1144">6</text>
+          {/* Cụm 4 số 2 - 0 - 2 - 6 phông chữ thư pháp nghệ thuật nối liền nhau (Interlocking Ribbon Script) */}
+          <g id="connected-year-2026">
+            {/* Đường nối thư pháp mềm mại giữa số 2 và số 0 */}
+            <path
+              d="M 68 986 C 82 992, 85 1006, 76 1016"
+              fill="none"
+              stroke="#fff4d0"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+            />
+
+            {/* Đường nối giữa số 0 và số 2 */}
+            <path
+              d="M 76 1044 C 71 1052, 66 1058, 72 1066"
+              fill="none"
+              stroke="#fff4d0"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+            />
+
+            {/* Dải lụa thư pháp uốn lượn đặc trưng từ chân số 2 bao bọc quanh số 6 */}
+            <path
+              d="M 66 1094 C 92 1100, 96 1122, 82 1140 C 72 1152, 60 1158, 74 1162"
+              fill="none"
+              stroke="#fff4d0"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+              opacity="0.95"
+            />
+
+            {/* 4 chữ số 2 - 0 - 2 - 6 phông thư pháp Charm mềm mại, uốn lượn nối liền */}
+            <g
+              fontFamily="'Charm', 'Great Vibes', cursive"
+              fontWeight="700"
+              fill="#fff4d0"
+              textAnchor="middle"
+            >
+              <text x="75" y="984" fontSize="54">
+                2
+              </text>
+              <text x="75" y="1034" fontSize="50">
+                0
+              </text>
+              <text x="75" y="1084" fontSize="54">
+                2
+              </text>
+              <text x="75" y="1134" fontSize="50">
+                6
+              </text>
+            </g>
           </g>
 
           {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
@@ -353,39 +390,31 @@ export default function PrintSash({
             <DongSonDrum size={230} opacity={0.32} />
           </g>
 
-          {/* CỘT TRÁI (x=42): VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI (CHUẨN TỶ LỆ, CÁCH K18 GẦN 70MM) */}
-          {/* 1. Viện Tài Chính - Kế Toán */}
-          <g transform="rotate(90 42 980)">
+          {/* CỘT 1 (x=33): VIỆN TÀI CHÍNH - KẾ TOÁN (XUỐNG DÒNG, SIZE LỚN HƠN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
+          <g transform="rotate(90 33 1058)">
             <text
-              x="42"
-              y="980"
+              x="33"
+              y="1058"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#fff4d0"
+              fill="#ffffff"
               fontFamily={SERIF}
               fontWeight="800"
-              fontSize="10"
+              fontSize="11.5"
               letterSpacing="1.2"
             >
               VIỆN TÀI CHÍNH - KẾ TOÁN
             </text>
           </g>
 
-          {/* Hạt kim cương quý phái phân cách giữa Viện và Khoa */}
-          <g>
-            <circle cx="42" cy="1051" r="0.7" fill={GOLD} />
-            <polygon points="42,1055.5 44.5,1058 42,1060.5 39.5,1058" fill="#fff4d0" />
-            <circle cx="42" cy="1065" r="0.7" fill={GOLD} />
-          </g>
-
-          {/* 2. Khoa Tài Chính - Ngân Hàng */}
-          <g transform="rotate(90 42 1138)">
+          {/* CỘT 2 (x=51): KHOA TÀI CHÍNH - NGÂN HÀNG (XUỐNG DÒNG SONG SONG, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
+          <g transform="rotate(90 51 1058)">
             <text
-              x="42"
-              y="1138"
+              x="51"
+              y="1058"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#fff4d0"
+              fill="#dfb143"
               fontFamily={SERIF}
               fontWeight="700"
               fontSize="9.5"
@@ -395,18 +424,18 @@ export default function PrintSash({
             </text>
           </g>
 
-          {/* CỘT PHẢI (x=86): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
-          <g transform="rotate(90 86 1058)">
+          {/* CỘT 3 (x=88): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
+          <g transform="rotate(90 88 1058)">
             {fontStyle === "script-charm" && (
               <text
-                x="86"
+                x="88"
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily="'Charm', 'Great Vibes', cursive"
                 fontWeight="700"
-                fontSize="33"
+                fontSize="34"
                 letterSpacing="0.8"
               >
                 Phạm Hữu Nghĩa
@@ -414,7 +443,7 @@ export default function PrintSash({
             )}
             {fontStyle === "script-greatvibes" && (
               <text
-                x="86"
+                x="88"
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -428,7 +457,7 @@ export default function PrintSash({
             )}
             {fontStyle === "script-alexbrush" && (
               <text
-                x="86"
+                x="88"
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -442,7 +471,7 @@ export default function PrintSash({
             )}
             {fontStyle === "script-dancing" && (
               <text
-                x="86"
+                x="88"
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -457,7 +486,7 @@ export default function PrintSash({
             )}
             {fontStyle === "serif-italic" && (
               <text
-                x="86"
+                x="88"
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"
@@ -473,7 +502,7 @@ export default function PrintSash({
             )}
             {fontStyle === "serif-caps" && (
               <text
-                x="86"
+                x="88"
                 y="1058"
                 textAnchor="middle"
                 dominantBaseline="middle"

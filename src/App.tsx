@@ -93,7 +93,7 @@ function LeftSashArtwork() {
       <ButterflyIcon x={32} y={132} size={24} color={GOLD} />
 
       {/* Mũ cử nhân mini đội nghiêng tự nhiên trên đỉnh số 2 */}
-      <MiniGraduationCap x={64} y={144} size={18} />
+      <MiniGraduationCap x={64} y={142} size={18} />
 
       {/* Ngôi sao lấp lánh trang trí quanh số 2026 */}
       <SparkleStar cx={96} cy={136} r={5} color="#fff4d0" />
@@ -102,10 +102,10 @@ function LeftSashArtwork() {
       <SparkleStar cx={48} cy={378} r={4} color={GOLD} />
 
       {/* Chữ CLASS OF chạy dọc cạnh số 2026 */}
-      <g transform="rotate(90 42 273)">
+      <g transform="rotate(90 40 270)">
         <text
-          x="42"
-          y="273"
+          x="40"
+          y="270"
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fff4d0"
@@ -119,27 +119,59 @@ function LeftSashArtwork() {
         </text>
       </g>
 
-      {/* Cụm 4 số 2 - 0 - 2 - 6 xếp dọc nghệ thuật in nghiêng thanh thoát chuẩn mẫu thực tế */}
-      <g
-        fontFamily="'Playfair Display', 'Cormorant Garamond', 'Noto Serif Display', Georgia, serif"
-        fontStyle="italic"
-        fontWeight="800"
-        fontSize="48"
-        fill="#fff4d0"
-        textAnchor="middle"
-      >
-        <text x="76" y="192" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-          2
-        </text>
-        <text x="76" y="246" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-          0
-        </text>
-        <text x="76" y="300" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-          2
-        </text>
-        <text x="76" y="354" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.8))">
-          6
-        </text>
+      {/* Cụm 4 số 2 - 0 - 2 - 6 phông chữ thư pháp nghệ thuật nối liền nhau (Interlocking Ribbon Script) */}
+      <g id="connected-year-2026">
+        {/* Đường nối thư pháp mềm mại giữa số 2 và số 0 */}
+        <path
+          d="M 68 196 C 82 202, 85 216, 76 226"
+          fill="none"
+          stroke="#fff4d0"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+        />
+
+        {/* Đường nối giữa số 0 và số 2 */}
+        <path
+          d="M 76 254 C 71 262, 66 268, 72 276"
+          fill="none"
+          stroke="#fff4d0"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+        />
+
+        {/* Dải lụa thư pháp uốn lượn đặc trưng từ chân số 2 bao bọc quanh số 6 */}
+        <path
+          d="M 66 304 C 92 310, 96 332, 82 350 C 72 362, 60 368, 74 372"
+          fill="none"
+          stroke="#fff4d0"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+          opacity="0.95"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
+        />
+
+        {/* 4 chữ số 2 - 0 - 2 - 6 phông thư pháp Charm mềm mại, uốn lượn nối liền */}
+        <g
+          fontFamily="'Charm', 'Great Vibes', cursive"
+          fontWeight="700"
+          fill="#fff4d0"
+          textAnchor="middle"
+        >
+          <text x="75" y="194" fontSize="54" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+            2
+          </text>
+          <text x="75" y="244" fontSize="50" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+            0
+          </text>
+          <text x="75" y="294" fontSize="54" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+            2
+          </text>
+          <text x="75" y="344" fontSize="50" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
+            6
+          </text>
+        </g>
       </g>
 
       {/* Ngôi sao lấp lánh trung tâm dưới số 2026 */}
@@ -215,62 +247,54 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm sắc nét, quý phái (chuẩn ảnh mẫu thực tế) */}
       <DongSonDrum x={-45} y={165} size={230} opacity={0.32} />
 
-      {/* CỘT TRÁI (x=42): VIỆN ĐIỀN TRÊN, KHOA ĐIỀN DƯỚI (CHUẨN TỶ LỆ, CÁCH K18 GẦN 64PX) */}
-      {/* 1. Viện Tài Chính - Kế Toán (Viện nằm ở phần trên, tâm y=188, dải y: 125 -> 251) */}
-      <g transform="rotate(90 42 188)">
+      {/* CỘT 1 (x=33): VIỆN TÀI CHÍNH - KẾ TOÁN (XUỐNG DÒNG, SIZE LỚN HƠN 11.5PX, MÀU TRẮNG NGỌC HOÀNG GIA NỔI BẬT) */}
+      <g transform="rotate(90 33 268)">
         <text
-          x="42"
-          y="188"
+          x="33"
+          y="268"
           textAnchor="middle"
           dominantBaseline="middle"
-          fill="#fff4d0"
+          fill="#ffffff"
           fontFamily="'Playfair Display', 'Noto Serif Display', Georgia, serif"
           fontWeight="800"
-          fontSize="10"
+          fontSize="11.5"
           letterSpacing="1.2"
-          filter="drop-shadow(0 1px 2px rgba(0,0,0,0.85))"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.95))"
         >
           VIỆN TÀI CHÍNH - KẾ TOÁN
         </text>
       </g>
 
-      {/* Hạt kim cương quý phái phân cách giữa Viện và Khoa ở y=268 */}
-      <g>
-        <circle cx="42" cy="261" r="0.7" fill={GOLD} />
-        <polygon points="42,265.5 44.5,268 42,270.5 39.5,268" fill="#fff4d0" />
-        <circle cx="42" cy="275" r="0.7" fill={GOLD} />
-      </g>
-
-      {/* 2. Khoa Tài Chính - Ngân Hàng (Khoa nằm ở phần dưới, tâm y=348, dải y: 288 -> 408) */}
-      <g transform="rotate(90 42 348)">
+      {/* CỘT 2 (x=51): KHOA TÀI CHÍNH - NGÂN HÀNG (XUỐNG DÒNG SONG SONG, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
+      <g transform="rotate(90 51 268)">
         <text
-          x="42"
-          y="348"
+          x="51"
+          y="268"
           textAnchor="middle"
           dominantBaseline="middle"
-          fill="#fff4d0"
+          fill="#dfb143"
           fontFamily="'Playfair Display', 'Noto Serif Display', Georgia, serif"
           fontWeight="700"
           fontSize="9.5"
           letterSpacing="1.0"
-          filter="drop-shadow(0 1px 2px rgba(0,0,0,0.8))"
+          filter="drop-shadow(0 1px 3px rgba(0,0,0,0.85))"
         >
           KHOA TÀI CHÍNH - NGÂN HÀNG
         </text>
       </g>
 
-      {/* CỘT PHẢI (x=86): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA) */}
-      <g transform="rotate(90 86 268)">
+      {/* CỘT 3 (x=88): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THƯ PHÁP CHUẨN MẪU THỰC TẾ) */}
+      <g transform="rotate(90 88 268)">
         {fontStyle === "script-charm" && (
           <text
-            x="86"
+            x="88"
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Charm', 'Great Vibes', cursive"
             fontWeight="700"
-            fontSize="33"
+            fontSize="34"
             letterSpacing="0.8"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
@@ -279,7 +303,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "script-greatvibes" && (
           <text
-            x="86"
+            x="88"
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -294,7 +318,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "script-dancing" && (
           <text
-            x="86"
+            x="88"
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -310,7 +334,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "serif-italic" && (
           <text
-            x="86"
+            x="88"
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -327,7 +351,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "script-alexbrush" && (
           <text
-            x="86"
+            x="88"
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -342,7 +366,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "serif-caps" && (
           <text
-            x="86"
+            x="88"
             y="268"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -548,7 +572,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.2.0</strong> · Trống đồng thực tế
+            TAG <strong>v1.3.0</strong> · Viện & Khoa Xuống Dòng · 2026 Nối Liền
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -566,8 +590,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.2.0): Nền hoa văn Trống đồng Đông Sơn Ngọc Lũ thực tế in chìm rõ nét trên cả mặt trước và mặt sau,
-            vạt trái số 2026 xếp dọc cùng bướm bay và mũ cử nhân mini, vạt phải mũ cử nhân hoàng gia, IUH, Viện Tài chính - Kế toán (trên), Khoa Tài chính - Ngân hàng (dưới) và tên sinh viên thư pháp chuẩn mẫu ảnh.
+            Mẫu sash nghi lễ đặc trưng IUH (v1.3.0): Viện Tài chính - Kế toán & Khoa Tài chính - Ngân hàng xuống dòng 2 hàng song song cân đối (Viện size lớn hơn màu trắng ngọc nổi bật), vạt trái cụm số 2026 thư pháp uốn lượn nối liền nghệ thuật trên nền Trống đồng Ngọc Lũ thực tế, tên sinh viên chuẩn mẫu ảnh.
           </p>
         </div>
       </section>
