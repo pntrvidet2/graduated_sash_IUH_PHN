@@ -11,7 +11,7 @@ import {
 
 type ViewMode = "all" | "front" | "back" | "print"
 
-const GOLD = "#f0c652"
+const GOLD = "#d8bd7b"
 
 function sashOutlinePoints(side: "left" | "right", d: number): string {
   const yTopLeft = side === "left" ? 18 + d * 0.9 : d * 0.9
@@ -45,7 +45,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
       <polygon
         points={sashOutlinePoints(side, 2.5)}
         fill="none"
-        stroke="#f0c652"
+        stroke="#d8bd7b"
         strokeWidth="1.8"
         strokeLinejoin="miter"
       />
@@ -53,7 +53,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
       <polygon
         points={sashOutlinePoints(side, 5.8)}
         fill="none"
-        stroke="#f0c652"
+        stroke="#d8bd7b"
         strokeWidth="1.0"
         strokeLinejoin="miter"
         opacity="0.95"
@@ -62,7 +62,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
       <polygon
         points={sashOutlinePoints(side, 8.8)}
         fill="none"
-        stroke="#f0c652"
+        stroke="#d8bd7b"
         strokeWidth="0.5"
         strokeLinejoin="miter"
         opacity="0.75"
@@ -134,7 +134,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       <SparkleStar cx={104} cy={82} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
-      <DongSonDrum x={-70} y={125} size={280} opacity={0.12} />
+      <DongSonDrum x={-70} y={125} size={280} opacity={0.09} />
 
       {/* ========================================================
           SPOT 1: BIỂU TƯỢNG NGÂN HÀNG HOÀNG GIA & VÒNG NGUYỆT QUẾ
@@ -189,7 +189,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
       {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-      <g transform="translate(40, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
+      <g transform="translate(55, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
         <polygon points="22,4 42,13 22,22 2,13" fill="url(#sashGoldFoil)" stroke="#fff8dd" strokeWidth="0.8" />
         <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
         <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -246,11 +246,11 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       {yearStyle === "royal-interlocking" && (
         <g id="masterpiece-2026" filter="url(#sashGoldGlow)"
           fontFamily="'Playfair Display', Georgia, serif" fontStyle="italic"
-          fontWeight="900" fontSize="60" textAnchor="middle" fill="url(#sashGoldFoil)">
-          <text x="65" y="204">2</text>
-          <text x="75" y="247">0</text>
-          <text x="65" y="290">2</text>
-          <text x="75" y="333">6</text>
+          fontWeight="900" fontSize="57" textAnchor="middle" fill="url(#sashGoldFoil)">
+          <text x="70" y="204">2</text>
+          <text x="70" y="247">0</text>
+          <text x="70" y="290">2</text>
+          <text x="70" y="333">6</text>
         </g>
       )}
 
@@ -328,20 +328,6 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           <path d="M 10 3.5 C 10 7.5, 22 7.5, 22 3.5 Z" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.5" />
         </g>
 
-        {/* Khẩu hiệu triết lý tài chính ngân hàng: EQUITY · CAPITAL · ASSETS */}
-        <text
-          x="70"
-          y="389"
-          textAnchor="middle"
-          fill="#f3dfa6"
-          fontFamily="'Cinzel', Georgia, serif"
-          fontWeight="700"
-          fontSize="4.6"
-          letterSpacing="1.2"
-        >
-          EQUITY · CAPITAL · ASSETS
-        </text>
-
         {/* Vạch phân cách & Huy hiệu Kim Tiền Hoàng Gia (Imperial Mint Coin Medallion at y=414) */}
         <line x1="28" y1="414" x2="56" y2="414" stroke="url(#sashGoldFoil)" strokeWidth="0.75" opacity="0.9" />
         <line x1="84" y1="414" x2="112" y2="414" stroke="url(#sashGoldFoil)" strokeWidth="0.75" opacity="0.9" />
@@ -363,7 +349,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           y="468"
           textAnchor="middle"
           dominantBaseline="central"
-          fill="url(#sashGoldFoil)"
+          fill={GOLD}
           fontFamily="'Great Vibes', 'Charm', cursive"
           fontSize="25"
           textLength="100"
@@ -455,7 +441,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       <SparkleStar cx={104} cy={82} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
-      <DongSonDrum x={-70} y={125} size={280} opacity={0.12} />
+      <DongSonDrum x={-70} y={125} size={280} opacity={0.09} />
 
       {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
       <g transform="rotate(90 33 268)">
@@ -503,7 +489,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             textLength="220"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
-            fill="#fff4d0"
+            fill="#fffdf4"
             fontFamily="'Charm', 'Alex Brush', cursive"
             fontWeight="700"
             fontSize="31"
@@ -521,7 +507,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
-            fill="url(#sashRightGoldFoil)"
+            fill="#fffdf4"
             fontFamily="'Great Vibes', 'Charm', cursive"
             fontSize="38"
             letterSpacing="1.5"
@@ -538,7 +524,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
-            fill="#fff4d0"
+            fill="#fffdf4"
             fontFamily="'Dancing Script', cursive"
             fontWeight="700"
             fontSize="33"
@@ -556,7 +542,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
-            fill="#fff4d0"
+            fill="#fffdf4"
             fontFamily="'Playfair Display', Georgia, serif"
             fontStyle="italic"
             fontWeight="800"
@@ -575,7 +561,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
-            fill="#fff4d0"
+            fill="#fffdf4"
             fontFamily="'Alex Brush', cursive"
             fontSize="37"
             letterSpacing="1.5"
@@ -592,7 +578,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
-            fill="#fff4d0"
+            fill="#fffdf4"
             fontFamily="'Playfair Display', Georgia, serif"
             fontWeight="800"
             fontSize="21"
@@ -629,7 +615,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
           y="468"
           textAnchor="middle"
           dominantBaseline="central"
-          fill="#dfb143"
+          fill={GOLD}
           fontFamily="'Cinzel', 'Noto Serif Display', 'Times New Roman', Georgia, serif"
           fontWeight="800"
           fontSize="28"
@@ -687,7 +673,7 @@ function BackLeftSashArtwork() {
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
       {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét, phóng to thanh thoát ở tâm */}
-      <DongSonDrum x={-70} y={145} size={280} opacity={0.13} />
+      <DongSonDrum x={-70} y={145} size={280} opacity={0.10} />
 
       {/* DÒNG CHỮ: INDUSTRIAL UNIVERSITY (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
       <g transform="rotate(90 70 285)">
@@ -727,7 +713,7 @@ function BackRightSashArtwork() {
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
       {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét, phóng to thanh thoát ở tâm */}
-      <DongSonDrum x={-70} y={145} size={280} opacity={0.13} />
+      <DongSonDrum x={-70} y={145} size={280} opacity={0.10} />
 
       {/* DÒNG CHỮ: HO CHI MINH CITY · 2026 (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
       <g transform="rotate(90 70 285)">

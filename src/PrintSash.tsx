@@ -21,7 +21,7 @@ const SLANT = 20 // slanted neck end
 const V = 70 // depth of the pointed end
 
 const NAVY = "#0b1b3e"
-const GOLD = "#f0c652"
+const GOLD = "#d8bd7b"
 const IVORY = "#f1e7cf"
 
 const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif"
@@ -208,7 +208,7 @@ export default function PrintSash({
         points={pts(outline(side, 3))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="3.2"
+        strokeWidth="2.6"
         strokeLinejoin="miter"
       />
 
@@ -253,7 +253,7 @@ export default function PrintSash({
         )}
         {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
         <g transform="translate(-55, 335)">
-          <DongSonDrum size={250} opacity={0.13} />
+          <DongSonDrum size={250} opacity={0.10} />
         </g>
         <VerticalText cy={470}>
           {side === "left"
@@ -286,7 +286,7 @@ export default function PrintSash({
 
           {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, in chìm tinh tế */}
           <g transform="translate(-70, 915)">
-            <DongSonDrum size={280} opacity={0.12} />
+            <DongSonDrum size={280} opacity={0.09} />
           </g>
 
           {/* ========================================================
@@ -342,7 +342,7 @@ export default function PrintSash({
           {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
           {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-          <g transform="translate(40, 948) rotate(-14) scale(0.68)">
+          <g transform="translate(55, 948) rotate(-14) scale(0.68)">
             <polygon points="22,4 42,13 22,22 2,13" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
             <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
             <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -398,11 +398,11 @@ export default function PrintSash({
       {yearStyle === "royal-interlocking" && (
         <g id="masterpiece-2026" 
           fontFamily="'Playfair Display', Georgia, serif" fontStyle="italic"
-          fontWeight="900" fontSize="60" textAnchor="middle" fill={`url(#goldFoil-${uid})`}>
-          <text x="65" y="1004">2</text>
-          <text x="75" y="1047">0</text>
-          <text x="65" y="1090">2</text>
-          <text x="75" y="1133">6</text>
+          fontWeight="900" fontSize="57" textAnchor="middle" fill={`url(#goldFoil-${uid})`}>
+          <text x="70" y="1004">2</text>
+          <text x="70" y="1047">0</text>
+          <text x="70" y="1090">2</text>
+          <text x="70" y="1133">6</text>
         </g>
       )}
 
@@ -468,20 +468,6 @@ export default function PrintSash({
               <path d="M 10 3.5 C 10 7.5, 22 7.5, 22 3.5 Z" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.5" />
             </g>
 
-            {/* Khẩu hiệu triết lý tài chính ngân hàng: EQUITY · CAPITAL · ASSETS */}
-            <text
-              x="70"
-              y="1189"
-              textAnchor="middle"
-              fill="#f3dfa6"
-              fontFamily="'Cinzel', Georgia, serif"
-              fontWeight="700"
-              fontSize="4.6"
-              letterSpacing="1.2"
-            >
-              EQUITY · CAPITAL · ASSETS
-            </text>
-
             {/* Vạch phân cách & Huy hiệu Kim Tiền Hoàng Gia (Imperial Mint Coin Medallion at y=1214) */}
             <line x1="28" y1="1214" x2="56" y2="1214" stroke={`url(#goldFoil-${uid})`} strokeWidth="0.75" opacity="0.9" />
             <line x1="84" y1="1214" x2="112" y2="1214" stroke={`url(#goldFoil-${uid})`} strokeWidth="0.75" opacity="0.9" />
@@ -503,7 +489,7 @@ export default function PrintSash({
               y="1260"
               textAnchor="middle"
               dominantBaseline="central"
-              fill={`url(#goldFoil-${uid})`}
+              fill={GOLD}
               fontFamily="'Great Vibes', 'Charm', cursive"
               fontSize="25"
           textLength="100"
@@ -564,7 +550,7 @@ export default function PrintSash({
 
           {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
           <g transform="translate(-70, 915)">
-            <DongSonDrum size={280} opacity={0.12} />
+            <DongSonDrum size={280} opacity={0.09} />
           </g>
 
           {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
@@ -611,7 +597,7 @@ export default function PrintSash({
             textLength="220"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
-                fill="#fff4d0"
+                fill="#fffdf4"
                 fontFamily="'Charm', 'Alex Brush', cursive"
                 fontWeight="700"
                 fontSize="31"
@@ -628,7 +614,7 @@ export default function PrintSash({
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
-                fill={`url(#goldFoil-${uid})`}
+                fill="#fffdf4"
                 fontFamily="'Great Vibes', 'Charm', cursive"
                 fontSize="38"
                 letterSpacing="1.5"
@@ -644,7 +630,7 @@ export default function PrintSash({
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
-                fill="#fff4d0"
+                fill="#fffdf4"
                 fontFamily="'Alex Brush', cursive"
                 fontSize="37"
                 letterSpacing="1.5"
@@ -660,7 +646,7 @@ export default function PrintSash({
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
-                fill="#fff4d0"
+                fill="#fffdf4"
                 fontFamily="'Dancing Script', cursive"
                 fontWeight="700"
                 fontSize="33"
@@ -677,7 +663,7 @@ export default function PrintSash({
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
-                fill="#fff4d0"
+                fill="#fffdf4"
                 fontFamily={SERIF}
                 fontStyle="italic"
                 fontWeight="800"
@@ -695,7 +681,7 @@ export default function PrintSash({
             textLength="210"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
-                fill="#fff4d0"
+                fill="#fffdf4"
                 fontFamily={SERIF}
                 fontWeight="800"
                 fontSize="21"
@@ -727,7 +713,7 @@ export default function PrintSash({
               y="1260"
               textAnchor="middle"
               dominantBaseline="central"
-              fill="#dfb143"
+              fill={GOLD}
               fontFamily="'Cinzel', 'Noto Serif Display', 'Times New Roman', Georgia, serif"
               fontWeight="800"
               fontSize="28"

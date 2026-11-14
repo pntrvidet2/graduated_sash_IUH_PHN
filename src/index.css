@@ -50,8 +50,8 @@
   font-family: "Inter:Regular", Inter, sans-serif;
   font-synthesis: none;
   --navy: #0b214d;
-  --gold: #f0c652;
-  --gold-trim: linear-gradient(135deg, #fced9d 0%, #dfa832 30%, #f7d770 65%, #c99120 100%);
+  --gold: #d8bd7b;
+  --gold-trim: linear-gradient(135deg, #ead8a4 0%, #c4a36a 30%, #e2cc93 65%, #b39157 100%);
   --royal-blue: #185adb;
   --paper: #f3efe5;
   --ink: #172238;
@@ -337,7 +337,7 @@ main {
   flex: 0 0 auto;
   width: 170px;
   height: 640px;
-  padding: 6.5px;
+  padding: 5px;
   background: var(--gold-trim);
   box-shadow: 0 14px 34px rgba(10, 31, 68, 0.28);
   clip-path: polygon(0 3.5%, 100% 0, 100% 89%, 50% 100%, 0 89%);
