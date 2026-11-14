@@ -1,5 +1,7 @@
 import { useState } from "react"
 import PrintStudio, { PrintSheets } from "./PrintStudio"
+import YearArtwork from "./YearArtwork"
+import BankingIcon from "./BankingIcon"
 import { IUH_LOGO_WHITE, IUH_LOGO_HEADER, IUH_EMBLEM_ORIGINAL } from "./assets/logoData"
 import {
   DongSonDrum,
@@ -32,7 +34,7 @@ function sashOutlinePoints(side: "left" | "right", d: number): string {
   ].join(" ")
 }
 
-/* Khung viền 3 chỉ vàng satin hoàng gia đậm đà, sắc nét và đẳng cấp */
+/* Ba đường chỉ viền đối xứng theo hình dáng hai vạt. */
 function SashFrame({ side }: { side: "left" | "right" }) {
   return (
     <svg
@@ -46,7 +48,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
         points={sashOutlinePoints(side, 2.5)}
         fill="none"
         stroke="#d8bd7b"
-        strokeWidth="1.8"
+        strokeWidth="1.2"
         strokeLinejoin="miter"
       />
       {/* Chỉ giữa thanh thoát */}
@@ -54,7 +56,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
         points={sashOutlinePoints(side, 5.8)}
         fill="none"
         stroke="#d8bd7b"
-        strokeWidth="1.0"
+        strokeWidth="0.7"
         strokeLinejoin="miter"
         opacity="0.95"
       />
@@ -63,7 +65,7 @@ function SashFrame({ side }: { side: "left" | "right" }) {
         points={sashOutlinePoints(side, 8.8)}
         fill="none"
         stroke="#d8bd7b"
-        strokeWidth="0.5"
+        strokeWidth="0.4"
         strokeLinejoin="miter"
         opacity="0.75"
       />
@@ -119,11 +121,19 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       <image
         href={IUH_EMBLEM_ORIGINAL}
         x="50"
-        y="22"
+        y="15"
         width="40"
-        height="44"
+        height="40"
         preserveAspectRatio="xMidYMid meet"
       />
+
+
+      <text x="70" y="62" textAnchor="middle" dominantBaseline="central"
+        fill="#dfb143" fontFamily="'Cinzel', Georgia, serif" fontWeight="800"
+        fontSize="5.2" letterSpacing="1.1">BANKING</text>
+      <text x="70" y="71" textAnchor="middle" dominantBaseline="central"
+        fill="#fff4d0" fontFamily="'Cinzel', Georgia, serif" fontWeight="700"
+        fontSize="4.7" letterSpacing="1.2">&amp; FINANCE</text>
 
       {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=82 (đồng mức tuyệt đối với vạt phải) */}
       <line x1="38" y1="82" x2="102" y2="82" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
@@ -136,60 +146,10 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
       <DongSonDrum x={-70} y={125} size={280} opacity={0.09} />
 
-      {/* ========================================================
-          SPOT 1: BIỂU TƯỢNG NGÂN HÀNG HOÀNG GIA & VÒNG NGUYỆT QUẾ
-          (Neoclassical Bank Facade · Laurel Wreath · Banking & Finance)
-         ======================================================== */}
-      <g id="spot1-banking-crest" filter="url(#sashRoyalShadow)">
-        {/* Vòng Nguyệt Quế Hoàng Gia ôm trọn trụ sở ngân hàng */}
-        <g stroke="url(#sashGoldFoil)" fill="url(#sashGoldFoil)" opacity="0.9">
-          <path d="M 50 114 C 42 108, 42 96, 52 90" fill="none" strokeWidth="0.9" strokeLinecap="round" />
-          <ellipse cx="44" cy="107" rx="2.5" ry="1.2" transform="rotate(-30 44 107)" />
-          <ellipse cx="43" cy="99" rx="2.5" ry="1.2" transform="rotate(-60 43 99)" />
-          <ellipse cx="48" cy="92" rx="2.2" ry="1.1" transform="rotate(-85 48 92)" />
-
-          <path d="M 90 114 C 98 108, 98 96, 88 90" fill="none" strokeWidth="0.9" strokeLinecap="round" />
-          <ellipse cx="96" cy="107" rx="2.5" ry="1.2" transform="rotate(30 96 107)" />
-          <ellipse cx="97" cy="99" rx="2.5" ry="1.2" transform="rotate(60 97 99)" />
-          <ellipse cx="92" cy="92" rx="2.2" ry="1.1" transform="rotate(85 92 92)" />
-        </g>
-
-        {/* Trụ sở Ngân hàng Tân Cổ Điển 3D Ánh Kim (4 Trụ Cột Corinthian & Mái Vòm Tam Giác) */}
-        <g transform="translate(70, 103) scale(0.8)">
-          <polygon points="0,-16 22,-6 -22,-6" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.5" />
-          <polygon points="0,-11.5 0.7,-9.5 2.5,-9 0.7,-8.5 0,-6.5 -0.7,-8.5 -2.5,-9 -0.7,-9.5" fill="#fff8df" />
-          <rect x="-22" y="-6" width="44" height="2.5" rx="0.4" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.3" />
-          <rect x="-17" y="-3.5" width="4.5" height="15" rx="0.6" fill="url(#sashGoldFoil)" />
-          <rect x="-7.5" y="-3.5" width="4.5" height="15" rx="0.6" fill="url(#sashGoldFoil)" />
-          <rect x="3" y="-3.5" width="4.5" height="15" rx="0.6" fill="url(#sashGoldFoil)" />
-          <rect x="12.5" y="-3.5" width="4.5" height="15" rx="0.6" fill="url(#sashGoldFoil)" />
-          <line x1="-14.75" y1="-2" x2="-14.75" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-          <line x1="-5.25" y1="-2" x2="-5.25" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-          <line x1="5.25" y1="-2" x2="5.25" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-          <line x1="14.75" y1="-2" x2="14.75" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-          <rect x="-20" y="11.5" width="40" height="2" rx="0.4" fill="url(#sashGoldFoil)" />
-          <rect x="-23" y="13.5" width="46" height="2" rx="0.4" fill="url(#sashGoldFoil)" opacity="0.9" />
-        </g>
-
-        {/* Dòng chữ: BANKING & FINANCE */}
-        <text
-          x="70"
-          y="126"
-          textAnchor="middle"
-          fill="url(#sashGoldFoil)"
-          fontFamily="'Cinzel', Georgia, serif"
-          fontWeight="800"
-          fontSize="5.6"
-          letterSpacing="1.2"
-        >
-          BANKING &amp; FINANCE
-        </text>
-      </g>
-
-      {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
+            {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
       {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-      <g transform="translate(55, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
+      <g transform="translate(50, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
         <polygon points="22,4 42,13 22,22 2,13" fill="url(#sashGoldFoil)" stroke="#fff8dd" strokeWidth="0.8" />
         <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
         <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -244,14 +204,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           3. classic-italic (Thư Pháp Cổ Điển Tinh Giản)
          ======================================================== */}
       {yearStyle === "royal-interlocking" && (
-        <g id="masterpiece-2026" filter="url(#sashGoldGlow)"
-          fontFamily="'Playfair Display', Georgia, serif" fontStyle="italic"
-          fontWeight="900" fontSize="57" textAnchor="middle" fill="url(#sashGoldFoil)">
-          <text x="70" y="204">2</text>
-          <text x="70" y="247">0</text>
-          <text x="70" y="290">2</text>
-          <text x="70" y="333">6</text>
-        </g>
+        <YearArtwork fill="url(#sashGoldFoil)" filter="url(#sashGoldGlow)" />
       )}
 
       {yearStyle === "seamless-ribbon" && (
@@ -306,27 +259,10 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       )}
 
       {/* ========================================================
-          SPOT 2: CÁN CÂN TÀI CHÍNH & HUY HIỆU KIM TIỀN HOÀNG GIA
-          (Golden Scales of Financial Balance · Equity · Mint Coin Medallion)
+          BIỂU TƯỢNG NGÂN HÀNG VÀ HUY HIỆU
          ======================================================== */}
-      <g id="spot2-banking-scales" filter="url(#sashRoyalShadow)">
-        {/* Cán cân tài chính cân bằng hoàn hảo (Scales of Fiscal Equilibrium) */}
-        <g transform="translate(70, 368) scale(0.85)">
-          <line x1="0" y1="-9" x2="0" y2="10" stroke="url(#sashGoldFoil)" strokeWidth="1.3" strokeLinecap="round" />
-          <circle cx="0" cy="-9" r="1.6" fill="#fff8df" />
-          <polygon points="-5,10 5,10 3,8 -3,8" fill="url(#sashGoldFoil)" />
-          <line x1="-16" y1="-6" x2="16" y2="-6" stroke="url(#sashGoldFoil)" strokeWidth="1.4" strokeLinecap="round" />
-          <circle cx="-16" cy="-6" r="1.1" fill="#fff8df" />
-          <circle cx="16" cy="-6" r="1.1" fill="#fff8df" />
-          {/* Đĩa cân trái & dây treo kim loại */}
-          <line x1="-16" y1="-6" x2="-21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-          <line x1="-16" y1="-6" x2="-11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-          <path d="M -22 3.5 C -22 7.5, -10 7.5, -10 3.5 Z" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.5" />
-          {/* Đĩa cân phải & dây treo kim loại */}
-          <line x1="16" y1="-6" x2="11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-          <line x1="16" y1="-6" x2="21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-          <path d="M 10 3.5 C 10 7.5, 22 7.5, 22 3.5 Z" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.5" />
-        </g>
+      <g id="banking-details" filter="url(#sashRoyalShadow)">
+        <BankingIcon y={368} gold="url(#sashGoldFoil)" />
 
         {/* Vạch phân cách & Huy hiệu Kim Tiền Hoàng Gia (Imperial Mint Coin Medallion at y=414) */}
         <line x1="28" y1="414" x2="56" y2="414" stroke="url(#sashGoldFoil)" strokeWidth="0.75" opacity="0.9" />
@@ -398,7 +334,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       </defs>
 
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sắc nét */}
-      <g transform="translate(48, 14)">
+      <g transform="translate(48, 18)">
         <GraduationCapIcon size={44} />
       </g>
 
@@ -504,8 +440,8 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
             x="88"
             y="268"
             textAnchor="middle"
-            textLength="210"
-            lengthAdjust="spacingAndGlyphs"
+            textLength="252"
+            lengthAdjust="spacing"
             dominantBaseline="middle"
             fill="#fffdf4"
             fontFamily="'Great Vibes', 'Charm', cursive"
@@ -807,7 +743,7 @@ export default function App() {
         <div className="header-right">
           <span className="version-pill" title="Đã đánh tag git cho từng bản update">
             <span className="tag-dot" />
-            TAG <strong>v1.14.0</strong> · Tăng Độ Đậm Khung Viền Vàng Hoàng Gia 3 Chỉ Đẳng Cấp
+            SASH · <strong>2026</strong> · K18
           </span>
           <p className="header-student-name">PHẠM HỮU NGHĨA</p>
         </div>
@@ -825,7 +761,7 @@ export default function App() {
         <div className="hero-note">
           <span>01</span>
           <p>
-            Mẫu sash nghi lễ đặc trưng IUH (v1.14.0): Tăng độ đậm và sắc nét cho toàn bộ khung viền dải sash với nẹp biên vàng satin 6.5px cùng hệ viền 3 chỉ vàng hoàng gia (Triple Pinstripe) tinh xảo, tôn vinh khí chất tân cử nhân Khoa Tài chính - Ngân hàng.
+            Mẫu sash IUH với họa tiết trống đồng, viền vàng thanh mảnh và tên tân cử nhân Khoa Tài chính - Ngân hàng.
           </p>
         </div>
       </section>
@@ -981,9 +917,8 @@ export default function App() {
             Đỉnh vạt phải khắc họa biểu tượng Mũ tốt nghiệp uy nghiêm cùng nhận diện
             khóa K18 và hoa văn góc hoàng gia ở mũi nhọn vạt.
           </OptionCard>
-          <OptionCard number="03" title="Viền 3 Chỉ Vàng Hoàng Gia Sắc Nét">
-            Khung viền 3 chỉ vàng sắc nét, đậm đà uy nghiêm chạy dọc dải sash trên nền satin Navy sâu,
-            kết hợp nẹp biên vàng satin 6.5px vững chãi tôn vinh phong thái cử nhân danh giá.
+          <OptionCard number="03" title="Viền 3 Chỉ Vàng">
+            Ba đường chỉ vàng thanh mảnh chạy dọc hai vạt sash trên nền satin xanh navy.
           </OptionCard>
         </div>
       </section>

@@ -337,7 +337,7 @@ main {
   flex: 0 0 auto;
   width: 170px;
   height: 640px;
-  padding: 5px;
+  padding: 3.5px;
   background: var(--gold-trim);
   box-shadow: 0 14px 34px rgba(10, 31, 68, 0.28);
   clip-path: polygon(0 3.5%, 100% 0, 100% 89%, 50% 100%, 0 89%);

@@ -8,6 +8,8 @@ import {
   MiniGraduationCap,
 } from "./DongSonDrum"
 import type { NameFontStyle, Year2026Style } from "./App"
+import YearArtwork from "./YearArtwork"
+import BankingIcon from "./BankingIcon"
 import charmBoldFont from "./assets/charm-bold.ttf?inline"
 import greatVibesFont from "./assets/great-vibes.ttf?inline"
 import playfairItalicFont from "./assets/playfair-display-italic.ttf?inline"
@@ -203,12 +205,12 @@ export default function PrintSash({
         clipPath={`url(#clip-${uid})`}
       />
 
-      {/* Outer thick gold border */}
+      {/* Three gold lines inset evenly from the cutting edge. */}
       <polygon
         points={pts(outline(side, 3))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="2.6"
+        strokeWidth="1.8"
         strokeLinejoin="miter"
       />
 
@@ -217,7 +219,7 @@ export default function PrintSash({
         points={pts(outline(side, 6.8))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="1.2"
+        strokeWidth="0.8"
         opacity="0.95"
         strokeLinejoin="miter"
       />
@@ -227,7 +229,7 @@ export default function PrintSash({
         points={pts(outline(side, 9.8))}
         fill="none"
         stroke={GOLD}
-        strokeWidth="0.7"
+        strokeWidth="0.5"
         opacity="0.80"
         strokeLinejoin="miter"
       />
@@ -270,11 +272,19 @@ export default function PrintSash({
             href={IUH_EMBLEM_ORIGINAL}
             xlinkHref={IUH_EMBLEM_ORIGINAL}
             x="50"
-            y="822"
+            y="815"
             width="40"
-            height="44"
+            height="40"
             preserveAspectRatio="xMidYMid meet"
           />
+
+
+      <text x="70" y="862" textAnchor="middle" dominantBaseline="central"
+        fill="#dfb143" fontFamily="'Cinzel', Georgia, serif" fontWeight="800"
+        fontSize="5.2" letterSpacing="1.1">BANKING</text>
+      <text x="70" y="871" textAnchor="middle" dominantBaseline="central"
+        fill="#fff4d0" fontFamily="'Cinzel', Georgia, serif" fontWeight="700"
+        fontSize="4.7" letterSpacing="1.2">&amp; FINANCE</text>
 
           {/* Đường vạch phân cách kim cương và ngôi sao lấp lánh dưới logo IUH ở y=882 (đồng mức tuyệt đối với vạt phải) */}
           <line x1="38" y1="882" x2="102" y2="882" stroke={GOLD} strokeWidth="0.6" opacity="0.8" />
@@ -289,60 +299,10 @@ export default function PrintSash({
             <DongSonDrum size={280} opacity={0.09} />
           </g>
 
-          {/* ========================================================
-              SPOT 1: BIỂU TƯỢNG NGÂN HÀNG HOÀNG GIA & VÒNG NGUYỆT QUẾ
-              (Neoclassical Bank Facade · Laurel Wreath · Banking & Finance)
-             ======================================================== */}
-          <g id="spot1-banking-crest">
-            {/* Vòng Nguyệt Quế Hoàng Gia ôm trọn trụ sở ngân hàng */}
-            <g stroke={`url(#goldFoil-${uid})`} fill={`url(#goldFoil-${uid})`} opacity="0.9">
-              <path d="M 50 914 C 42 908, 42 896, 52 890" fill="none" strokeWidth="0.9" strokeLinecap="round" />
-              <ellipse cx="44" cy="907" rx="2.5" ry="1.2" transform="rotate(-30 44 907)" />
-              <ellipse cx="43" cy="899" rx="2.5" ry="1.2" transform="rotate(-60 43 899)" />
-              <ellipse cx="48" cy="892" rx="2.2" ry="1.1" transform="rotate(-85 48 892)" />
-
-              <path d="M 90 914 C 98 908, 98 896, 88 890" fill="none" strokeWidth="0.9" strokeLinecap="round" />
-              <ellipse cx="96" cy="907" rx="2.5" ry="1.2" transform="rotate(30 96 907)" />
-              <ellipse cx="97" cy="899" rx="2.5" ry="1.2" transform="rotate(60 97 899)" />
-              <ellipse cx="92" cy="892" rx="2.2" ry="1.1" transform="rotate(85 92 892)" />
-            </g>
-
-            {/* Trụ sở Ngân hàng Tân Cổ Điển 3D Ánh Kim (4 Trụ Cột Corinthian & Mái Vòm Tam Giác) */}
-            <g transform="translate(70, 903) scale(0.8)">
-              <polygon points="0,-16 22,-6 -22,-6" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.5" />
-              <polygon points="0,-11.5 0.7,-9.5 2.5,-9 0.7,-8.5 0,-6.5 -0.7,-8.5 -2.5,-9 -0.7,-9.5" fill="#fff8df" />
-              <rect x="-22" y="-6" width="44" height="2.5" rx="0.4" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.3" />
-              <rect x="-17" y="-3.5" width="4.5" height="15" rx="0.6" fill={`url(#goldFoil-${uid})`} />
-              <rect x="-7.5" y="-3.5" width="4.5" height="15" rx="0.6" fill={`url(#goldFoil-${uid})`} />
-              <rect x="3" y="-3.5" width="4.5" height="15" rx="0.6" fill={`url(#goldFoil-${uid})`} />
-              <rect x="12.5" y="-3.5" width="4.5" height="15" rx="0.6" fill={`url(#goldFoil-${uid})`} />
-              <line x1="-14.75" y1="-2" x2="-14.75" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-              <line x1="-5.25" y1="-2" x2="-5.25" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-              <line x1="5.25" y1="-2" x2="5.25" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-              <line x1="14.75" y1="-2" x2="14.75" y2="10" stroke="#fff8df" strokeWidth="0.6" opacity="0.8" />
-              <rect x="-20" y="11.5" width="40" height="2" rx="0.4" fill={`url(#goldFoil-${uid})`} />
-              <rect x="-23" y="13.5" width="46" height="2" rx="0.4" fill={`url(#goldFoil-${uid})`} opacity="0.9" />
-            </g>
-
-            {/* Dòng chữ: BANKING & FINANCE */}
-            <text
-              x="70"
-              y="926"
-              textAnchor="middle"
-              fill={`url(#goldFoil-${uid})`}
-              fontFamily="'Cinzel', Georgia, serif"
-              fontWeight="800"
-              fontSize="5.6"
-              letterSpacing="1.2"
-            >
-              BANKING &amp; FINANCE
-            </text>
-          </g>
-
-          {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
+                    {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
           {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-          <g transform="translate(55, 948) rotate(-14) scale(0.68)">
+          <g transform="translate(50, 948) rotate(-14) scale(0.68)">
             <polygon points="22,4 42,13 22,22 2,13" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
             <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
             <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -396,14 +356,7 @@ export default function PrintSash({
               3. classic-italic (Thư Pháp Cổ Điển Tinh Giản)
              ======================================================== */}
       {yearStyle === "royal-interlocking" && (
-        <g id="masterpiece-2026" 
-          fontFamily="'Playfair Display', Georgia, serif" fontStyle="italic"
-          fontWeight="900" fontSize="57" textAnchor="middle" fill={`url(#goldFoil-${uid})`}>
-          <text x="70" y="1004">2</text>
-          <text x="70" y="1047">0</text>
-          <text x="70" y="1090">2</text>
-          <text x="70" y="1133">6</text>
-        </g>
+        <YearArtwork fill={`url(#goldFoil-${uid})`} yOffset={800} />
       )}
 
           {yearStyle === "seamless-ribbon" && (
@@ -446,27 +399,10 @@ export default function PrintSash({
           )}
 
           {/* ========================================================
-              SPOT 2: CÁN CÂN TÀI CHÍNH & HUY HIỆU KIM TIỀN HOÀNG GIA
-              (Golden Scales of Financial Balance · Equity · Mint Coin Medallion)
+              BIỂU TƯỢNG NGÂN HÀNG VÀ HUY HIỆU
              ======================================================== */}
-          <g id="spot2-banking-scales">
-            {/* Cán cân tài chính cân bằng hoàn hảo (Scales of Fiscal Equilibrium) */}
-            <g transform="translate(70, 1168) scale(0.85)">
-              <line x1="0" y1="-9" x2="0" y2="10" stroke={`url(#goldFoil-${uid})`} strokeWidth="1.3" strokeLinecap="round" />
-              <circle cx="0" cy="-9" r="1.6" fill="#fff8df" />
-              <polygon points="-5,10 5,10 3,8 -3,8" fill={`url(#goldFoil-${uid})`} />
-              <line x1="-16" y1="-6" x2="16" y2="-6" stroke={`url(#goldFoil-${uid})`} strokeWidth="1.4" strokeLinecap="round" />
-              <circle cx="-16" cy="-6" r="1.1" fill="#fff8df" />
-              <circle cx="16" cy="-6" r="1.1" fill="#fff8df" />
-              {/* Đĩa cân trái & dây treo kim loại */}
-              <line x1="-16" y1="-6" x2="-21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-              <line x1="-16" y1="-6" x2="-11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-              <path d="M -22 3.5 C -22 7.5, -10 7.5, -10 3.5 Z" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.5" />
-              {/* Đĩa cân phải & dây treo kim loại */}
-              <line x1="16" y1="-6" x2="11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-              <line x1="16" y1="-6" x2="21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
-              <path d="M 10 3.5 C 10 7.5, 22 7.5, 22 3.5 Z" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.5" />
-            </g>
+          <g id="banking-details">
+            <BankingIcon y={1168} gold={`url(#goldFoil-${uid})`} />
 
             {/* Vạch phân cách & Huy hiệu Kim Tiền Hoàng Gia (Imperial Mint Coin Medallion at y=1214) */}
             <line x1="28" y1="1214" x2="56" y2="1214" stroke={`url(#goldFoil-${uid})`} strokeWidth="0.75" opacity="0.9" />
@@ -508,7 +444,7 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Mũ cử nhân hoàng gia */}
-          <g transform="translate(48, 814)">
+          <g transform="translate(48, 818)">
             <GraduationCapIcon size={44} color={GOLD} />
           </g>
 
@@ -611,8 +547,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
-            textLength="210"
-            lengthAdjust="spacingAndGlyphs"
+            textLength="252"
+            lengthAdjust="spacing"
                 dominantBaseline="middle"
                 fill="#fffdf4"
                 fontFamily="'Great Vibes', 'Charm', cursive"
