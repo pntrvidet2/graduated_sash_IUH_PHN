@@ -594,14 +594,14 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
-            textLength="220"
+            textLength="255"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fffdf4"
                 fontFamily="'Charm', 'Alex Brush', cursive"
                 fontWeight="700"
-                fontSize="31"
-                letterSpacing="0.5"
+                fontSize="34"
+                letterSpacing="1.1"
               >
                 Phạm Hữu Nghĩa
               </text>
