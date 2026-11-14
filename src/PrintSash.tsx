@@ -4,11 +4,12 @@ import {
   DongSonDrum,
   GraduationCapIcon,
   CornerFlourish,
-  ButterflyIcon,
   SparkleStar,
   MiniGraduationCap,
 } from "./DongSonDrum"
 import type { NameFontStyle, Year2026Style } from "./App"
+import greatVibesFont from "./assets/great-vibes.ttf?inline"
+import playfairItalicFont from "./assets/playfair-display-italic.ttf?inline"
 
 export type Side = "left" | "right"
 
@@ -161,16 +162,30 @@ export default function PrintSash({
             }}
           />
         )}
+        <style>{`
+          @font-face {
+            font-family: 'Great Vibes';
+            src: url('${greatVibesFont}') format('truetype');
+            font-style: normal;
+            font-weight: 400;
+          }
+          @font-face {
+            font-family: 'Playfair Display';
+            src: url('${playfairItalicFont}') format('truetype');
+            font-style: italic;
+            font-weight: 900;
+          }
+        `}</style>
         <clipPath id={`clip-${uid}`}>
           <polygon points={pts(outline(side, -BLEED))} />
         </clipPath>
         <linearGradient id={`goldFoil-${uid}`} x1="15%" y1="0%" x2="85%" y2="100%">
-          <stop offset="0%" stopColor="#fffce8" />
-          <stop offset="18%" stopColor="#fced9d" />
-          <stop offset="42%" stopColor="#dfa832" />
-          <stop offset="68%" stopColor="#fdf0b0" />
-          <stop offset="88%" stopColor="#c99120" />
-          <stop offset="100%" stopColor="#9a6912" />
+          <stop offset="0%" stopColor="#fff5d6" />
+          <stop offset="18%" stopColor="#f3dfa6" />
+          <stop offset="42%" stopColor="#c9a051" />
+          <stop offset="68%" stopColor="#f7e5b9" />
+          <stop offset="88%" stopColor="#b38a40" />
+          <stop offset="100%" stopColor="#967133" />
         </linearGradient>
       </defs>
 
@@ -231,7 +246,7 @@ export default function PrintSash({
         )}
         {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
         <g transform="translate(-55, 335)">
-          <DongSonDrum size={250} opacity={0.20} />
+          <DongSonDrum size={250} opacity={0.13} />
         </g>
         <VerticalText cy={470}>
           {side === "left"
@@ -264,7 +279,7 @@ export default function PrintSash({
 
           {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, in chìm tinh tế */}
           <g transform="translate(-70, 915)">
-            <DongSonDrum size={280} opacity={0.17} />
+            <DongSonDrum size={280} opacity={0.12} />
           </g>
 
           {/* ========================================================
@@ -318,7 +333,6 @@ export default function PrintSash({
           </g>
 
           {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
-          <ButterflyIcon x={16} y={930} size={20} color={GOLD} />
 
           {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
           <g transform="translate(36, 948) rotate(-14) scale(0.68)">
@@ -332,24 +346,21 @@ export default function PrintSash({
           <g>
             {/* Chòm sao góc trên bên phải của số 2 */}
             <SparkleStar cx={98} cy={964} r={4.5} color="#fff8df" />
-            <circle cx={108} cy={978} r={0.9} fill="#fced9d" />
+            <circle cx={108} cy={978} r={0.9} fill="#f3dfa6" />
             <circle cx={92} cy={982} r={0.75} fill="#fff8df" />
 
             {/* Chòm sao khoảng giữa bên trái (cạnh CLASS OF) */}
-            <SparkleStar cx={22} cy={1002} r={3.6} color="#fced9d" />
             <circle cx={20} cy={1046} r={0.8} fill="#fff8df" />
 
             {/* Chòm sao khoảng giữa bên phải (cạnh số 0 và số 2) */}
-            <SparkleStar cx={106} cy={1056} r={4.5} color="#fff8df" />
-            <circle cx={102} cy={1092} r={0.85} fill="#fced9d" />
+            <circle cx={102} cy={1092} r={0.85} fill="#f3dfa6" />
 
             {/* Chòm sao góc dưới bên trái (cạnh đuôi số 2 thứ hai) */}
-            <SparkleStar cx={22} cy={1120} r={3.6} color="#fced9d" />
 
             {/* Chòm sao trung tâm dưới số 6 */}
             <SparkleStar cx={70} cy={1164} r={4.2} color="#fff8df" />
-            <circle cx={58} cy={1164} r={0.8} fill="#fced9d" />
-            <circle cx={82} cy={1164} r={0.8} fill="#fced9d" />
+            <circle cx={58} cy={1164} r={0.8} fill="#f3dfa6" />
+            <circle cx={82} cy={1164} r={0.8} fill="#f3dfa6" />
           </g>
 
           {/* DÒNG CHỮ CLASS OF XẾP DỌC HOÀNG GIA (C L A S S  O F) - Hạ +20px */}
@@ -482,12 +493,12 @@ export default function PrintSash({
               <circle cx="-16" cy="-6" r="1.1" fill="#fff8df" />
               <circle cx="16" cy="-6" r="1.1" fill="#fff8df" />
               {/* Đĩa cân trái & dây treo kim loại */}
-              <line x1="-16" y1="-6" x2="-21" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
-              <line x1="-16" y1="-6" x2="-11" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
+              <line x1="-16" y1="-6" x2="-21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
+              <line x1="-16" y1="-6" x2="-11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
               <path d="M -22 3.5 C -22 7.5, -10 7.5, -10 3.5 Z" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.5" />
               {/* Đĩa cân phải & dây treo kim loại */}
-              <line x1="16" y1="-6" x2="11" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
-              <line x1="16" y1="-6" x2="21" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
+              <line x1="16" y1="-6" x2="11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
+              <line x1="16" y1="-6" x2="21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
               <path d="M 10 3.5 C 10 7.5, 22 7.5, 22 3.5 Z" fill={`url(#goldFoil-${uid})`} stroke="#fff8df" strokeWidth="0.5" />
             </g>
 
@@ -496,7 +507,7 @@ export default function PrintSash({
               x="70"
               y="1189"
               textAnchor="middle"
-              fill="#fced9d"
+              fill="#f3dfa6"
               fontFamily="'Cinzel', Georgia, serif"
               fontWeight="700"
               fontSize="4.6"
@@ -510,21 +521,17 @@ export default function PrintSash({
             <line x1="84" y1="1214" x2="112" y2="1214" stroke={`url(#goldFoil-${uid})`} strokeWidth="0.75" opacity="0.9" />
             <g transform="translate(70, 1214)">
               <circle cx="0" cy="0" r="7.5" fill="#0b172a" stroke={`url(#goldFoil-${uid})`} strokeWidth="1.2" />
-              <circle cx="0" cy="0" r="5.8" fill="none" stroke="#fced9d" strokeWidth="0.5" strokeDasharray="1.2,1.2" />
+              <circle cx="0" cy="0" r="5.8" fill="none" stroke="#f3dfa6" strokeWidth="0.5" strokeDasharray="1.2,1.2" />
               <polygon points="0,-3.5 1,-1 3.5,0 1,1 0,3.5 -1,1 -3.5,0 -1,-1" fill="#fff8df" />
               <circle cx="-10" cy="0" r="0.8" fill="#fff8df" />
               <circle cx="10" cy="0" r="0.8" fill="#fff8df" />
             </g>
 
             {/* Ngôi sao lấp lánh tầng dưới */}
-            <SparkleStar cx={46} cy={1238} r={2.8} color={GOLD} />
-            <SparkleStar cx={94} cy={1238} r={2.8} color={GOLD} />
           </g>
 
           {/* Chữ Graduation thư pháp uốn lượn (căn tại y=1260, bằng ngang tuyệt đối với K18) */}
           <g>
-            <SparkleStar cx={24} cy={1260} r={3} color={GOLD} />
-            <SparkleStar cx={116} cy={1260} r={3} color={GOLD} />
             <text
               x="70"
               y="1260"
@@ -532,7 +539,9 @@ export default function PrintSash({
               dominantBaseline="central"
               fill={`url(#goldFoil-${uid})`}
               fontFamily="'Great Vibes', 'Charm', cursive"
-              fontSize="28"
+              fontSize="25"
+          textLength="100"
+          lengthAdjust="spacingAndGlyphs"
               letterSpacing="1"
             >
               Graduation
@@ -589,7 +598,7 @@ export default function PrintSash({
 
           {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
           <g transform="translate(-70, 915)">
-            <DongSonDrum size={280} opacity={0.17} />
+            <DongSonDrum size={280} opacity={0.12} />
           </g>
 
           {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
@@ -633,6 +642,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily="'Charm', 'Alex Brush', cursive"
@@ -648,6 +659,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill={`url(#goldFoil-${uid})`}
                 fontFamily="'Great Vibes', 'Charm', cursive"
@@ -662,6 +675,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily="'Alex Brush', cursive"
@@ -676,6 +691,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily="'Dancing Script', cursive"
@@ -691,6 +708,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily={SERIF}
@@ -707,6 +726,8 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily={SERIF}
@@ -721,9 +742,6 @@ export default function PrintSash({
 
           {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
           <g>
-            <SparkleStar cx={70} cy={1182} r={5} color="#f3db83" />
-            <SparkleStar cx={48} cy={1178} r={3} color="#fff4d0" />
-            <SparkleStar cx={92} cy={1178} r={3} color="#fff4d0" />
 
             <line x1="36" y1="1204" x2="62" y2="1204" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
             <line x1="78" y1="1204" x2="104" y2="1204" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
@@ -734,15 +752,10 @@ export default function PrintSash({
             <circle cx="82" cy="1204" r="0.6" fill="#fff4d0" />
             <SparkleStar cx={34} cy={1204} r={2.8} color={GOLD} />
             <SparkleStar cx={106} cy={1204} r={2.8} color={GOLD} />
-
-            <SparkleStar cx={46} cy={1228} r={2.8} color={GOLD} />
-            <SparkleStar cx={94} cy={1228} r={2.8} color={GOLD} />
           </g>
 
           {/* Cohort K18 (chuẩn Roman Serif Cinzel, căn chính xác trung tâm x=70, y=1260, màu vàng gold quý phái) */}
           <g>
-            <SparkleStar cx={24} cy={1260} r={3} color={GOLD} />
-            <SparkleStar cx={116} cy={1260} r={3} color={GOLD} />
             <text
               x="70"
               y="1260"

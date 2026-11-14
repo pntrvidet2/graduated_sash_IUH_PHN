@@ -5,7 +5,6 @@ import {
   DongSonDrum,
   GraduationCapIcon,
   CornerFlourish,
-  ButterflyIcon,
   SparkleStar,
   MiniGraduationCap,
 } from "./DongSonDrum"
@@ -89,18 +88,18 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       <defs>
         {/* Luxury Gold Foil Metallic Gradient (Ánh kim vàng 5 tầng hoàng gia) */}
         <linearGradient id="sashGoldFoil" x1="15%" y1="0%" x2="85%" y2="100%">
-          <stop offset="0%" stopColor="#fffce8" />
-          <stop offset="18%" stopColor="#fced9d" />
-          <stop offset="42%" stopColor="#dfa832" />
-          <stop offset="68%" stopColor="#fdf0b0" />
-          <stop offset="88%" stopColor="#c99120" />
-          <stop offset="100%" stopColor="#9a6912" />
+          <stop offset="0%" stopColor="#fff5d6" />
+          <stop offset="18%" stopColor="#f3dfa6" />
+          <stop offset="42%" stopColor="#c9a051" />
+          <stop offset="68%" stopColor="#f7e5b9" />
+          <stop offset="88%" stopColor="#b38a40" />
+          <stop offset="100%" stopColor="#967133" />
         </linearGradient>
 
         <linearGradient id="sashGoldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#dfa832" />
+          <stop offset="0%" stopColor="#c9a051" />
           <stop offset="50%" stopColor="#fff8df" />
-          <stop offset="100%" stopColor="#dfa832" />
+          <stop offset="100%" stopColor="#c9a051" />
         </linearGradient>
 
         {/* Deep Luxury Embossed Shadow */}
@@ -135,7 +134,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       <SparkleStar cx={104} cy={82} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
-      <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
+      <DongSonDrum x={-70} y={125} size={280} opacity={0.12} />
 
       {/* ========================================================
           SPOT 1: BIỂU TƯỢNG NGÂN HÀNG HOÀNG GIA & VÒNG NGUYỆT QUẾ
@@ -188,7 +187,6 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       </g>
 
       {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
-      <ButterflyIcon x={16} y={130} size={20} color={GOLD} />
 
       {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
       <g transform="translate(36, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
@@ -202,24 +200,21 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       <g filter="url(#sashRoyalShadow)">
         {/* Chòm sao góc trên bên phải của số 2 */}
         <SparkleStar cx={98} cy={164} r={4.5} color="#fff8df" />
-        <circle cx={108} cy={178} r={0.9} fill="#fced9d" />
+        <circle cx={108} cy={178} r={0.9} fill="#f3dfa6" />
         <circle cx={92} cy={182} r={0.75} fill="#fff8df" />
 
         {/* Chòm sao khoảng giữa bên trái (cạnh CLASS OF) */}
-        <SparkleStar cx={22} cy={202} r={3.6} color="#fced9d" />
         <circle cx={20} cy={246} r={0.8} fill="#fff8df" />
 
         {/* Chòm sao khoảng giữa bên phải (cạnh số 0 và số 2) */}
-        <SparkleStar cx={106} cy={256} r={4.5} color="#fff8df" />
-        <circle cx={102} cy={292} r={0.85} fill="#fced9d" />
+        <circle cx={102} cy={292} r={0.85} fill="#f3dfa6" />
 
         {/* Chòm sao góc dưới bên trái (cạnh đuôi số 2 thứ hai) */}
-        <SparkleStar cx={22} cy={320} r={3.6} color="#fced9d" />
 
         {/* Chòm sao trung tâm dưới số 6 */}
         <SparkleStar cx={70} cy={364} r={4.2} color="#fff8df" />
-        <circle cx={58} cy={364} r={0.8} fill="#fced9d" />
-        <circle cx={82} cy={364} r={0.8} fill="#fced9d" />
+        <circle cx={58} cy={364} r={0.8} fill="#f3dfa6" />
+        <circle cx={82} cy={364} r={0.8} fill="#f3dfa6" />
       </g>
 
       {/* DÒNG CHỮ CLASS OF XẾP DỌC HOÀNG GIA (C L A S S  O F) - Hạ +20px */}
@@ -368,12 +363,12 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           <circle cx="-16" cy="-6" r="1.1" fill="#fff8df" />
           <circle cx="16" cy="-6" r="1.1" fill="#fff8df" />
           {/* Đĩa cân trái & dây treo kim loại */}
-          <line x1="-16" y1="-6" x2="-21" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
-          <line x1="-16" y1="-6" x2="-11" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
+          <line x1="-16" y1="-6" x2="-21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
+          <line x1="-16" y1="-6" x2="-11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
           <path d="M -22 3.5 C -22 7.5, -10 7.5, -10 3.5 Z" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.5" />
           {/* Đĩa cân phải & dây treo kim loại */}
-          <line x1="16" y1="-6" x2="11" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
-          <line x1="16" y1="-6" x2="21" y2="3.5" stroke="#fced9d" strokeWidth="0.6" />
+          <line x1="16" y1="-6" x2="11" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
+          <line x1="16" y1="-6" x2="21" y2="3.5" stroke="#f3dfa6" strokeWidth="0.6" />
           <path d="M 10 3.5 C 10 7.5, 22 7.5, 22 3.5 Z" fill="url(#sashGoldFoil)" stroke="#fff8df" strokeWidth="0.5" />
         </g>
 
@@ -382,7 +377,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           x="70"
           y="389"
           textAnchor="middle"
-          fill="#fced9d"
+          fill="#f3dfa6"
           fontFamily="'Cinzel', Georgia, serif"
           fontWeight="700"
           fontSize="4.6"
@@ -396,21 +391,17 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
         <line x1="84" y1="414" x2="112" y2="414" stroke="url(#sashGoldFoil)" strokeWidth="0.75" opacity="0.9" />
         <g transform="translate(70, 414)">
           <circle cx="0" cy="0" r="7.5" fill="#0b172a" stroke="url(#sashGoldFoil)" strokeWidth="1.2" />
-          <circle cx="0" cy="0" r="5.8" fill="none" stroke="#fced9d" strokeWidth="0.5" strokeDasharray="1.2,1.2" />
+          <circle cx="0" cy="0" r="5.8" fill="none" stroke="#f3dfa6" strokeWidth="0.5" strokeDasharray="1.2,1.2" />
           <polygon points="0,-3.5 1,-1 3.5,0 1,1 0,3.5 -1,1 -3.5,0 -1,-1" fill="#fff8df" />
           <circle cx="-10" cy="0" r="0.8" fill="#fff8df" />
           <circle cx="10" cy="0" r="0.8" fill="#fff8df" />
         </g>
 
         {/* Ngôi sao lấp lánh tầng dưới */}
-        <SparkleStar cx={46} cy={438} r={2.8} color="#dfa832" />
-        <SparkleStar cx={94} cy={438} r={2.8} color="#dfa832" />
       </g>
 
       {/* Chữ Graduation thư pháp uốn lượn (căn tại y=468, bằng ngang trung tâm tuyệt đối với K18) */}
       <g filter="url(#sashRoyalShadow)">
-        <SparkleStar cx={24} cy={468} r={3} color="#dfa832" />
-        <SparkleStar cx={116} cy={468} r={3} color="#dfa832" />
         <text
           x="70"
           y="468"
@@ -418,7 +409,9 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           dominantBaseline="central"
           fill="url(#sashGoldFoil)"
           fontFamily="'Great Vibes', 'Charm', cursive"
-          fontSize="28"
+          fontSize="25"
+          textLength="100"
+          lengthAdjust="spacingAndGlyphs"
           letterSpacing="1"
         >
           Graduation
@@ -453,12 +446,12 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       <defs>
         <linearGradient id="sashRightGoldFoil" x1="15%" y1="0%" x2="85%" y2="100%">
-          <stop offset="0%" stopColor="#fffce8" />
-          <stop offset="18%" stopColor="#fced9d" />
-          <stop offset="42%" stopColor="#dfa832" />
-          <stop offset="68%" stopColor="#fdf0b0" />
-          <stop offset="88%" stopColor="#c99120" />
-          <stop offset="100%" stopColor="#9a6912" />
+          <stop offset="0%" stopColor="#fff5d6" />
+          <stop offset="18%" stopColor="#f3dfa6" />
+          <stop offset="42%" stopColor="#c9a051" />
+          <stop offset="68%" stopColor="#f7e5b9" />
+          <stop offset="88%" stopColor="#b38a40" />
+          <stop offset="100%" stopColor="#967133" />
         </linearGradient>
       </defs>
 
@@ -506,7 +499,7 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
       <SparkleStar cx={104} cy={82} r={2.2} color={GOLD} />
 
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
-      <DongSonDrum x={-70} y={125} size={280} opacity={0.17} />
+      <DongSonDrum x={-70} y={125} size={280} opacity={0.12} />
 
       {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
       <g transform="rotate(90 33 268)">
@@ -551,6 +544,8 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Charm', 'Alex Brush', cursive"
@@ -567,6 +562,8 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="url(#sashRightGoldFoil)"
             fontFamily="'Great Vibes', 'Charm', cursive"
@@ -582,6 +579,8 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Dancing Script', cursive"
@@ -598,6 +597,8 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Playfair Display', Georgia, serif"
@@ -615,6 +616,8 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Alex Brush', cursive"
@@ -630,6 +633,8 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
+            textLength="210"
+            lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Playfair Display', Georgia, serif"
@@ -646,9 +651,6 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
       {/* Đường gạch ngang hoàng gia decor và chùm ngôi sao lấp lánh (Bridging Divider & Stardust) */}
       <g filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))">
         {/* Chùm sao lấp lánh tầng trên */}
-        <SparkleStar cx={70} cy={392} r={5} color="#f3db83" />
-        <SparkleStar cx={48} cy={388} r={3} color="#fff4d0" />
-        <SparkleStar cx={92} cy={388} r={3} color="#fff4d0" />
 
         {/* Đường gạch ngang hoàng gia tinh xảo */}
         <line x1="36" y1="414" x2="62" y2="414" stroke={GOLD} strokeWidth="0.65" strokeLinecap="round" opacity="0.85" />
@@ -662,14 +664,10 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
         <SparkleStar cx={106} cy={414} r={2.8} color={GOLD} />
 
         {/* Sao lấp lánh tầng dưới */}
-        <SparkleStar cx={46} cy={438} r={2.8} color={GOLD} />
-        <SparkleStar cx={94} cy={438} r={2.8} color={GOLD} />
       </g>
 
       {/* K18 (chuẩn Roman Serif Cinzel, căn chính xác tuyệt đối trung tâm x=70, y=468, màu vàng gold quý phái) */}
       <g filter="drop-shadow(0 2px 4px rgba(0,0,0,0.9))">
-        <SparkleStar cx={24} cy={468} r={3} color={GOLD} />
-        <SparkleStar cx={116} cy={468} r={3} color={GOLD} />
         <text
           x="70"
           y="468"
@@ -733,7 +731,7 @@ function BackLeftSashArtwork() {
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
       {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét, phóng to thanh thoát ở tâm */}
-      <DongSonDrum x={-70} y={145} size={280} opacity={0.18} />
+      <DongSonDrum x={-70} y={145} size={280} opacity={0.13} />
 
       {/* DÒNG CHỮ: INDUSTRIAL UNIVERSITY (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
       <g transform="rotate(90 70 285)">
@@ -773,7 +771,7 @@ function BackRightSashArtwork() {
       <circle cx="70" cy="123" r="1.2" fill="#fff4d0" />
 
       {/* Trống đồng Đông Sơn cổ truyền thực tế in chìm sắc nét, phóng to thanh thoát ở tâm */}
-      <DongSonDrum x={-70} y={145} size={280} opacity={0.18} />
+      <DongSonDrum x={-70} y={145} size={280} opacity={0.13} />
 
       {/* DÒNG CHỮ: HO CHI MINH CITY · 2026 (phóng to rõ ràng, đậm nét, xoay dọc ở x=70, tâm y=285) */}
       <g transform="rotate(90 70 285)">
@@ -1021,7 +1019,7 @@ export default function App() {
           )}
         </section>
       )}
-      <PrintSheets />
+      <PrintSheets fontStyle={fontStyle} yearStyle={yearStyle} />
 
       <section className="design-notes">
         <div className="notes-intro">

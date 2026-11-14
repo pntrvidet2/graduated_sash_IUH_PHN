@@ -78,12 +78,12 @@ async function downloadSvg(
 }
 
 /** Hidden on screen; these are the pages the browser prints. */
-export function PrintSheets() {
+export function PrintSheets({ fontStyle, yearStyle }: { fontStyle: NameFontStyle; yearStyle: Year2026Style }) {
   return (
     <div className="print-sheets" aria-hidden="true">
       {(["left", "right"] as Side[]).map((side) => (
         <div className="print-sheet" key={side}>
-          <PrintSash side={side} uid={`sheet-${side}`} mm />
+          <PrintSash side={side} uid={`sheet-${side}`} mm fontStyle={fontStyle} yearStyle={yearStyle} />
         </div>
       ))}
     </div>
