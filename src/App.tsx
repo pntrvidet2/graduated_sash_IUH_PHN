@@ -334,8 +334,8 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       </defs>
 
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sắc nét */}
-      <g transform="translate(48, 18)">
-        <GraduationCapIcon size={44} />
+      <g transform="translate(44, 14)">
+        <GraduationCapIcon size={52} />
       </g>
 
       {/* Tên trường tiếng Anh thu nhỏ thanh nhã, cân xứng hoàn hảo với logo IUH bên vạt trái */}

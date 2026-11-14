@@ -444,8 +444,8 @@ export default function PrintSash({
       ) : (
         <g id="front-right">
           {/* Top: Mũ cử nhân hoàng gia */}
-          <g transform="translate(48, 818)">
-            <GraduationCapIcon size={44} color={GOLD} />
+          <g transform="translate(44, 814)">
+            <GraduationCapIcon size={52} color={GOLD} />
           </g>
 
           {/* Tên trường tiếng Anh thu nhỏ thanh nhã cân xứng với vạt trái */}
