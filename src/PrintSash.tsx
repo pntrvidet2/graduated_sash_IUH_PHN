@@ -8,6 +8,7 @@ import {
   MiniGraduationCap,
 } from "./DongSonDrum"
 import type { NameFontStyle, Year2026Style } from "./App"
+import charmBoldFont from "./assets/charm-bold.ttf?inline"
 import greatVibesFont from "./assets/great-vibes.ttf?inline"
 import playfairItalicFont from "./assets/playfair-display-italic.ttf?inline"
 
@@ -122,7 +123,7 @@ export default function PrintSash({
   crop = false,
   logoSrc = IUH_LOGO_WHITE,
   fontCss,
-  fontStyle = "script-greatvibes",
+  fontStyle = "script-charm",
   yearStyle = "royal-interlocking",
 }: {
   side: Side
@@ -163,6 +164,12 @@ export default function PrintSash({
           />
         )}
         <style>{`
+          @font-face {
+            font-family: 'Charm';
+            src: url('${charmBoldFont}') format('truetype');
+            font-style: normal;
+            font-weight: 700;
+          }
           @font-face {
             font-family: 'Great Vibes';
             src: url('${greatVibesFont}') format('truetype');
@@ -335,7 +342,7 @@ export default function PrintSash({
           {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
           {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-          <g transform="translate(36, 948) rotate(-14) scale(0.68)">
+          <g transform="translate(40, 948) rotate(-14) scale(0.68)">
             <polygon points="22,4 42,13 22,22 2,13" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
             <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
             <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -388,57 +395,16 @@ export default function PrintSash({
               2. seamless-ribbon (Thư Pháp Dải Ruy Băng Vàng Liền Mạch)
               3. classic-italic (Thư Pháp Cổ Điển Tinh Giản)
              ======================================================== */}
-          {yearStyle === "royal-interlocking" && (
-            <g id="masterpiece-2026">
-              {/* Nét uốn lượn liên hoàn kết nối mượt mà giữa các con số */}
-              <path
-                d="M 70 1004 C 77 1004, 80 1006, 80 1016"
-                fill="none"
-                stroke={`url(#goldFoil-${uid})`}
-                strokeWidth="2.8"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 79 1050 C 76 1058, 68 1056, 62 1060"
-                fill="none"
-                stroke={`url(#goldFoil-${uid})`}
-                strokeWidth="2.6"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 70 1084 C 77 1084, 80 1088, 80 1098"
-                fill="none"
-                stroke={`url(#goldFoil-${uid})`}
-                strokeWidth="2.8"
-                strokeLinecap="round"
-              />
-
-              <g
-                fontFamily="'Playfair Display', Georgia, serif"
-                fontStyle="italic"
-                fontWeight="900"
-                fill={`url(#goldFoil-${uid})`}
-                textAnchor="middle"
-              >
-                {/* Số 2 thứ nhất: x=60, y=1004 */}
-                <text x="60" y="1004" fontSize="70">
-                  2
-                </text>
-                {/* Số 0: x=80, y=1044 */}
-                <text x="80" y="1044" fontSize="64">
-                  0
-                </text>
-                {/* Số 2 thứ hai: x=60, y=1084 */}
-                <text x="60" y="1084" fontSize="70">
-                  2
-                </text>
-                {/* Số 6: x=80, y=1124 */}
-                <text x="80" y="1124" fontSize="66">
-                  6
-                </text>
-              </g>
-            </g>
-          )}
+      {yearStyle === "royal-interlocking" && (
+        <g id="masterpiece-2026" 
+          fontFamily="'Playfair Display', Georgia, serif" fontStyle="italic"
+          fontWeight="900" fontSize="60" textAnchor="middle" fill={`url(#goldFoil-${uid})`}>
+          <text x="65" y="1004">2</text>
+          <text x="75" y="1047">0</text>
+          <text x="65" y="1090">2</text>
+          <text x="75" y="1133">6</text>
+        </g>
+      )}
 
           {yearStyle === "seamless-ribbon" && (
             <g id="seamless-ribbon-2026" fill={`url(#goldFoil-${uid})`} transform="translate(0, 20)">
@@ -642,14 +608,14 @@ export default function PrintSash({
                 x="88"
                 y="1058"
                 textAnchor="middle"
-            textLength="210"
+            textLength="220"
             lengthAdjust="spacingAndGlyphs"
                 dominantBaseline="middle"
                 fill="#fff4d0"
                 fontFamily="'Charm', 'Alex Brush', cursive"
-                fontWeight="600"
-                fontSize="36"
-                letterSpacing="2.2"
+                fontWeight="700"
+                fontSize="31"
+                letterSpacing="0.5"
               >
                 Phạm Hữu Nghĩa
               </text>

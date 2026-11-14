@@ -2,6 +2,13 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "Charm";
+  src: url("./assets/charm-bold.ttf?inline") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
   font-family: "Great Vibes";
   src: url("./assets/great-vibes.ttf?inline") format("truetype");
   font-style: normal;

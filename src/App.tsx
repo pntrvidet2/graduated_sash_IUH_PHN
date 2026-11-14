@@ -189,7 +189,7 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
       {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-      <g transform="translate(36, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
+      <g transform="translate(40, 148) rotate(-14) scale(0.68)" filter="url(#sashRoyalShadow)">
         <polygon points="22,4 42,13 22,22 2,13" fill="url(#sashGoldFoil)" stroke="#fff8dd" strokeWidth="0.8" />
         <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
         <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
@@ -244,57 +244,13 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
           3. classic-italic (Thư Pháp Cổ Điển Tinh Giản)
          ======================================================== */}
       {yearStyle === "royal-interlocking" && (
-        <g id="masterpiece-2026" filter="url(#sashGoldGlow)">
-          {/* Nét uốn lượn liên hoàn kết nối mượt mà giữa các con số */}
-          {/* 2 -> 0: đuôi số 2 thứ nhất lượn cong vươn sang và nối vào đỉnh số 0 */}
-          <path
-            d="M 70 204 C 77 204, 80 206, 80 216"
-            fill="none"
-            stroke="url(#sashGoldFoil)"
-            strokeWidth="2.8"
-            strokeLinecap="round"
-          />
-          {/* 0 -> 2: đáy cong số 0 lượn nhẹ nối vào đỉnh số 2 thứ hai */}
-          <path
-            d="M 79 250 C 76 258, 68 256, 62 260"
-            fill="none"
-            stroke="url(#sashGoldFoil)"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-          />
-          {/* 2 -> 6: đuôi số 2 thứ hai lượn cong vươn sang và nối vào cổ số 6 */}
-          <path
-            d="M 70 284 C 77 284, 80 288, 80 298"
-            fill="none"
-            stroke="url(#sashGoldFoil)"
-            strokeWidth="2.8"
-            strokeLinecap="round"
-          />
-
-          <g
-            fontFamily="'Playfair Display', Georgia, serif"
-            fontStyle="italic"
-            fontWeight="900"
-            fill="url(#sashGoldFoil)"
-            textAnchor="middle"
-          >
-            {/* Số 2 thứ nhất: x=60, y=204 */}
-            <text x="60" y="204" fontSize="70">
-              2
-            </text>
-            {/* Số 0: x=80, y=244 */}
-            <text x="80" y="244" fontSize="64">
-              0
-            </text>
-            {/* Số 2 thứ hai: x=60, y=284 */}
-            <text x="60" y="284" fontSize="70">
-              2
-            </text>
-            {/* Số 6: x=80, y=324 */}
-            <text x="80" y="324" fontSize="66">
-              6
-            </text>
-          </g>
+        <g id="masterpiece-2026" filter="url(#sashGoldGlow)"
+          fontFamily="'Playfair Display', Georgia, serif" fontStyle="italic"
+          fontWeight="900" fontSize="60" textAnchor="middle" fill="url(#sashGoldFoil)">
+          <text x="65" y="204">2</text>
+          <text x="75" y="247">0</text>
+          <text x="65" y="290">2</text>
+          <text x="75" y="333">6</text>
         </g>
       )}
 
@@ -441,7 +397,7 @@ export type NameFontStyle =
  * Viện trên & Khoa dưới (tách bạch rõ ràng, KHÔNG chạm K18) | Tên sinh viên thư pháp chuẩn mẫu thực tế ->
  * Khoảng thở 64px -> Khóa K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: NameFontStyle }) {
+function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       <defs>
@@ -544,14 +500,14 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
             x="88"
             y="268"
             textAnchor="middle"
-            textLength="210"
+            textLength="220"
             lengthAdjust="spacingAndGlyphs"
             dominantBaseline="middle"
             fill="#fff4d0"
             fontFamily="'Charm', 'Alex Brush', cursive"
-            fontWeight="600"
-            fontSize="36"
-            letterSpacing="2.2"
+            fontWeight="700"
+            fontSize="31"
+            letterSpacing="0.5"
             filter="drop-shadow(0 2px 4px rgba(0,0,0,0.85))"
           >
             Phạm Hữu Nghĩa
@@ -692,7 +648,7 @@ function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: Nam
 }
 
 function FrontSash({
-  fontStyle = "script-greatvibes",
+  fontStyle = "script-charm",
   yearStyle = "royal-interlocking",
 }: {
   fontStyle?: NameFontStyle
@@ -842,7 +798,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
-  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-greatvibes")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-charm")
   const [yearStyle, setYearStyle] = useState<Year2026Style>("royal-interlocking")
 
   return (
