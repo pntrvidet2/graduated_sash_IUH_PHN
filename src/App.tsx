@@ -86,7 +86,7 @@ export type Year2026Style =
  */
 function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Year2026Style }) {
   return (
-    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
+    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
       <defs>
         {/* Luxury Gold Foil Metallic Gradient (Ánh kim vàng 5 tầng hoàng gia) */}
         <linearGradient id="sashGoldFoil" x1="15%" y1="0%" x2="85%" y2="100%">
@@ -321,7 +321,7 @@ export type NameFontStyle =
  */
 function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFontStyle }) {
   return (
-    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt phải">
+    <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
       <defs>
         <linearGradient id="sashRightGoldFoil" x1="15%" y1="0%" x2="85%" y2="100%">
           <stop offset="0%" stopColor="#fff5d6" />
@@ -582,7 +582,7 @@ function FrontSash({
       <article className="sash-panel sash-left">
         <div className="sash-inner">
           <SashFrame side="left" />
-          <LeftSashArtwork yearStyle={yearStyle} />
+          <RightSashArtwork fontStyle={fontStyle} />
         </div>
       </article>
 
@@ -590,7 +590,7 @@ function FrontSash({
       <article className="sash-panel sash-right">
         <div className="sash-inner">
           <SashFrame side="right" />
-          <RightSashArtwork fontStyle={fontStyle} />
+          <LeftSashArtwork yearStyle={yearStyle} />
         </div>
       </article>
     </div>

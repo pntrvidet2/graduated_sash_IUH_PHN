@@ -71,10 +71,13 @@ async function downloadSvg(
     type: "image/svg+xml",
   })
   const a = document.createElement("a")
-  a.href = URL.createObjectURL(blob)
+  const url = URL.createObjectURL(blob)
+  a.href = url
   a.download = `sash-${side === "left" ? "trai" : "phai"}-140x1500mm.svg`
+  document.body.append(a)
   a.click()
-  URL.revokeObjectURL(a.href)
+  a.remove()
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 
 /** Hidden on screen; these are the pages the browser prints. */

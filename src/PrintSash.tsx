@@ -265,8 +265,8 @@ export default function PrintSash({
       </g>
 
       {/* Front, hanging end */}
-      {side === "left" ? (
-        <g id="front-left">
+      {side === "right" ? (
+        <g id="front-right">
           {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, căn chuẩn cân đối với vạt phải */}
           <image
             href={IUH_EMBLEM_ORIGINAL}
@@ -442,7 +442,7 @@ export default function PrintSash({
           </g>
         </g>
       ) : (
-        <g id="front-right">
+        <g id="front-left">
           {/* Top: Mũ cử nhân hoàng gia */}
           <g transform="translate(44, 814)">
             <GraduationCapIcon size={52} color={GOLD} />
