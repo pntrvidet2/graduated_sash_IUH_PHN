@@ -118,14 +118,9 @@ function LeftSashArtwork({ yearStyle = "royal-interlocking" }: { yearStyle?: Yea
       </defs>
 
       {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, căn chuẩn cân đối với vạt phải */}
-      <image
-        href={IUH_EMBLEM_ORIGINAL}
-        x="50"
-        y="15"
-        width="40"
-        height="40"
-        preserveAspectRatio="xMidYMid meet"
-      />
+      <g transform="translate(44, 14)">
+        <GraduationCapIcon size={52} />
+      </g>
 
 
       <text x="70" y="62" textAnchor="middle" dominantBaseline="central"
@@ -334,9 +329,14 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       </defs>
 
       {/* Top: Mũ cử nhân tốt nghiệp hoàng gia 3D sắc nét */}
-      <g transform="translate(44, 14)">
-        <GraduationCapIcon size={52} />
-      </g>
+      <image
+        href={IUH_EMBLEM_ORIGINAL}
+        x="50"
+        y="15"
+        width="40"
+        height="40"
+        preserveAspectRatio="xMidYMid meet"
+      />
 
       {/* Tên trường tiếng Anh thu nhỏ thanh nhã, cân xứng hoàn hảo với logo IUH bên vạt trái */}
       <text
@@ -379,10 +379,10 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       {/* Nền Trống đồng Đông Sơn Ngọc Lũ thực tế phóng to bao quát, chìm mờ thanh thoát */}
       <DongSonDrum x={-70} y={125} size={280} opacity={0.09} />
 
-      {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
-      <g transform="rotate(90 33 268)">
+      {/* CỘT 1 (x=107): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
+      <g transform="rotate(90 107 268)">
         <text
-          x="33"
+          x="107"
           y="268"
           textAnchor="middle"
           dominantBaseline="middle"
@@ -397,10 +397,10 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         </text>
       </g>
 
-      {/* CỘT 2 (x=51): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
-      <g transform="rotate(90 51 268)">
+      {/* CỘT 2 (x=89): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
+      <g transform="rotate(90 89 268)">
         <text
-          x="51"
+          x="89"
           y="268"
           textAnchor="middle"
           dominantBaseline="middle"
@@ -415,11 +415,11 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         </text>
       </g>
 
-      {/* CỘT 3 (x=88): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THƯ PHÁP THANH THOÁT, KÉO DÀI TRANG TRỌNG) */}
-      <g transform="rotate(90 88 268)">
+      {/* CỘT 3 (x=52): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THƯ PHÁP THANH THOÁT, KÉO DÀI TRANG TRỌNG) */}
+      <g transform="rotate(90 52 268)">
         {fontStyle === "script-charm" && (
           <text
-            x="88"
+            x="52"
             y="268"
             textAnchor="middle"
             textLength="255"
@@ -437,7 +437,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "script-greatvibes" && (
           <text
-            x="88"
+            x="52"
             y="268"
             textAnchor="middle"
             textLength="252"
@@ -454,7 +454,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "script-dancing" && (
           <text
-            x="88"
+            x="52"
             y="268"
             textAnchor="middle"
             textLength="210"
@@ -472,7 +472,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "serif-italic" && (
           <text
-            x="88"
+            x="52"
             y="268"
             textAnchor="middle"
             textLength="210"
@@ -491,7 +491,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "script-alexbrush" && (
           <text
-            x="88"
+            x="52"
             y="268"
             textAnchor="middle"
             textLength="210"
@@ -508,7 +508,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
         )}
         {fontStyle === "serif-caps" && (
           <text
-            x="88"
+            x="52"
             y="268"
             textAnchor="middle"
             textLength="210"

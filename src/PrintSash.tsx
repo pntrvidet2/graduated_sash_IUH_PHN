@@ -268,15 +268,9 @@ export default function PrintSash({
       {side === "right" ? (
         <g id="front-right">
           {/* Top: Biểu tượng IUH thu nhỏ thanh nhã, căn chuẩn cân đối với vạt phải */}
-          <image
-            href={IUH_EMBLEM_ORIGINAL}
-            xlinkHref={IUH_EMBLEM_ORIGINAL}
-            x="50"
-            y="815"
-            width="40"
-            height="40"
-            preserveAspectRatio="xMidYMid meet"
-          />
+          <g transform="translate(44, 814)">
+            <GraduationCapIcon size={52} color={GOLD} />
+          </g>
 
 
       <text x="70" y="862" textAnchor="middle" dominantBaseline="central"
@@ -444,9 +438,15 @@ export default function PrintSash({
       ) : (
         <g id="front-left">
           {/* Top: Mũ cử nhân hoàng gia */}
-          <g transform="translate(44, 814)">
-            <GraduationCapIcon size={52} color={GOLD} />
-          </g>
+          <image
+            href={IUH_EMBLEM_ORIGINAL}
+            xlinkHref={IUH_EMBLEM_ORIGINAL}
+            x="50"
+            y="815"
+            width="40"
+            height="40"
+            preserveAspectRatio="xMidYMid meet"
+          />
 
           {/* Tên trường tiếng Anh thu nhỏ thanh nhã cân xứng với vạt trái */}
           <text
@@ -489,10 +489,10 @@ export default function PrintSash({
             <DongSonDrum size={280} opacity={0.09} />
           </g>
 
-          {/* CỘT 1 (x=33): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
-          <g transform="rotate(90 33 1058)">
+          {/* CỘT 1 (x=107): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
+          <g transform="rotate(90 107 1058)">
             <text
-              x="33"
+              x="107"
               y="1058"
               textAnchor="middle"
               dominantBaseline="middle"
@@ -506,10 +506,10 @@ export default function PrintSash({
             </text>
           </g>
 
-          {/* CỘT 2 (x=51): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
-          <g transform="rotate(90 51 1058)">
+          {/* CỘT 2 (x=89): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
+          <g transform="rotate(90 89 1058)">
             <text
-              x="51"
+              x="89"
               y="1058"
               textAnchor="middle"
               dominantBaseline="middle"
@@ -523,11 +523,11 @@ export default function PrintSash({
             </text>
           </g>
 
-          {/* CỘT 3 (x=88): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THANH THOÁT, KÉO DÀI) */}
-          <g transform="rotate(90 88 1058)">
+          {/* CỘT 3 (x=52): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THANH THOÁT, KÉO DÀI) */}
+          <g transform="rotate(90 52 1058)">
             {fontStyle === "script-charm" && (
               <text
-                x="88"
+                x="52"
                 y="1058"
                 textAnchor="middle"
             textLength="255"
@@ -544,7 +544,7 @@ export default function PrintSash({
             )}
             {fontStyle === "script-greatvibes" && (
               <text
-                x="88"
+                x="52"
                 y="1058"
                 textAnchor="middle"
             textLength="252"
@@ -560,7 +560,7 @@ export default function PrintSash({
             )}
             {fontStyle === "script-alexbrush" && (
               <text
-                x="88"
+                x="52"
                 y="1058"
                 textAnchor="middle"
             textLength="210"
@@ -576,7 +576,7 @@ export default function PrintSash({
             )}
             {fontStyle === "script-dancing" && (
               <text
-                x="88"
+                x="52"
                 y="1058"
                 textAnchor="middle"
             textLength="210"
@@ -593,7 +593,7 @@ export default function PrintSash({
             )}
             {fontStyle === "serif-italic" && (
               <text
-                x="88"
+                x="52"
                 y="1058"
                 textAnchor="middle"
             textLength="210"
@@ -611,7 +611,7 @@ export default function PrintSash({
             )}
             {fontStyle === "serif-caps" && (
               <text
-                x="88"
+                x="52"
                 y="1058"
                 textAnchor="middle"
             textLength="210"
