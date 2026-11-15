@@ -296,7 +296,7 @@ export default function PrintSash({
                     {/* Họa tiết bướm bay nghệ thuật bên trái nối nhịp uyển chuyển */}
 
           {/* Mũ cử nhân mini đội chuẩn xác trên đỉnh đầu số 2 (xích qua trái theo yêu cầu) */}
-          <g transform="translate(50, 948) rotate(-14) scale(0.68)">
+          <g transform="translate(56, 948) rotate(-14) scale(0.68)">
             <polygon points="22,4 42,13 22,22 2,13" fill={`url(#goldFoil-${uid})`} stroke="#fff8dd" strokeWidth="0.8" />
             <path d="M 12 17 V 23 C 12 27, 32 27, 32 23 V 17 Z" fill="#9e7115" />
             <path d="M 22 13 C 22 17, 34 19, 34 25" stroke="#fff8dd" strokeWidth="1.2" fill="none" strokeLinecap="round" />
