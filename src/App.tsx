@@ -380,7 +380,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       <DongSonDrum x={-70} y={125} size={280} opacity={0.09} />
 
       {/* CỘT 1 (x=107): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
-      <g transform="rotate(90 107 268)">
+      <g transform="rotate(-90 107 268)">
         <text
           x="107"
           y="268"
@@ -398,7 +398,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       </g>
 
       {/* CỘT 2 (x=89): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
-      <g transform="rotate(90 89 268)">
+      <g transform="rotate(-90 89 268)">
         <text
           x="89"
           y="268"
@@ -416,7 +416,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
       </g>
 
       {/* CỘT 3 (x=52): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THƯ PHÁP THANH THOÁT, KÉO DÀI TRANG TRỌNG) */}
-      <g transform="rotate(90 52 268)">
+      <g transform="rotate(-90 52 268)">
         {fontStyle === "script-charm" && (
           <text
             x="52"

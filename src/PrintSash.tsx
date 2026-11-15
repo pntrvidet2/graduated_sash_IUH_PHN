@@ -490,7 +490,7 @@ export default function PrintSash({
           </g>
 
           {/* CỘT 1 (x=107): KHOA TÀI CHÍNH - NGÂN HÀNG (ĐÃ ĐỔI VỊ TRÍ, SIZE 9.5PX, MÀU VÀNG GOLD QUÝ PHÁI) */}
-          <g transform="rotate(90 107 1058)">
+          <g transform="rotate(-90 107 1058)">
             <text
               x="107"
               y="1058"
@@ -507,7 +507,7 @@ export default function PrintSash({
           </g>
 
           {/* CỘT 2 (x=89): VIỆN TÀI CHÍNH - KẾ TOÁN (ĐÃ ĐỔI VỊ TRÍ SÁT CẠNH TÊN, SIZE LỚN 11.5PX, MÀU TRẮNG NGỌC NỔI BẬT) */}
-          <g transform="rotate(90 89 1058)">
+          <g transform="rotate(-90 89 1058)">
             <text
               x="89"
               y="1058"
@@ -524,7 +524,7 @@ export default function PrintSash({
           </g>
 
           {/* CỘT 3 (x=52): DÒNG TÊN SINH VIÊN (PHẠM HỮU NGHĨA - THANH THOÁT, KÉO DÀI) */}
-          <g transform="rotate(90 52 1058)">
+          <g transform="rotate(-90 52 1058)">
             {fontStyle === "script-charm" && (
               <text
                 x="52"
