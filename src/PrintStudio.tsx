@@ -40,7 +40,7 @@ async function buildFontCss(): Promise<string> {
 
 async function downloadSvg(
   side: Side,
-  fontStyle: NameFontStyle = "script-charm",
+  fontStyle: NameFontStyle = "script-greatvibes",
   yearStyle: Year2026Style = "royal-interlocking",
 ) {
   let fontCss: string | undefined
@@ -94,7 +94,7 @@ export function PrintSheets({ fontStyle, yearStyle }: { fontStyle: NameFontStyle
 }
 
 export default function PrintStudio({
-  fontStyle = "script-charm",
+  fontStyle = "script-greatvibes",
   yearStyle = "royal-interlocking",
 }: {
   fontStyle?: NameFontStyle

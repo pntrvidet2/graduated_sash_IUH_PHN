@@ -314,7 +314,7 @@ export type NameFontStyle =
  * Viện trên & Khoa dưới (tách bạch rõ ràng, KHÔNG chạm K18) | Tên sinh viên thư pháp chuẩn mẫu thực tế ->
  * Khoảng thở 64px -> Khóa K18 -> Hoa văn góc nhọn
  */
-function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFontStyle }) {
+function RightSashArtwork({ fontStyle = "script-greatvibes" }: { fontStyle?: NameFontStyle }) {
   return (
     <svg viewBox="0 0 140 580" className="sash-artwork-svg" aria-label="Nội dung vạt trái">
       <defs>
@@ -570,7 +570,7 @@ function RightSashArtwork({ fontStyle = "script-charm" }: { fontStyle?: NameFont
 }
 
 function FrontSash({
-  fontStyle = "script-charm",
+  fontStyle = "script-greatvibes",
   yearStyle = "royal-interlocking",
 }: {
   fontStyle?: NameFontStyle
@@ -720,7 +720,7 @@ function OptionCard({
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("all")
-  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-charm")
+  const [fontStyle, setFontStyle] = useState<NameFontStyle>("script-greatvibes")
   const [yearStyle, setYearStyle] = useState<Year2026Style>("royal-interlocking")
 
   return (

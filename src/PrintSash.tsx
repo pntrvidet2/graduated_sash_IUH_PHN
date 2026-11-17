@@ -125,7 +125,7 @@ export default function PrintSash({
   crop = false,
   logoSrc = IUH_LOGO_WHITE,
   fontCss,
-  fontStyle = "script-charm",
+  fontStyle = "script-greatvibes",
   yearStyle = "royal-interlocking",
 }: {
   side: Side
