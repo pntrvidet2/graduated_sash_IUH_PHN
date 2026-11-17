@@ -17,6 +17,20 @@
 
 @font-face {
   font-family: "Playfair Display";
+  src: url("./assets/playfair-display-bold.ttf?inline") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./assets/playfair-display-extrabold.ttf?inline") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Playfair Display";
   src: url("./assets/playfair-display-italic.ttf?inline") format("truetype");
   font-style: italic;
   font-weight: 900;

@@ -12,6 +12,8 @@ import YearArtwork from "./YearArtwork"
 import BankingIcon from "./BankingIcon"
 import charmBoldFont from "./assets/charm-bold.ttf?inline"
 import greatVibesFont from "./assets/great-vibes.ttf?inline"
+import playfairBoldFont from "./assets/playfair-display-bold.ttf?inline"
+import playfairExtraBoldFont from "./assets/playfair-display-extrabold.ttf?inline"
 import playfairItalicFont from "./assets/playfair-display-italic.ttf?inline"
 
 export type Side = "left" | "right"
@@ -24,11 +26,8 @@ const V = 70 // depth of the pointed end
 
 const NAVY = "#0b1b3e"
 const GOLD = "#d8bd7b"
-const IVORY = "#f1e7cf"
 
-const SANS = "Inter, 'Helvetica Neue', Arial, sans-serif"
 const SERIF = "'Playfair Display', 'Noto Serif Display', Georgia, serif"
-const SCRIPT = "'Great Vibes', 'Alex Brush', cursive"
 
 const tipTop = (side: Side) => (side === "left" ? [SLANT, 0] : [0, SLANT])
 
@@ -48,44 +47,6 @@ function outline(side: Side, d: number): [number, number][] {
 }
 
 const pts = (p: [number, number][]) => p.map(([x, y]) => `${x},${y}`).join(" ")
-
-function StepLines({ y }: { y: number }) {
-  return (
-    <path
-      d={`M62 ${y}H78M54 ${y + 6}H86M46 ${y + 12}H94`}
-      fill="none"
-      stroke={GOLD}
-      strokeWidth="0.5"
-    />
-  )
-}
-
-function Label({
-  y,
-  children,
-  color = IVORY,
-  size = 3.8,
-}: {
-  y: number
-  children: string
-  color?: string
-  size?: number
-}) {
-  return (
-    <text
-      x="70"
-      y={y}
-      textAnchor="middle"
-      fill={color}
-      fontFamily={SANS}
-      fontWeight="500"
-      fontSize={size}
-      letterSpacing={size * 0.32}
-    >
-      {children}
-    </text>
-  )
-}
 
 type VerticalTextProps = {
   cy: number
@@ -180,6 +141,18 @@ export default function PrintSash({
           }
           @font-face {
             font-family: 'Playfair Display';
+            src: url('${playfairBoldFont}') format('truetype');
+            font-style: normal;
+            font-weight: 700;
+          }
+          @font-face {
+            font-family: 'Playfair Display';
+            src: url('${playfairExtraBoldFont}') format('truetype');
+            font-style: normal;
+            font-weight: 800;
+          }
+          @font-face {
+            font-family: 'Playfair Display';
             src: url('${playfairItalicFont}') format('truetype');
             font-style: italic;
             font-weight: 900;
@@ -236,22 +209,13 @@ export default function PrintSash({
 
       {/* Neck end (back of the sash) */}
       <g id="neck-end">
-        <StepLines y={150} />
-        {side === "left" ? (
-          <text
-            x="70"
-            y={190}
-            textAnchor="middle"
-            fill={IVORY}
-            fontFamily={SANS}
-            fontWeight="700"
-            fontSize="5.4"
-            letterSpacing="2"
-          >
-            FINANCE
+        <path d="M62 150H78M54 156H86M46 162H94" fill="none" stroke={GOLD} strokeWidth="0.5" />
+        {side === "right" && (
+          <text x="70" y="190" textAnchor="middle" fill="#f1e7cf"
+            fontFamily="Inter, 'Helvetica Neue', Arial, sans-serif" fontWeight="500"
+            fontSize="3.8" letterSpacing={3.8 * 0.32}>
+            CLASS OF 2026
           </text>
-        ) : (
-          <Label y={190}>CLASS OF 2026</Label>
         )}
         {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
         <g transform="translate(-55, 335)">
