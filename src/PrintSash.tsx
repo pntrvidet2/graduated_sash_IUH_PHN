@@ -210,13 +210,6 @@ export default function PrintSash({
       {/* Neck end (back of the sash) */}
       <g id="neck-end">
         <path d="M62 150H78M54 156H86M46 162H94" fill="none" stroke={GOLD} strokeWidth="0.5" />
-        {side === "right" && (
-          <text x="70" y="190" textAnchor="middle" fill="#f1e7cf"
-            fontFamily="Inter, 'Helvetica Neue', Arial, sans-serif" fontWeight="500"
-            fontSize="3.8" letterSpacing={3.8 * 0.32}>
-            CLASS OF 2026
-          </text>
-        )}
         {/* Nền Trống đồng Đông Sơn cổ truyền thực tế phóng to bao quát */}
         <g transform="translate(-55, 335)">
           <DongSonDrum size={250} opacity={0.10} />
